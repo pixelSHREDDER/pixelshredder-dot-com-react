@@ -1,9 +1,30 @@
 import Head from 'next/head'
+import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
     <div className={styles.container}>
+<Image
+    src="/images/tv-frame.svg"
+    fill
+    alt="Your Name"
+    className={styles.tvframe}
+  />
+  <Image
+    src="/images/tv-bezel.svg"
+    fill
+    alt="Your Name"
+    className={styles.tvbezel}
+  />
+  <Image
+    src="/images/tv-glow.svg"
+    fill
+    alt="Your Name"
+    className={styles.tvglow}
+  />
+  <div className={styles.scanlines}>
+  <div className={styles.screen}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -105,11 +126,14 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
+            background-color: #222;
         }
         * {
           box-sizing: border-box;
         }
       `}</style>
+      </div>
+    </div>
     </div>
   )
 }
