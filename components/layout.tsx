@@ -1,10 +1,21 @@
 import Head from 'next/head'
 import Image from 'next/image';
 import styles from './layout.module.css';
+import { Press_Start_2P, VT323 } from '@next/font/google';
 
 type LayoutProps = {
     children: React.ReactNode,
   };
+
+export const title = Press_Start_2P({
+    subsets: ['latin'],
+    weight: ['400'],
+});
+
+export const text = VT323({
+    subsets: ['latin'],
+    weight: ['400'],
+});
 
 export default function Layout({ children }: LayoutProps) {
     return (
@@ -90,13 +101,23 @@ export default function Layout({ children }: LayoutProps) {
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          font-family: ${text.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
             background-color: #222;
         }
         * {
           box-sizing: border-box;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: ${title.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
         }
       `}</style>
       </div>

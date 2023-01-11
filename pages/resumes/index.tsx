@@ -12,7 +12,7 @@ export default function Resumes() {
             <section className={utilStyles.grid}>
 				<Link href="/resumes/web-developer" className={utilStyles.card}>
                     <h2>Web Development</h2>
-                    <p>Over 10 years of professional experience.</p>
+                    <h5>Over 10 years of professional experience</h5>
                 </Link>
                 <Link href="/resumes/game-developer" className={utilStyles.card}>
                     <h2>Game Development</h2>
