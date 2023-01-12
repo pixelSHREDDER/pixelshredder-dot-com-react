@@ -10,11 +10,11 @@ export default function Resumes() {
                 <h1>Choose Your Destiny</h1>
             </section>
             <section className={utilStyles.grid}>
-				<Link href="/resumes/web-developer" className={utilStyles.card}>
+				<Link href="/resumes/web-development" className={utilStyles.card}>
                     <h2>Web Development</h2>
                     <p>Over 10 years of professional experience</p>
                 </Link>
-                <Link href="/resumes/game-developer" className={utilStyles.card}>
+                <Link href="/resumes/game-development" className={utilStyles.card}>
                     <h2>Game Development</h2>
                     <p>Go play Halo Infinite!</p>
                 </Link>
