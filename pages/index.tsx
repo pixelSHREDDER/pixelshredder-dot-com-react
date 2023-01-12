@@ -1,30 +1,58 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import utilStyles from '/styles/utils.module.css';
+import styles from '/styles/utils.module.css';
 import Layout from '../components/layout';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-  return (
-    <Layout>
-        <h1 className={utilStyles.title}>Welcome!</h1>
+  const [startingUp, setStartingUp] = useState(true);
+  
+  useEffect(() => {
+    setTimeout(() => setStartingUp(false), 2000);
+  }, []);
 
-        <p className={utilStyles.description}>
+      return (
+    <Layout>
+      {startingUp ?
+      <div className={styles.startupbg}>
+      <Image
+    src="/images/startup.svg"
+    fill
+    alt="Your Name"
+    className={styles.startup}
+  />
+  </div>
+      :
+      <section className={styles.content}>
+        <h1 className={styles.title}>Welcome!</h1>
+
+        <p className={styles.description}>
           Please select an option below
         </p>
 
-        <div className={utilStyles.grid}>
-        <Link href="/resumes" className={utilStyles.card}>
-            <h2>Portfolio</h2>
-          </Link>
-          <Link href="/resumes" className={utilStyles.card}>
+        <div className={styles.grid}>
+        <Link href="/resumes" className={styles.card}>
             <h2>Resume</h2>
           </Link>
-          <Link href="/resumes" className={utilStyles.card}>
+        <a
+          href="https://www.pixel-shredder.com/port/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.card}><h2>Portfolio</h2></a>
+          <Link href="/about-me" className={styles.card}>
             <h2>About Me</h2>
           </Link>
-          <Link href="/resumes" className={utilStyles.card}>
-            <h2>Blog (deprecated)</h2>
+          <Link href="/about-this-site" className={styles.card}>
+            <h2>About This Site</h2>
           </Link>
+          <a
+          href="https://www.pixel-shredder.com/blog/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.card}><h2>Blog</h2><p>'Paper Awesome'<br/>(deprecated)</p></a>
         </div>
+        </section>
+        }
         </Layout>
   )
 }

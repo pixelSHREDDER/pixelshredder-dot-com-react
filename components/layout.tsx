@@ -2,6 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image';
 import styles from './layout.module.css';
 import { Press_Start_2P, VT323 } from '@next/font/google';
+import { useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'next/router';
+import clsx from 'clsx';
 
 type LayoutProps = {
     children: React.ReactNode,
@@ -18,6 +21,30 @@ export const text = VT323({
 });
 
 export default function Layout({ children }: LayoutProps) {
+  /*function startup() {
+    let startTime = performance.now();
+    while (performance.now() - startTime < 2000) {
+      // Do nothing for 500 ms to emulate extremely slow code
+    }
+
+    return true;
+  }*/
+
+  /*const [startingUp, setStartingUp] = useState(true);
+  
+  useEffect(() => {
+setTimeout(() => setStartingUp(false), 2000);
+  }, []);*/
+  const { asPath } = useRouter();
+  /*const startedUp = useMemo(() => {
+    setTimeout(() => true, 2000);
+  }, []);*/
+
+  const [startingUp, setStartingUp] = useState(true);
+  
+  useEffect(() => {
+    setTimeout(() => setStartingUp(false), 2000);
+  }, []);
     return (
         <div className={styles.container}>
 <Image
@@ -36,19 +63,33 @@ export default function Layout({ children }: LayoutProps) {
     src="/images/tv-glow.svg"
     fill
     alt="Your Name"
-    className={styles.tvglow}
+    className={clsx([styles.tvglow], {
+      [styles.startuptvglow]: startingUp && asPath === '/',
+      [styles.hometvglow]: !startingUp && asPath === '/',
+      [styles.resumestvglow]: asPath === '/resumes',
+    })}
   />
-  <div className={styles.scanlines}>
+  <div className={clsx([styles.scanlines], {
+    [styles.sectionscanlines]: !startingUp && asPath !== '/',
+    [styles.homescanlines]: !startingUp && asPath === '/',
+    [styles.resumesscanlines]: asPath === '/resumes',
+  })}>
   <div className={styles.screen}>
       <Head>
         <title>Mike DeVine | Developer - Designer - Creative</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        {children}
+      {/*<Image
+    src="/vercel.svg"
+    fill
+    alt="Your Name"
+    className={styles.startup}
+    id="globalLoader"
+    />*/}
+      <main className={styles.main}>
+  {children}
         </main>
-        <footer>
+        {/*<footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -57,7 +98,7 @@ export default function Layout({ children }: LayoutProps) {
           Powered by{' '}
           <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
         </a>
-      </footer>
+  </footer>*/}
 
       <style jsx>{`
         main {

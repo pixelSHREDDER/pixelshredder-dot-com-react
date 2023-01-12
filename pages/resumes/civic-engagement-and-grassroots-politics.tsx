@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import Layout from '../../components/layout';
 
-export default function WebDeveloperResume() {
+export default function CivicsPoliticsResume() {
     return (
     <Layout>
         <article className={styles.darkmode}>

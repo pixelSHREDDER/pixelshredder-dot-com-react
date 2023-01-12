@@ -1,3 +1,47 @@
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes startup {
+  0% {
+    transform:scale(1,0.8) translate3d(0,0,0);
+    -webkit-filter:brightness(30);
+    filter:brightness(30);
+    opacity:1;
+  }
+  3.5% {
+    transform:scale(1,0.8) translate3d(0,100%,0);
+  }
+  3.6% {
+    transform:scale(1,0.8) translate3d(0,-100%,0);
+    opacity:1;
+  }
+  9% {
+    transform:scale(1.3,0.6) translate3d(0,100%,0);
+    -webkit-filter:brightness(30);
+    filter:brightness(30);
+    opacity:0;
+  }
+  11% {
+    transform:scale(1,1) translate3d(0,0,0);
+    -webkit-filter:contrast(0) brightness(0) ;
+    filter:contrast(0) brightness(0);
+    opacity:0;
+  }
+  100% {
+    transform:scale(1,1) translate3d(0,0,0);
+    -webkit-filter:contrast(1) brightness(1.2) saturate(1.3);
+    filter:contrast(1) brightness(1.2) saturate(1.3);
+    opacity:1;
+  }
+}
+
 .description {
   line-height: 1.5;
   font-size: 1.5rem;
@@ -9,17 +53,17 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .card {
-  margin: 1rem;
+  margin: 2%;
   flex-basis: 45%;
   padding: 1rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 4px double #333;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
@@ -39,16 +83,73 @@
 .card p {
   margin: 0;
   font-size: 1.25rem;
-  line-height: 1.5;
+  text-align: center;
+  /*line-height: 1.5;*/
 }
 
 .logo {
   height: 1em;
 }
 
+/*.main,
+.footer {
+  opacity: hidden;
+  visibility: hidden;
+  animation: fadein 0.5s;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}*/
+.content {
+  opacity: hidden;
+  visibility: hidden;
+  animation: fadein 0.5s;
+  animation-delay: 0.25s;
+  animation-fill-mode: forwards;
+}
+
+.startup {
+  animation: startup 1s linear;
+  animation-fill-mode: forwards;
+}
+
+.startupbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #333;
+}
+
+.skills {
+  height: 60px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.skills li {
+    margin-bottom: 0;
+}
+
+.darkmode {
+  color: #bababa;
+}
+
+.darkmode h1 {
+  animation: none;
+}
+
 @media (max-width: 600px) {
   .grid {
     /*width: 100%;*/
     flex-direction: column;
+  }
+}
+
+@media (max-width: 800px) {
+  .skills {
+    flex-wrap: nowrap;
   }
 }
