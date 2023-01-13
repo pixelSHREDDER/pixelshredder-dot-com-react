@@ -52,6 +52,7 @@ setTimeout(() => setStartingUp(false), 2000);
     fill
     alt="Your Name"
     className={styles.tvframe}
+    priority
   />
   <Image
     src="/images/tv-bezel.svg"
@@ -102,7 +103,7 @@ setTimeout(() => setStartingUp(false), 2000);
 
       <style jsx>{`
         main {
-          padding: 5rem 0;
+          padding: 4rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
