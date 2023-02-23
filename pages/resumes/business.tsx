@@ -1,10 +1,17 @@
 import Link from 'next/link';
 import styles from 'styles/utils.module.css';
+import GlobalHead from '../../components/head';
 import Layout from '../../components/layout';
 
 export default function BusinessResume() {
     return (
     <Layout>
+		<GlobalHead meta={{
+			title: 'Mike DeVine | Business Résumé',
+			description: 'Two credited startups (so far)',
+			image: '/images/mike-devine-headshot.jpg',
+			imageAlt: 'Here\'s what I look like I guess'
+		}} />
         <article className={styles.darkmode}>
 			<h1>Résumé</h1>
 				<section>

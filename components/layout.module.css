@@ -156,7 +156,7 @@
   pointer-events: none;
   animation: glow 0.15s infinite;
   aspect-ratio: 4 / 3;
-  filter: sepia(5%) saturate(9%) hue-rotate(340deg) brightness(0%) contrast(100%);
+  filter: invert(19%) sepia(4%) saturate(6576%) hue-rotate(197deg) brightness(86%) contrast(77%);
 }
 
 .startuptvglow {
@@ -183,7 +183,6 @@
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
-  /*aspect-ratio: 4 / 3;*/
 }
 
 .scanlines::after {
@@ -199,19 +198,16 @@
   z-index: 2;
   pointer-events: none;
   animation: flicker 0.15s infinite;
-  /*aspect-ratio: 4 / 3;*/
 }
 
 .scanlines {
   position: fixed;
   left: 9%;
   right: 9%;
-  /*bottom: 2rem;*/
   top: 2rem;
   z-index: 3;
-  /*background-color: #619cb5;*/
   aspect-ratio: 4 / 3;
-  background-color: #333;
+  background-color: #393c5a;
 }
 
 .homescanlines {
@@ -232,22 +228,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
   padding: 2rem;
-  /*aspect-ratio: 4 / 3;*/
 }
-
-/*.main,
-.footer {
-  opacity: hidden;
-  visibility: hidden;
-  animation: fadein 0.5s;
-  animation-delay: 2.5s;
-  animation-fill-mode: forwards;
-}
-
-.startup {
-  animation: startup 2s linear;
-  animation-fill-mode: forwards;
-}*/
 
 @media screen and (max-width: 400px) {
   .scanlines {
@@ -255,9 +236,9 @@
   }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (max-width: 1024px) and (orientation: landscape) {
   .container {
-    padding-bottom: 46%;
+    padding-bottom: 47%;
   }
   .tvbezel,
   .tvglow {
@@ -265,7 +246,22 @@
   }
   .scanlines {
     top: 2rem;
-    left: 25%;
-    right: 25%;
+    left: 23%;
+    right: 23%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding-bottom: 50%;
+  }
+  .tvbezel,
+  .tvglow {
+    padding: 3%;
+  }
+  .scanlines {
+    top: 2rem;
+    left: 22%;
+    right: 22%;
   }
 }

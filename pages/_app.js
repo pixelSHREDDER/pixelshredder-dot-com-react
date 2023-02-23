@@ -1,24 +1,24 @@
-import { useEffect } from 'react';
+import Script from 'next/script';
 import '../styles/globals.css';
 
 export default function App({ Component, pageProps }) {
-  /*useEffect(() => {
-    const loader = document.getElementById('globalLoader');
-    if (loader) {
-      loader.style.display = 'block';
-  }
-    if (typeof window !== 'undefined') {
-      setTimeout(() => {  
-        if (loader) {
-            loader.style.display = 'none';
-        }
-      }, 2000);
-    } else {
-      if (loader) {
-        loader.style.display = 'block';
-    }
-    }
-}, []);*/
-  
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`} />
+      <Script
+        id='google-analytics'
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', '${process.env.GOOGLE_ANALYTICS_ID}');
+          `,
+        }}
+      />
+      <Component {...pageProps} />
+    </>
+  )
 }

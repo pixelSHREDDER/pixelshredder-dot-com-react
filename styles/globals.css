@@ -8,8 +8,13 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background-color: #222;
   color: #333;
   text-align: center;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -18,15 +23,6 @@ body {
 
 a {
   color: inherit;
-  /*text-decoration: none;*/
-}
-
-* {
-  box-sizing: border-box;
-}
-
-li {
-  margin-bottom: 1rem;
 }
 
 img {
@@ -41,6 +37,21 @@ ul {
   margin: 0;
 }
 
+p,
+li {
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.1;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
 h1,
 h2,
 h3,
@@ -50,40 +61,40 @@ h6 {
   text-align: center;
 }
 
-h1 a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
 h1 {
-  margin: 0 0 1rem;
+  margin-block: 0 1rem;
   line-height: 1.15;
   font-size: 2.0rem;
   animation: blinker 1.5s ease-out infinite;
 }
 
+h1 a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
 h2 {
-  margin: 1rem 0;
-  line-height: 1.15;
   font-size: 1.4rem;
+  line-height: 1.15;
+  margin-block: 1rem;
 }
 
 h3 {
   font-size: 1.0rem;
+  line-height: 1.4;
+  margin-block: 0.8rem;
 }
 
 h4 {
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.4;
+  margin-block: 1rem;
 }
 
 h5 {
   font-size: 0.6rem;
-}
-
-ul {
-  padding: 0;
-  list-style: none;
+  line-height: 1.2;
+  margin-block: 0.6rem;
 }
 
 button {
@@ -91,10 +102,22 @@ button {
   font-weight: bold;
 }
 
-p {
-  line-height: 1.1;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+main {
+  padding: 1rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 article {
@@ -103,4 +126,11 @@ article {
 
 section {
   margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  li {
+    font-size: 1.2rem;
+    line-height: 1.1;
+  }
 }

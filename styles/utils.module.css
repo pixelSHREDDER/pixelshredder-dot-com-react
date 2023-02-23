@@ -84,21 +84,12 @@
   margin: 0;
   font-size: 1.25rem;
   text-align: center;
-  /*line-height: 1.5;*/
 }
 
 .logo {
   height: 1em;
 }
 
-/*.main,
-.footer {
-  opacity: hidden;
-  visibility: hidden;
-  animation: fadein 0.5s;
-  animation-delay: 2.5s;
-  animation-fill-mode: forwards;
-}*/
 .content {
   opacity: hidden;
   visibility: hidden;
@@ -122,15 +113,14 @@
 }
 
 .skills {
-  height: 60px;
-  margin-bottom: 1rem;
+  margin-block: 0 1rem;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .skills li {
-    margin-bottom: 0;
+    margin: 0 0.6rem;
 }
 
 .darkmode {
@@ -141,15 +131,10 @@
   animation: none;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    /*width: 100%;*/
-    /*flex-direction: column;*/
-  }
-}
-
-@media (max-width: 800px) {
+@media (min-width: 769px) {
   .skills {
-    flex-wrap: nowrap;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
