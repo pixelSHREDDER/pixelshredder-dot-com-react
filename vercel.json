@@ -1,0 +1,5 @@
+{
+    "redirects": [
+        { "source": "/port", "destination": "/port/index.html" }
+    ]
+}
