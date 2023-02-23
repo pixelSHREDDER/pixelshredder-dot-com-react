@@ -32,18 +32,21 @@ export default function Layout({ children }: LayoutProps) {
       <Image
         src="/images/tv-frame.svg"
         fill
-        alt="Your Name"
+        aria-hidden
+        alt="TV frame"
         className={styles.tvframe}
         priority />
       <Image
         src="/images/tv-bezel.svg"
         fill
-        alt="Your Name"
+        aria-hidden
+        alt="TV bezel"
         className={styles.tvbezel} />
       <Image
         src="/images/tv-glow.svg"
         fill
-        alt="Your Name"
+        aria-hidden
+        alt="TV glow"
         className={clsx([styles.tvglow], {
           [styles.startuptvglow]: startingUp && asPath === '/',
           [styles.hometvglow]: !startingUp && asPath === '/',
