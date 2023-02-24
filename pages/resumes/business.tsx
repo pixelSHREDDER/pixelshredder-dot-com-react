@@ -101,7 +101,7 @@ export default function BusinessResume() {
 					<p>Various uses of social media APIs, including Twitter, Facebook, Pinterest, and LinkedIn.</p>
 					<p>Various uses of Google Maps API functionality for interactive data rendering.</p>
 					<p>Various uses of THOMAS and <a href="https://www.congress.gov/" target="_blank">congress.gov</a> API functionality.</p>
-					<p>Various uses of multimedia APIs, including Flickr and YouTube (see my favorite example in my <a href="https://www.pixel-shredder.com/port/dv.html" target="_blank">portfolio</a>).</p>
+					<p>Various uses of multimedia APIs, including Flickr and YouTube (see my favorite example in my <a href="https://pixel-shredder.com/port/dv.html" target="_blank">portfolio</a>).</p>
 					<h3>VOICE Government CRM</h3>
 					<h4>Front-End Design & Development</h4>
 					<h4>Symplicity Corporation</h4>
