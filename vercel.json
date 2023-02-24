@@ -1,3 +1,8 @@
 {
-    "rewrites": []
+    "redirects": [
+        {
+          "source": "/port",
+          "destination": "https://pixel-shredder.com/port"
+        }
+    ]
 }
