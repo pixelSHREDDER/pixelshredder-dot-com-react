@@ -1,5 +1,7 @@
 {
     "rewrites": [
+        {"source": "/alchemancer/", "destination": "https://pixel-shredder.com/alchemancer/"},
+        {"source": "/alchemancer/:match*", "destination": "https://pixel-shredder.com/alchemancer/:match*"},
         {"source": "/port/", "destination": "https://pixel-shredder.com/port/"},
         {"source": "/port/:match*", "destination": "https://pixel-shredder.com/port/:match*"},
         {"source": "/", "destination": "https://pixelshredder-dot-com.vercel.app/"},

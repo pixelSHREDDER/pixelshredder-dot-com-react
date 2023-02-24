@@ -13,6 +13,9 @@ export default function GameDevelopmentResume() {
 				imageAlt: 'Here\'s what I look like I guess'
 			}} />
 			<article className={styles.darkmode}>
+				<Link href="/resumes">
+					<p>← Back</p>
+				</Link>
 				<h1>Résumé</h1>
 				<section>
 					<h2>Profile</h2>
