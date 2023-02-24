@@ -35,7 +35,7 @@ export default function Home() {
               <h2>Resume</h2>
             </Link>
             <a
-              href="https://www.pixel-shredder.com/port/"
+              href="https://pixel-shredder.com/port/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.card}>
@@ -48,7 +48,7 @@ export default function Home() {
               <h2>About This Site</h2>
             </Link>
             <a
-              href="https://www.pixel-shredder.com/blog/"
+              href="https://pixel-shredder.com/blog/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.card}>
