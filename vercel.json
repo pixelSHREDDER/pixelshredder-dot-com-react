@@ -4,8 +4,6 @@
         {"source": "/alchemancer/:match*", "destination": "https://pixel-shredder.com/alchemancer/:match*"},
         {"source": "/blog/", "destination": "https://pixel-shredder.com/blog/"},
         {"source": "/blog/:match*", "destination": "https://pixel-shredder.com/blog/:match*"},
-        {"source": "/port/", "destination": "https://pixel-shredder.com/port/"},
-        {"source": "/port/:match*", "destination": "https://pixel-shredder.com/port/:match*"},
         {"source": "/", "destination": "https://pixelshredder-dot-com.vercel.app/"},
         {"source": "/:match*", "destination": "https://pixelshredder-dot-com.vercel.app/:match*"}
       ]
