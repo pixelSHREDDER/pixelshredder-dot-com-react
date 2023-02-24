@@ -1,5 +1,8 @@
 {
-    "redirects": [
-        { "source": "/port", "destination": "/port/index.html" }
-    ]
+    "rewrites": [
+        {"source": "/port/", "destination": "https://pixel-shredder.com/port/"},
+        {"source": "/port/:match*", "destination": "https://pixel-shredder.com/port/:match*"},
+        {"source": "/", "destination": "https://pixelshredder-dot-com.vercel.app/"},
+        {"source": "/:match*", "destination": "https://pixelshredder-dot-com.vercel.app/:match*"}
+      ]
 }
