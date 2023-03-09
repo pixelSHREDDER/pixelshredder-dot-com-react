@@ -27,7 +27,7 @@ export default function Home() {
             className={styles.startup} />
         </div>
       :
-        <section className={styles.content}>
+        <article className={styles.homeContent}>
           <h1 className={styles.title}>Welcome!</h1>
           <p className={styles.description}>Please select an option below</p>
           <div className={styles.grid}>
@@ -56,7 +56,7 @@ export default function Home() {
               <p>'Paper Awesome'<br/>(deprecated)</p>
             </a>
           </div>
-        </section>
+        </article>
       }
     </Layout>
   )

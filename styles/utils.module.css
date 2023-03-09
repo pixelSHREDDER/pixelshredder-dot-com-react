@@ -44,7 +44,6 @@
 
 .description {
   line-height: 1.5;
-  font-size: 1.5rem;
 }
 
 .grid {
@@ -52,13 +51,13 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  gap: 1rem;
+  max-width: 80rem;
   margin-top: 1rem;
 }
 
 .card {
-  margin: 2%;
-  flex-basis: 45%;
+  flex: 1;
   padding: 1rem;
   text-align: left;
   color: inherit;
@@ -82,7 +81,7 @@
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
+  line-height: 1;
   text-align: center;
 }
 
@@ -90,7 +89,7 @@
   height: 1em;
 }
 
-.content {
+.homeContent {
   opacity: hidden;
   visibility: hidden;
   animation: fadein 0.5s;
@@ -117,10 +116,12 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  row-gap: 0.6rem;
+  column-gap: clamp(1.2rem, calc(3.0rem - 5vw), 3.0rem);
 }
 
 .skills li {
-    margin: 0 0.6rem;
+  margin: 0;
 }
 
 .darkmode {
@@ -129,12 +130,4 @@
 
 .darkmode h1 {
   animation: none;
-}
-
-@media (min-width: 769px) {
-  .skills {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
