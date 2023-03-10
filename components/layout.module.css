@@ -133,8 +133,9 @@
 .container {
   position: relative;
   aspect-ratio: 4 / 3;
-  height: 100vh;
-  height: 100svh;
+  max-height: 100vh;
+  max-height: 100svh;
+  max-width: 100%;
   margin: auto;
 }
 
@@ -224,5 +225,5 @@
   overflow-x: hidden;
   overflow-y: scroll;
   margin-right: 2rem;
-  padding: 4rem 2rem 4rem 4rem;
+  padding: 2rem 1rem 2rem 3rem;
 }
