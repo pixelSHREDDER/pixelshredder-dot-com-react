@@ -130,6 +130,72 @@
   }
 }
 
+@keyframes reflectedglow {
+  0% {
+  opacity: 0.77861;
+  }
+  5% {
+  opacity: 0.74769;
+  }
+  10% {
+  opacity: 0.73604;
+  }
+  15% {
+  opacity: 0.70626;
+  }
+  20% {
+  opacity: 0.78128;
+  }
+  25% {
+  opacity: 0.83891;
+  }
+  30% {
+  opacity: 0.75583;
+  }
+  35% {
+  opacity: 0.77807;
+  }
+  40% {
+  opacity: 0.76559;
+  }
+  45% {
+  opacity: 0.84693;
+  }
+  50% {
+  opacity: 0.76019;
+  }
+  55% {
+  opacity: 0.78594;
+  }
+  60% {
+  opacity: 0.70313;
+  }
+  65% {
+  opacity: 0.71988;
+  }
+  70% {
+  opacity: 0.73455;
+  }
+  75% {
+  opacity: 0.77288;
+  }
+  80% {
+  opacity: 0.71428;
+  }
+  85% {
+  opacity: 0.70419;
+  }
+  90% {
+  opacity: 0.77003;
+  }
+  95% {
+  opacity: 0.76108;
+  }
+  100% {
+  opacity: 0.74387;
+  }
+}
+
 
 @keyframes startup {
   0% {
@@ -239,12 +305,14 @@
   z-index: 4;
   pointer-events: none;
   aspect-ratio: 4 / 3;
+  filter: contrast(0.25);
 }
 
 .tvbezel {
   padding: 1rem;
   z-index: 5;
   pointer-events: none;
+  filter: contrast(0.2);
 }
 
 .tvglow {
@@ -252,19 +320,19 @@
   z-index: 5;
   pointer-events: none;
   animation: glow 0.15s infinite;
-  filter: invert(19%) sepia(4%) saturate(6576%) hue-rotate(197deg) brightness(86%) contrast(77%);
+  filter: var(--tvglow) blur(2px);
 }
 
 .startuptvglow {
-  filter: none;
+  filter: blur(2px);
 }
 
 .hometvglow {
-  filter: sepia(25%) saturate(2000%) hue-rotate(149deg) brightness(95%) contrast(91%);
+  filter: var(--hometvglow) blur(2px);
 }
 
 .resumestvglow {
-  filter: sepia(66%) saturate(1000%) hue-rotate(316deg) brightness(86%) contrast(89%);
+  filter: var(--resumestvglow) blur(2px);
 }
 
 .scanlines::before {
@@ -295,15 +363,15 @@
   inset: 6%;
   z-index: 3;
   aspect-ratio: 4 / 3;
-  background-color: #393c5a;
+  background-color: var(--tvbg);
 }
 
 .homescanlines {
-  background-color: #619cb5;
+  background-color: var(--hometvbg);
 }
 
 .resumesscanlines {
-  background-color: #b56161;
+  background-color: var(--resumestvbg);
 }
 
 .screen {
@@ -325,6 +393,10 @@
   background-color: #333;
   position: absolute;
   inset: 0;
+}
+
+.mac {
+  display: none;
 }
 
 /*.startup img {
@@ -407,5 +479,55 @@
   }
   .startupbg {
     background: transparent;
+  }
+  .mac,
+  .macglow {
+    display: block;
+    height: 75px;
+    width: 100%;
+    border-radius: 8px;
+  }
+  .mac {
+    position: relative;
+    margin-top: -12px;
+    z-index: 90;
+    background: linear-gradient(#eee, #333 10%, #333 85%, #000 90%);
+    filter: drop-shadow(2px 4px 6px black);
+  }
+  .macglow {
+    position: absolute;
+    inset: 0;
+    z-index: 999;
+    animation: reflectedglow 2s infinite;
+    animation-timing-function: ease-out;
+    background-image: radial-gradient(
+      farthest-corner at 50% -30%,
+      var(--tvbg) -220%,
+      #787878 70%
+    );
+  }
+  
+  .startupmacglow {
+    background-image: radial-gradient(
+      farthest-corner at 50% -30%,
+      #787878 -220%,
+      #787878 70%
+    );
+  }
+  
+  .homemacglow {
+    background-image: radial-gradient(
+      farthest-corner at 50% -30%,
+      var(--hometvbg) -220%,
+      #787878 70%
+    );
+  }
+  
+  .resumesmacglow {
+    background-image: radial-gradient(
+      farthest-corner at 50% -30%,
+      var(--resumestvbg) -220%,
+      #787878 70%
+    );
   }
 }

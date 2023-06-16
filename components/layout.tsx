@@ -106,6 +106,13 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
           </div>
         </div>
       </div>
+      <div className={styles.mac}>
+        <div className={clsx([styles.macglow], {
+            [styles.sectionmacglow]: !props.startingUp && asPath !== '/',
+            [styles.homemacglow]: !props.startingUp && asPath === '/',
+            [styles.resumesmacglow]: asPath === '/resumes',
+        })}></div>
+      </div>
     {/*</DynamicDevice>*/}
     </>
   );
