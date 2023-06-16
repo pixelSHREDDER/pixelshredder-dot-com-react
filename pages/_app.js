@@ -1,7 +1,16 @@
 import Script from 'next/script';
+import { useEffect, useState } from 'react';
 import '../styles/globals.css';
 
 export default function App({ Component, pageProps }) {
+  const [startingUp, setStartingUp] = useState(true);
+
+  useEffect(() => {
+    const startupTimeout = setTimeout(() => setStartingUp(false), 4000);
+
+    return (() => clearTimeout(startupTimeout));
+  }, []);
+  
   return (
     <>
       <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`} />
@@ -18,7 +27,7 @@ export default function App({ Component, pageProps }) {
           `,
         }}
       />
-      <Component {...pageProps} />
+      <Component {...pageProps} startingUp={startingUp} />
     </>
   )
 }

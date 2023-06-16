@@ -130,6 +130,102 @@
   }
 }
 
+
+@keyframes startup {
+  0% {
+    transform: scale(1,0.8) translate3d(0,0,0);
+    -webkit-filter: brightness(30);
+    filter: brightness(30);
+    opacity: 1;
+  }
+  3.5% {
+    transform: scale(1,0.8) translate3d(0,100%,0);
+  }
+  3.6% {
+    transform: scale(1,0.8) translate3d(0,-100%,0);
+    opacity: 1;
+  }
+  9% {
+    transform: scale(1.3,0.6) translate3d(0,100%,0);
+    -webkit-filter: brightness(30);
+    filter: brightness(30);
+    opacity: 0;
+  }
+  11% {
+    transform: scale(1,1) translate3d(0,0,0);
+    -webkit-filter: contrast(0) brightness(0) ;
+    filter: contrast(0) brightness(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1,1) translate3d(0,0,0);
+    -webkit-filter: contrast(1) brightness(1.2) saturate(1.3);
+    filter: contrast(1) brightness(1.2) saturate(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes landscaping {
+  0% {
+    transform: rotate(90deg) scale(1.34);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+@keyframes portraiting {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  100% {
+    transform: rotate(90deg) scale(1.34);
+  }
+}
+
+@keyframes landscapingaspect {
+  0% {
+    aspect-ratio: 3 / 4;
+  }
+  100% {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@keyframes portraitingaspect {
+  0% {
+    aspect-ratio: 4 / 3;
+  }
+  100% {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+@keyframes landscapingscreen {
+  0% {
+    margin-inline-end: 0.5rem;
+    padding-block: 1rem;
+    padding-inline: 1rem 0.5rem;
+  }
+  100% {
+    margin-inline-end: 2rem;
+    padding-block: 2rem;
+    padding-inline: 3rem 1rem;
+  }
+}
+
+@keyframes portraitingscreen {
+  0% {
+    margin-inline-end: 2rem;
+    padding-block: 2rem;
+    padding-inline: 3rem 1rem;
+  }
+  100% {
+    margin-inline-end: 0.5rem;
+    padding-block: 1rem;
+    padding-inline: 1rem 0.5rem;
+  }
+}
+
 .container {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -175,10 +271,7 @@
   content: " ";
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  inset: 0;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
@@ -189,10 +282,7 @@
   content: " ";
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  inset: 0;
   background: rgba(18, 16, 16, 0.1);
   opacity: 0;
   z-index: 2;
@@ -202,10 +292,7 @@
 
 .scanlines {
   position: absolute;
-  bottom: 6%;
-  left: 6%;
-  right: 6%;
-  top: 6%;
+  inset: 6%;
   z-index: 3;
   aspect-ratio: 4 / 3;
   background-color: #393c5a;
@@ -224,6 +311,101 @@
   z-index: 2;
   overflow-x: hidden;
   overflow-y: scroll;
-  margin-right: 2rem;
-  padding: 2rem 1rem 2rem 3rem;
+  animation-duration: .25s;
+  animation-iteration-count: 1;
+  /*margin-inline-end: 2rem;
+  padding-block: 2rem;
+  padding-inline: 3rem 1rem;*/
+
+  /*margin-right: 2rem;
+  padding: 2rem 1rem 2rem 3rem;*/
+}
+
+.startupbg {
+  background-color: #333;
+  position: absolute;
+  inset: 0;
+}
+
+/*.startup img {
+  animation: startup 1s linear;
+  animation-fill-mode: forwards;
+}
+
+.tvframe,
+.tvbezel,
+.tvglow,
+.container,
+.scanlines,
+.scanlines::before,
+.scanlines::after,
+.screen {
+  animation-duration: .25s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.landscaping :is(.tvframe, .tvbezel, .tvglow, .scanlines::before, .scanlines::after) {
+  animation-name: landscaping;
+}
+.portraiting :is(.tvframe, .tvbezel, .tvglow, .scanlines::before, .scanlines::after) {
+  animation-name: portraiting;
+}
+.landscaping :is(.container, .scanlines) {
+  animation-name: landscapingaspect;
+}
+.portraiting :is(.container, .scanlines) {
+  animation-name: portraitingaspect;
+}
+.landscaping .screen {
+  animation-name: landscapingscreen;
+}
+.potraiting .screen {
+  animation-name: portraitingscreen;
+}*/
+
+@media (orientation: portrait) {
+  .tvframe,
+  .tvbezel,
+  .tvglow,
+  .scanlines::before,
+  .scanlines::after {
+    transform: rotate(90deg) scale(1.34);
+  }
+  .container,
+  .tvframe,
+  .scanlines {
+    aspect-ratio: 3 / 4;
+  }
+  .startup .scanlines {
+    background: transparent;
+  }
+  .container {
+    /*max-width: none;
+    margin: 0 auto;*/
+    overflow: hidden;
+  }
+  /*.container {
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+  }*/
+  .tvglow {
+    padding: 5%;
+  }
+  .screen {
+    margin-inline-end: 0.5rem;
+    padding-block: 1rem;
+    padding-inline: 1rem 0.5rem;
+    /*margin-right: 0.5rem;
+    padding: 1rem 0.5rem 1rem 1rem;*/
+    /*background-color: #939490;*/
+    overflow-y: auto;
+  }
+  .startup .screen {
+    background-color: #787878;
+  }
+  .startupbg {
+    background: transparent;
+  }
 }
