@@ -401,15 +401,15 @@
     display: grid;
     padding: 1rem;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     z-index: 90;
-    filter: drop-shadow(2px 4px 6px black);
   }
   .mac::before {
     content: url('/favicon-16x16.png');
     border-radius: 2px;
-    height: 0.9rem;
-    width: 0.9rem;
+    height: 1rem;
+    width: 1rem;
+    background-color: #fff;
   }
   .mac::after {
     content: 'Mikeintosh LC III';
@@ -470,7 +470,6 @@
     grid-template-columns: auto 50px;
     grid-template-rows: 1fr 3fr;
     justify-content: start;
-    justify-items: start;
   }
   .root::before {
     content: '';
@@ -478,7 +477,7 @@
     inset: auto 0 0;
     width: 100%;
     height: 70px;
-    background: linear-gradient(#a86100, #000 0%, #553100 14%, #a86100 65%);
+    background: linear-gradient(#000 0%, #553100 20%, #a86100 60%);
   }
   .root::after {
     content: '';
@@ -523,14 +522,15 @@
     box-shadow: 0px 4px 16px 11px #000;
   }
   .mac {
-    width: 50px;
+    width: 55px;
     height: 98%;
     grid-column: 2 / 2;
     grid-row: 2;
     grid-template-rows: auto 1rem;
     grid-template-columns: 1rem;
     align-content: end;
-    background: linear-gradient(-90deg, #eee, #333 10%, #333 85%, #000 90%);
+    filter: drop-shadow(-2px 4px 6px black);
+    background: linear-gradient(-90deg, #eee, #777 10%, #666 85%, #000 90%);
   }
   .mac::before,
   .mac::after {
@@ -634,7 +634,8 @@
     height: 68px;
     grid-template-columns: 1rem auto;
     grid-template-rows: 1rem;
-    background: linear-gradient(#eee, #333 10%, #333 85%, #000 90%);
+    filter: drop-shadow(2px 4px 6px black);
+    background: linear-gradient(#eee, #666 10%, #777 85%, #000 90%);
   }
   .mac::before {
     border: 2px inset #666;
