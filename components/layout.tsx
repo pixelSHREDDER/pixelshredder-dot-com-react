@@ -38,7 +38,11 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
   //useEffect(() => lazyLoadDevice(), []);
   
   return (
-    <>
+    <div className={clsx([styles.root], {
+      [styles.startup]: props.startingUp,
+      [styles.home]: !props.startingUp && asPath === '/',
+      [styles.resumes]: asPath === '/resumes',
+      })}>
     {/*<DynamicDevice>*/}
       <div className={clsx([styles.container],
         {[styles.startup]: props.startingUp})}>
@@ -60,16 +64,8 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
           fill
           aria-hidden
           alt="TV glow"
-          className={clsx([styles.tvglow], {
-            [styles.startuptvglow]: props.startingUp && asPath === '/',
-            [styles.hometvglow]: !props.startingUp && asPath === '/',
-            [styles.resumestvglow]: asPath === '/resumes',
-          })} />
-        <div className={clsx([styles.scanlines], {
-          [styles.sectionscanlines]: !props.startingUp && asPath !== '/',
-          [styles.homescanlines]: !props.startingUp && asPath === '/',
-          [styles.resumesscanlines]: asPath === '/resumes',
-        })}>
+          className={styles.tvglow} />
+        <div className={styles.scanlines}>
           <div className={styles.screen}>
             <main className={styles.main}>
               {props.startingUp ?
@@ -107,14 +103,10 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
         </div>
       </div>
       <div className={styles.mac}>
-        <div className={clsx([styles.macglow], {
-            [styles.sectionmacglow]: !props.startingUp && asPath !== '/',
-            [styles.homemacglow]: !props.startingUp && asPath === '/',
-            [styles.resumesmacglow]: asPath === '/resumes',
-        })}></div>
+        <div className={styles.macglow}></div>
       </div>
     {/*</DynamicDevice>*/}
-    </>
+    </div>
   );
 }
   
