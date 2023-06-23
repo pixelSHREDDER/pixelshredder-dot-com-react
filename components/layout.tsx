@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './layout.module.css';
 import { Press_Start_2P, VT323 } from '@next/font/google';
-import { Fragment, PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
 //import Device from './Device';
@@ -42,10 +42,11 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
       [styles.startup]: props.startingUp,
       [styles.home]: !props.startingUp && asPath === '/',
       [styles.resumes]: asPath === '/resumes',
-      })}>
+      })} aria-hidden>
     {/*<DynamicDevice>*/}
       <div className={clsx([styles.container],
-        {[styles.startup]: props.startingUp})}>
+        {[styles.startup]: props.startingUp})}
+        aria-hidden>
         <Image
           src="/images/tv-frame.svg"
           fill
@@ -65,20 +66,20 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
           aria-hidden
           alt="TV glow"
           className={styles.tvglow} />
-        <div className={styles.scanlines}>
-          <div className={styles.screen}>
+        <div className={styles.scanlines} aria-hidden>
+          <div className={styles.screen} aria-hidden>
             <main className={styles.main}>
               {props.startingUp ?
-                <div className={styles.startupbg}>
+                <div className={styles.startupbg} aria-hidden>
                   <Image
                     src="/images/startup.svg"
                     fill
                     alt="Welcome to Mikeintosh." />
                 </div>
                 :
-                <Fragment>
+                <>
                   {props.children}
-                </Fragment>
+                </>
               }
             </main>
             <style jsx global>{`
@@ -102,8 +103,8 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
           </div>
         </div>
       </div>
-      <div className={styles.mac}>
-        <div className={styles.macglow}></div>
+      <div className={styles.mac} aria-hidden>
+        <div className={styles.macglow} aria-hidden></div>
       </div>
     {/*</DynamicDevice>*/}
     </div>

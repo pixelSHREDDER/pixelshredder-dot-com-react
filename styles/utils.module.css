@@ -7,17 +7,9 @@
     opacity: 1;
   }
 }
-
 @keyframes pulser {
-  50% {
-      opacity: 0.33;
-  }
+  50% { opacity: 0.33; }
 }
-
-/*.description {
-  line-height: 1.5;
-}*/
-
 .grid {
   display: flex;
   align-items: center;
@@ -28,7 +20,6 @@
   margin-block-start: 1rem;
   margin-inline: auto;
 }
-
 .card {
   flex: 1;
   padding: 1rem;
@@ -39,7 +30,6 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
-
 .card:hover,
 .card:focus,
 .card:active {
@@ -47,26 +37,22 @@
   border-color: #000;
   animation: pulser 1.5s ease-out infinite;
 }
-
 .card h2 {
   font-size: var(--step-1);
   animation: none;
 }
-
 .card p {
   margin: 0;
   line-height: 1;
   text-align: center;
 }
-
-.homeContent {
+.homecontent {
   opacity: hidden;
   visibility: hidden;
   animation: fadein 0.5s;
   animation-delay: 0.25s;
   animation-fill-mode: forwards;
 }
-
 .skills {
   margin-block: 0 1rem;
   display: flex;
@@ -74,15 +60,12 @@
   flex-wrap: wrap;
   column-gap: clamp(1.2rem, calc(3.0rem - 5vw), 3.0rem);
 }
-
 .skills li {
   margin: 0;
 }
-
 .darkmode {
   color: #ddd;
 }
-
 .darkmode h1,
 .darkmode h2,
 .darkmode h3,
@@ -91,7 +74,6 @@
 .darkmode h6 {
   color: #bfbfbf;
 }
-
 .darkmode h1 {
   animation: none;
 }

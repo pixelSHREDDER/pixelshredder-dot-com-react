@@ -10,7 +10,7 @@ export default function Home(props: { startingUp: boolean }) {
         title: 'Mike DeVine | Developer/Designer/Creative/Politico',
         description: 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX/Game Designer, Creative Professional, Politico, Writer, Funnyperson.'
       }} />
-      <article className={styles.homeContent}>
+      <article className={styles.homecontent}>
         <h1 className={styles.title}>Welcome!</h1>
         <p className={styles.description}>Please select an option below</p>
         <div className={styles.grid}>

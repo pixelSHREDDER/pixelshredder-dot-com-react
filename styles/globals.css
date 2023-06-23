@@ -1,5 +1,4 @@
 /* @link https://utopia.fyi/type/calculator?c=320,20,1.067,1240,26,1.333,3,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
 :root {
   /* Step -1: 12.80px → 13.50px */
   --step--1: clamp(0.80rem, calc(0.78rem + 0.08vw), 0.84rem);
@@ -12,24 +11,22 @@
   /* Step 3: 31.25px → 42.63px */
   --step-3: clamp(1.95rem, calc(1.65rem + 1.31vw), 2.66rem);
   
-  --tvbg: #393c5a;
   --hometvbg: #619cb5;
   --resumestvbg: #b56161;
+  --startuptvbg: #787878;
+  --tvbg: #393c5a;
 
-  --tvglow: invert(19%) sepia(4%) saturate(6576%) hue-rotate(197deg) brightness(86%) contrast(77%);
   --hometvglow: sepia(25%) saturate(2000%) hue-rotate(149deg) brightness(95%) contrast(91%) blur(2px);
   --resumestvglow: sepia(66%) saturate(1000%) hue-rotate(316deg) brightness(86%) contrast(89%) blur(2px);
+  --tvglow: invert(19%) sepia(4%) saturate(6576%) hue-rotate(197deg) brightness(86%) contrast(77%);
 
-  --landscaperadialgradient: farthest-corner at 130% 50%;
+  --landscapemacglowradialgradient: farthest-side at 120% 50%;
+  --landscaperadialgradient: farthest-side at 50% 100%;
   --portraitradialgradient: farthest-corner at 50% -30%;
 }
-
 @keyframes pulser {
-  50% {
-      opacity: 0.33;
-  }
+  50% { opacity: 0.33; }
 }
-
 html,
 body {
   padding: 0;
@@ -40,37 +37,32 @@ body {
   width: 100%;
   height: 100%;
 }
-
-body {
+html {
   touch-action: none;
+}
+body {
   background-image: radial-gradient(55% 70% at center, #030769 40%, #000 100%);
 }
-
 * {
   box-sizing: border-box;
 }
-
 a {
   color: inherit;
 }
-
 img {
   max-width: 100%;
   height: auto;
 }
-
 ul {
   padding: 0;
   list-style: none;
   margin-block: 0 1.6rem;
 }
-
 p,
 li {
   font-size: var(--step-0);
   margin-block: 0.8rem;
 }
-
 h1,
 h2,
 h3,
@@ -84,47 +76,37 @@ h6 {
   line-height: 1.6;
   color: #222;
 }
-
 h1 {
   font-size: var(--step-3);
   animation: pulser 1.5s ease-out infinite;
 }
-
 h1 a {
   color: #222;
   text-decoration: none;
 }
-
 h2 {
   font-size: var(--step-1);
   animation: pulser 1.5s ease-out infinite;
 }
-
 h3 {
   font-size: var(--step-0);
 }
-
 h4 {
   font-size: var(--step--1);
 }
-
 h5 {
   font-size: var(--step--1);
 }
-
 button {
   padding: 0.5rem 1rem;
   font-weight: bold;
 }
-
 article {
   width: 100%;
 }
-
 section {
   margin-block: 0 2.4rem;
 }
-
 #__next {
   height: 100%;
   width: 100%;
@@ -134,5 +116,11 @@ section {
   #__next {
     max-width: 62.5%;
     margin: auto;
+  }
+}
+
+@media (aspect-ratio >= 16 / 9) {
+  html {
+    font-size: 62.5%;
   }
 }
