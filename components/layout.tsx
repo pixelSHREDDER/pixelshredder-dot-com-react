@@ -82,31 +82,55 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
                 </>
               }
             </main>
-            <style jsx global>{`
-              html,
-              body {
-                font-family: ${text.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-                  Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-                  sans-serif;
-              }
-              h1,
-              h2,
-              h3,
-              h4,
-              h5,
-              h6 {
-                  font-family: ${title.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-                  Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-                  sans-serif;
-              }
-            `}</style>
           </div>
         </div>
+        <footer className={styles.footer}>
+          <nav>
+            <ul>
+              <li>
+                <a href="https://www.linkedin.com/in/pixelshredder/" target="_blank">
+                  <Image
+                    src="/images/github-mark-white.svg"
+                    height="20"
+                    width="20"
+                    alt="LinkedIn sticker"/>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/pixelSHREDDER" target="_blank">
+                  <Image
+                    src="/images/github-mark-white.svg"
+                    height="20"
+                    width="20"
+                    alt="GitHub sticker"/>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </footer>
       </div>
       <div className={styles.mac} aria-hidden>
         <div className={styles.macglow} aria-hidden></div>
       </div>
     {/*</DynamicDevice>*/}
+    <style jsx global>{`
+        html,
+        body {
+          font-family: ${text.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: ${title.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
+        }
+      `}</style>
     </div>
   );
 }

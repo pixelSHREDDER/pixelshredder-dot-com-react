@@ -15,9 +15,10 @@
   --resumestvbg: #b56161;
   --startuptvbg: #787878;
   --tvbg: #393c5a;
+  --tvglowbg: #5a5e8f;
 
-  --hometvglow: sepia(25%) saturate(2000%) hue-rotate(149deg) brightness(95%) contrast(91%) blur(2px);
-  --resumestvglow: sepia(66%) saturate(1000%) hue-rotate(316deg) brightness(86%) contrast(89%) blur(2px);
+  --hometvglow: sepia(25%) saturate(2000%) hue-rotate(149deg) brightness(95%) contrast(91%);
+  --resumestvglow: sepia(66%) saturate(1000%) hue-rotate(316deg) brightness(86%) contrast(89%);
   --tvglow: invert(19%) sepia(4%) saturate(6576%) hue-rotate(197deg) brightness(86%) contrast(77%);
 
   --landscapemacglowradialgradient: farthest-side at 120% 50%;
@@ -121,6 +122,6 @@ section {
 
 @media (aspect-ratio >= 16 / 9) {
   html {
-    font-size: 62.5%;
+    font-size: 75%;
   }
 }

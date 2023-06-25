@@ -161,23 +161,23 @@
 
 .root {
   display: grid;
-  max-height: 100svh;
+  max-height: 100lvh;
 }
 .root::before,
-  .root::after {
-    content: '';
-    position: fixed;
-    inset: auto 0 0;
-    width: 100%;
-    height: 70px;
-  }
-  .root::before {
-    background: linear-gradient(#000 0%, #553100 20%, #a86100 60%);
-  }
-  .root::after {
-    animation: reflectedglow 0.15s infinite;
-    animation-timing-function: ease-in-out;
-  }
+.root::after {
+  content: '';
+  position: fixed;
+  inset: auto 0 0;
+  width: 100%;
+  height: max(10rem, 40%);
+}
+.root::before {
+  background: linear-gradient(#000 0%, #553100 20%, #a86100 60%);
+}
+.root::after {
+  animation: reflectedglow 0.15s infinite;
+  animation-timing-function: ease-in-out;
+}
 .container {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -296,6 +296,34 @@
   animation: reflectedglow 0.15s infinite;
   animation-timing-function: ease-in-out;
 }
+.footer a {
+  position: absolute;
+  z-index: 10;
+  height: 20px;
+  width: 20px;
+  transform: rotate(12deg);
+}
+.footer li:last-child a {
+  transform: rotate(319deg);
+}
+.footer img {
+  border: 1px inset var(--tvbg);
+  border-radius: 50%;
+  animation: glow 0.15s infinite;
+  filter: var(--tvglow) saturate(55%);
+}
+.home .footer img {
+  filter: var(--hometvglow) saturate(55%);
+  border-color: var(--hometvglow);
+}
+.resumes .footer img {
+  filter: var(--resumestvglow) saturate(55%);
+  border-color: var(--resumestvglow);
+}
+.startup .footer img {
+  filter: saturate(55%);
+  border-color: var(--startuptvbg);
+}
 
 /*.startup img {
   animation: startup 1s linear;
@@ -344,7 +372,7 @@
   .root::after {
     background-image: radial-gradient(
       var(--landscaperadialgradient),
-      var(--tvbg) -20%,
+      var(--tvglowbg) -20%,
       var(--startuptvbg) 90%
     );
   }
@@ -409,30 +437,38 @@
     height: 100%;
     background-image: radial-gradient(
       var(--landscapemacglowradialgradient),
-      var(--tvbg) -20%,
-      var(--startuptvbg) 50%
+      var(--tvglowbg) -20%,
+      var(--startuptvbg) 40%
     );
   }
   .startup .macglow {
     background-image: radial-gradient(
       var(--landscapemacglowradialgradient),
       var(--startuptvbg) -20%,
-      var(--startuptvbg) 50%
+      var(--startuptvbg) 40%
     );
   }
   .home .macglow {
     background-image: radial-gradient(
       var(--landscapemacglowradialgradient),
       var(--hometvbg) -20%,
-      var(--startuptvbg) 50%
+      var(--startuptvbg) 40%
     );
   }
   .resumes .macglow {
     background-image: radial-gradient(
       var(--landscapemacglowradialgradient),
       var(--resumestvbg) -20%,
-      var(--startuptvbg) 50%
+      var(--startuptvbg) 40%
     );
+  }
+  .footer a {
+    top: 1.95rem;
+    left: 3.2rem;
+  }
+  .footer li:last-child a {
+    top: 3.6rem;
+    left: 2.05rem;
   }
 }
 
@@ -445,28 +481,28 @@
   .root::after {
     background-image: radial-gradient(
       var(--portraitradialgradient),
-      var(--tvbg) 30%,
+      var(--tvglowbg) 0%,
       var(--startuptvbg) 80%
     );
   }
   .startup::after {
     background-image: radial-gradient(
       var(--portraitradialgradient),
-      var(--startuptvbg) 30%,
+      var(--startuptvbg) 0%,
       var(--startuptvbg) 80%
     );
   }
   .home::after {
     background-image: radial-gradient(
       var(--portraitradialgradient),
-      var(--hometvbg) 30%,
+      var(--hometvbg) 0%,
       var(--startuptvbg) 80%
     );
   }
   .resumes::after {
     background-image: radial-gradient(
       var(--portraitradialgradient),
-      var(--resumestvbg) 30%,
+      var(--resumestvbg) 0%,
       var(--startuptvbg) 80%
     );
   }
@@ -531,7 +567,7 @@
   .macglow {
     background-image: radial-gradient(
       var(--portraitradialgradient),
-      var(--tvbg) -45%,
+      var(--tvglowbg) -45%,
       var(--startuptvbg) 90%
     );
   }
@@ -556,14 +592,32 @@
       var(--startuptvbg) 90%
     );
   }
+  .footer a {
+    top: 1.85rem;
+    left: 1.35rem;
+  }
+  .footer li:last-child a {
+    top: 4.6rem;
+    left: 0.68rem;
+  }
 }
 @media (aspect-ratio >= 16 / 9) {
   .mac {
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 1.25rem;
   }
   .mac::after {
-    font-size: 1.25rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+  .footer a {
+    top: 6.75%;
+    left: 8%;
+    height: 16px;
+    width: 16px;
+  }
+  .footer li:last-child a {
+    top: 16%;
+    left: 15.4%;
   }
 }
