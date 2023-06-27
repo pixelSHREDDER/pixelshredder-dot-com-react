@@ -42,11 +42,10 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
       [styles.startup]: props.startingUp,
       [styles.home]: !props.startingUp && asPath === '/',
       [styles.resumes]: asPath === '/resumes',
-      })} aria-hidden>
+      })}>
     {/*<DynamicDevice>*/}
       <div className={clsx([styles.container],
-        {[styles.startup]: props.startingUp})}
-        aria-hidden>
+        {[styles.startup]: props.startingUp})}>
         <Image
           src="/images/tv-frame.svg"
           fill
@@ -90,7 +89,7 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
               <li>
                 <a href="https://www.linkedin.com/in/pixelshredder/" target="_blank">
                   <Image
-                    src="/images/github-mark-white.svg"
+                    src="/images/linkedin-01.svg"
                     height="20"
                     width="20"
                     alt="LinkedIn sticker"/>

@@ -45,7 +45,7 @@
   100% { opacity: 0.74387; }
 }
 
-@keyframes reflectedglow {
+@keyframes reflected-glow {
   0% { opacity: 0.77861; }
   5% { opacity: 0.74769; }
   10% { opacity: 0.74604; }
@@ -175,12 +175,15 @@
   background: linear-gradient(#000 0%, #553100 20%, #a86100 60%);
 }
 .root::after {
-  animation: reflectedglow 0.15s infinite;
-  animation-timing-function: ease-in-out;
+  animation: reflected-glow var(--crt-timing) ease-in-out;
+}
+.container,
+.tvframe,
+.scanlines {
+  aspect-ratio: 4 / 3;
 }
 .container {
   position: relative;
-  aspect-ratio: 4 / 3;
   height: 100%;
 }
 .tvframe,
@@ -193,41 +196,41 @@
 }
 .tvframe {
   z-index: 4;
-  aspect-ratio: 4 / 3;
   filter: contrast(0.25);
+}
+.tvbezel,
+.tvglow {
+  z-index: 5;
 }
 .tvbezel {
   padding: 1rem;
-  z-index: 5;
   filter: contrast(0.2);
 }
 .tvglow {
   padding: 4%;
-  z-index: 5;
-  animation: glow 0.15s infinite;
-  filter: var(--tvglow) blur(2px);
+  animation: glow var(--crt-timing);
+  filter: var(--glow) blur(2px);
 }
 .startup .tvglow {
   filter: blur(2px);
 }
 .home .tvglow {
-  filter: var(--hometvglow) blur(2px);
+  filter: var(--home-glow) blur(2px);
 }
 .resumes .tvglow {
-  filter: var(--resumestvglow) blur(2px);
+  filter: var(--resumes-glow) blur(2px);
 }
 .scanlines {
   position: absolute;
   inset: 6%;
   z-index: 3;
-  aspect-ratio: 4 / 3;
-  background-color: var(--tvbg);
+  background-color: var(--bg);
 }
 .home .scanlines {
-  background-color: var(--hometvbg);
+  background-color: var(--home-bg);
 }
 .resumes .scanlines {
-  background-color: var(--resumestvbg);
+  background-color: var(--resumes-bg);
 }
 .scanlines::before,
 .scanlines::after {
@@ -244,7 +247,7 @@
 .scanlines::after {
   background: rgba(18, 16, 16, 0.1);
   opacity: 0;
-  animation: flicker 0.15s infinite;
+  animation: flicker var(--crt-timing);
 }
 .screen {
   height: 100%;
@@ -262,17 +265,15 @@
   position: absolute;
   inset: 0;
 }
-
 .mac,
 .macglow {
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 .mac {
   display: grid;
-  padding: 1rem;
   align-items: center;
   gap: 0.75rem;
-  z-index: 90;
+  z-index: 9;
 }
 .mac::before {
   content: url('/favicon-16x16.png');
@@ -285,44 +286,43 @@
   content: 'Mikeintosh LC III';
   color: #000;
   font-size: 0.8rem;
-  text-align: left;
+  text-align: start;
   font-family: serif;
 }
 .macglow {
   display: block;
   position: absolute;
   inset: 0;
-  z-index: 999;
-  animation: reflectedglow 0.15s infinite;
-  animation-timing-function: ease-in-out;
+  z-index: 10;
+  animation: reflected-glow var(--crt-timing) ease-in-out;
 }
 .footer a {
   position: absolute;
-  z-index: 10;
-  height: 20px;
-  width: 20px;
+  z-index: 6;
   transform: rotate(12deg);
+  border: 1px inset var(--bg);
+  border-radius: 50%;
+  animation: glow var(--crt-timing);
+  filter: var(--glow) saturate(55%);
 }
 .footer li:last-child a {
   transform: rotate(319deg);
 }
-.footer img {
-  border: 1px inset var(--tvbg);
-  border-radius: 50%;
-  animation: glow 0.15s infinite;
-  filter: var(--tvglow) saturate(55%);
+.home .footer a {
+  filter: var(--home-glow) saturate(55%);
+  border-color: var(--home-glow);
 }
-.home .footer img {
-  filter: var(--hometvglow) saturate(55%);
-  border-color: var(--hometvglow);
+.resumes .footer a {
+  filter: var(--resumes-glow) saturate(55%);
+  border-color: var(--resumes-glow);
 }
-.resumes .footer img {
-  filter: var(--resumestvglow) saturate(55%);
-  border-color: var(--resumestvglow);
-}
-.startup .footer img {
+.startup .footer a {
   filter: saturate(55%);
-  border-color: var(--startuptvbg);
+  border-color: var(--startup-bg);
+}
+.footer img {
+  height: 100% !important;
+  width: 100% !important;
 }
 
 /*.startup img {
@@ -365,36 +365,36 @@
 @media (orientation: landscape) {
   .root {
     height: 100%;
-    grid-template-columns: auto 50px;
+    grid-template-columns: auto min(90px, 10vh);
     grid-template-rows: 1fr 3fr;
     justify-content: start;
   }
   .root::after {
     background-image: radial-gradient(
-      var(--landscaperadialgradient),
-      var(--tvglowbg) -20%,
-      var(--startuptvbg) 90%
+      var(--landscape-radial),
+      var(--glow-bg) -20%,
+      var(--startup-bg) 90%
     );
   }
   .startup::after {
     background-image: radial-gradient(
-      var(--landscaperadialgradient),
-      var(--startuptvbg) -20%,
-      var(--startuptvbg) 90%
+      var(--landscape-radial),
+      var(--startup-bg) -20%,
+      var(--startup-bg) 90%
     );
   }
   .home::after {
     background-image: radial-gradient(
-      var(--landscaperadialgradient),
-      var(--hometvbg) -20%,
-      var(--startuptvbg) 90%
+      var(--landscape-radial),
+      var(--home-bg) -20%,
+      var(--startup-bg) 90%
     );
   }
   .resumes::after {
     background-image: radial-gradient(
-      var(--landscaperadialgradient),
-      var(--resumestvbg) -20%,
-      var(--startuptvbg) 90%
+      var(--landscape-radial),
+      var(--resumes-bg) -20%,
+      var(--startup-bg) 90%
     )
   }
   .container {
@@ -405,8 +405,9 @@
     box-shadow: 0px 4px 16px 11px #000;
   }
   .mac {
-    width: 55px;
+    width: min(90px, 10vh);
     height: 98%;
+    padding: max(14%, 2vw);
     grid-column: 2 / 2;
     grid-row: 2;
     grid-template-rows: auto 1rem;
@@ -436,39 +437,41 @@
   .macglow {
     height: 100%;
     background-image: radial-gradient(
-      var(--landscapemacglowradialgradient),
-      var(--tvglowbg) -20%,
-      var(--startuptvbg) 40%
+      var(--landscape-macglow-radial),
+      var(--glow-bg) -20%,
+      var(--startup-bg) 40%
     );
   }
   .startup .macglow {
     background-image: radial-gradient(
-      var(--landscapemacglowradialgradient),
-      var(--startuptvbg) -20%,
-      var(--startuptvbg) 40%
+      var(--landscape-macglow-radial),
+      var(--startup-bg) -20%,
+      var(--startup-bg) 40%
     );
   }
   .home .macglow {
     background-image: radial-gradient(
-      var(--landscapemacglowradialgradient),
-      var(--hometvbg) -20%,
-      var(--startuptvbg) 40%
+      var(--landscape-macglow-radial),
+      var(--home-bg) -20%,
+      var(--startup-bg) 40%
     );
   }
   .resumes .macglow {
     background-image: radial-gradient(
-      var(--landscapemacglowradialgradient),
-      var(--resumestvbg) -20%,
-      var(--startuptvbg) 40%
+      var(--landscape-macglow-radial),
+      var(--resumes-bg) -20%,
+      var(--startup-bg) 40%
     );
   }
   .footer a {
-    top: 1.95rem;
-    left: 3.2rem;
+    height: max(20px, 3vw);
+    width: max(20px, 3vw);
+    top: max(1.95rem, 5%);
+    left: max(3.2rem, 10%);
   }
   .footer li:last-child a {
-    top: 3.6rem;
-    left: 2.05rem;
+    top: max(3.6rem, 14%);
+    left: max(2.05rem, 4%);
   }
 }
 
@@ -480,30 +483,30 @@
   }
   .root::after {
     background-image: radial-gradient(
-      var(--portraitradialgradient),
-      var(--tvglowbg) 0%,
-      var(--startuptvbg) 80%
+      var(--portrait-radial),
+      var(--glow-bg) 0%,
+      var(--startup-bg) 80%
     );
   }
   .startup::after {
     background-image: radial-gradient(
-      var(--portraitradialgradient),
-      var(--startuptvbg) 0%,
-      var(--startuptvbg) 80%
+      var(--portrait-radial),
+      var(--startup-bg) 0%,
+      var(--startup-bg) 80%
     );
   }
   .home::after {
     background-image: radial-gradient(
-      var(--portraitradialgradient),
-      var(--hometvbg) 0%,
-      var(--startuptvbg) 80%
+      var(--portrait-radial),
+      var(--home-bg) 0%,
+      var(--startup-bg) 80%
     );
   }
   .resumes::after {
     background-image: radial-gradient(
-      var(--portraitradialgradient),
-      var(--resumestvbg) 0%,
-      var(--startuptvbg) 80%
+      var(--portrait-radial),
+      var(--resumes-bg) 0%,
+      var(--startup-bg) 80%
     );
   }
   .tvframe,
@@ -532,12 +535,12 @@
     margin-inline-end: 0.5rem;
     padding-block: 1rem;
     padding-inline: 1rem 0.5rem;
-    margin-right: 0.5rem;
+    margin-inline-end: 0.5rem;
     padding: 1rem 0.5rem 1rem 1rem;
     overflow-y: auto;
   }
   .startup .screen {
-    background-color: var(--startuptvbg);
+    background-color: var(--startup-bg);
   }
   .startupbg {
     background: transparent;
@@ -548,6 +551,7 @@
   }
   .mac {
     height: 68px;
+    padding: 1rem;
     grid-template-columns: 1rem auto;
     grid-template-rows: 1rem;
     filter: drop-shadow(2px 4px 6px black);
@@ -566,58 +570,54 @@
   }
   .macglow {
     background-image: radial-gradient(
-      var(--portraitradialgradient),
-      var(--tvglowbg) -45%,
-      var(--startuptvbg) 90%
+      var(--portrait-radial),
+      var(--glow-bg) -45%,
+      var(--startup-bg) 90%
     );
   }
   .startup .macglow {
     background-image: radial-gradient(
-      var(--portraitradialgradient),
-      var(--startuptvbg) -45%,
-      var(--startuptvbg) 90%
+      var(--portrait-radial),
+      var(--startup-bg) -45%,
+      var(--startup-bg) 90%
     );
   }
   .home .macglow {
     background-image: radial-gradient(
-      var(--portraitradialgradient),
-      var(--hometvbg) -45%,
-      var(--startuptvbg) 90%
+      var(--portrait-radial),
+      var(--home-bg) -45%,
+      var(--startup-bg) 90%
     );
   }
   .resumes .macglow {
     background-image: radial-gradient(
-      var(--portraitradialgradient),
-      var(--resumestvbg) -45%,
-      var(--startuptvbg) 90%
+      var(--portrait-radial),
+      var(--resumes-bg) -45%,
+      var(--startup-bg) 90%
     );
   }
   .footer a {
-    top: 1.85rem;
-    left: 1.35rem;
+    height: max(20px, 3svh);
+    width: max(20px, 3svh);
+    top: 4%;
+    left: 5%;
   }
   .footer li:last-child a {
-    top: 4.6rem;
-    left: 0.68rem;
+    top: 10%;
+    left: 3%;
   }
 }
 @media (aspect-ratio >= 16 / 9) {
   .mac {
     gap: 1rem;
-    padding: 1.25rem;
+    padding: 25%;
   }
   .mac::after {
     font-size: 1rem;
     line-height: 1.75rem;
   }
   .footer a {
-    top: 6.75%;
-    left: 8%;
-    height: 16px;
-    width: 16px;
-  }
-  .footer li:last-child a {
-    top: 16%;
-    left: 15.4%;
+    height: max(16px, 2vw);
+    width: max(16px, 2vw);
   }
 }
