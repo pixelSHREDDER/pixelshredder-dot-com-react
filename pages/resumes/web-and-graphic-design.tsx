@@ -1,6 +1,8 @@
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
 import Layout from '../../components/layout';
+import Link from 'next/link';
+import Nav from '../../components/Nav';
 
 export default function WebAndGraphicDesignResume() {
     return (
@@ -11,7 +13,11 @@ export default function WebAndGraphicDesignResume() {
 			image: '/images/mike-devine-headshot.jpg',
 			imageAlt: 'Here\'s what I look like I guess'
 		}} />
-        <article className={styles.darkmode}>
+    <article className={styles.darkmode}>
+			<Nav parent={{
+				label: 'Resumes',
+				path: '/resumes',
+			}} />
 			<h1>Résumé</h1>
             <section>
 				<h2>Profile</h2>
@@ -248,13 +254,14 @@ export default function WebAndGraphicDesignResume() {
 				<p>Class of 2012. Rochester, NY</p>
 				<h3>Suffolk County Community College</h3>
 				<h4>A.A.S. Degree, Computer Art</h4>
-                <p>Class of 2008. Selden, NY</p>
-            </section>
-            <section>
-                <h2><a href="choose-your-destiny.html">⇦ Back</a></h2>
-            </section>
-        </article>
-        </Layout>
-    );
-  }
+        <p>Class of 2008. Selden, NY</p>
+        </section>
+				<Nav parent={{
+					label: 'Resumes',
+					path: '/resumes',
+				}} />
+      </article>
+    </Layout>
+  );
+}
   

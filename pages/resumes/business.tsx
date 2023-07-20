@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
 import Layout from '../../components/layout';
+import Nav from '../../components/Nav';
 
 export default function BusinessResume() {
     return (
@@ -12,7 +13,11 @@ export default function BusinessResume() {
 			image: '/images/mike-devine-headshot.jpg',
 			imageAlt: 'Here\'s what I look like I guess'
 		}} />
-        <article className={styles.darkmode}>
+    <article className={styles.darkmode}>
+			<Nav parent={{
+				label: 'Resumes',
+				path: '/resumes',
+			}} />
 			<h1>Résumé</h1>
 				<section>
 					<h2>About</h2>
@@ -188,11 +193,12 @@ export default function BusinessResume() {
 					<h4>Dec ’09 - May ’10</h4>
 					<p>Served as artist on a team designing games for the One Laptop Per Child’s Python-based XO device. Responsibilities included character design and vector graphic design in Illustrator, as well as research into animation on low-power devices. Available for download <a href="http://wiki.sugarlabs.org/go/Fortune_Hunter" target="_blank">here</a>. (Prototype in progress)</p>
 				</section>
-				<Link href="/resumes">
-					<p>← Back</p>
-				</Link>
+				<Nav parent={{
+					label: 'Resumes',
+					path: '/resumes',
+				}} />
 			</article>
-        </Layout>
-    );
-  }
+    </Layout>
+  );
+}
   

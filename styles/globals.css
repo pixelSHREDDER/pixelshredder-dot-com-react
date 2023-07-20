@@ -44,6 +44,9 @@ html {
   touch-action: none;
 }
 body {
+  background-image: radial-gradient(55% 100% at center, #000 50%, #8cb7e8 100%);
+}
+body.nighttime {
   background-image: radial-gradient(55% 70% at center, #2e2f4d 40%, #000 100%);
 }
 * {
@@ -63,7 +66,7 @@ ul {
 }
 p,
 li {
-  font-size: var(--step-0);
+  font-size: var(--step--1);
   margin-block: 0.8rem;
 }
 h1,
@@ -73,23 +76,23 @@ h4,
 h5,
 h6 {
   text-align: center;
-  text-transform: uppercase;
-  margin-block: 0.8rem;
-  font-weight: normal;
+  margin-block: 0 0.8rem;
+  font-weight: bold;
   line-height: 1.6;
   color: #222;
 }
 h1 {
   font-size: var(--step-3);
-  animation: pulser 1.5s ease-out infinite;
+  margin-block: 0;
+  line-height: 1.4;
 }
 h1 a {
   color: #222;
   text-decoration: none;
 }
 h2 {
-  font-size: var(--step-1);
-  animation: pulser 1.5s ease-out infinite;
+  font-size: var(--step-2);
+  line-height: 1.2;
 }
 h3 {
   font-size: var(--step-0);
@@ -104,11 +107,35 @@ button {
   padding: 0.5rem 1rem;
   font-weight: bold;
 }
-article {
+nav {
   width: 100%;
 }
-section {
-  margin-block: 0 2.4rem;
+nav :is(
+  ul,
+  li
+) {
+  margin: 0;
+}
+nav ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+main {
+  height: 100%;
+  overflow-y: auto;
+  margin-inline-end: 2rem;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 4rem;
+  padding-inline-end: 2rem;
 }
 #__next {
   height: 100%;
@@ -122,8 +149,31 @@ section {
   }
 }
 
+@media (orientation: portrait) {
+  body {
+    background-image: radial-gradient(110% 60% at center, #000 50%, #8cb7e8 100%);
+  }
+  main {
+    margin-inline-end: 0.5rem;
+  }
+  article {
+    padding: 2rem;
+    padding-inline-end: 1.5rem;
+  }
+}
+
 @media (aspect-ratio >= 16 / 9) {
   html {
     font-size: 75%;
+  }
+}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+@media (prefers-reduced-motion: no-preference) {
+  h1 {
+    animation: pulser 1.5s ease-out infinite;
+  }
+  h2 {
+    animation: pulser 1.5s ease-out infinite;
   }
 }

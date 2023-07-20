@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import styles from './layout.module.css';
 import { Press_Start_2P, VT323 } from '@next/font/google';
-import { PropsWithChildren } from 'react';
+import localFont from '@next/font/local';
+import { PropsWithChildren, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
 //import Device from './Device';
@@ -26,8 +27,11 @@ export const text = VT323({
     weight: ['400'],
 });
 
+export const sysFont = localFont({ src: './sysfont.woff2' });
+
 export default function Layout(props: PropsWithChildren<LayoutProps>) {
   const { asPath } = useRouter();
+  const [lightsOut, setLightsOut] = useState<boolean>(false);
   //const [orientation, isLandscaping, isPortraiting] = useDevice();
 
   /*const lazyLoadDevice = async () => {
@@ -36,12 +40,16 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
   }*/
 
   //useEffect(() => lazyLoadDevice(), []);
+  useEffect(() => {
+    document.body.classList.toggle('nighttime');
+  }, [lightsOut]);
   
   return (
     <div className={clsx([styles.root], {
       [styles.startup]: props.startingUp,
       [styles.home]: !props.startingUp && asPath === '/',
       [styles.resumes]: asPath === '/resumes',
+      [styles.lightsout]: lightsOut === true,
       })}>
     {/*<DynamicDevice>*/}
       <div className={clsx([styles.container],
@@ -104,6 +112,9 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
                     alt="GitHub sticker"/>
                 </a>
               </li>
+              <li>
+                <button onClick={() => setLightsOut(l => !l)}>Lights</button>
+              </li>
             </ul>
           </nav>
         </footer>
@@ -115,9 +126,12 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
     <style jsx global>{`
         html,
         body {
-          font-family: ${text.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
+          /*font-family: ${text.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+          sans-serif;*/
+          font-family: ${sysFont.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+          sans-serif;
         }
         h1,
         h2,
@@ -125,7 +139,10 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
         h4,
         h5,
         h6 {
-            font-family: ${title.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            /*font-family: ${title.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;*/
+            font-family: ${sysFont.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
         }

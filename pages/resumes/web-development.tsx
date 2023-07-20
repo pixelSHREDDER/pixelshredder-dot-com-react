@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
 import Layout from '../../components/layout';
+import Nav from '../../components/Nav';
 
 export default function WebDevelopmentResume() {
     return (
@@ -13,9 +14,10 @@ export default function WebDevelopmentResume() {
 				imageAlt: 'Here\'s what I look like I guess'
 			}} />
 			<article className={styles.darkmode}>
-				<Link href="/resumes">
-					<p>← Back</p>
-				</Link>
+			<Nav parent={{
+				label: 'Resumes',
+				path: '/resumes',
+			}} />
 				<h1>Résumé</h1>
 				<section>
 					<h2>Profile</h2>
@@ -201,9 +203,10 @@ export default function WebDevelopmentResume() {
 						<li>Conducted research into animation on low-power devices</li>
 					</ul>
 				</section>
-				<Link href="/resumes">
-					<p>← Back</p>
-				</Link>
+				<Nav parent={{
+					label: 'Resumes',
+					path: '/resumes',
+				}} />
 			</article>
 		</Layout>
     );

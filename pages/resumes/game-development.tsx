@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
 import Layout from '../../components/layout';
+import Nav from '../../components/Nav';
 
 export default function GameDevelopmentResume() {
     return (
@@ -13,9 +14,10 @@ export default function GameDevelopmentResume() {
 				imageAlt: 'Here\'s what I look like I guess'
 			}} />
 			<article className={styles.darkmode}>
-				<Link href="/resumes">
-					<p>← Back</p>
-				</Link>
+				<Nav parent={{
+					label: 'Resumes',
+					path: '/resumes',
+				}} />
 				<h1>Résumé</h1>
 				<section>
 					<h2>Profile</h2>
@@ -198,9 +200,10 @@ export default function GameDevelopmentResume() {
 					<h4>A.A.S. Degree, Computer Art</h4>
 					<p>Class of 2008. Selden, NY</p>
 				</section>
-				<Link href="/resumes">
-					<p>← Back</p>
-				</Link>
+				<Nav parent={{
+					label: 'Resumes',
+					path: '/resumes',
+				}} />
 			</article>
 		</Layout>
 	);

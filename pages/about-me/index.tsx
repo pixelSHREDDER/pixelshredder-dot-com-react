@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
 import Layout from '../../components/layout';
+import Nav from '../../components/Nav';
 
 export default function AboutMe() {
     return (
@@ -28,9 +29,7 @@ export default function AboutMe() {
 					<p>Journalism, electronics, inventing, landscaping, telemarketing- I've had experience working in so many fields it can be hard to keep track of it all sometimes. But it all inspires me in one way or another. An entrepreneurial spirit and an insatiable appetite for learning new things doesn't hurt either.</p>
 					<p>Aside from playing and collecting video games, I try to keep my interests as broad as possible. There's no substitute for experience when it comes to good ideas, and so I try to soak up any new experience I can get- I never know when it may inspire me in my work.</p>
 				</section>
-				<Link href="/">
-                    <p>← Back to home</p>
-                </Link>
+				<Nav />
 			</article>
         </Layout>
     );

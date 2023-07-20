@@ -170,12 +170,10 @@
   inset: auto 0 0;
   width: 100%;
   height: max(10rem, 40%);
+  opacity: 0.7;
 }
 .root::before {
   background: linear-gradient(#000 0%, #553100 20%, #a86100 60%);
-}
-.root::after {
-  animation: reflected-glow var(--crt-timing) ease-in-out;
 }
 .container,
 .tvframe,
@@ -208,7 +206,6 @@
 }
 .tvglow {
   padding: 4%;
-  animation: glow var(--crt-timing);
   filter: var(--glow) blur(2px);
 }
 .startup .tvglow {
@@ -239,6 +236,7 @@
   position: absolute;
   inset: 0;
   z-index: 2;
+  opacity: 0.5;
 }
 .scanlines::before {
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
@@ -247,18 +245,14 @@
 .scanlines::after {
   background: rgba(18, 16, 16, 0.1);
   opacity: 0;
-  animation: flicker var(--crt-timing);
 }
 .screen {
   height: 100%;
   z-index: 2;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  animation-duration: .25s;
-  animation-iteration-count: 1;
-  margin-inline-end: 2rem;
-  padding-block: 2rem;
-  padding-inline: 3rem 1rem;
+  overflow: hidden;
+  /*margin-inline-end: 1rem;
+  padding-block: 3rem;
+  padding-inline: 4rem 2rem;*/
 }
 .startupbg {
   background-color: #333;
@@ -294,19 +288,24 @@
   position: absolute;
   inset: 0;
   z-index: 10;
-  animation: reflected-glow var(--crt-timing) ease-in-out;
+  opacity: 0.7;
 }
-.footer a {
+.footer :is(a, button) {
   position: absolute;
   z-index: 6;
   transform: rotate(12deg);
   border: 1px inset var(--bg);
   border-radius: 50%;
-  animation: glow var(--crt-timing);
   filter: var(--glow) saturate(55%);
 }
-.footer li:last-child a {
+.footer li:nth-child(2) a {
   transform: rotate(319deg);
+}
+.footer li button {
+  transform: rotate(-340deg);
+  font-size: 0.5rem;
+  padding: 0.2rem;
+  background-color: #fff;
 }
 .home .footer a {
   filter: var(--home-glow) saturate(55%);
@@ -324,43 +323,6 @@
   height: 100% !important;
   width: 100% !important;
 }
-
-/*.startup img {
-  animation: startup 1s linear;
-  animation-fill-mode: forwards;
-}
-
-.tvframe,
-.tvbezel,
-.tvglow,
-.container,
-.scanlines,
-.scanlines::before,
-.scanlines::after,
-.screen {
-  animation-duration: .25s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-.landscaping :is(.tvframe, .tvbezel, .tvglow, .scanlines::before, .scanlines::after) {
-  animation-name: landscaping;
-}
-.portraiting :is(.tvframe, .tvbezel, .tvglow, .scanlines::before, .scanlines::after) {
-  animation-name: portraiting;
-}
-.landscaping :is(.container, .scanlines) {
-  animation-name: landscapingaspect;
-}
-.portraiting :is(.container, .scanlines) {
-  animation-name: portraitingaspect;
-}
-.landscaping .screen {
-  animation-name: landscapingscreen;
-}
-.potraiting .screen {
-  animation-name: portraitingscreen;
-}*/
 
 @media (orientation: landscape) {
   .root {
@@ -469,9 +431,13 @@
     top: max(1.95rem, 5%);
     left: max(3.2rem, 10%);
   }
-  .footer li:last-child a {
+  .footer li:nth-child(2) a {
     top: max(3.6rem, 14%);
     left: max(2.05rem, 4%);
+  }
+  .footer li button {
+    top: max(3.6rem, 11%);
+    right: max(2.05rem, 4%);
   }
 }
 
@@ -487,6 +453,10 @@
       var(--glow-bg) 0%,
       var(--startup-bg) 80%
     );
+  }
+  .scanlines::before,
+  .scanlines::after {
+    inset: 6rem 0;
   }
   .startup::after {
     background-image: radial-gradient(
@@ -530,14 +500,6 @@
   }
   .startup .scanlines {
     background: transparent;
-  }
-  .screen {
-    margin-inline-end: 0.5rem;
-    padding-block: 1rem;
-    padding-inline: 1rem 0.5rem;
-    margin-inline-end: 0.5rem;
-    padding: 1rem 0.5rem 1rem 1rem;
-    overflow-y: auto;
   }
   .startup .screen {
     background-color: var(--startup-bg);
@@ -602,9 +564,13 @@
     top: 4%;
     left: 5%;
   }
-  .footer li:last-child a {
+  .footer li:nth-child(2) a {
     top: 10%;
     left: 3%;
+  }
+  .footer li button {
+    top: 10%;
+    right: 2%;
   }
 }
 @media (aspect-ratio >= 16 / 9) {
@@ -620,4 +586,77 @@
     height: max(16px, 2vw);
     width: max(16px, 2vw);
   }
+}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+@media (prefers-reduced-motion: no-preference) {
+  .startupbg img {
+    animation: startup 1s linear;
+    animation-fill-mode: forwards;
+  }
+  .lightsout .root::after {
+    animation: reflected-glow var(--crt-timing) ease-in-out;
+  }
+  .lightsout .tvglow {
+    animation: glow var(--crt-timing);
+  }
+  .lightsout .scanlines::after {
+    animation: flicker var(--crt-timing);
+  }
+  .lightsout .screen {
+    animation-duration: .25s;
+    animation-iteration-count: 1;
+  }
+  .lightsout .macglow {
+    animation: reflected-glow var(--crt-timing) ease-in-out;
+  }
+  .lightsout .footer a {
+    animation: glow var(--crt-timing);
+  }
+
+  /*.lightsout :is(
+    .tvframe,
+    .tvbezel,
+    .tvglow,
+    .container,
+    .scanlines,
+    .scanlines::before,
+    .scanlines::after,
+    .screen
+  ) {
+    animation-duration: .25s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  }
+  .lightsout .landscaping :is(
+    .tvframe,
+    .tvbezel,
+    .tvglow,
+    .scanlines::before,
+    .scanlines::after
+  ) {
+    animation-name: landscaping;
+  }
+  .lightsout .portraiting :is(
+    .tvframe,
+    .tvbezel,
+    .tvglow,
+    .scanlines::before,
+    .scanlines::after
+  ) {
+    animation-name: portraiting;
+  }
+  .lightsout .landscaping :is(.container, .scanlines) {
+    animation-name: landscapingaspect;
+  }
+  .lightsout .portraiting :is(.container, .scanlines) {
+    animation-name: portraitingaspect;
+  }
+  .lightsout .landscaping .screen {
+    animation-name: landscapingscreen;
+  }
+  .lightsout .potraiting .screen {
+    animation-name: portraitingscreen;
+  }*/
 }

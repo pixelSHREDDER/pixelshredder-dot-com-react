@@ -16,12 +16,13 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  max-width: 90%;
+  /*max-width: 90%;
   margin-block-start: 1rem;
-  margin-inline: auto;
+  margin-inline: auto;*/
+  margin: 0;
 }
 .card {
-  flex: 1;
+  flex: 0 1 33%;
   padding: 1rem;
   text-align: start;
   color: inherit;
@@ -33,25 +34,23 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #000;
-  border-color: #000;
-  animation: pulser 1.5s ease-out infinite;
+  background: #000;
+  border-color: #ddd;
+  outline-color: transparent;
+}
+.card:focus,
+.card:focus h2 {
+  color: #ddd;
 }
 .card h2 {
   font-size: var(--step-1);
+  margin-block: 0;
   animation: none;
 }
 .card p {
-  margin: 0;
+  margin: 0.6rem 0 0;
   line-height: 1;
   text-align: center;
-}
-.homecontent {
-  opacity: hidden;
-  visibility: hidden;
-  animation: fadein 0.5s;
-  animation-delay: 0.25s;
-  animation-fill-mode: forwards;
 }
 .skills {
   margin-block: 0 1rem;
@@ -62,6 +61,9 @@
 }
 .skills li {
   margin: 0;
+}
+.description {
+  margin-block: 0;
 }
 .darkmode {
   color: #ddd;
@@ -76,4 +78,15 @@
 }
 .darkmode h1 {
   animation: none;
+}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+@media (prefers-reduced-motion: no-preference) {
+  .homecontent {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadein 0.5s;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
+  }
 }

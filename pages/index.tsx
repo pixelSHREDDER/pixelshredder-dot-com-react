@@ -13,7 +13,7 @@ export default function Home(props: { startingUp: boolean }) {
       <article className={styles.homecontent}>
         <h1 className={styles.title}>Welcome!</h1>
         <p className={styles.description}>Please select an option below</p>
-        <div className={styles.grid}>
+        <section className={styles.grid}>
           <Link href="/resumes" className={styles.card}>
             <h2>Resume</h2>
           </Link>
@@ -30,15 +30,7 @@ export default function Home(props: { startingUp: boolean }) {
           <Link href="/about-this-site" className={styles.card}>
             <h2>About This Site</h2>
           </Link>
-          <a
-            href="https://pixel-shredder.com/blog/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}>
-            <h2>Blog</h2>
-            <p>'Paper Awesome'<br/>(deprecated)</p>
-          </a>
-        </div>
+        </section>
       </article>
     </Layout>
   )

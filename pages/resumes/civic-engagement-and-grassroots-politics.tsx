@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
 import Layout from '../../components/layout';
+import Nav from '../../components/Nav';
 
 export default function CivicsPoliticsResume() {
     return (
@@ -12,8 +13,12 @@ export default function CivicsPoliticsResume() {
 			image: '/images/mike-devine-headshot.jpg',
 			imageAlt: 'Here\'s what I look like I guess'
 		}} />
-        <article className={styles.darkmode}>
-		<h1>Résumé</h1>
+    <article className={styles.darkmode}>
+			<Nav parent={{
+				label: 'Resumes',
+				path: '/resumes',
+			}} />
+			<h1>Résumé</h1>
 			<section>
 				<h2>About</h2>
 				<p>I worked for years with various government entities during my time in Arlington, VA, but was only driven to take political action after the 2016 presidential election. I believe that the problems our society faces are systemic, long-term, and will require a generational effort by individuals driven to secure a future for themselves, and for those who come after.</p>
@@ -134,11 +139,12 @@ export default function CivicsPoliticsResume() {
 					<li>C#</li>
 				</ul>
 			</section>
-            <Link href="/resumes">
-                    <p>← Back</p>
-                </Link>
-        </article>
-        </Layout>
-    );
-  }
+			<Nav parent={{
+				label: 'Resumes',
+				path: '/resumes',
+			}} />
+      </article>
+    </Layout>
+  );
+}
   

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
 import Layout from '../../components/layout';
+import Nav from '../../components/Nav';
 
 export default function AboutThisSite() {
     return (
@@ -13,14 +14,10 @@ export default function AboutThisSite() {
         <article className={styles.darkmode}>
             <section>
 				<h1>About This Site</h1>
-				<p>This site was built on a React.js / Next.js stack, using the magic of server-side rendering!</p>
+				<p>This site was built on a React.js / Next.js stack, using the magic of server-side rendering! Fonts used include <a href="https://fontsarena.com/sysfont-by-alina-sava/" target='_blank'>Sysfont by Alina Sava</a>.</p>
 				<p>The CRT effect is done in pure CSS, based on the awesome work seen <a href="http://aleclownes.com/2017/02/01/crt-display.html" target="_blank">here</a> and <a href="https://codepen.io/lbebber/pen/XJRdrV" target="_blank">here</a>.</p>
 			</section>
-            <section>
-				<Link href="/">
-                    <p>← Back to home</p>
-            	</Link>
-            </section>
+            <Nav />
         </article>
         </Layout>
     );

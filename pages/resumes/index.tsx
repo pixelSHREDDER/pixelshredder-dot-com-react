@@ -2,6 +2,7 @@ import Link from 'next/link';
 import utilStyles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
 import Layout from '../../components/layout';
+import Nav from '../../components/Nav';
 
 export default function Resumes() {
     return (
@@ -11,9 +12,7 @@ export default function Resumes() {
                 description: 'Over 30 years of experience, at least a third of which was professional!'
             }} />
             <article>
-                <section>
-                    <h1>Choose Your Destiny</h1>
-                </section>
+                <h1>Choose Your Destiny</h1>
                 <section className={utilStyles.grid}>
                     <Link href="/resumes/web-development" className={utilStyles.card}>
                         <h2>Web Development</h2>
@@ -24,9 +23,7 @@ export default function Resumes() {
                         <p>Go play Halo Infinite!</p>
                     </Link>
                 </section>
-                <Link href="/">
-                    <p>← Back to home</p>
-                </Link>
+                <Nav />
             </article>
         </Layout>
     );
