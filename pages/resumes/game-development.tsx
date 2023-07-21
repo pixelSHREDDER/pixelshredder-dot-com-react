@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
-import Layout from '../../components/layout';
+import Layout, { LayoutProps } from '../../components/layout';
 import Nav from '../../components/Nav';
 
-export default function GameDevelopmentResume() {
+export default function GameDevelopmentResume(props: LayoutProps) {
     return (
-		<Layout>
+		<Layout {...props}>
 			<GlobalHead meta={{
 				title: 'Mike DeVine | Game Development Résumé',
 				description: 'Go play Halo Infinite!',

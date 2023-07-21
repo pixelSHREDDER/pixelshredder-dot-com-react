@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import styles from '/styles/utils.module.css';
-import Layout from '../components/layout';
+import Layout, { LayoutProps } from '../components/layout';
 import GlobalHead from '../components/head';
 
-export default function Home(props: { startingUp: boolean }) {
+export default function Home(props: LayoutProps) {
   return (
     <Layout {...props}>
       <GlobalHead meta={{

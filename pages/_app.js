@@ -4,6 +4,11 @@ import '../styles/globals.css';
 
 export default function App({ Component, pageProps }) {
   const [startingUp, setStartingUp] = useState(true);
+  const [lightsOut, setLightsOut] = useState(false);
+
+  useEffect(() => {
+    !!lightsOut ? document.body.classList.add('nighttime') : document.body.classList.remove('nighttime');
+  }, [lightsOut]);
 
   useEffect(() => {
     const startupTimeout = setTimeout(() => setStartingUp(false), 4000);
@@ -27,7 +32,11 @@ export default function App({ Component, pageProps }) {
           `,
         }}
       />
-      <Component {...pageProps} startingUp={startingUp} />
+      <Component {...pageProps}
+        lightsOut={lightsOut}
+        setLightsOut={setLightsOut}
+        startingUp={startingUp}
+        />
     </>
   )
 }

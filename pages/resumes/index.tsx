@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import utilStyles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
-import Layout from '../../components/layout';
+import Layout, { LayoutProps } from '../../components/layout';
 import Nav from '../../components/Nav';
 
-export default function Resumes() {
+export default function Resumes(props: LayoutProps) {
     return (
-        <Layout>
+        <Layout {...props}>
             <GlobalHead meta={{
                 title: 'Mike DeVine | Résumés',
                 description: 'Over 30 years of experience, at least a third of which was professional!'

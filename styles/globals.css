@@ -44,6 +44,7 @@ html {
   touch-action: none;
 }
 body {
+  overflow-x: hidden;
   background-image: radial-gradient(55% 100% at center, #000 50%, #8cb7e8 100%);
 }
 body.nighttime {

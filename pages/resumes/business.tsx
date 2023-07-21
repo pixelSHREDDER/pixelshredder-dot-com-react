@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
-import Layout from '../../components/layout';
+import Layout, { LayoutProps } from '../../components/layout';
 import Nav from '../../components/Nav';
 
-export default function BusinessResume() {
+export default function BusinessResume(props: LayoutProps) {
     return (
-    <Layout>
+    <Layout {...props}>
 		<GlobalHead meta={{
 			title: 'Mike DeVine | Business Résumé',
 			description: 'Two credited startups (so far)',

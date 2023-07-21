@@ -13,7 +13,9 @@ import clsx from 'clsx';
   ssr: false,
 })*/
 
-type LayoutProps = {
+export type LayoutProps = {
+  lightsOut?: Boolean,
+  setLightsOut?: Function,
   startingUp?: Boolean,
 };
 
@@ -31,8 +33,7 @@ export const sysFont = localFont({ src: './sysfont.woff2' });
 
 export default function Layout(props: PropsWithChildren<LayoutProps>) {
   const { asPath } = useRouter();
-  const [lightsOut, setLightsOut] = useState<boolean>(false);
-  //const [orientation, isLandscaping, isPortraiting] = useDevice();
+    //const [orientation, isLandscaping, isPortraiting] = useDevice();
 
   /*const lazyLoadDevice = async () => {
     //const useDevice = await import('./Device/useDevice');
@@ -40,16 +41,19 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
   }*/
 
   //useEffect(() => lazyLoadDevice(), []);
-  useEffect(() => {
-    document.body.classList.toggle('nighttime');
-  }, [lightsOut]);
+
+  const toggleLightsOut = () => () => {
+    if (!!props.setLightsOut) {
+      props.setLightsOut((l: boolean) => !l);
+    }
+  }
   
   return (
     <div className={clsx([styles.root], {
       [styles.startup]: props.startingUp,
       [styles.home]: !props.startingUp && asPath === '/',
       [styles.resumes]: asPath === '/resumes',
-      [styles.lightsout]: lightsOut === true,
+      [styles.lightsout]: props.lightsOut === true,
       })}>
     {/*<DynamicDevice>*/}
       <div className={clsx([styles.container],
@@ -113,7 +117,7 @@ export default function Layout(props: PropsWithChildren<LayoutProps>) {
                 </a>
               </li>
               <li>
-                <button onClick={() => setLightsOut(l => !l)}>Lights</button>
+                <button onClick={toggleLightsOut()}>Lights</button>
               </li>
             </ul>
           </nav>

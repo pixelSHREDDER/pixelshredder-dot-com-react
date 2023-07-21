@@ -2,12 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
-import Layout from '../../components/layout';
+import Layout, { LayoutProps } from '../../components/layout';
 import Nav from '../../components/Nav';
 
-export default function AboutMe() {
+export default function AboutMe(props: LayoutProps) {
     return (
-		<Layout>
+		<Layout {...props}>
 			<GlobalHead meta={{
 				title: 'Mike DeVine | About Me',
 				description: 'Great in small doses!',

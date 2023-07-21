@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
-import Layout from '../../components/layout';
+import Layout, { LayoutProps } from '../../components/layout';
 import Nav from '../../components/Nav';
 
-export default function CivicsPoliticsResume() {
+export default function CivicsPoliticsResume(props: LayoutProps) {
     return (
-    <Layout>
+    <Layout {...props}>
 		<GlobalHead meta={{
 			title: 'Mike DeVine | Civic Engagement & Grassroots Politics Résumé',
 			description: 'Nearly a decade of experience at various levels of government and organizing',

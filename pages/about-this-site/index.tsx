@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
-import Layout from '../../components/layout';
+import Layout, { LayoutProps } from '../../components/layout';
 import Nav from '../../components/Nav';
 
-export default function AboutThisSite() {
+export default function AboutThisSite(props: LayoutProps) {
     return (
-    <Layout>
+    <Layout {...props}>
 		<GlobalHead meta={{
 			title: 'Mike DeVine | About This Site',
 			description: 'Let\'s take a quick peek under the hood.'

@@ -1,12 +1,12 @@
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
-import Layout from '../../components/layout';
+import Layout, { LayoutProps } from '../../components/layout';
 import Link from 'next/link';
 import Nav from '../../components/Nav';
 
-export default function WebAndGraphicDesignResume() {
+export default function WebAndGraphicDesignResume(props: LayoutProps) {
     return (
-    <Layout>
+    <Layout {...props}>
 		<GlobalHead meta={{
 			title: 'Mike DeVine | Web & Graphic Design Résumé',
 			description: 'iT\'S mY PaSsIoN',

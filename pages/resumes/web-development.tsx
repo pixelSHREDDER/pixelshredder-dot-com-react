@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import styles from 'styles/utils.module.css';
 import GlobalHead from '../../components/head';
-import Layout from '../../components/layout';
+import Layout, { LayoutProps } from '../../components/layout';
 import Nav from '../../components/Nav';
 
-export default function WebDevelopmentResume() {
+export default function WebDevelopmentResume(props: LayoutProps) {
     return (
-		<Layout>
+		<Layout {...props}>
 			<GlobalHead meta={{
 				title: 'Mike DeVine | Web Development Résumé',
 				description: 'Over 10 years of professional experience',
