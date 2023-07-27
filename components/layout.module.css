@@ -730,7 +730,7 @@
     right: 0;
   }
   .macglow {
-    background: none;
+    background: none !important;
   }
 }}
 
