@@ -197,6 +197,7 @@
 }
 .tvframe {
   z-index: 6;
+  -webkit-filter: contrast(0.25);
   filter: contrast(0.25);
 }
 .tvbezel,
@@ -205,19 +206,24 @@
 }
 .tvbezel {
   padding: 1rem;
+  -webkit-filter: contrast(0.2);
   filter: contrast(0.2);
 }
 .tvglow {
   padding: 4%;
+  -webkit-filter: var(--glow) blur(2px);
   filter: var(--glow) blur(2px);
 }
 .startup .tvglow {
+  -webkit-filter: blur(2px);
   filter: blur(2px);
 }
 .home .tvglow {
+  -webkit-filter: var(--home-glow) blur(2px);
   filter: var(--home-glow) blur(2px);
 }
 .resumes .tvglow {
+  -webkit-filter: var(--resumes-glow) blur(2px);
   filter: var(--resumes-glow) blur(2px);
 }
 .scanlines {
@@ -305,6 +311,7 @@
   transform: rotate(12deg);
   border: 1px inset var(--bg);
   border-radius: 50%;
+  -webkit-filter: var(--glow) saturate(55%);
   filter: var(--glow) saturate(55%);
 }
 .footer li:nth-child(2) a {
@@ -317,14 +324,17 @@
   background-color: #fff;
 }
 .home .footer a {
+  -webkit-filter: var(--home-glow) saturate(55%);
   filter: var(--home-glow) saturate(55%);
   border-color: var(--home-glow);
 }
 .resumes .footer a {
+  -webkit-filter: var(--resumes-glow) saturate(55%);
   filter: var(--resumes-glow) saturate(55%);
   border-color: var(--resumes-glow);
 }
 .startup .footer a {
+  -webkit-filter: saturate(55%);
   filter: saturate(55%);
   border-color: var(--startup-bg);
 }
@@ -384,6 +394,7 @@
     grid-template-rows: auto 1rem;
     grid-template-columns: 1rem;
     align-content: end;
+    -webkit-filter: drop-shadow(-2px 4px 6px black);
     filter: drop-shadow(-2px 4px 6px black);
     background: -webkit-linear-gradient(-90deg, #eee, #777 10%, #666 85%, #000 90%);
     background: linear-gradient(-90deg, #eee, #777 10%, #666 85%, #000 90%);
@@ -526,6 +537,7 @@
     padding: 1rem;
     grid-template-columns: 1rem auto;
     grid-template-rows: 1rem;
+    -webkit-filter: drop-shadow(2px 4px 6px black);
     filter: drop-shadow(2px 4px 6px black);
     background: -webkit-linear-gradient(#eee, #666 10%, #777 85%, #000 90%);
     background: linear-gradient(#eee, #666 10%, #777 85%, #000 90%);

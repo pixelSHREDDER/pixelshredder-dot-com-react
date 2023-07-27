@@ -38,6 +38,8 @@
   border-color: #ddd;
   outline-color: transparent;
 }
+.card:hover,
+.card:hover h2,
 .card:focus,
 .card:focus h2 {
   color: #ddd;
