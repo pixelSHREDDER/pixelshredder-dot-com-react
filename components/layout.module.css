@@ -167,6 +167,7 @@
 
 .root {
   display: grid;
+  max-height: 100vh;
   max-height: 100lvh;
   z-index: 1;
 }
@@ -187,6 +188,11 @@
 .tvframe,
 .scanlines {
   aspect-ratio: 4 / 3;
+  
+  /*@supports not (aspect-ratio) { 
+    float: left;
+    padding-top: 75%;
+  }*/
 }
 .container {
   position: relative;
@@ -691,3 +697,54 @@
     animation-name: portraitingscreen;
   }*/
 }
+
+/* Safari 11+ */
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  .root::before,
+  .root::after {
+    top: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .container,
+  .tvframe,
+  .scanlines {
+    float: left;
+    padding-top: 75%;
+  }
+  .scanlines {
+    top: 6%;
+    left: 6%;
+    bottom: 6%;
+    right: 6%;
+  }
+  .scanlines::before,
+  .scanlines::after,
+  .startupbg,
+  .macglow {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}}
+
+/* Safari 11+ */
+@media not all and (min-resolution:.001dpcm) and (orientation: portrait)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  .container,
+  .tvframe,
+  .scanlines {
+    float: left;
+    padding-top: 133%;
+  }
+  .scanlines::before,
+  .scanlines::after {
+    top: 6rem;
+    left: 0;
+    bottom: 6rem;
+    right: 0;
+  }
+}}
