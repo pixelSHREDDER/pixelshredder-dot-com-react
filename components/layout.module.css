@@ -730,7 +730,7 @@
     right: 0;
   }
   .macglow {
-    background: none !important;
+    background-image: none !important;
   }
 }}
 
@@ -743,11 +743,11 @@
     float: left;
     padding-top: 33%;
   }
-  .scanlines::before,
+  /*.scanlines::before,
   .scanlines::after {
     top: 6rem;
     left: 0;
     bottom: 6rem;
     right: 0;
-  }
+  }*/
 }}
