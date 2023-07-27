@@ -433,6 +433,11 @@
   }
   .macglow {
     height: 100%;
+    background-image: -webkit-radial-gradient(
+      var(--landscape-macglow-radial),
+      var(--glow-bg) -20%,
+      var(--startup-bg) 40%
+    );
     background-image: radial-gradient(
       var(--landscape-macglow-radial),
       var(--glow-bg) -20%,
@@ -440,6 +445,11 @@
     );
   }
   .startup .macglow {
+    background-image: -webkit-radial-gradient(
+      var(--landscape-macglow-radial),
+      var(--startup-bg) -20%,
+      var(--startup-bg) 40%
+    );
     background-image: radial-gradient(
       var(--landscape-macglow-radial),
       var(--startup-bg) -20%,
@@ -447,6 +457,11 @@
     );
   }
   .home .macglow {
+    background-image: -webkit-radial-gradient(
+      var(--landscape-macglow-radial),
+      var(--home-bg) -20%,
+      var(--startup-bg) 40%
+    );
     background-image: radial-gradient(
       var(--landscape-macglow-radial),
       var(--home-bg) -20%,
@@ -454,6 +469,11 @@
     );
   }
   .resumes .macglow {
+    background-image: -webkit-radial-gradient(
+      var(--landscape-macglow-radial),
+      var(--resumes-bg) -20%,
+      var(--startup-bg) 40%
+    );
     background-image: radial-gradient(
       var(--landscape-macglow-radial),
       var(--resumes-bg) -20%,
