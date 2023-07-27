@@ -115,7 +115,6 @@ button {
 nav {
   width: 100%;
 }
-nav :matches(ul, li),
 nav :is(ul, li) {
   margin: 0;
 }
