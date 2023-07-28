@@ -164,12 +164,6 @@ article {
   }
 }
 
-@media (aspect-ratio >= 16 / 9) {
-  html {
-    font-size: 75%;
-  }
-}
-
 /*@media (prefers-reduced-motion: reduced) {*/
 @media (prefers-reduced-motion: no-preference) {
   h1 {

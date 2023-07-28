@@ -618,8 +618,8 @@
     padding: 25%;
   }
   .mac::after {
-    font-size: 1rem;
-    line-height: 1.75rem;
+    font-size: 0.75rem;
+    line-height: 1.5rem;
   }
   .footer a {
     height: max(16px, 2vw);
