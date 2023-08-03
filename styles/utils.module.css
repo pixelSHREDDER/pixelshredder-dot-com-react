@@ -90,8 +90,6 @@
   .homecontent {
     opacity: 0;
     visibility: hidden;
-    animation: fadein 0.5s;
-    animation-delay: 0.25s;
-    animation-fill-mode: forwards;
+    animation: 0.5s linear 0.25s normal forwards fadein;
   }
 }
