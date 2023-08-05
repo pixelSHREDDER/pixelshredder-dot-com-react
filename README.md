@@ -1,8 +1,13 @@
 # Mikeintosh
 
-![Lighthouse](https://htmlpreview.github.io/?https://github.com/pixelSHREDDER/pixelshredder-dot-com-react/blob/main/lighthouse_results/desktop/www_pixel_shredder_com.html)
-
 My personal website, built in React + NextJS + TypeScript
+
+###### <center>Desktop</center>
+
+![Lighthouse Desktop](lighthouse_results/desktop/pagespeed.svg)
+
+###### <center>Mobile</center>
+![Lighthouse Mobile](lighthouse_results/mobile/pagespeed.svg)
 
 ## Table of Contents
 
