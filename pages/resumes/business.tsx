@@ -11,7 +11,7 @@ export default function BusinessResume(props: LayoutProps) {
 			title: 'Mike DeVine | Business Résumé',
 			description: 'Two credited startups (so far)',
 			image: '/images/mike-devine-headshot.jpg',
-			imageAlt: 'Here\'s what I look like I guess'
+			imageAlt: 'Here\'s what I look like!'
 		}} />
     <article className={styles.darkmode}>
 			<Nav parent={{

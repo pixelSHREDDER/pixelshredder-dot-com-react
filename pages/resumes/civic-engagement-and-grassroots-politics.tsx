@@ -11,7 +11,7 @@ export default function CivicsPoliticsResume(props: LayoutProps) {
 			title: 'Mike DeVine | Civic Engagement & Grassroots Politics Résumé',
 			description: 'Nearly a decade of experience at various levels of government and organizing',
 			image: '/images/mike-devine-headshot.jpg',
-			imageAlt: 'Here\'s what I look like I guess'
+			imageAlt: 'Here\'s what I look like!'
 		}} />
     <article className={styles.darkmode}>
 			<Nav parent={{

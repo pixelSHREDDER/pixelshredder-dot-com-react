@@ -12,6 +12,7 @@ export default function Resumes(props: LayoutProps) {
                 description: 'Over 30 years of experience, at least a third of which was professional!'
             }} />
             <article>
+                <Nav />
                 <h1>Choose Your Destiny</h1>
                 <section className={utilStyles.grid}>
                     <Link href="/resumes/web-development" className={utilStyles.card}>

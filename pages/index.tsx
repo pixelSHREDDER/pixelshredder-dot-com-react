@@ -15,7 +15,7 @@ export default function Home(props: LayoutProps) {
         <p className={styles.description}>Please select an option below</p>
         <section className={styles.grid}>
           <Link href="/resumes" className={styles.card}>
-            <h2>Resume</h2>
+            <h2>Résumé</h2>
           </Link>
           <a
             href="https://pixel-shredder.com/port/"

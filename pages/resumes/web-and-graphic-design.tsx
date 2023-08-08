@@ -11,7 +11,7 @@ export default function WebAndGraphicDesignResume(props: LayoutProps) {
 			title: 'Mike DeVine | Web & Graphic Design Résumé',
 			description: 'iT\'S mY PaSsIoN',
 			image: '/images/mike-devine-headshot.jpg',
-			imageAlt: 'Here\'s what I look like I guess'
+			imageAlt: 'Here\'s what I look like!'
 		}} />
     <article className={styles.darkmode}>
 			<Nav parent={{
