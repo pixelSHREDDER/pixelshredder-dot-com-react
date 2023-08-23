@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './layout.module.css';
-import { Press_Start_2P, VT323 } from '@next/font/google';
-import localFont from '@next/font/local';
+import { Press_Start_2P, VT323 } from "next/font/google";
+import localFont from "next/font/local";
 import { PropsWithChildren, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
