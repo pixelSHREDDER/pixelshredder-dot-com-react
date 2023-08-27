@@ -1,0 +1,95 @@
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes pulser {
+  50% { opacity: 0.33; }
+}
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /*max-width: 90%;
+  margin-block-start: 1rem;
+  margin-inline: auto;*/
+  margin: 0;
+}
+.card {
+  flex: 0 1 33%;
+  padding: 1rem;
+  text-align: start;
+  color: inherit;
+  text-decoration: none;
+  border: 4px double #222;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.card:hover,
+.card:focus,
+.card:active {
+  background: #000;
+  border-color: #ddd;
+  outline-color: transparent;
+}
+.card:hover,
+.card:hover h2,
+.card:focus,
+.card:focus h2 {
+  color: #ddd;
+}
+.card h2 {
+  font-size: var(--step-1);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  animation: none;
+}
+.card p {
+  margin: 0.6rem 0 0;
+  line-height: 1;
+  text-align: center;
+}
+.skills {
+  margin-block-start: 0;
+  margin-block-end: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: clamp(1.2rem, calc(3.0rem - 5vw), 3.0rem);
+}
+.skills li {
+  margin: 0;
+}
+.description {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.darkmode {
+  color: #ddd;
+}
+.darkmode h1,
+.darkmode h2,
+.darkmode h3,
+.darkmode h4,
+.darkmode h5,
+.darkmode h6 {
+  color: #bfbfbf;
+}
+.darkmode h1 {
+  animation: none;
+}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+@media (prefers-reduced-motion: no-preference) {
+  .homecontent {
+    opacity: 0;
+    visibility: hidden;
+    animation: 0.5s linear 0.25s normal forwards fadein;
+  }
+}
