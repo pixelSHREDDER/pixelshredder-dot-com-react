@@ -2,7 +2,6 @@ import Link from 'next/link';
 import utilStyles from '../utils.module.css';
 import Nav from '@/components/Nav';
 import { Metadata } from 'next';
-import MacWrapper from 'app/MacWrapper';
 
 export const metadata: Metadata = {
   title: 'Mike DeVine | Résumés',

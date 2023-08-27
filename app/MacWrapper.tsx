@@ -43,6 +43,7 @@ export default function MacWrapper({ children }: { children: React.ReactNode }) 
     <div className={clsx({
       [styles.startup]: startingUp,
       [styles.home]: !startingUp && pathname === '/',
+      [styles.projects]: pathname === '/projects',
       [styles.resumes]: pathname === '/resumes',
       [styles.lightsout]: lightsOut === true,
       })}>

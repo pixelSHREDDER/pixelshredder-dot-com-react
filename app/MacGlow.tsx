@@ -19,6 +19,7 @@ export default function MacGlow() {
     <div className={clsx([styles.macglow], {
       [styles.startupglow]: startingUp,
       [styles.homeglow]: !startingUp && pathname === '/',
+      [styles.projectsglow]: pathname === '/projects',
       [styles.resumesglow]: pathname === '/resumes',
       //[styles.lightsout]: lightsOut === true,
       })} aria-hidden></div>

@@ -235,6 +235,10 @@
   -webkit-filter: var(--home-glow) blur(2px);
   filter: var(--home-glow) blur(2px);
 }
+.projects .tvglow {
+  -webkit-filter: var(--projects-glow) blur(2px);
+  filter: var(--projects-glow) blur(2px);
+}
 .resumes .tvglow {
   -webkit-filter: var(--resumes-glow) blur(2px);
   filter: var(--resumes-glow) blur(2px);
@@ -246,6 +250,9 @@
 }
 .home .scanlines {
   background-color: var(--home-bg);
+}
+.projects .scanlines {
+  background-color: var(--projects-bg);
 }
 .resumes .scanlines {
   background-color: var(--resumes-bg);
@@ -342,6 +349,11 @@
   filter: var(--home-glow) saturate(55%);
   border-color: var(--home-glow);
 }
+.projects .footer a {
+  -webkit-filter: var(--projects-glow) saturate(55%);
+  filter: var(--projects-glow) saturate(55%);
+  border-color: var(--projects-glow);
+}
 .resumes .footer a {
   -webkit-filter: var(--resumes-glow) saturate(55%);
   filter: var(--resumes-glow) saturate(55%);
@@ -392,6 +404,13 @@
       var(--home-bg) -20%,
       var(--startup-bg) 90%
     );
+  }
+  .projects::after {
+    background-image: radial-gradient(
+      var(--landscape-radial),
+      var(--projects-bg) -20%,
+      var(--startup-bg) 90%
+    )
   }
   .resumes::after {
     background-image: radial-gradient(
@@ -468,6 +487,13 @@
       var(--startup-bg) 40%
     );
   }
+  .projectsglow {
+    background-image: radial-gradient(
+      var(--landscape-macglow-radial),
+      var(--projects-bg) -20%,
+      var(--startup-bg) 40%
+    );
+  }
   .resumesglow {
     background-image: radial-gradient(
       var(--landscape-macglow-radial),
@@ -526,6 +552,13 @@
     background-image: radial-gradient(
       var(--portrait-radial),
       var(--home-bg) 0%,
+      var(--startup-bg) 80%
+    );
+  }
+  .projects::after {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--projects-bg) 0%,
       var(--startup-bg) 80%
     );
   }
@@ -611,6 +644,13 @@
     background-image: radial-gradient(
       var(--portrait-radial),
       var(--home-bg) -45%,
+      var(--startup-bg) 90%
+    );
+  }
+  .projectsglow {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--projects-bg) -45%,
       var(--startup-bg) 90%
     );
   }

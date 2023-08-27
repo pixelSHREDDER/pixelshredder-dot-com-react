@@ -12,12 +12,14 @@
   --step-3: clamp(1.95rem, calc(1.65rem + 1.31vw), 2.66rem);
   
   --home-bg: #619cb5;
+  --projects-bg: #67b561;
   --resumes-bg: #b56161;
   --startup-bg: #787878;
   --bg: #393c5a;
   --glow-bg: #5a5e8f;
 
   --home-glow: sepia(25%) saturate(2000%) hue-rotate(149deg) brightness(95%) contrast(91%);
+  --projects-glow: sepia(66%) saturate(1000%) hue-rotate(316deg) brightness(86%) contrast(89%);
   --resumes-glow: sepia(66%) saturate(1000%) hue-rotate(316deg) brightness(86%) contrast(89%);
   --glow: invert(19%) sepia(4%) saturate(6576%) hue-rotate(197deg) brightness(86%) contrast(77%);
 
