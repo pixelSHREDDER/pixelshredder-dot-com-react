@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"]
+      "@/*": [
+        "./*"
+      ]
     },
     "target": "es5",
     "lib": [
@@ -26,7 +28,10 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false
   },
   "include": [
     "next-env.d.ts",

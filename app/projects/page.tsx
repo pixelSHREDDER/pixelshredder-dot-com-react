@@ -1,4 +1,5 @@
 import Nav from '@/components/Nav';
+import { ProjectClass } from '@/models/Project';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -6,18 +7,30 @@ export const metadata: Metadata = {
   description: 'Let\'s take a quick peek under the hood.',
 }
 
-export default function Projects() {
+const getProjects = async () => {
+  const projects = await fetch(`${process.env.BASE_URL}/api/projects`)
+  .then((res) => res.json())
+  return projects.projects
+}
+
+export default async function Projects() {
+  const projects = await getProjects()
+
   return (
     <article>
       <Nav />
-      <h1>About This Site</h1>
+      <h1>Projects</h1>
       <section>
-        <p>This site was built on a React / Next / TypeScript stack, using the magic of server-side rendering! Fonts used include <a href="https://fontsarena.com/sysfont-by-alina-sava/" target='_blank'>Sysfont by Alina Sava</a>.</p>
-        <p>The CRT effect is done in pure <abbr title="Cascading Style Sheets">CSS</abbr>, based on the awesome work seen <a href="http://aleclownes.com/2017/02/01/crt-display.html" target="_blank">here</a> and <a href="https://codepen.io/lbebber/pen/XJRdrV" target="_blank">here</a>.</p>
-        <p>(If you couldn't tell, my first computer was a Mac LC III)</p>
+        <ul>
+        {projects.map((project: ProjectClass, i: number) => {
+          <li key={`projects_${i}`}>
+            <h3>Project: {project.title}</h3>
+            <p>{project.description}</p>
+          </li>
+        })}
+        </ul>
       </section>
       <Nav />
     </article>
-  );
+  )
 }
-  

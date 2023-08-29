@@ -5,6 +5,10 @@ const withPWA = require('next-pwa')({
 })
 
 module.exports = withPWA({
+  experimental: {
+    serverActions: true,
+    serverComponentsExternalPackages:['mongoose','@typegoose/typegoose']
+  },
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
