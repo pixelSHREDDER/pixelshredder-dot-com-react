@@ -5,7 +5,7 @@ interface IProject {
   params: { slug: string }
 }
 
-/*export async function generateMetadata({ params }: IProject): Promise<Metadata> {
+export async function generateMetadata({ params }: IProject): Promise<Metadata> {
   try {
     const slug = params.slug
     const projectData = await fetch(`${process.env.BASE_URL}/projects/${slug}/api`)
@@ -15,9 +15,9 @@ interface IProject {
     return {
       title: `${project.title} | Mike DeVine`,
       description: project.description,
-      *//*openGraph: {
+      /*openGraph: {
         images: [],
-      },*//*
+      },*/
     }
   } catch (error: any) {
     throw error
@@ -42,18 +42,15 @@ async function getProject(slug: string) {
   } catch (error: any) {
     throw error
   }
-}*/
+}
 
 export default async function Project({ params }: IProject) {
-  /*const project: ProjectClass = await getProject(params.slug)
+  const project: ProjectClass = await getProject(params.slug)
   
   return (
     <section>
       <h1>{project.title}</h1>
       {project.body}
     </section>
-  )*/
-  return (
-    <section><h1>WHAT IS LOVE</h1></section>
   )
 }

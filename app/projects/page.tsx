@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Let\'s take a quick peek under the hood.',
 }
 
-/*export async function generateStaticParams() {
+export async function generateStaticParams() {
   try {
     const projects = await fetch(`${process.env.BASE_URL}/projects/api`)
     .then((res) => res.json())
@@ -26,9 +26,9 @@ const getProjects = async () => {
     throw error
   }
 }
-*/
+
 export default async function Projects() {
-  /*const projects = await getProjects()
+  const projects = await getProjects()
 
   return (
     <article>
@@ -44,13 +44,6 @@ export default async function Projects() {
         })}
         </ul>
       </section>
-      <Nav />
-    </article>
-  )*/
-  return (
-    <article>
-      <Nav />
-      <h1>BABY DON'T HURT ME</h1>
       <Nav />
     </article>
   )
