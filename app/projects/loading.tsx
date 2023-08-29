@@ -1,6 +1,6 @@
 'use client'
 
-export default function Loading(props: any) {
+export default function Loading() {
   return (
     <section>
       <h1>Now Loading</h1>

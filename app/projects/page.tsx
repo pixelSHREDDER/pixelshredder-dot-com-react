@@ -7,10 +7,24 @@ export const metadata: Metadata = {
   description: 'Let\'s take a quick peek under the hood.',
 }
 
+export async function generateStaticParams() {
+  try {
+    const projects = await fetch(`${process.env.BASE_URL}/projects/api`)
+    .then((res) => res.json())
+    return projects.projects
+  } catch (error: any) {
+    throw error
+  }
+}
+
 const getProjects = async () => {
-  const projects = await fetch(`${process.env.BASE_URL}/api/projects`)
-  .then((res) => res.json())
-  return projects.projects
+  try {
+    const projects = await fetch(`${process.env.BASE_URL}/projects/api`)
+    .then((res) => res.json())
+    return projects.projects
+  } catch (error: any) {
+    throw error
+  }
 }
 
 export default async function Projects() {
@@ -22,8 +36,8 @@ export default async function Projects() {
       <h1>Projects</h1>
       <section>
         <ul>
-        {projects.map((project: ProjectClass, i: number) => {
-          <li key={`projects_${i}`}>
+        {projects.map((project: ProjectClass) => {
+          <li key={`projects_${project._id}`}>
             <h3>Project: {project.title}</h3>
             <p>{project.description}</p>
           </li>

@@ -1,6 +1,6 @@
 'use client'
 
-export default function NotFound(props: any) {
+export default function NotFound() {
   return (
     <section>
       <h1>Whoops</h1>

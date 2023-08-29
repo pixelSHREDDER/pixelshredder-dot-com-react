@@ -28,4 +28,4 @@ This site was built on a React.js / Next.js stack, using the magic of server-sid
 
 The CRT effect is done in pure CSS, based on the awesome work seen [here](http://aleclownes.com/2017/02/01/crt-display.html) and [here](https://codepen.io/lbebber/pen/XJRdrV).
 
-The projects section implements the full MERN stack. Or would it be MRNN in this case....? Either way, we've got a MongoDB database wired up via Next.js's internal API routing feature, with dynamic app routing for the frontend that takes advantage of Next's SSG features for minimal load times.
+The projects section implements the full MERN stack. Or would it be MRNN in this case....? Either way, we've got a MongoDB database wired up via Next.js's route handling feature, with dynamic app routing for the frontend that takes advantage of Next's SSG features for minimal load times.
