@@ -7,7 +7,12 @@ import MacGlow from "./MacGlow";
 import MacWrapper from "./MacWrapper";
 import Script from "next/script";
 
-const defaultMetadata: {[key: string]: string} = {
+const sysfont = localFont({
+  src: './sysfont.woff2',
+  variable: '--font-sysfont',
+});
+
+export const defaultMetadata: {[key: string]: string} = {
   'applicationName': 'Mikeintosh',
   'author': 'Mike DeVine',
   'description': 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX/Game Designer, Creative Professional, Politico, Writer, Funnyperson.',
@@ -15,10 +20,9 @@ const defaultMetadata: {[key: string]: string} = {
   'title': 'Mike DeVine | Developer/Designer/Creative/Politico',
 }
 
-const sysfont = localFont({
-  src: './sysfont.woff2',
-  variable: '--font-sysfont',
-});
+export const defaultKeywords: string[] = [
+  'pixelshredder', 'pixel-shredder', 'pixel shredder', 'pixel', 'shredder', 'mike devine', 'mike', 'devine'
+]
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.pixel-shredder.com'),
@@ -33,7 +37,7 @@ export const metadata: Metadata = {
   creator: defaultMetadata.author,
   description: defaultMetadata.description,
   generator: 'Next.js',
-  keywords: 'pixelshredder, pixel-shredder, pixel shredder, pixel, shredder, mike devine, mike, devine',
+  keywords: defaultKeywords,
   manifest: '/site.webmanifest',
   openGraph: {
     description: defaultMetadata.description,

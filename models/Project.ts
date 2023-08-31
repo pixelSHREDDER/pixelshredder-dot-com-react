@@ -29,6 +29,8 @@ class ProjectClass {
   body: string
   @prop({ default: [] })
   tags: Array<string>
+  @prop({ default: [] })
+  tech: Array<string>
   _id: mongoose.Types.ObjectId
 }
 

@@ -1,10 +1,14 @@
 'use client'
+import ErrorDialog from "@/components/ErrorDialog"
+import Nav from "@/components/Nav"
 
 export default function Error() {
   return (
-    <section>
-      <h1>Error</h1>
-      <p>An unexpected error has occurred.</p>
-    </section>
+    <article>
+      <Nav />
+      <h1>Projects</h1>
+        <ErrorDialog />
+      <Nav />
+    </article>
   )
 }

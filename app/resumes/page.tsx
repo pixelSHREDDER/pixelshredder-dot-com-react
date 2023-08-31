@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import utilStyles from '../utils.module.css';
+import styles from '@/app/utils.module.css'
+import resumesStyles from '../resumes.module.css'
 import Nav from '@/components/Nav';
 import { Metadata } from 'next';
 
@@ -13,12 +14,12 @@ export default function Resumes() {
     <article>
       <Nav />
       <h1>Choose Your Destiny</h1>
-      <section className={utilStyles.grid}>
-        <Link href="/resumes/web-development" className={utilStyles.card}>
+      <section className={styles.grid}>
+        <Link href="/resumes/web-development" className={styles.card}>
           <h2>Web Development</h2>
           <p>Over 10 years of professional experience</p>
         </Link>
-        <Link href="/resumes/game-development" className={utilStyles.card}>
+        <Link href="/resumes/game-development" className={styles.card}>
           <h2>Game Development</h2>
           <p>Go play Halo Infinite!</p>
         </Link>

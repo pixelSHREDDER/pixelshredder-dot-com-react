@@ -1,13 +1,18 @@
-import Nav from '@/components/Nav';
-import { ProjectClass } from '@/models/Project';
-import { Metadata } from 'next';
+import Nav from '@/components/Nav'
+import { ProjectClass } from '@/models/Project'
+import { Metadata } from 'next'
+import Link from 'next/link'
+import styles from '@/app/utils.module.css'
+import projectsStyles from './projects.module.css'
+import clsx from 'clsx'
+import TechIcons from '@/components/TechIcons'
 
 export const metadata: Metadata = {
   title: 'Mike DeVine | Projects',
-  description: 'Let\'s take a quick peek under the hood.',
+  description: 'Everything I\'ve worked on over the years.',
 }
 
-export async function generateStaticParams() {
+/*export async function generateStaticParams() {
   try {
     const projects = await fetch(`${process.env.BASE_URL}/projects/api`)
     .then((res) => res.json())
@@ -15,7 +20,7 @@ export async function generateStaticParams() {
   } catch (error: any) {
     throw error
   }
-}
+}*/
 
 const getProjects = async () => {
   try {
@@ -35,13 +40,19 @@ export default async function Projects() {
       <Nav />
       <h1>Projects</h1>
       <section>
-        <ul>
-        {projects.map((project: ProjectClass) => {
-          <li key={`projects_${project._id}`}>
-            <h3>Project: {project.title}</h3>
-            <p>{project.description}</p>
+        <ul className={styles.grid}>
+        {projects.map((project: ProjectClass) => (
+          <li key={`projects_${project._id}`} className={styles.card}>
+            <Link href={`${process.env.BASE_URL}/projects/${project.slug}`}>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <TechIcons project={project} />
+              <h5 className={clsx([styles.tags, projectsStyles.tags])} aria-label="Tags">{
+                project.tags.map((tag: string, i: number) => <span key={`${project.slug}_tag_${i}`}>{tag}</span>)
+              }</h5>
+            </Link>
           </li>
-        })}
+        ))}
         </ul>
       </section>
       <Nav />

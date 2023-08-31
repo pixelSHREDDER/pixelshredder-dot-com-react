@@ -8,6 +8,7 @@
   "dependencies": {
     "@typegoose/typegoose": "^11.4.1",
     "clsx": "^1.2.1",
+    "html-to-react": "^1.6.0",
     "mongoose": "^7.4.5",
     "next": "^13.4.19",
     "next-pwa": "^5.6.0",

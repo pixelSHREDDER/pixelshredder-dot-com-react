@@ -1,10 +1,17 @@
 'use client'
 
+import styles from '@/app/utils.module.css'
+import Nav from '@/components/Nav'
+
 export default function Loading() {
   return (
-    <section>
-      <h1>Now Loading</h1>
-      <p>Please wait....</p>
-    </section>
+    <article>
+      <Nav />
+      <h1>Projects</h1>
+      <section>
+        <div className={styles.loader}>&bull;</div>
+      </section>
+      <Nav />
+    </article>
   )
 }

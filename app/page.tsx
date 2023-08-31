@@ -1,5 +1,6 @@
-import Link from 'next/link';
-import styles from './utils.module.css';
+import Link from 'next/link'
+import styles from '@/app/utils.module.css'
+import homeStyles from './home.module.css'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Index() {
   return (
-    <article className={styles.homecontent}>
+    <article className={homeStyles.postStartup}>
       <h1 className={styles.title}>Welcome!</h1>
       <p className={styles.description}>Please select an option below</p>
       <section className={styles.grid}>

@@ -1,0 +1,22 @@
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.tags span {
+  color: var(--home-bg);
+}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+@media (prefers-reduced-motion: no-preference) {
+  .postStartup {
+    opacity: 0;
+    visibility: hidden;
+    animation: 0.5s linear 0.25s normal forwards fadein;
+  }
+}

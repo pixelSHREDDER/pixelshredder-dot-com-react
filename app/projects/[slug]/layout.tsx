@@ -1,4 +1,4 @@
-import styles from '../../utils.module.css';
+import styles from '@/app/utils.module.css';
 import Nav from "@/components/Nav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {

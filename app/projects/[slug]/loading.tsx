@@ -1,10 +1,6 @@
 'use client'
+import styles from '@/app/utils.module.css'
 
 export default function Loading() {
-  return (
-    <section>
-      <h1>Now Loading</h1>
-      <p>Please wait....</p>
-    </section>
-  )
+  return <div className={styles.loader}>&bull;</div>
 }

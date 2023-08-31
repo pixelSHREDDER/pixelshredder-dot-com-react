@@ -1,10 +1,11 @@
-'use client'
+import ErrorDialog from '@/components/ErrorDialog'
+import styles from '@/app/utils.module.css'
 
 export default function NotFound() {
   return (
-    <section>
-      <h1>Whoops</h1>
-      <p>Project not found!</p>
-    </section>
+    <>
+      <h1 className={styles.srOnly}>Project Not Found</h1>
+      <ErrorDialog errorMsg="Project not found! Please restart your Mikeintosh and try again." />
+    </>
   )
 }
