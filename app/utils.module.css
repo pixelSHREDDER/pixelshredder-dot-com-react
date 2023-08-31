@@ -16,25 +16,44 @@
   margin-inline: auto;*/
   margin: 0;
 }
+.nav li,
 .card,
 .tags span,
 .dialog button {
   text-align: start;
   color: inherit;
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: 0.15s ease all;
 }
 .card,
 .dialog button {
   border: 4px double #222;
 }
-.card {
-  flex: 0 1 33%;
-  padding: 1rem;
+.nav {
+  width: 100%;
+}
+.nav :is(ul, li) {
   margin: 0;
 }
+.nav ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.nav li {
+  padding: 0.2rem 0.4rem;
+  border: 1px solid #222;
+}
+.card {
+  flex: 0 1 33%;
+  padding: 0.8rem 0.6rem;
+  margin: 0;
+}
+.nav li:hover,
 .card:hover,
+.nav li:focus,
 .card:focus,
+.nav li:active,
 .card:active {
   background: #000;
   border-color: #ddd;
@@ -51,8 +70,12 @@
 .card:active .techIcons span {
   filter: invert(0.8);
 }
+.nav li:hover,
+.nav li:hover *,
 .card:hover,
 .card:hover *,
+.nav li:focus,
+.nav li:focus *,
 .card:focus,
 .card:focus * {
   color: #ddd;
@@ -109,6 +132,9 @@
   padding: 0 0.2rem;
   white-space: nowrap;
   background: rgba(0, 0, 0, 0.7)
+}
+.projectsGrid .tags span {
+  color: var(--projects-bg);
 }
 .techIcons {
   gap: 0.1rem;
@@ -200,8 +226,17 @@
 .darkmode h1 {
   animation: none;
 }
+.darkmode .nav li {
+  border-color: #bfbfbf;
+}
+.darkmode .nav li:hover,
+.darkmode .nav li:focus,
 .darkmode .tags span {
   background: #bfbfbf;
+}
+.darkmode .nav li:hover a,
+.darkmode .nav li:focus a {
+  color: #222;
 }
 .darkmode .techIcons span {
   filter: invert(0.8);

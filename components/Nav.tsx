@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from 'next/link'
+import styles from '@/app/utils.module.css'
 
 export interface INavProps {
   parent?: {
@@ -9,7 +10,7 @@ export interface INavProps {
 
 export default function Nav(props: INavProps) {
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul>
         {!!props.parent &&
           <li>

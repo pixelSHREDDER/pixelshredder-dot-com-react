@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import styles from '@/app/utils.module.css'
 import projectStyles from './project.module.css'
-import TechIcons from '@/components/TechIcons'
+import TechIcons from '@/components/TechIcons/TechIcons'
 
 interface IProject {
   params: { slug: string }
