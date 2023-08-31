@@ -16,7 +16,7 @@ const TechIconMap: {[key: string]: string} = {
 export default function TechIcons({ project }: { project: ProjectClass }) {
   return (
     <h5 className={styles.techIcons} aria-label="Tech">{
-      project.tech.map((tech: string, i: number) => {
+      project.tech?.map((tech: string, i: number) => {
         return (!!TechIconMap[tech]) ?
           <span key={`${project.slug}_tech_${i}`}>
             <Image
