@@ -9,10 +9,6 @@ module.exports = withPWA({
     serverActions: true,
     serverComponentsExternalPackages:['mongoose','@typegoose/typegoose']
   },
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
   reactStrictMode: true,
   async rewrites() {
     return [
