@@ -1,3 +1,35 @@
 .project p {
+  margin-block-start: 0;
+}
+.project p,
+.project li {
   text-align: left;
+}
+.project figure {
+  width: 48%;
+  min-width: 120px;
+  float: left;
+  margin-block-start: 0;
+  margin-block-end: 0.8rem;
+  margin-inline: 0 1.2rem;
+}
+.project figure:nth-of-type(2n) {
+  float: right;
+  margin-inline: 1.2rem 0;
+}
+.project p,
+.project li {
+  text-align: justify;
+}
+.project section {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+.project section > figure {
+  width: 100%;
+  min-width: 0;
+  float: none;
+  margin: 0;
 }

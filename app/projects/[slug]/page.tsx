@@ -70,6 +70,9 @@ export default async function Project({ params }: IProject) {
         <TechIcons project={project} />
       </div>
       <div dangerouslySetInnerHTML={{__html: project.body}} aria-hidden className={projectStyles.project}></div>
+      {/*<div aria-hidden className={projectStyles.project}>
+        
+      </div>*/}
     </section>
   )
 }
