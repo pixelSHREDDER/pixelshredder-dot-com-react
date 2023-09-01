@@ -20,11 +20,12 @@ export async function generateMetadata({ params }: IProject): Promise<Metadata> 
       notFound()
     }
     const project: ProjectClass = projectData.data.project
+    const tech: string[] = !!project.tech.length ? project.tech : ['']
 
     return {
       title: `${project.title} | Mike DeVine`,
       description: project.description,
-      keywords: [...project.tags, ...project.tech, ...defaultKeywords],
+      keywords: [...project.tags, ...tech, ...defaultKeywords],
       /*openGraph: {
         images: [],
       },*/
