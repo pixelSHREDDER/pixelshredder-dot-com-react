@@ -34,12 +34,16 @@
 }
 .nav ul {
   display: flex;
-  gap: 1rem;
+  gap: 0.6rem;
   justify-content: center;
 }
 .nav li {
-  padding: 0.2rem 0.4rem;
+  padding: 0.4rem;
   border: 1px solid #222;
+  line-height: 1;
+}
+.nav li a {
+  text-decoration: none;
 }
 .card {
   flex: 0 1 33%;
@@ -116,6 +120,7 @@
   font-size: 0.6rem;
   font-family: sans-serif;
   line-height: 0.8rem;
+  font-style: italic;
 }
 .card .tags {
   justify-content: flex-start;
@@ -218,7 +223,8 @@
 .darkmode h3,
 .darkmode h4,
 .darkmode h5,
-.darkmode h6 {
+.darkmode h6,
+.darkmode .nav li {
   color: #bfbfbf;
 }
 .darkmode h1 {

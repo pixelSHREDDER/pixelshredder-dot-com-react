@@ -20,12 +20,11 @@ export async function generateMetadata({ params }: IProject): Promise<Metadata> 
       notFound()
     }
     const project: ProjectClass = projectData.data.project
-    const tech: string[] = !!project.tech.length ? project.tech : ['']
 
     return {
       title: `${project.title} | Mike DeVine`,
       description: project.description,
-      keywords: [...project.tags, ...tech, ...defaultKeywords],
+      keywords: [...project.tags, ...project.tech, ...defaultKeywords],
       /*openGraph: {
         images: [],
       },*/
@@ -62,15 +61,16 @@ export default async function Project({ params }: IProject) {
   const project: ProjectClass = await getProject(params.slug)
 
   return (
-    <section>
+    <section className={projectStyles.project}>
       <h1>{project.title}</h1>
+      <h3>{project.description}</h3>
       <div aria-hidden className={styles.infobar}>
         <h5 className={styles.tags} aria-label="Tags">{
           project.tags.map((tag: string, i: number) => <span key={`${project.slug}_tag_${i}`}>{tag}</span>)
         }</h5>
         <TechIcons project={project} />
       </div>
-      <div dangerouslySetInnerHTML={{__html: project.body}} aria-hidden className={projectStyles.project}></div>
+      <div dangerouslySetInnerHTML={{__html: project.body}} aria-hidden></div>
       {/*<div aria-hidden className={projectStyles.project}>
         
       </div>*/}

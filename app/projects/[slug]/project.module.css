@@ -1,9 +1,21 @@
+.project h1,
+.project h2,
+.project h3,
+.project h4,
+.project h5,
+.project h6 {
+  text-align: left;
+}
+.project h1 {
+  line-height: 1;
+  margin-block-end: 0.6rem;
+}
+.project h1 ~ h3 {
+  font-weight: normal;
+  line-height: 1.2;
+}
 .project p {
   margin-block-start: 0;
-}
-.project p,
-.project li {
-  text-align: left;
 }
 .project figure {
   width: 48%;
