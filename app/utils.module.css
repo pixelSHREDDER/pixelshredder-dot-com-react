@@ -19,7 +19,8 @@
 }
 .nav li,
 .card,
-.tags span {
+.tags span,
+.tags li {
   text-align: start;
   color: inherit;
   border-radius: 10px;
@@ -118,21 +119,23 @@
 .tags {
   gap: 0.2rem;
   align-content: center;
-  overflow-x: hidden;
-  overflow-y: auto;
-  font-size: 0.6rem;
-  font-family: sans-serif;
-  line-height: 0.8rem;
-  font-style: italic;
 }
 .card .tags {
   justify-content: flex-start;
   align-content: flex-start;
   height: 9ch;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin-block-start: 0.8rem;
   margin-block-end: 0;
 }
-.tags span {
+.tags span,
+.tags li {
+  font-size: 0.6rem;
+  font-family: sans-serif;
+  line-height: 0.8rem;
+  font-style: italic;
+  font-weight: bold;
   color: var(--bg);
   padding: 0 0.2rem;
   white-space: nowrap;
@@ -218,7 +221,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  column-gap: clamp(1.2rem, calc(3.0rem - 5vw), 3.0rem);
 }
 .skills li {
   margin: 0;
@@ -259,7 +261,8 @@
   border: 1px outset #000;
 }
 .darkmode .nav li,
-.darkmode .tags span {
+.darkmode .tags span,
+.darkmode .tags li {
   text-shadow: none;
   box-shadow: var(--darkmode-shadow);
 }
@@ -269,7 +272,8 @@
 }
 .darkmode .nav li:hover,
 .darkmode .nav li:focus,
-.darkmode .tags span {
+.darkmode .tags span,
+.darkmode .tags li {
   background: #bfbfbf;
 }
 .darkmode .nav li:hover a,

@@ -1,5 +1,6 @@
 import styles from '@/app/utils.module.css';
 import Nav from '@/components/Nav';
+import clsx from 'clsx';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -124,7 +125,7 @@ export default function CivicsPoliticsResume() {
       </section>
 			<section>
 				<h2>Additional Skills</h2>
-				<ul className={styles.skills}>
+				<ul className={clsx([styles.skills, styles.tags])}>
 					<li>JavaScript</li>
 					<li>HTML</li>
 					<li>CSS/SASS/LESS</li>

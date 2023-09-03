@@ -23,7 +23,7 @@ export default function WebAndGraphicDesignResume() {
 			{/*<section>
 				<h2>Skills</h2>
 				<h3>Tools<h3/>
-				<ul className={styles.skills}>
+				<ul className={clsx([styles.skills, styles.tags])}>
 					<li>WordPress</li>
 					<li>Photoshop</li>
 					<li>Illustrator</li>
@@ -36,7 +36,7 @@ export default function WebAndGraphicDesignResume() {
 					<li>WordPress</li>
 				</ul>
 				<h3>Code<h3/>
-				<ul className={styles.skills}>
+				<ul className={clsx([styles.skills, styles.tags])}>
 					<li>WordPress</li>
 					<li>WordPress</li>
 					<li>WordPress</li>

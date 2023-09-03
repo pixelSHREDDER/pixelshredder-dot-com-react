@@ -1,5 +1,6 @@
 import styles from '@/app/utils.module.css';
 import Nav from '@/components/Nav';
+import clsx from 'clsx';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -139,7 +140,7 @@ export default function GameDevelopmentResume() {
       </section>
       <section>
         <h2>Skills</h2>
-        <ul className={styles.skills}>
+        <ul className={clsx([styles.skills, styles.tags])}>
           <li>Responsive Design</li>
           <li>Atomic Design</li>
           <li>Scalable UI Libraries</li>
@@ -149,7 +150,7 @@ export default function GameDevelopmentResume() {
           <li><abbr title="Search Engine Optimization">SEO</abbr></li>
         </ul>
         <h3>Code</h3>
-        <ul className={styles.skills}>
+        <ul className={clsx([styles.skills, styles.tags])}>
           <li>JavaScript/TypeScript</li>
           <li><abbr title="HyperText Markup Language">HTML</abbr></li>
           <li><abbr title="Cascading Style Sheets and preprocessors">CSS/SASS/LESS</abbr></li>
@@ -162,7 +163,7 @@ export default function GameDevelopmentResume() {
           <li>ActionScript</li>
         </ul>
         <h3>Web</h3>
-        <ul className={styles.skills}>
+        <ul className={clsx([styles.skills, styles.tags])}>
           <li>React</li>
           <li>Next</li>
           <li>Redux</li>
@@ -178,7 +179,7 @@ export default function GameDevelopmentResume() {
           <li><abbr title="JavaScript eXtensible Markup Language">JSX</abbr>/Jekyll/Liquid/Smarty</li>
         </ul>
         <h3>Tools</h3>
-        <ul className={styles.skills}>
+        <ul className={clsx([styles.skills, styles.tags])}>
           <li>Git/<abbr title="SubVersioN">SVN</abbr></li>
           <li><abbr title="Node Package Manager">NPM</abbr>/Yarn</li>
           <li>Bower</li>
