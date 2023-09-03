@@ -30,6 +30,7 @@ export default function AboutThisSite() {
           <li><a href="https://icons8.com/icon/39848/unity" target="_blank">Unity</a></li>
           <li><a href="https://icons8.com/icon/12510/wordpress" target="_blank">WordPress</a></li>
         </ul>
+        <p>date by Popular from <a href="https://thenounproject.com/browse/icons/term/date/" target="_blank" title="date Icons">Noun Project</a> (CC BY 3.0)</p>
       </section>
       <Nav />
     </article>

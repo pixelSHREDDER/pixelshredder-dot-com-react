@@ -343,6 +343,7 @@
   font-size: 0.5rem;
   padding: 0.2rem;
   background-color: #fff;
+  min-width: 0;
 }
 .home .footer a {
   -webkit-filter: var(--home-glow) saturate(55%);

@@ -45,4 +45,6 @@ Icons by [Icons8](https://icons8.com):
 - [Unity](https://icons8.com/icon/39848/unity)
 - [WordPress](https://icons8.com/icon/12510/wordpress)
 
+date by Popular from [Noun Project](https://thenounproject.com/browse/icons/term/date/) (CC BY 3.0)
+
 [Improved .sr-only styles](https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034) courtesy of [Gaël Poupard's](https://gist.github.com/ffoodd) hard work.

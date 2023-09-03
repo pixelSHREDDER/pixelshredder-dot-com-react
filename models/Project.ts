@@ -31,8 +31,22 @@ class ProjectClass {
   tags: Array<string>
   @prop({ default: [] })
   tech: Array<string>
+  @prop({ required: true })
+  date: Date
+  _id: mongoose.Types.ObjectId
+}
+
+type ProjectResponse = {
+  slug: string,
+  title: string,
+  description: string,
+  body: string,
+  tags: Array<string>,
+  tech: Array<string>,
+  date: Date,
+  dateString: string,
   _id: mongoose.Types.ObjectId
 }
 
 const Project = getModelForClass(ProjectClass)
-export { Project, ProjectClass }
+export { Project, ProjectClass, type ProjectResponse }
