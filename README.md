@@ -1,6 +1,6 @@
 # Mikeintosh
 
-My personal website, built in React + NextJS + TypeScript + MongoDB
+My personal website, built in Next.js + TypeScript + MongoDB
 
 ###### <center>Desktop</center>
 
@@ -13,6 +13,7 @@ My personal website, built in React + NextJS + TypeScript + MongoDB
 
 - [Stack](#stack)
 - [Description](#description)
+- [Credits](#credits)
 
 ## Stack
 
@@ -24,11 +25,15 @@ My personal website, built in React + NextJS + TypeScript + MongoDB
 
 ## Description
 
-This site was built on a React.js / Next.js stack, using the magic of server-side rendering! Fonts used include [Sysfont by Alina Sava](https://fontsarena.com/sysfont-by-alina-sava/).
+This site was built on a React.js / Next.js stack, using the magic of server-side rendering!
 
 The CRT effect is done in pure CSS, based on the awesome work seen [here](http://aleclownes.com/2017/02/01/crt-display.html) and [here](https://codepen.io/lbebber/pen/XJRdrV).
 
+(If you couldn't tell, my first computer was a Mac LC III)
+
 The projects section implements the full MERN stack. Or would it be MRNN in this case....? Either way, we've got a MongoDB database wired up via Next.js's route handling feature, with dynamic app routing for the frontend that takes advantage of Next's SSG features for minimal load times.
+
+## Credits
 
 Icons by [Icons8](https://icons8.com):
 - [Bomb](https://icons8.com/icon/80098/explosive)
@@ -46,5 +51,10 @@ Icons by [Icons8](https://icons8.com):
 - [WordPress](https://icons8.com/icon/12510/wordpress)
 
 date by Popular from [Noun Project](https://thenounproject.com/browse/icons/term/date/) (CC BY 3.0)
+Search Settings by TkBt from [Noun Project](https://thenounproject.com/browse/icons/term/search-settings/) (CC BY 3.0)
+
+[Sysfont webfont by Alina Sava](https://fontsarena.com/sysfont-by-alina-sava/).
 
 [Improved .sr-only styles](https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034) courtesy of [Gaël Poupard's](https://gist.github.com/ffoodd) hard work.
+
+[MultiSelect React Dropdown](https://github.com/srigar/multiselect-react-dropdown) by srigar

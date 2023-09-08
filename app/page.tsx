@@ -27,7 +27,7 @@ export default function Index() {
         <Link href="/about-me" className={styles.card}>
           <h2>About Me</h2>
         </Link>
-        <Link href="/about-this-site" className={styles.card}>
+        <Link href="/projects/mikeintosh" className={styles.card}>
           <h2>About This Site</h2>
         </Link>
       </section>

@@ -369,6 +369,9 @@
   height: 100% !important;
   width: 100% !important;
 }
+.projects .multiSelect > div > span {
+  color: var(--projects-bg);
+}
 
 @media (orientation: landscape) {
   .next {

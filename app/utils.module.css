@@ -8,6 +8,7 @@
 .buttonGroup {
   display: flex;
   gap: 0.2rem;
+  align-items: flex-start;
 }
 .grid {
   display: flex;
@@ -110,6 +111,9 @@
   line-height: 1;
   text-align: center;
 }
+.card a {
+  text-decoration: underline;
+}
 .tags,
 .techIcons {
   display: flex;
@@ -169,11 +173,13 @@
 }
 .infobar button {
   display: flex;
+  flex-shrink: 0;
   flex-wrap: wrap;
   align-content: center;
   padding: 0.2rem 0.4rem;
   gap: 0.2rem;
   min-width: 0;
+  height: 1.7rem;
 }
 .infobar button sub,
 .infobar button sup {
@@ -188,6 +194,22 @@
 }
 .infobar :last-child {
   justify-content: flex-end;
+}
+.expandable {
+  max-height: 0svh;
+  overflow: hidden;
+  /*transform: scaleY(0);*/
+}
+.expandable.expanding,
+.expandable.expanded {
+  /*transform: scaleY(1);*/
+  max-height: 100svh;
+}
+.expandable.expanded {
+  overflow: visible;
+}
+.expandable > div:first-child {
+  flex: 1 1 50%;
 }
 .dialog {
   width: 75%;
@@ -254,6 +276,14 @@
 }
 .darkmode h1 {
   animation: none;
+}
+.darkmode button[aria-expanded] span {
+  border-bottom-color: #bfbfbf;
+}
+.darkmode button[aria-expanded]:hover span,
+.darkmode button[aria-expanded]:active span,
+.darkmode button[aria-expanded]:focus span {
+  border-bottom-color: #222;
 }
 .darkmode figcaption {
   background: #ccc;
@@ -350,4 +380,10 @@
 	overflow: visible !important;
 	width: auto !important;
 	white-space: normal !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .expandable {
+    transition: max-height 500ms ease-in-out;
+  }
 }

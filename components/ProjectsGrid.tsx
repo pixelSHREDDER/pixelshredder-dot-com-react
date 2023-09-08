@@ -2,24 +2,60 @@
 
 import { ProjectResponse } from '@/models/Project'
 import styles from '@/app/utils.module.css'
+import layoutStyles from '@/app/layout.module.css'
 import clsx from 'clsx'
 import ProjectCard from '@/components/ProjectCard'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import Multiselect from 'multiselect-react-dropdown'
+import { useSearchParams } from 'next/navigation'
 
 type Sort = {
   field: keyof ProjectResponse,
   asc: boolean,
 }
 
+export const tags = [
+  "accessibility",
+  "electronics",  
+  "game design",
+  "hardware",
+  "installation design",
+  "non-profit",
+  "politics",
+  "promotions",
+  "responsive design",
+  "web design",
+  "web development",
+]
+
+export const defaultTags = [
+  "accessibility",
+  "electronics",  
+  "game design",
+  "hardware",
+  "installation design",
+  "non-profit",
+  "promotions",
+  "responsive design",
+  "web design",
+  "web development",
+]
+
 export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) {
+  const searchParams = useSearchParams()
+  const [queryString, setQueryString] = useState<string>('')
   const inputRef = useRef<HTMLInputElement>()
+  const expandTimeout = useRef<NodeJS.Timer>()
+  const [selectedValues, setSelectedValues] = useState<string[]>(defaultTags)
   const [filteredProjects, setFilteredProjects] = useState<ProjectResponse[]>(() => [...projects])
   const [sortedProjects, setSortedProjects] = useState<ProjectResponse[]>(() => [...filteredProjects])
   const [sortBy, setSortBy] = useState<Sort>({
     field: 'dateString',
     asc: false,
   })
+  const [isExpanded, setIsExpanded] = useState<boolean>(false)
+  const [isExpanding, setIsExpanding] = useState<boolean>(false)
 
   const toggleSort = useCallback((prevSort: Sort, field: string) => {
     const newSortBy: Sort = {...prevSort}
@@ -42,10 +78,24 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
         project.title.toLowerCase().includes(searchTerm) ||
         project.description.toLowerCase().includes(searchTerm) ||
         project.tags.join().toLowerCase().includes(searchTerm) ||
-        project.tech.join().toLowerCase().includes(searchTerm)
+        project.tech.join().toLowerCase().includes(searchTerm) ||
+        project.tags.includes(searchTerm)
       ))
     })
-  }, [inputRef.current])
+  }, [inputRef.current, selectedValues])
+
+  const toggleExpandable = useCallback((expand: boolean) => {
+    if (expand === false) {
+      setIsExpanded(false)
+      setIsExpanding(false)
+      return
+    }
+    setIsExpanding(true)
+    expandTimeout.current = setTimeout(() => {
+      setIsExpanding(false)
+      setIsExpanded(true)
+    }, 500)
+  }, [isExpanding, isExpanded])
 
   useEffect(() => {
     setSortedProjects(filteredProjects.sort((a: ProjectResponse, b: ProjectResponse) => {
@@ -59,12 +109,55 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
     }))
   }, [sortBy, filteredProjects])
 
+  useEffect(() => {
+    if (!queryString.length)  {
+      return
+    }
+    setSelectedValues((values: string[]) => [...values, ...queryString.split(',')])
+    setQueryString('')
+    filterProjects()
+  }, [queryString])
+
+  useEffect(() => {
+    setQueryString(searchParams.get('tags') || '')
+    return () => clearTimeout(expandTimeout.current)
+  }, [])
+
   return (
     <section>
       <div className={styles.infobar}>
-        <input type='text' placeholder='Search....' ref={inputRef as any} onChange={() => filterProjects()} />
-        <div className={styles.buttonGroup}>
-          <button onClick={() => toggleSort(sortBy, 'title')}>
+        <input
+          type='text'
+          placeholder='Search....'
+          ref={inputRef as any}
+          onChange={() => filterProjects()} />
+        <button
+          aria-expanded={isExpanded || isExpanding}
+          aria-label='Advanced Search'
+          aria-controls='advanced_search'
+          onClick={() => toggleExpandable(!isExpanded)}>
+            <Image
+              src='/images/noun-search-settings-4841336.svg'
+              alt='Advanced Search'
+              width={18}
+              height={18} />
+              <span aria-hidden></span>
+        </button>
+      </div>
+      <div id='advanced_search' className={clsx(styles.infobar, styles.expandable, {
+        [styles.expanded]: !!isExpanded,
+        [styles.expanding]: !!isExpanding
+      })}>
+        <Multiselect
+          className={layoutStyles.multiSelect}
+          customCloseIcon={<button>x</button>}
+          options={tags} // Options to display in the dropdown
+          selectedValues={selectedValues} // Preselected value to persist in dropdown
+          onSelect={filterProjects} // Function will trigger on select event
+          onRemove={filterProjects} // Function will trigger on remove event
+          isObject={false} />
+          <div className={styles.buttonGroup}>
+            <button onClick={() => toggleSort(sortBy, 'title')}>
               <sup>A</sup>/<sub>Z</sub>
               {!!sortBy.asc && sortBy.field === 'title' &&
                 <span>&uarr;</span>
@@ -86,8 +179,8 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
                 <span>&darr;</span>
               }
             </button>
+          </div>
         </div>
-      </div>
       <ul className={clsx(styles.grid, styles.projectsGrid)}>
         {sortedProjects.map((project: ProjectResponse, i: number) => (
           <ProjectCard project={project} key={`projects_grid_${i}`} />
