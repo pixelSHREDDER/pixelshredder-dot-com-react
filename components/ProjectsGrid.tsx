@@ -47,7 +47,7 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
   const [queryString, setQueryString] = useState<string>('')
   const inputRef = useRef<HTMLInputElement>()
   const expandTimeout = useRef<NodeJS.Timer>()
-  const [selectedValues, setSelectedValues] = useState<string[]>(defaultTags)
+  const selectedValues = useRef<string[]>(defaultTags)
   const [filteredProjects, setFilteredProjects] = useState<ProjectResponse[]>(() => [...projects])
   const [sortedProjects, setSortedProjects] = useState<ProjectResponse[]>(() => [...filteredProjects])
   const [sortBy, setSortBy] = useState<Sort>({
@@ -68,11 +68,14 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
     setSortBy(newSortBy)
   }, [])
 
-  const filterProjects = useCallback(() => {
+  const filterProjects = useCallback((selectedTags: string[]) => {
     const searchTerm: string = inputRef!.current!.value!.toLowerCase() || ''
+    selectedValues.current = selectedTags
     setFilteredProjects(() => {
       if (searchTerm.length < 3) {
-        return projects
+        return projects.filter((project: ProjectResponse) => {
+          return project.tags.some((tag: string) => selectedValues.current.includes(tag))
+        })
       }
       return projects.filter((project: ProjectResponse) => (
         project.title.toLowerCase().includes(searchTerm) ||
@@ -82,7 +85,7 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
         project.tags.includes(searchTerm)
       ))
     })
-  }, [inputRef.current, selectedValues])
+  }, [inputRef.current])
 
   const toggleExpandable = useCallback((expand: boolean) => {
     if (expand === false) {
@@ -113,9 +116,9 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
     if (!queryString.length)  {
       return
     }
-    setSelectedValues((values: string[]) => [...values, ...queryString.split(',')])
+    selectedValues.current = [...selectedValues.current, ...queryString.split(',')]
     setQueryString('')
-    filterProjects()
+    filterProjects(selectedValues.current)
   }, [queryString])
 
   useEffect(() => {
@@ -130,7 +133,7 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
           type='text'
           placeholder='Search....'
           ref={inputRef as any}
-          onChange={() => filterProjects()} />
+          onChange={() => filterProjects(selectedValues.current)} />
         <button
           aria-expanded={isExpanded || isExpanding}
           aria-label='Advanced Search'
@@ -151,10 +154,10 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
         <Multiselect
           className={layoutStyles.multiSelect}
           customCloseIcon={<button>x</button>}
-          options={tags} // Options to display in the dropdown
-          selectedValues={selectedValues} // Preselected value to persist in dropdown
-          onSelect={filterProjects} // Function will trigger on select event
-          onRemove={filterProjects} // Function will trigger on remove event
+          options={tags}
+          selectedValues={selectedValues.current}
+          onSelect={filterProjects}
+          onRemove={filterProjects}
           isObject={false} />
           <div className={styles.buttonGroup}>
             <button onClick={() => toggleSort(sortBy, 'title')}>
