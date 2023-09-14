@@ -17,13 +17,9 @@ export default function Index() {
         <Link href="/resumes" className={styles.card}>
           <h2>Résumé</h2>
         </Link>
-        <a
-          href="https://pixel-shredder.com/port/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.card}>
-          <h2>Portfolio</h2>
-        </a>
+        <Link href="/projects" className={styles.card}>
+          <h2>Projects</h2>
+        </Link>
         <Link href="/about-me" className={styles.card}>
           <h2>About Me</h2>
         </Link>
