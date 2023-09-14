@@ -80,6 +80,9 @@ iframe {
   margin-block-start: 0.8rem;
   margin-block-end: 0.8rem;
 }
+figure iframe {
+  margin-block: 0;
+}
 p a,
 li a {
   text-decoration: underline wavy;
@@ -134,10 +137,13 @@ input[type="text"]::placeholder {
   font-family: sans-serif;
   font-style: italic;
   font-weight: bold;
+  max-height: 12rem;
+  overflow-y: auto;
 }
 .multiselect-container .search-wrapper {
   border: none;
   padding: 0;
+  padding-block-start: 2.4rem;
 }
 .multiselect-container .chip {
   background: #222;
@@ -153,6 +159,9 @@ input[type="text"]::placeholder {
   padding: 0;
 }
 .multiselect-container input[type="text"] {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 1.7rem;
   border: 2px solid #222;
   padding-inline: 0.4rem;
@@ -172,6 +181,9 @@ input[type="text"]::placeholder {
   color: #222;
   font-weight: normal;
   font-size: 0.8rem;
+}
+.multiselect-container div ~ div {
+  top: 1.9rem;
 }
 button {
   background: transparent;

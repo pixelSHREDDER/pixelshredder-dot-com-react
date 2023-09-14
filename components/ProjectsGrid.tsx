@@ -17,29 +17,53 @@ type Sort = {
 
 export const tags = [
   "accessibility",
-  "electronics",  
+  "authentication",
+  "business",
+  "computer repair",
+  "e2e testing",
+  "electronics",
+  "entrepreneurship",
+  "full-stack",
   "game design",
+  "graphic design",
   "hardware",
   "installation design",
+  "MERN stack",
   "non-profit",
+  "open-source",
   "politics",
   "promotions",
   "responsive design",
+  "REST APIs",
   "web design",
   "web development",
 ]
 
-export const defaultTags = [
+export const defaultVisibleTags = [
   "accessibility",
-  "electronics",  
+  "authentication",
+  "business",
+  "computer repair",
+  "e2e testing",
+  "electronics",
+  "entrepreneurship",
+  "full-stack",
   "game design",
+  "graphic design",
   "hardware",
   "installation design",
+  "MERN stack",
   "non-profit",
+  "open-source",
   "promotions",
   "responsive design",
+  "REST APIs",
   "web design",
   "web development",
+]
+
+export const defaultHiddenTags = [
+  "politics"
 ]
 
 export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) {
@@ -47,15 +71,17 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
   const [queryString, setQueryString] = useState<string>('')
   const inputRef = useRef<HTMLInputElement>()
   const expandTimeout = useRef<NodeJS.Timer>()
-  const selectedValues = useRef<string[]>(defaultTags)
+  const selectedValues = useRef<string[]>(defaultVisibleTags)
+  const hiddenValues = useRef<string[]>(defaultHiddenTags)
   const [filteredProjects, setFilteredProjects] = useState<ProjectResponse[]>(() => [...projects])
   const [sortedProjects, setSortedProjects] = useState<ProjectResponse[]>(() => [...filteredProjects])
   const [sortBy, setSortBy] = useState<Sort>({
     field: 'dateString',
     asc: false,
   })
-  const [isExpanded, setIsExpanded] = useState<boolean>(false)
-  const [isExpanding, setIsExpanding] = useState<boolean>(false)
+  const [isExpanded, setIsExpanded] = useState<boolean>(() => false)
+  const [isExpanding, setIsExpanding] = useState<boolean>(() => false)
+  const [isLoading, setIsLoading] = useState<boolean>(() => true)
 
   const toggleSort = useCallback((prevSort: Sort, field: string) => {
     const newSortBy: Sort = {...prevSort}
@@ -70,12 +96,16 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
 
   const filterProjects = useCallback((selectedTags: string[]) => {
     const searchTerm: string = inputRef!.current!.value!.toLowerCase() || ''
+    setIsLoading(true)
     selectedValues.current = selectedTags
+    hiddenValues.current = tags.filter((tag: string) => !selectedTags.includes(tag))
+    console.log(selectedValues.current, hiddenValues.current)
     setFilteredProjects(() => {
       if (searchTerm.length < 3) {
-        return projects.filter((project: ProjectResponse) => {
-          return project.tags.some((tag: string) => selectedValues.current.includes(tag))
-        })
+        return projects.filter((project: ProjectResponse) => (
+          project.tags.some((tag: string) => selectedValues.current.includes(tag)) &&
+          !project.tags.some((tag: string) => hiddenValues.current.includes(tag))
+        ))
       }
       return projects.filter((project: ProjectResponse) => (
         project.title.toLowerCase().includes(searchTerm) ||
@@ -83,9 +113,11 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
         project.tags.join().toLowerCase().includes(searchTerm) ||
         project.tech.join().toLowerCase().includes(searchTerm) ||
         project.tags.includes(searchTerm)
-      ))
+      ) &&
+      project.tags.some((tag: string) => selectedValues.current.includes(tag)) &&
+      !project.tags.some((tag: string) => hiddenValues.current.includes(tag)))
     })
-  }, [inputRef.current])
+  }, [inputRef.current, hiddenValues.current, selectedValues.current])
 
   const toggleExpandable = useCallback((expand: boolean) => {
     if (expand === false) {
@@ -113,7 +145,12 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
   }, [sortBy, filteredProjects])
 
   useEffect(() => {
+    setIsLoading(false)
+  }, [sortedProjects])
+
+  useEffect(() => {
     if (!queryString.length)  {
+      filterProjects(selectedValues.current)
       return
     }
     selectedValues.current = [...selectedValues.current, ...queryString.split(',')]
@@ -151,44 +188,50 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
         [styles.expanded]: !!isExpanded,
         [styles.expanding]: !!isExpanding
       })}>
-        <Multiselect
-          className={layoutStyles.multiSelect}
-          customCloseIcon={<button>x</button>}
-          options={tags}
-          selectedValues={selectedValues.current}
-          onSelect={filterProjects}
-          onRemove={filterProjects}
-          isObject={false} />
-          <div className={styles.buttonGroup}>
-            <button onClick={() => toggleSort(sortBy, 'title')}>
-              <sup>A</sup>/<sub>Z</sub>
-              {!!sortBy.asc && sortBy.field === 'title' &&
-                <span>&uarr;</span>
-              }
-              {!sortBy.asc && sortBy.field === 'title' &&
-                <span>&darr;</span>
-              }
-            </button>
-            <button onClick={() => toggleSort(sortBy, 'dateString')}>
-              <Image
-                src='/images/noun-date-1360181.svg'
-                alt='Date'
-                width={16}
-                height={16} />
-              {!!sortBy.asc && sortBy.field === 'dateString' &&
-                <span>&uarr;</span>
-              }
-              {!sortBy.asc && sortBy.field === 'dateString' &&
-                <span>&darr;</span>
-              }
-            </button>
-          </div>
+      <Multiselect
+        className={clsx(layoutStyles.multiSelect, {
+          [layoutStyles.multiSelectLoading]: !!isLoading
+        })}
+        customCloseIcon={<button>x</button>}
+        options={tags}
+        selectedValues={selectedValues.current}
+        onSelect={filterProjects}
+        onRemove={filterProjects}
+        isObject={false} />
+        <div className={styles.buttonGroup}>
+          <button onClick={() => toggleSort(sortBy, 'title')}>
+            <sup>A</sup>/<sub>Z</sub>
+            {!!sortBy.asc && sortBy.field === 'title' &&
+              <span>&uarr;</span>
+            }
+            {!sortBy.asc && sortBy.field === 'title' &&
+              <span>&darr;</span>
+            }
+          </button>
+          <button onClick={() => toggleSort(sortBy, 'dateString')}>
+            <Image
+              src='/images/noun-date-1360181.svg'
+              alt='Date'
+              width={16}
+              height={16} />
+            {!!sortBy.asc && sortBy.field === 'dateString' &&
+              <span>&uarr;</span>
+            }
+            {!sortBy.asc && sortBy.field === 'dateString' &&
+              <span>&darr;</span>
+            }
+          </button>
         </div>
-      <ul className={clsx(styles.grid, styles.projectsGrid)}>
-        {sortedProjects.map((project: ProjectResponse, i: number) => (
-          <ProjectCard project={project} key={`projects_grid_${i}`} />
-        ))}
-      </ul>
+      </div>
+      {!!isLoading ?
+        <div className={styles.loader}>&bull;</div>
+      :
+        <ul className={clsx(styles.grid, styles.projectsGrid)}>
+          {sortedProjects.map((project: ProjectResponse, i: number) => (
+            <ProjectCard project={project} key={`projects_grid_${i}`} />
+          ))}
+        </ul>
+      }
     </section>
   )
 }

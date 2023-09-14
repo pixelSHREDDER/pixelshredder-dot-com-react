@@ -20,7 +20,7 @@ export default function AboutMe() {
 					height={100}
 					alt="Here's what I look like!"
 				/>
-				<h2>Great in Small Doses!</h2>
+				<h2>Hey There</h2>
 				<p>My goal in life is to use my skills in technology to make as much of a positive impact as I can. I've spent over a decade honing my skills in web development, and along the way have embraced core tenets of computer science. Code reusability, optimization, and documentation are some of my specialties.</p>
 				<p>Over my career I've gained experience in the artistic sides of digital development, as well. I've tried to balance my work with a little bit of everything, from drawing and Photoshop to JavaScript frameworks and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>. I figure the broader my knowledge and skills, the better I'll be able to work with others in specialized roles.</p>
 				<p>Gaming, ecommerce, government, education, journalism, electronics, landscaping, telemarketing- I've had experience working in so many fields it can be hard to keep track of it all sometimes. But it all inspires me in one way or another. An entrepreneurial spirit and an insatiable appetite for learning new things doesn't hurt either.</p>

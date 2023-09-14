@@ -1,24 +1,40 @@
 import Image from 'next/image'
 import styles from '@/app/utils.module.css'
 import { ProjectClass } from '@/models/Project'
+import adobeIllustratorIcon from './icons8-adobe-illustrator.svg'
+import adobePhotoshopIcon from './icons8-adobe-photoshop.svg'
 import cssIcon from './icons8-css-logo.svg'
+import expressIcon from './icons8-express-js.svg'
 import htmlIcon from './icons8-html-logo.svg'
 import javaScriptIcon from './icons8-javascript.svg'
+import materialUIIcon from './icons8-material-ui.svg'
 import mongoDbIcon from './icons8-mongodb.svg'
 import nextJsIcon from './icons8-nextjs.svg'
+import phpIcon from './icons8-php-logo.svg'
 import reactJsIcon from './icons8-react.svg'
+import reduxIcon from './icons8-redux.svg'
 import typeScriptIcon from './icons8-typescript.svg'
 import unityIcon from './icons8-unity.svg'
+import wordPressIcon from './icons8-wordpress.svg'
 
 const TechIconMap: {[key: string]: string} = {
+  'Auth0': `/images/icons8-auth0.png`,
+  'Adobe Illustrator': adobeIllustratorIcon,
+  'Adobe Photoshop': adobePhotoshopIcon,
   'CSS': cssIcon,
+  'Express': expressIcon,
   'HTML': htmlIcon,
   'JavaScript': javaScriptIcon,
+  'Kinect': `/images/icons8-kinect-24.png`,
+  'Material UI': materialUIIcon,
   'MongoDB': mongoDbIcon,
   'Next.js': nextJsIcon,
+  'PHP': phpIcon,
   'React.js': reactJsIcon,
+  'Redux': reduxIcon,
   'TypeScript': typeScriptIcon,
   'Unity': unityIcon,
+  'WordPress': wordPressIcon,
 }
 
 export default function TechIcons({ project }: { project: ProjectClass }) {

@@ -113,13 +113,13 @@ export default function BusinessResume() {
         <h4>Symplicity Corporation</h4>
         <h4>Jun ’12 - Dec ’17</h4>
         <p>Built from the ground up by career services professionals, CSM by Symplicity enhances how information is shared and processed both within the university and between their students and employers. This career services-focused approach has enabled us to become the market leader with 1000+ career office deployments worldwide.</p>
-        <h3>Project Odyssey</h3>
+        <h3><a href="/projects/project-odyssey">Project Odyssey</a></h3>
         <h4>Concept / Design / Physical Installation</h4>
         <h4>Rochester Institute of Technology</h4>
         <h4>Sep ’11 - Jun ’12</h4>
         <p>Odyssey was a 360-degree audio-visual interactive experience, incorporating motion controls with Kinect to allow for free motion. We developed a solution which fully immerses the user’s senses, offering an experience that is engaging and comparable to real life.</p>
         <p>We created an installation which combined a physical cylindrical screen made of plastic piping and stretchable fabric, and four short-throw projectors with image stitching software applied to create the display solution. We also incorporated 5.1 surround sound speakers and Kinect-based motion controls to control movement. We developed software in Unity and designed it to be experienced exclusively on the Odyssey platform.</p>
-        <p>We planned to further develop our software to take advantage of the innovative properties of the Odyssey platform, and refine the motion controls to deliver the most intuitive control scheme possible. We also intended to develop a permanent mounting system for our installation, and presented a near production-quality iteration of Odyssey at 2012's ImagineRIT Festival. After graduation, future development of Project Odyssey was put on hold. All of our materials and footage from Project Odyssey can be found <a href="https://www.facebook.com/projectodyssey/" target="_blank">here</a>.</p>
+        <p>We planned to further develop our software to take advantage of the innovative properties of the Odyssey platform, and refine the motion controls to deliver the most intuitive control scheme possible. We also intended to develop a permanent mounting system for our installation, and presented a near production-quality iteration of Odyssey at 2012's ImagineRIT Festival. After graduation, future development of Project Odyssey was put on hold.</p>
         <h3>Just Press Play</h3>
         <h4>Content Development</h4>
         <h4>Rochester Institute of Technology</h4>

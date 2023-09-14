@@ -369,6 +369,9 @@
   height: 100% !important;
   width: 100% !important;
 }
+.multiSelectLoading {
+  opacity: 0;
+}
 .projects .multiSelect > div > span {
   color: var(--projects-bg);
 }

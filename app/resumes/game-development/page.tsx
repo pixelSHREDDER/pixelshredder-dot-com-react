@@ -81,7 +81,7 @@ export default function GameDevelopmentResume() {
           <li>Founded and operated computer repair service based around an innovative new business model</li>
           <li>Devised company-wide branding strategy</li>
         </ul>
-        <h3><a href="https://www.facebook.com/projectodyssey" target="_blank">Project Odyssey</a></h3>
+        <h3><a href="/projects/project-odyssey">Project Odyssey</a></h3>
         <h4>Concept / Design / Physical Installation</h4>
         <h5>Sep ’11 - May ’12</h5>
         <ul>

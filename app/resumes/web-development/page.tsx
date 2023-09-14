@@ -166,7 +166,7 @@ export default function WebDevelopmentResume() {
 					<li>Created and managed robust membership database using Airtable, providing demographic data and visualizations for organizational use</li>
 					<li>Implemented several successful statewide elections for members to participate in virtually, leveraging existing data structures and creating new pipelines for safe and secure transmission, storage, and counting of ballots</li>
 				</ul>
-				<h3><a href="https://www.facebook.com/projectodyssey" target="_blank">Project Odyssey</a></h3>
+				<h3><a href="/projects/project-odyssey">Project Odyssey</a></h3>
 				<h4>Concept / Design / Physical Installation</h4>
 				<h5>Sep ’11 - May ’12</h5>
 				<ul>

@@ -33,6 +33,13 @@
 .project li {
   text-align: justify;
 }
+.project ul {
+  list-style: disc;
+  margin-inline-start: 1.6rem;
+}
+.project ul ul {
+  list-style: circle;
+}
 .project section {
   display: grid;
   align-items: center;
