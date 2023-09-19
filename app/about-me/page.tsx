@@ -2,10 +2,26 @@ import Image from 'next/image';
 import styles from '@/app/utils.module.css';
 import Nav from '@/components/Nav';
 import { Metadata } from 'next';
+import { defaultKeywords } from '../layout';
 
 export const metadata: Metadata = {
-  title: 'Mike DeVine | About Me',
-  description: 'Great in small doses!',
+	appleWebApp: {
+		title: 'Mike DeVine | About Me',
+	},
+	description: 'Great in small doses!',
+	keywords: ['about me', ...defaultKeywords],
+	openGraph: {
+		description: 'Great in small doses!',
+		title: 'Mike DeVine | About Me',
+		url: `${process.env.BASE_URL}/about-me`,
+	},
+	title: 'Mike DeVine | About Me',
+	twitter: {
+		card: 'summary',
+		creator: '@pixelSHREDDER',
+		description: 'Great in small doses!',
+		title: 'Mike DeVine | About Me',
+	},
 }
 
 export default function AboutMe() {

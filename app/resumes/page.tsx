@@ -3,10 +3,26 @@ import styles from '@/app/utils.module.css'
 import resumesStyles from '../resumes.module.css'
 import Nav from '@/components/Nav';
 import { Metadata } from 'next';
+import { defaultKeywords } from '../layout';
 
 export const metadata: Metadata = {
-  title: 'Mike DeVine | Résumés',
-  description: 'Over 30 years of experience, at least a third of which was professional!',
+  appleWebApp: {
+		title: 'Mike DeVine | Résumés',
+	},
+	description: 'Over 30 years of experience, at least a third of which was professional!',
+	keywords: ['resumes', 'resume', ...defaultKeywords],
+	openGraph: {
+		description: 'Over 30 years of experience, at least a third of which was professional!',
+		title: 'Mike DeVine | Résumés',
+		url: `${process.env.BASE_URL}/resumes`,
+	},
+	title: 'Mike DeVine | Résumés',
+	twitter: {
+		card: 'summary',
+		creator: '@pixelSHREDDER',
+		description: 'Over 30 years of experience, at least a third of which was professional!',
+		title: 'Mike DeVine | Résumés',
+	},
 }
 
 export default function Resumes() {

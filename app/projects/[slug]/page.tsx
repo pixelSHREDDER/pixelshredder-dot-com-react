@@ -22,12 +22,23 @@ export async function generateMetadata({ params }: IProject): Promise<Metadata> 
     const project: ProjectClass = projectData.data.project
 
     return {
-      title: `${project.title} | Mike DeVine`,
+      appleWebApp: {
+        title: `${project.title} | Mike DeVine`,
+      },
       description: project.description,
       keywords: [...project.tags, ...project.tech, ...defaultKeywords],
-      /*openGraph: {
-        images: [],
-      },*/
+      openGraph: {
+        description: project.description,
+        title: `${project.title} | Mike DeVine`,
+        url: `${process.env.BASE_URL}/projects/${slug}`,
+      },
+      title: `${project.title} | Mike DeVine`,
+      twitter: {
+        card: 'summary',
+        creator: '@pixelSHREDDER',
+        description: project.description,
+        title: project.title,
+      },
     }
   } catch (error: any) {
     throw error
@@ -71,9 +82,6 @@ export default async function Project({ params }: IProject) {
         <TechIcons project={project} />
       </div>
       <div dangerouslySetInnerHTML={{__html: project.body}} aria-hidden></div>
-      {/*<div aria-hidden className={projectStyles.project}>
-        
-      </div>*/}
     </section>
   )
 }

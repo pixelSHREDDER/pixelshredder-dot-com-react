@@ -1,11 +1,27 @@
+import { defaultKeywords } from '@/app/layout';
 import styles from '@/app/utils.module.css';
 import Nav from '@/components/Nav';
 import clsx from 'clsx';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mike DeVine | Web Development Résumé',
-  description: 'Over 10 years of professional experience',
+  appleWebApp: {
+		title: 'Mike DeVine | Web Development Résumé',
+	},
+	description: 'Over 10 years of professional experience',
+	keywords: ['web development', 'web developer', 'front-end developer', 'front end developer', 'software engineer', 'engineer', 'full-stack', 'full stack', 'web', 'responsive design', 'atomic design', 'scalable ui libraries', 'authentication', 'jwt', 'tokenization', 'auth0', 'accessibility', 'section 508', 'compliance', 'test-driven development', 'tdd', 'internationalization', 'i18', 'search engine optimization', 'seo', 'code', 'javascript', 'js', 'es6', 'es7', 'typescript', 'hypertext markup language', 'html', 'cascading style sheets', 'preprocessors', 'css', 'sass', 'less', 'php', 'xml', 'json', 'sql', 'c sharp', 'c#', 'coldfusion', 'actionscript', 'react', 'reactjs', 'next', 'nextjs', 'redux', 'vue', 'vuejs', 'angularjs', 'jquery', 'laravel', 'node', 'nodejs', 'rest apis', 'ajax', 'mongodb', 'mongoose', 'material ui', 'bootstrap', 'jsx', 'jekyll', 'liquid', 'smarty', 'git', 'subversion', 'svn', 'node package manager', 'npm', 'yarn', 'bower', 'composer', 'grunt', 'gulp', 'wordpress', 'theme developer', 'mongodb', 'mongodb atlas', 'adobe creative cloud', 'adobe photoshop', 'adobe illustrator', 'flex builder', 'resume', ...defaultKeywords],
+	openGraph: {
+		description: 'Over 10 years of professional experience',
+		title: 'Mike DeVine | Web Development Résumé',
+		url: `${process.env.BASE_URL}/resumes/web-development`,
+	},
+	title: 'Mike DeVine | Web Development Résumé',
+	twitter: {
+		card: 'summary',
+		creator: '@pixelSHREDDER',
+		description: 'Over 10 years of professional experience',
+		title: 'Mike DeVine | Web Development Résumé',
+	},
 }
 
 export default function WebDevelopmentResume() {
@@ -59,7 +75,7 @@ export default function WebDevelopmentResume() {
 					<li><abbr title="REpresentational State Transfer Application Programmable Interfaces">REST APIs</abbr></li>
 					<li><abbr title="Asynchronous Javascript And XML">AJAX</abbr></li>
 					<li>MongoDB/Mongoose</li>
-					<li>Material/Bootstrap</li>
+					<li>Material UI/Bootstrap</li>
 					<li><abbr title="JavaScript eXtensible Markup Language">JSX</abbr>/Jekyll/Liquid/Smarty</li>
 				</ul>
 				<h3>Tools</h3>

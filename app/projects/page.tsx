@@ -3,10 +3,26 @@ import { Metadata } from 'next'
 import ProjectsGrid from '@/components/ProjectsGrid'
 import { ProjectClass, ProjectResponse } from '@/models/Project'
 import Link from 'next/link'
+import { defaultKeywords } from '../layout'
 
 export const metadata: Metadata = {
-  title: 'Mike DeVine | Projects',
-  description: 'Everything I\'ve worked on over the years.',
+  appleWebApp: {
+		title: 'Mike DeVine | Projects',
+	},
+	description: 'Various personal endeavors, side projects, and tinkering I\'ve worked on over the years.',
+	keywords: ['projects', ...defaultKeywords],
+	openGraph: {
+		description: 'Various personal endeavors, side projects, and tinkering I\'ve worked on over the years.',
+		title: 'Mike DeVine | Projects',
+		url: `${process.env.BASE_URL}/projects`,
+	},
+	title: 'Mike DeVine | Projects',
+	twitter: {
+		card: 'summary',
+		creator: '@pixelSHREDDER',
+		description: 'Various personal endeavors, side projects, and tinkering I\'ve worked on over the years.',
+		title: 'Mike DeVine | Projects',
+	},
 }
 
 const getProjects = async () => {

@@ -30,6 +30,7 @@ const TechIconMap: {[key: string]: string} = {
   'MongoDB': mongoDbIcon,
   'Next.js': nextJsIcon,
   'PHP': phpIcon,
+  'QuarkXPress': `/images/quarkxpress-icon.png`,
   'React.js': reactJsIcon,
   'Redux': reduxIcon,
   'TypeScript': typeScriptIcon,

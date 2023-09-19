@@ -1,11 +1,27 @@
+import { defaultKeywords } from '@/app/layout';
 import styles from '@/app/utils.module.css';
 import Nav from '@/components/Nav';
 import clsx from 'clsx';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mike DeVine | Game Development Résumé',
-  description: 'Go play Halo Infinite!',
+  appleWebApp: {
+		title: 'Mike DeVine | Game Development Résumé',
+	},
+	description: 'Go play Halo Infinite!',
+	keywords: ['game development', 'game developer', 'aaa development', 'game', 'game tools', 'infrastructure', 'halo infinite', 'halo', 'web development', 'web developer', 'front-end developer', 'front end developer', 'software engineer', 'engineer', 'full-stack', 'full stack', 'web', 'responsive design', 'atomic design', 'scalable ui libraries', 'authentication', 'jwt', 'tokenization', 'auth0', 'accessibility', 'section 508', 'compliance', 'test-driven development', 'tdd', 'internationalization', 'i18', 'search engine optimization', 'seo', 'code', 'javascript', 'js', 'es6', 'es7', 'typescript', 'hypertext markup language', 'html', 'cascading style sheets', 'preprocessors', 'css', 'sass', 'less', 'php', 'xml', 'json', 'sql', 'c sharp', 'c#', 'actionscript', 'react', 'reactjs', 'next', 'nextjs', 'redux', 'vue', 'vuejs', 'angularjs', 'jquery', 'laravel', 'node', 'nodejs', 'rest apis', 'ajax', 'mongodb', 'mongoose', 'material ui', 'bootstrap', 'jsx', 'git', 'subversion', 'svn', 'node package manager', 'npm', 'yarn', 'bower', 'composer', 'grunt', 'gulp', 'wordpress', 'mongodb', 'mongodb atlas', 'adobe creative cloud', 'adobe photoshop', 'adobe illustrator', 'resume', ...defaultKeywords],
+	openGraph: {
+		description: 'Go play Halo Infinite!',
+		title: 'Mike DeVine | Game Development Résumé',
+		url: `${process.env.BASE_URL}/resumes/game-development`,
+	},
+	title: 'Mike DeVine | Game Development Résumé',
+	twitter: {
+		card: 'summary',
+		creator: '@pixelSHREDDER',
+		description: 'Go play Halo Infinite!',
+		title: 'Mike DeVine | Game Development Résumé',
+	},
 }
 
 export default function GameDevelopmentResume() {
