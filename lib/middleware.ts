@@ -3,12 +3,12 @@ import { stripHTML, getWordCount } from "./utils";
 
 function getSortDate(data: any) {
   if (!!data.schema.datePublished) {
-    return data.schema.datePublished.toLocaleString()
+    return data.schema.datePublished
   }
   if (!!data.schema.dateCreated) {
-    return data.schema.dateCreated.toLocaleString()
+    return data.schema.dateCreated
   }
-  return data.date.toLocaleString()
+  return data.date
 }
 
 function populate(data: any) {

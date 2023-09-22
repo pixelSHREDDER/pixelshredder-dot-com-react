@@ -15,6 +15,8 @@ My personal website, built in Next.js + TypeScript + MongoDB
 - [Description](#description)
 - [Credits](#credits)
 
+![Welcome to Mikeintosh.](public/images/welcome-to-mikeintosh.png)
+
 ## Stack
 
 - React.js
@@ -22,6 +24,12 @@ My personal website, built in Next.js + TypeScript + MongoDB
 - TypeScript
 - MongoDB
 - Mongoose / Typegoose
+
+<center>
+
+![Just a throwback to those classic 90's Mac logos.](public/favicon-32x32.png)
+
+</center>
 
 ## Description
 
@@ -33,7 +41,15 @@ The CRT effect is done in pure CSS, based on the awesome work seen [here](http:/
 
 The projects section implements the full MERN stack. Or would it be MRNN in this case....? Either way, we've got a MongoDB database wired up via Next.js's route handling feature, with dynamic app routing for the frontend that takes advantage of Next's SSG features for minimal load times.
 
+<center>
+
+![Just a throwback to those classic 90's Mac logos.](public/favicon-32x32.png)
+
+</center>
+
 ## Credits
+
+### Icons
 
 Icons by [Icons8](https://icons8.com):
 - [Adobe Illustrator](https://icons8.com/icon/100522/adobe-illustrator)
@@ -58,7 +74,11 @@ Icons by [Icons8](https://icons8.com):
 date by Popular from [Noun Project](https://thenounproject.com/browse/icons/term/date/) (CC BY 3.0)
 Search Settings by TkBt from [Noun Project](https://thenounproject.com/browse/icons/term/search-settings/) (CC BY 3.0)
 
+### Fonts
+
 [Sysfont webfont by Alina Sava](https://fontsarena.com/sysfont-by-alina-sava/).
+
+### Misc.
 
 [Improved .sr-only styles](https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034) courtesy of [Gaël Poupard's](https://gist.github.com/ffoodd) hard work.
 
