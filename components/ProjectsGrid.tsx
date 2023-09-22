@@ -1,6 +1,6 @@
 'use client'
 
-import { ProjectResponse } from '@/models/Project'
+import { ProjectClass } from '@/models/Project'
 import styles from '@/app/utils.module.css'
 import layoutStyles from '@/app/layout.module.css'
 import clsx from 'clsx'
@@ -11,7 +11,7 @@ import Multiselect from 'multiselect-react-dropdown'
 import { useSearchParams } from 'next/navigation'
 
 type Sort = {
-  field: keyof ProjectResponse,
+  field: keyof ProjectClass,
   asc: boolean,
 }
 
@@ -70,17 +70,17 @@ export const defaultHiddenTags = [
   "politics"
 ]
 
-export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) {
+export default function ProjectsGrid({projects}: {projects: ProjectClass[]}) {
   const searchParams = useSearchParams()
   const [queryString, setQueryString] = useState<string>('')
   const inputRef = useRef<HTMLInputElement>()
   const expandTimeout = useRef<NodeJS.Timer>()
   const selectedValues = useRef<string[]>(defaultVisibleTags)
   const hiddenValues = useRef<string[]>(defaultHiddenTags)
-  const [filteredProjects, setFilteredProjects] = useState<ProjectResponse[]>(() => [...projects])
-  const [sortedProjects, setSortedProjects] = useState<ProjectResponse[]>(() => [...filteredProjects])
+  const [filteredProjects, setFilteredProjects] = useState<ProjectClass[]>(() => [...projects])
+  const [sortedProjects, setSortedProjects] = useState<ProjectClass[]>(() => [...filteredProjects])
   const [sortBy, setSortBy] = useState<Sort>({
-    field: 'dateString',
+    field: 'sortDate',
     asc: false,
   })
   const [isExpanded, setIsExpanded] = useState<boolean>(() => false)
@@ -92,7 +92,7 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
     if (prevSort.field === field) {
       newSortBy.asc = !newSortBy.asc
     } else {
-      newSortBy.field = field as keyof ProjectResponse
+      newSortBy.field = field as keyof ProjectClass
       newSortBy.asc = true
     }
     setSortBy(newSortBy)
@@ -103,15 +103,14 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
     setIsLoading(true)
     selectedValues.current = selectedTags
     hiddenValues.current = tags.filter((tag: string) => !selectedTags.includes(tag))
-    console.log(selectedValues.current, hiddenValues.current)
     setFilteredProjects(() => {
       if (searchTerm.length < 3) {
-        return projects.filter((project: ProjectResponse) => (
+        return projects.filter((project: ProjectClass) => (
           project.tags.some((tag: string) => selectedValues.current.includes(tag)) &&
           !project.tags.some((tag: string) => hiddenValues.current.includes(tag))
         ))
       }
-      return projects.filter((project: ProjectResponse) => (
+      return projects.filter((project: ProjectClass) => (
         project.title.toLowerCase().includes(searchTerm) ||
         project.description.toLowerCase().includes(searchTerm) ||
         project.tags.join().toLowerCase().includes(searchTerm) ||
@@ -137,7 +136,7 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
   }, [isExpanding, isExpanded])
 
   useEffect(() => {
-    setSortedProjects(filteredProjects.sort((a: ProjectResponse, b: ProjectResponse) => {
+    setSortedProjects(filteredProjects.sort((a: ProjectClass, b: ProjectClass) => {
       if (a[sortBy.field] < b[sortBy.field]) {
         return sortBy.asc === true ? -1 : 1
       } else if (a[sortBy.field] > b[sortBy.field]) {
@@ -212,16 +211,16 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
               <span>&darr;</span>
             }
           </button>
-          <button onClick={() => toggleSort(sortBy, 'dateString')}>
+          <button onClick={() => toggleSort(sortBy, 'sortDate')}>
             <Image
               src='/images/noun-date-1360181.svg'
               alt='Date'
               width={16}
               height={16} />
-            {!!sortBy.asc && sortBy.field === 'dateString' &&
+            {!!sortBy.asc && sortBy.field === 'sortDate' &&
               <span>&uarr;</span>
             }
-            {!sortBy.asc && sortBy.field === 'dateString' &&
+            {!sortBy.asc && sortBy.field === 'sortDate' &&
               <span>&darr;</span>
             }
           </button>
@@ -231,7 +230,7 @@ export default function ProjectsGrid({projects}: {projects: ProjectResponse[]}) 
         <div className={styles.loader}>&bull;</div>
       :
         <ul className={clsx(styles.grid, styles.projectsGrid)}>
-          {sortedProjects.map((project: ProjectResponse, i: number) => (
+          {sortedProjects.map((project: ProjectClass, i: number) => (
             <ProjectCard project={project} key={`projects_grid_${i}`} />
           ))}
         </ul>

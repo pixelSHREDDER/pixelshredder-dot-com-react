@@ -1,10 +1,10 @@
-import { defaultKeywords } from '@/app/layout'
 import { ProjectClass } from '@/models/Project'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import styles from '@/app/utils.module.css'
 import projectStyles from './project.module.css'
 import TechIcons from '@/components/TechIcons/TechIcons'
+import { ProjectSchema } from '@/components/Schema'
 
 interface IProject {
   params: { slug: string }
@@ -19,25 +19,25 @@ export async function generateMetadata({ params }: IProject): Promise<Metadata> 
     if (!projectData.data) {
       notFound()
     }
-    const project: ProjectClass = projectData.data.project
+    const project: ProjectClass = projectData.data
 
     return {
       appleWebApp: {
         title: `${project.title} | Mike DeVine`,
       },
       description: project.description,
-      keywords: [...project.tags, ...project.tech, ...defaultKeywords],
+      keywords: project.schema.keywords,
       openGraph: {
         description: project.description,
         title: `${project.title} | Mike DeVine`,
-        url: `${process.env.BASE_URL}/projects/${slug}`,
+        url: project.schema.url,
       },
       title: `${project.title} | Mike DeVine`,
       twitter: {
         card: 'summary',
         creator: '@pixelSHREDDER',
         description: project.description,
-        title: project.title,
+        title: `${project.title} | Mike DeVine`,
       },
     }
   } catch (error: any) {
@@ -62,7 +62,7 @@ async function getProject(slug: string) {
     if (!projectData.data) {
       notFound()
     }
-    return projectData.data.project
+    return projectData.data
   } catch (error: any) {
     throw error
   }
@@ -82,6 +82,7 @@ export default async function Project({ params }: IProject) {
         <TechIcons project={project} />
       </div>
       <div dangerouslySetInnerHTML={{__html: project.body}} aria-hidden></div>
+      <ProjectSchema project={project.schema} />
     </section>
   )
 }

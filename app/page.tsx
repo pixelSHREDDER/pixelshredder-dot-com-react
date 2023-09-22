@@ -4,8 +4,8 @@ import homeStyles from './home.module.css'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Mike DeVine | Developer/Designer/Creative/Politico',
-  description: 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX/Game Designer, Creative Professional, Politico, Writer, Funnyperson.',
+  title: 'Mike DeVine | Developer/Designer/Creative',
+  description: 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX Designer, Creative Professional, Writer, Attempted Funnyperson.',
 }
 
 export default function Index() {

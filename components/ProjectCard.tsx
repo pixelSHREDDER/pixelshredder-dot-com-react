@@ -1,9 +1,9 @@
-import { ProjectResponse } from '@/models/Project'
+import { ProjectClass } from '@/models/Project'
 import Link from 'next/link'
 import styles from '@/app/utils.module.css'
 import TechIcons from '@/components/TechIcons/TechIcons'
 
-export default function ProjectCard({project}: {project: ProjectResponse}) {
+export default function ProjectCard({project}: {project: ProjectClass}) {
   return (
     <li key={`projects_${project._id}`} className={styles.card}>
       <Link href={`/projects/${project.slug}`}>

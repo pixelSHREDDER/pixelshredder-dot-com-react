@@ -231,12 +231,14 @@ figcaption {
   padding: .2rem;
   font-size: 0.7rem;
   font-family: sans-serif;
-  border: 1px outset #bfbfbf;
   font-style: italic;
   text-align: left;
 }
 iframe {
   width: 100%;
+}
+abbr {
+  text-decoration: underline dotted;
 }
 main {
   height: 100%;

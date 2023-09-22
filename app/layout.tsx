@@ -15,9 +15,10 @@ const sysfont = localFont({
 export const defaultMetadata: {[key: string]: string} = {
   'applicationName': 'Mikeintosh',
   'author': 'Mike DeVine',
-  'description': 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX/Game Designer, Creative Professional, Politico, Writer, Funnyperson.',
+  'description': 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX Designer, Creative Professional, Writer, Attempted Funnyperson.',
+  'image': '/android-chrome-512x512.png',
   'themeColor': '#787878',
-  'title': 'Mike DeVine | Developer/Designer/Creative/Politico',
+  'title': 'Mike DeVine | Developer/Designer/Creative',
 }
 
 export const defaultKeywords: string[] = [

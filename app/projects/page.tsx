@@ -1,7 +1,7 @@
 import Nav from '@/components/Nav'
 import { Metadata } from 'next'
 import ProjectsGrid from '@/components/ProjectsGrid'
-import { ProjectClass, ProjectResponse } from '@/models/Project'
+import { ProjectClass } from '@/models/Project'
 import Link from 'next/link'
 import { defaultKeywords } from '../layout'
 
@@ -29,18 +29,14 @@ const getProjects = async () => {
   try {
     const projects = await fetch(`${process.env.BASE_URL}/projects/api`)
     .then((res) => res.json())
-    const projectsResponse: ProjectResponse[] = []
-    projects.projects.map((project: ProjectClass) => {
-      projectsResponse.push({...project, dateString: project.date.toLocaleString()})
-    })
-    return projectsResponse
+    return projects.projects
   } catch (error: any) {
     throw error
   }
 }
 
 export default async function Projects() {
-  const projects: ProjectResponse[] = await getProjects()
+  const projects: ProjectClass[] = await getProjects()
 
   return (
     <article>

@@ -6,8 +6,8 @@ export default function Offline(props: LayoutProps) {
   return (
     <Layout {...props}>
       <GlobalHead meta={{
-        title: 'Mike DeVine | Developer/Designer/Creative/Politico',
-        description: 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX/Game Designer, Creative Professional, Politico, Writer, Funnyperson.'
+        title: 'Mike DeVine | Developer/Designer/Creative',
+        description: 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX/Game Designer, Creative Professional, Writer, Attempted Funnyperson.'
       }} />
       <article className={styles.homecontent}>
         <h1 className={styles.title}>Offline!</h1>

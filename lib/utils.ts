@@ -1,5 +1,19 @@
 import { NextResponse } from 'next/server'
 
+
+export function stripHTML(text: string): string {
+  return text
+    .replace(/<\/+p+>/g, ' ')
+    .replace(/<\/+figcaption+>/g, ' ')
+    .replace(/<\/+li+>/g, '; ')
+    .replace(/<\/+h+\d+>/g, ': ')
+    .replace(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g, '')
+}
+
+export function getWordCount(text: string): number {
+  return stripHTML(text).trim().split(/\s+/).length
+}
+
 export function createErrorResponse(
   message: string,
   statusCode: number

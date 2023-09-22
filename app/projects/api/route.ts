@@ -1,4 +1,5 @@
 import connectDB from '@/lib/connect-db'
+import { populateProjectData } from '@/lib/middleware'
 import { getProjects } from '@/lib/project-db'
 import { createErrorResponse } from '@/lib/utils'
 import { NextRequest, NextResponse } from 'next/server'
@@ -19,11 +20,17 @@ export async function GET(request: NextRequest) {
       throw error
     }
 
-    let res = {
-      status: 'success',
-      results,
-      projects,
-    }
+    const res = populateProjectData(projects, (projects: any[], error: any) => {
+      if (error) {
+        throw error
+      }
+
+      return {
+        status: 'success',
+        results,
+        projects
+      }
+    })
 
     return NextResponse.json(res)
   } catch (error: any) {
