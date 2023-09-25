@@ -13,6 +13,10 @@ module.exports = withPWA({
   async rewrites() {
     return [
       {
+        source: '/about-this-site',
+        destination: '/projects/mikeintosh',
+      },
+      {
         source: '/mikearcade/:path*',
         destination: 'https://pixel-shredder.com/mikearcade/:path*',
       },

@@ -35,7 +35,7 @@ My personal website, built in Next.js + TypeScript + MongoDB
 
 This site was built on a React.js / Next.js stack, using the magic of server-side rendering!
 
-The CRT effect is done in pure CSS, based on the awesome work seen [here](http://aleclownes.com/2017/02/01/crt-display.html) and [here](https://codepen.io/lbebber/pen/XJRdrV).
+The CRT effect is done in pure CSS, based on the awesome work by [Alec Lownes](http://aleclownes.com/2017/02/01/crt-display.html) and [Lucas Bebber](https://codepen.io/lbebber/pen/XJRdrV).
 
 (If you couldn't tell, my first computer was a Mac LC III)
 
