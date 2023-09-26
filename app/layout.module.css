@@ -168,7 +168,7 @@
 .root {
   display: grid;
   max-height: 100vh;
-  max-height: 100lvh;
+  max-height: 100svh;
   z-index: 1;
 }
 .root::before,

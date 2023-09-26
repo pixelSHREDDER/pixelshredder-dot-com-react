@@ -36,7 +36,7 @@ export default function GameDevelopmentResume() {
         <h2>Profile</h2>
         <p>Frontend developer with 10 years experience in customer-facing and internal software including web, government, <abbr title="Customer Management System">CMS</abbr>, ecommerce and other problem spaces across property management, gaming, and higher education.</p>
         <p>Expertise in agile software development with React, Redux, Next, Vue, and AngularJS frameworks involving complex workflows. Knowledgeable in test-driven development, modernization projects, internationalization, and accessibility / Section 508 compliance requirements. Seeking a new front-end position with an amazing team.</p>
-        <p>Work samples viewable <a href="https://pixel-shredder.com/port/" target="_blank">here</a>, and on <a href="https://github.com/pixelSHREDDER/" target="_blank">GitHub</a>.</p>
+        <p>Work samples viewable <a href="https://www.pixel-shredder.com/projects" target="_blank">here</a>, and on <a href="https://github.com/pixelSHREDDER/" target="_blank">GitHub</a>.</p>
       </section>
       <section>
         <h2>Experience</h2>
