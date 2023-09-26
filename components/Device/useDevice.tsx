@@ -9,7 +9,7 @@ export default function useDevice() {
   const [isPortraiting, setIsPortraiting] = useState<boolean>(false);
 
   const rotateHandler = useCallback((currentOrientation: string) => {
-    console.log(currentOrientation);
+    //console.log(currentOrientation);
     if (currentOrientation === 'landscape') {
       setIsLandscaping(true);
       setTimeout(() => setIsLandscaping(false), 1000);

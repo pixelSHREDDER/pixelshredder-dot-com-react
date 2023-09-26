@@ -16,10 +16,10 @@
   --resumes-bg: #b56161;
   --startup-bg: #787878;
   --bg: #393c5a;
-  --glow-bg: #5a5e8f;
+  --glow-bg: #e1e1e1;
 
   --home-glow: sepia(25%) saturate(2000%) hue-rotate(149deg) brightness(95%) contrast(91%);
-  --projects-glow: sepia(66%) saturate(1000%) hue-rotate(316deg) brightness(86%) contrast(89%);
+  --projects-glow: sepia(33%) saturate(1000%) hue-rotate(27deg) brightness(86%) contrast(77%);
   --resumes-glow: sepia(66%) saturate(1000%) hue-rotate(316deg) brightness(86%) contrast(89%);
   --glow: invert(19%) sepia(4%) saturate(6576%) hue-rotate(197deg) brightness(86%) contrast(77%);
 
