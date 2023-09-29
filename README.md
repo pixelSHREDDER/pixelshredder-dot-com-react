@@ -60,6 +60,7 @@ Icons by [Icons8](https://icons8.com):
 - [Express Js](https://icons8.com/icon/kg46nzoJrmTR/express-js)
 - [HTML5](https://icons8.com/icon/23028/html-5)
 - [JavaScript](https://icons8.com/icon/39854/javascript)
+- [JQuery](https://icons8.com/icon/40253/jquery)
 - [Kinect](https://icons8.com/icon/eKiffGnSJhqU/kinect)
 - [Material Ui](https://icons8.com/icon/gFw7X5Tbl3ss/material-ui)
 - [MongoDB](https://icons8.com/icon/74402/mongodb)

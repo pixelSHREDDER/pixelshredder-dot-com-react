@@ -7,6 +7,7 @@ import cssIcon from './icons8-css-logo.svg'
 import expressIcon from './icons8-express-js.svg'
 import htmlIcon from './icons8-html-logo.svg'
 import javaScriptIcon from './icons8-javascript.svg'
+import jQueryIcon from './icons8-jquery.svg'
 import materialUIIcon from './icons8-material-ui.svg'
 import mongoDbIcon from './icons8-mongodb.svg'
 import nextJsIcon from './icons8-nextjs.svg'
@@ -25,6 +26,7 @@ const TechIconMap: {[key: string]: string} = {
   'Express': expressIcon,
   'HTML': htmlIcon,
   'JavaScript': javaScriptIcon,
+  'jQuery': jQueryIcon,
   'Kinect': `/images/icons8-kinect-24.png`,
   'Material UI': materialUIIcon,
   'MongoDB': mongoDbIcon,

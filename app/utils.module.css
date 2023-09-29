@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.9rem;
   margin: 0;
 }
 .nav li,
@@ -51,9 +51,10 @@
   text-decoration: none;
 }
 .card {
-  flex: 0 1 33%;
+  flex: 1 1 30%;
   padding: 0.8rem 0.6rem;
   margin: 0;
+  max-width: max(190px, 30%);
 }
 .nav li:hover,
 .card:hover,
@@ -106,7 +107,7 @@
   height: 5.9ch;
 }
 .card p {
-  height: 7.1ch;
+  height: 7.2ch;
   margin: 0.6rem 0 0;
   line-height: 1;
   text-align: center;
