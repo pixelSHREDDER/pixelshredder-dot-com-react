@@ -11,7 +11,28 @@ function getSortDate(data: any) {
   return data.date
 }
 
-function populate(data: any) {
+function populateArticle(data: any) {
+  return {
+    ...data,
+    sortDate: getSortDate(data),
+    schema: {
+      '@type': 'BlogPosting',
+      articleBody: stripHTML(data.body),
+      description: data.description,
+      headline: data.title,
+      keywords: [...data.keywords, ...defaultKeywords],
+      name: data.title,
+      image: 'https://www.pixel-shredder.com/android-chrome-512x512.png',
+      inLanguage: 'en-US',
+      isPartOf:  'https://www.pixel-shredder.com/articles',
+      url: `https://www.pixel-shredder.com/articles/${data.slug}`,
+      wordCount: getWordCount(data.body).toString(),
+      ...data.schema,
+    }
+  }
+}
+
+function populateProject(data: any) {
   return {
     ...data,
     sortDate: getSortDate(data),
@@ -32,12 +53,25 @@ function populate(data: any) {
   }
 }
 
+export function populateArticleData(data: any, callback: Function) {
+  try {
+    if (data instanceof Array) {
+      return callback(data.map((d) => populateArticle(d)))
+    } else {
+      return callback(populateArticle(data))
+    }
+  } catch(err: any) {
+      data['exception'] = err.toString();
+      return callback(data, err);
+  }
+}
+
 export function populateProjectData(data: any, callback: Function) {
   try {
     if (data instanceof Array) {
-      return callback(data.map((d) => populate(d)))
+      return callback(data.map((d) => populateProject(d)))
     } else {
-      return callback(populate(data))
+      return callback(populateProject(data))
     }
   } catch(err: any) {
       data['exception'] = err.toString();

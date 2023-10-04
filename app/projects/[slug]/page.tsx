@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import styles from '@/app/utils.module.css'
 import projectStyles from './project.module.css'
 import TechIcons from '@/components/TechIcons/TechIcons'
-import { ProjectSchema } from '@/components/Schema'
+import { ItemSchema } from '@/components/Schema'
 
 interface IProject {
   params: { slug: string }
@@ -82,7 +82,7 @@ export default async function Project({ params }: IProject) {
         <TechIcons project={project} />
       </div>
       <div dangerouslySetInnerHTML={{__html: project.body}} aria-hidden></div>
-      <ProjectSchema project={project.schema} />
+      <ItemSchema item={project.schema} />
     </section>
   )
 }
