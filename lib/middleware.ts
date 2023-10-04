@@ -1,4 +1,4 @@
-import { defaultKeywords } from "@/app/layout";
+import { defaultKeywords } from "@mikeintosh/layout";
 import { stripHTML, getWordCount } from "./utils";
 
 function getSortDate(data: any) {

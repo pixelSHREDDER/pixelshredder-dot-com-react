@@ -1,4 +1,4 @@
-import styles from '@/app/utils.module.css';
+import styles from '@mikeintosh/utils.module.css';
 import Nav from '@/components/Nav';
 import clsx from 'clsx';
 import { Metadata } from 'next';

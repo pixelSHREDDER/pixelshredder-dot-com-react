@@ -1,5 +1,5 @@
 'use client'
-import styles from '@/app/utils.module.css'
+import styles from '@mikeintosh/utils.module.css'
 import ErrorDialog from '@/components/ErrorDialog'
 
 export default function Error() {

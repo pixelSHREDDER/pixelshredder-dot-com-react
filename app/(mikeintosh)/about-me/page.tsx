@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '@/app/utils.module.css';
+import styles from '@mikeintosh/utils.module.css';
 import Nav from '@/components/Nav';
 import { Metadata } from 'next';
 import { defaultKeywords } from '../layout';

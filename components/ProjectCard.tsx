@@ -1,6 +1,6 @@
 import { ProjectClass } from '@/models/Project'
 import Link from 'next/link'
-import styles from '@/app/utils.module.css'
+import styles from '@mikeintosh/utils.module.css'
 import TechIcons from '@/components/TechIcons/TechIcons'
 
 export default function ProjectCard({project}: {project: ProjectClass}) {

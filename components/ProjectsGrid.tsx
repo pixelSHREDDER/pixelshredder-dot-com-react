@@ -1,8 +1,8 @@
 'use client'
 
 import { ProjectClass } from '@/models/Project'
-import styles from '@/app/utils.module.css'
-import layoutStyles from '@/app/layout.module.css'
+import styles from '@mikeintosh/utils.module.css'
+import layoutStyles from '@mikeintosh/layout.module.css'
 import clsx from 'clsx'
 import ProjectCard from '@/components/ProjectCard'
 import { useCallback, useEffect, useRef, useState } from 'react'

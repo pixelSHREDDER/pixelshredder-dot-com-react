@@ -1,5 +1,5 @@
-import { defaultKeywords } from '@/app/layout';
-import styles from '@/app/utils.module.css';
+import { defaultKeywords } from '@mikeintosh/layout';
+import styles from '@mikeintosh/utils.module.css';
 import Nav from '@/components/Nav';
 import clsx from 'clsx';
 import { Metadata } from 'next';

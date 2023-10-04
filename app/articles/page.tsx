@@ -1,9 +1,9 @@
-/*import Nav from '@/components/Nav'
+import Nav from '@/components/Nav'
 import { Metadata } from 'next'
 //import ProjectsGrid from '@/components/ProjectsGrid'
 import { ArticleClass } from '@/models/Article'
 import Link from 'next/link'
-import { defaultKeywords } from '../layout'
+import { defaultKeywords } from '@mikeintosh/layout'
 
 const defaultMetadata = {
   description: '',
@@ -38,19 +38,18 @@ const getArticles = async () => {
   } catch (error: any) {
     throw error
   }
-}*/
+}
 
 export default async function Articles() {
-  return null;
-  /*const articles: ArticleClass[] = await getArticles()
+  const articles: ArticleClass[] = await getArticles()
 
   return (
     <article>
-      {*//*<Nav />
+      {/*<Nav />
       <h1>Articles</h1>
       <p>All of my various personal endeavors, side projects, and tinkering I've worked on over the years. You can find my professional work experience <Link href="/resumes">here</Link>.</p>
       <ProjectsGrid projects={projects} />
-  <Nav />*//*}
+  <Nav />*/}
     </article>
-  )*/
+  )
 }

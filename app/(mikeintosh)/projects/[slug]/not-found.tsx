@@ -1,5 +1,5 @@
 import ErrorDialog from '@/components/ErrorDialog'
-import styles from '@/app/utils.module.css'
+import styles from '@mikeintosh/utils.module.css'
 
 export default function NotFound() {
   return (

@@ -1,7 +1,7 @@
 import { ProjectClass } from '@/models/Project'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import styles from '@/app/utils.module.css'
+import styles from '@mikeintosh/utils.module.css'
 import projectStyles from './project.module.css'
 import TechIcons from '@/components/TechIcons/TechIcons'
 import { ItemSchema } from '@/components/Schema'

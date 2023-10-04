@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from '@/app/utils.module.css'
+import styles from '@mikeintosh/utils.module.css'
 
 export interface INavProps {
   parent?: {

@@ -4,6 +4,9 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@mikeintosh/*": [
+        "./app/(mikeintosh)/*"
       ]
     },
     "target": "es5",
