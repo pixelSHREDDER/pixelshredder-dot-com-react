@@ -1,0 +1,101 @@
+.mac {
+  pointer-events: none;
+  touch-action: none;
+  border-radius: 0.5rem;
+  display: grid;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 10;
+}
+.mac::before {
+  content: url('/favicon-16x16.png');
+  border-radius: 2px;
+  height: 1rem;
+  width: 1rem;
+  background-color: #fff;
+}
+.mac::after {
+  content: 'Mikeintosh LC III';
+  color: #000;
+  font-size: 0.8rem;
+  text-align: start;
+  font-family: serif;
+}
+
+@media (orientation: landscape) {
+  .mac {
+    width: min(90px, 10vh);
+    height: 98%;
+    padding: max(14%, 2vw);
+    grid-column: 1;
+    grid-row: 2;
+    grid-template-rows: auto 1rem;
+    grid-template-columns: 1rem;
+    align-content: end;
+    -webkit-filter: drop-shadow(0 4px 6px black);
+    filter: drop-shadow(0 4px 6px black);
+    background: -webkit-linear-gradient(-90deg, #bbb, #777 10%, #666 85%, #444 90%);
+    background: linear-gradient(-90deg, #bbb, #777 10%, #666 85%, #444 90%);
+  }
+  .mac::before,
+  .mac::after {
+    transform: rotate(-90deg);
+  }
+  .mac::before {
+    order: 1;
+    border: 2px inset #666;
+    border-left-color: #bbb;
+    border-top-color: #ccc;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+  }
+  .mac::after {
+    width: 10rem;
+    height: 10rem;
+    text-shadow: -1px -1px #888;
+    line-height: 1.25rem;
+  }
+  :global .lightsOut :local .mac {
+    background: -webkit-linear-gradient(-90deg, #eee, #777 10%, #666 85%, #000 90%);
+    background: linear-gradient(-90deg, #eee, #777 10%, #666 85%, #000 90%);
+  }
+}
+
+@media (orientation: portrait) {
+  .mac {
+    width: 100%;
+    height: 68px;
+    padding: 1rem;
+    grid-template-columns: 1rem auto;
+    grid-template-rows: 1rem;
+    -webkit-filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(2px 4px 6px black);
+    background: -webkit-linear-gradient(#bbb, #666 10%, #777 85%, #444 90%);
+    background: linear-gradient(#bbb, #666 10%, #777 85%, #444 90%);
+  }
+  .mac::before {
+    border: 2px inset #666;
+    border-left-color: #ccc;
+    border-bottom-color: #bbb;
+    border-right-color: #000;
+    border-right-width: 1px;
+    border-top-width: 1px;
+  }
+  .mac::after {
+    text-shadow: -1px 1px #888;
+  }
+  :global .lightsOut :local .mac {
+    background: -webkit-linear-gradient(#eee, #666 10%, #777 85%, #000 90%);
+    background: linear-gradient(#eee, #666 10%, #777 85%, #000 90%);
+  }
+}
+@media (aspect-ratio >= 16 / 9) {
+  .mac {
+    gap: 1rem;
+    padding: 25%;
+  }
+  .mac::after {
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+  }
+}

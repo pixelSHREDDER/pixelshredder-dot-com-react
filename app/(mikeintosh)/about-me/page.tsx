@@ -1,8 +1,7 @@
-import Image from 'next/image';
-import styles from '@mikeintosh/utils.module.css';
-import Nav from '@/components/Nav';
-import { Metadata } from 'next';
-import { defaultKeywords } from '../layout';
+import Image from 'next/image'
+import Nav from '@/components/Nav/Nav'
+import { Metadata } from 'next'
+import { defaultKeywords } from '../layout'
 
 export const metadata: Metadata = {
 	appleWebApp: {
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function AboutMe() {
   return (
-		<article className={styles.darkmode}>
+		<article className='darkMode'>
 			<Nav />
 			<h1>About Me</h1>
 			<section>
@@ -44,5 +43,5 @@ export default function AboutMe() {
 			</section>
 			<Nav />
 		</article>
-  );
+  )
 }

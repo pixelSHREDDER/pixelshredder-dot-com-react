@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import styles from '@mikeintosh/utils.module.css'
-import resumesStyles from '../resumes.module.css'
-import Nav from '@/components/Nav';
-import { Metadata } from 'next';
-import { defaultKeywords } from '../layout';
+import Link from 'next/link'
+import cardGridStyles from '@/components/Grid/cardGrid.module.css'
+import mikeintoshCardStyles from '@/components/Card/mikeintoshCard.module.css'
+import Nav from '@/components/Nav/Nav'
+import { Metadata } from 'next'
+import { defaultKeywords } from '../layout'
 
 export const metadata: Metadata = {
   appleWebApp: {
@@ -30,12 +30,12 @@ export default function Resumes() {
     <article>
       <Nav />
       <h1>Choose Your Destiny</h1>
-      <section className={styles.grid}>
-        <Link href="/resumes/web-development" className={styles.card}>
+      <section className={cardGridStyles.cardGrid}>
+        <Link href="/resumes/web-development" className={mikeintoshCardStyles.mikeintoshCard}>
           <h2>Web Development</h2>
           <p>Over 10 years of professional experience</p>
         </Link>
-        <Link href="/resumes/game-development" className={styles.card}>
+        <Link href="/resumes/game-development" className={mikeintoshCardStyles.mikeintoshCard}>
           <h2>Game Development</h2>
           <p>Go play Halo Infinite!</p>
         </Link>

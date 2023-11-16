@@ -1,0 +1,30 @@
+.articlesMultiSelect {
+  composes: multiSelectBase from "./multiSelectBase.module.css";
+}
+.articlesMultiSelectLoading {
+  composes: multiSelectLoadingBase from "./multiSelectBase.module.css";
+}
+.articlesMultiSelect :global .chip {
+  background: #333;
+  color: var(--bg-articles);
+  border-radius: 0;
+}
+.articlesMultiSelect :global .chip button {
+  color: var(--bg-articles);
+}
+.articlesMultiSelect :global input[type="text"] {
+  border: var(--thin-border-articles);
+  box-shadow: var(--input-box-shadow-articles);
+  margin-left: 1px;
+}
+.articlesMultiSelect :global .option.highlight,
+.articlesMultiSelect :global .option:hover {
+  background: #333;
+  color: var(--bg-articles);
+}
+.articlesMultiSelect :global ul {
+  background: var(--bg-articles);
+}
+.articlesMultiSelect :global ul > span {
+  color: #333;
+}

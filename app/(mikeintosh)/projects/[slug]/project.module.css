@@ -25,7 +25,10 @@
   margin-block-end: 0.8rem;
   margin-inline: 0 1.2rem;
 }
-.project figure[data-class*="wide"] {
+.project figure[data-class*='tall'] {
+  grid-row: span 2;
+}
+.project figure[data-class*='wide'] {
   width: 100%;
   min-width: 0;
   float: none;
@@ -60,7 +63,7 @@
 .project section > figure:nth-of-type(2n) {
   margin-inline: 0;
 }
-.project section > figure[data-class*="wide"] {
+.project section > figure[data-class*='wide'] {
   grid-column: 1 / -1;
   margin-inline: 0;
 }

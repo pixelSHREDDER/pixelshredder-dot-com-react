@@ -1,0 +1,5 @@
+.buttonGroupCard {
+  composes: buttonGroup from "./buttonGroup.module.css";
+  align-items: center;
+  flex-wrap: wrap;
+}

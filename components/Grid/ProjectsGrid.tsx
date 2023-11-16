@@ -1,14 +1,18 @@
 'use client'
 
-import { ProjectClass } from '@/models/Project'
-import styles from '@mikeintosh/utils.module.css'
-import layoutStyles from '@mikeintosh/layout.module.css'
-import clsx from 'clsx'
-import ProjectCard from '@/components/ProjectCard'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import Multiselect from 'multiselect-react-dropdown'
 import { useSearchParams } from 'next/navigation'
+import clsx from 'clsx'
+import Multiselect from 'multiselect-react-dropdown'
+import buttonGroupStyles from '@/components/ButtonGroup/buttonGroup.module.css'
+import cardGridStyles from './cardGrid.module.css'
+import mikeintoshExpandableStyles from '@/components/Expandable/mikeintoshExpandable.module.css'
+import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
+import Loader from '@/components/Loader/Loader'
+import mikeintoshMultiSelectStyles from '@/components/MultiSelect/mikeintoshMultiSelect.module.css'
+import ProjectCard from '@/components/Card/ProjectCard'
+import { ProjectClass } from '@/models/Project'
 
 type Sort = {
   field: keyof ProjectClass,
@@ -168,7 +172,7 @@ export default function ProjectsGrid({projects}: {projects: ProjectClass[]}) {
 
   return (
     <section>
-      <div className={styles.infobar}>
+      <div className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
         <input
           type='text'
           placeholder='Search....'
@@ -187,13 +191,15 @@ export default function ProjectsGrid({projects}: {projects: ProjectClass[]}) {
               <span aria-hidden></span>
         </button>
       </div>
-      <div id='advanced_search' className={clsx(styles.infobar, styles.expandable, {
-        [styles.expanded]: !!isExpanded,
-        [styles.expanding]: !!isExpanding
+      <div id='advanced_search' className={clsx({
+        [mikeintoshExpandableStyles.expanded]: !!isExpanded,
+        [mikeintoshExpandableStyles.expanding]: !!isExpanding,
+        [mikeintoshExpandableStyles.expandable]: !isExpanded && !isExpanding,
       })}>
       <Multiselect
-        className={clsx(layoutStyles.multiSelect, {
-          [layoutStyles.multiSelectLoading]: !!isLoading
+        className={clsx({
+          [mikeintoshMultiSelectStyles.mikeintoshMultiSelect]: !isLoading,
+          [mikeintoshMultiSelectStyles.mikeintoshMultiSelectLoading]: !!isLoading
         })}
         customCloseIcon={<button>x</button>}
         options={tags}
@@ -201,7 +207,7 @@ export default function ProjectsGrid({projects}: {projects: ProjectClass[]}) {
         onSelect={filterProjects}
         onRemove={filterProjects}
         isObject={false} />
-        <div className={styles.buttonGroup}>
+        <div className={buttonGroupStyles.buttonGroup}>
           <button onClick={() => toggleSort(sortBy, 'title')}>
             <sup>A</sup>/<sub>Z</sub>
             {!!sortBy.asc && sortBy.field === 'title' &&
@@ -226,14 +232,18 @@ export default function ProjectsGrid({projects}: {projects: ProjectClass[]}) {
           </button>
         </div>
       </div>
-      {!!isLoading ?
-        <div className={styles.loader}>&bull;</div>
-      :
-        <ul className={clsx(styles.grid, styles.projectsGrid)}>
+      {!!isLoading &&
+        <Loader />
+      }
+      {!isLoading && !!sortedProjects.length &&
+        <ul className={cardGridStyles.cardGrid}>
           {sortedProjects.map((project: ProjectClass, i: number) => (
             <ProjectCard project={project} key={`projects_grid_${i}`} />
           ))}
         </ul>
+      }
+      {!isLoading && !sortedProjects.length &&
+        <p>No projects found matching your search criteria.</p>
       }
     </section>
   )

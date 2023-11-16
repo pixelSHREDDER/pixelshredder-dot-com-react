@@ -1,0 +1,16 @@
+.cardBase {
+  text-align: start;
+  color: inherit;
+  flex: 1 1 30%;
+  padding: 0.8rem 0.6rem;
+  margin: 0;
+}
+.cardBase h2,
+.cardBase h3,
+.cardBase p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.cardBase h2 {
+  font-size: var(--step-1);
+}

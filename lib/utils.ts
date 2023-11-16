@@ -1,5 +1,20 @@
 import { NextResponse } from 'next/server'
+import { parseISO, format } from 'date-fns'
 
+export enum Weekdays {
+  'Mon.' = 1,
+  'Tue.',
+  'Wed.',
+  'Thu.',
+  'Fri.',
+  'Sat.',
+  'Sun.',
+}
+
+export function formatDate(dateString: string, dateFormat: string = 'LLLL d, yyyy'): string {
+  const date = parseISO(dateString)
+  return format(date, dateFormat)
+}
 
 export function stripHTML(text: string): string {
   return text

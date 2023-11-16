@@ -1,0 +1,246 @@
+@keyframes reflectedGlow {
+  0% { opacity: 0.76861; }
+  5% { opacity: 0.74769; }
+  10% { opacity: 0.74604; }
+  15% { opacity: 0.74626; }
+  20% { opacity: 0.76128; }
+  25% { opacity: 0.76891; }
+  30% { opacity: 0.75583; }
+  35% { opacity: 0.76807; }
+  40% { opacity: 0.76559; }
+  45% { opacity: 0.76693; }
+  50% { opacity: 0.76019; }
+  55% { opacity: 0.76594; }
+  60% { opacity: 0.74313; }
+  65% { opacity: 0.74988; }
+  70% { opacity: 0.74455; }
+  75% { opacity: 0.76288; }
+  80% { opacity: 0.74428; }
+  85% { opacity: 0.74419; }
+  90% { opacity: 0.76003; }
+  95% { opacity: 0.76108; }
+  100% { opacity: 0.74387; }
+}
+
+.environment {
+  display: grid;
+  max-height: 100vh;
+  max-height: 100svh;
+  z-index: 1;
+}
+.environment::before,
+.environment::after {
+  content: '';
+  position: fixed;
+  inset: auto 0 0;
+  width: 100%;
+  opacity: 0.7;
+}
+.environment::before {
+  background: -webkit-linear-gradient(#000 0%, #553100 20%, #a86100 60%);
+  background: linear-gradient(#000 0%, #553100 20%, #a86100 60%);
+}
+
+@media (orientation: landscape) {
+  .environment {
+    height: 100%;
+    grid-template-columns: min(90px, 10vh) auto;
+    grid-template-rows: 1fr 3fr;
+    justify-content: stretch;
+  }
+  .environment::before,
+  .environment::after {
+    height: max(10rem, 50%);
+  }
+  .environment::after {
+    background-image: radial-gradient(
+      var(--landscape-radial),
+      var(--bg) -100%,
+      var(--glow-bg) 90%,
+      transparent 150%
+    );
+  }
+  :global .lightsOut :local .environment::after {
+    background-image: radial-gradient(
+      var(--landscape-radial),
+      var(--bg) -30%,
+      var(--glow-bg) 63%,
+      transparent 108%
+    );
+  }
+  :global .home :local .environment::after {
+    background-image: radial-gradient(
+      var(--landscape-radial),
+      var(--home-bg) -100%,
+      var(--glow-bg) 90%,
+      transparent 150%
+    );
+  }
+  :global .lightsOut.home :local .environment::after {
+    background-image: radial-gradient(
+      var(--landscape-radial),
+      var(--home-bg) -30%,
+      var(--glow-bg) 63%,
+      transparent 108%
+    );
+  }
+  :global .projects :local .environment::after {
+    background-image: radial-gradient(
+      var(--landscape-radial),
+      var(--projects-bg) -100%,
+      var(--glow-bg) 90%,
+      transparent 150%
+    );
+  }
+  :global .lightsOut.projects :local .environment::after {
+    background-image: radial-gradient(
+      var(--landscape-radial),
+      var(--projects-bg) -30%,
+      var(--glow-bg) 63%,
+      transparent 108%
+    );
+  }
+  :global .resumes :local .environment::after {
+    background-image: radial-gradient(
+      var(--landscape-radial),
+      var(--resumes-bg) -100%,
+      var(--glow-bg) 90%,
+      transparent 150%
+    );
+  }
+  :global .lightsOut.resumes :local .environment::after {
+    background-image: radial-gradient(
+      var(--landscape-radial),
+      var(--resumes-bg) -30%,
+      var(--glow-bg) 63%,
+      transparent 108%
+    );
+  }
+  :global .startup :local .environment::after {
+    background-image: radial-gradient(
+      var(--landscape-radial),
+      var(--startup-bg) -100%,
+      var(--glow-bg) 90%,
+      transparent 150%
+    );
+  }
+  :global .lightsOut.startup :local .environment::after {
+    background-image: radial-gradient(
+      var(--landscape-radial),
+      var(--startup-bg) -30%,
+      var(--glow-bg) 63%,
+      transparent 108%
+    );
+  }
+}
+
+@media (orientation: portrait) {
+  .environment {
+    grid-template-rows: auto 50px;
+    justify-items: center;
+    align-items: end;
+  }
+  .environment::before,
+  .environment::after {
+    height: max(10rem, 40%);
+  }
+  .environment::after {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--bg) -70%,
+      var(--glow-bg) 55%,
+      transparent 150%
+    );
+  }
+  :global .lightsOut :local .environment::after {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--bg) -70%,
+      var(--glow-bg) 55%,
+      transparent 125%
+    );
+  }
+  :global .home :local .environment::after {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--home-bg) -70%,
+      var(--glow-bg) 55%,
+      transparent 150%
+    );
+  }
+  :global .home.lightsOut :local .environment::after {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--home-bg) -70%,
+      var(--glow-bg) 55%,
+      transparent 125%
+    );
+  }
+  :global .projects :local .environment::after {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--projects-bg) -70%,
+      var(--glow-bg) 55%,
+      transparent 150%
+    );
+  }
+  :global .projects.lightsOut :local .environment::after {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--projects-bg) -70%,
+      var(--glow-bg) 55%,
+      transparent 125%
+    );
+  }
+  :global .resumes :local .environment::after {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--resumes-bg) -70%,
+      var(--glow-bg) 55%,
+      transparent 150%
+    );
+  }
+  :global .resumes.lightsOut :local .environment::after {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--resumes-bg) -70%,
+      var(--glow-bg) 55%,
+      transparent 125%
+    );
+  }
+  :global .startup :local .environment::after {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--startup-bg) -70%,
+      var(--glow-bg) 55%,
+      transparent 150%
+    );
+  }
+  :global .startup.lightsOut :local .environment::after {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--startup-bg) -70%,
+      var(--glow-bg) 55%,
+      transparent 125%
+    );
+  }
+}
+
+/* Safari 11+ */
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  .environment::before,
+  .environment::after {
+    top: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+  @media (prefers-reduced-motion: no-preference) {
+    :global .lightsOut :local .environment::after {
+      animation: reflectedGlow var(--crt-timing) ease-in-out;
+    }
+  }

@@ -1,6 +1,6 @@
-import Nav from '@/components/Nav'
+import Nav from '@/components/Nav/Nav'
 import { Metadata } from 'next'
-import ProjectsGrid from '@/components/ProjectsGrid'
+import ProjectsGrid from '@/components/Grid/ProjectsGrid'
 import { ProjectClass } from '@/models/Project'
 import Link from 'next/link'
 import { defaultKeywords } from '../layout'

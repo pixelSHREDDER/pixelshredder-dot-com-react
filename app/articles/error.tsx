@@ -1,15 +1,20 @@
 'use client'
 
-import ErrorDialog from "@/components/ErrorDialog"
-import Nav from "@/components/Nav"
+import Masthead from '@/components/Masthead/Masthead'
+import Nav from '@/components/Nav/Nav'
 
 export default function Error() {
   return (
-    <article>
-      <Nav />
-      <h1>Articles</h1>
-        <ErrorDialog />
-      <Nav />
-    </article>
+    <>
+      <Masthead />
+      <main>
+        <h1>Whoops.</h1>
+        <p>Sorry, an unexpected error has occurred. Please reload and try again.</p>
+      </main>
+      <footer>
+        <span>Mike DeVine</span>
+        <Nav articles />
+      </footer>
+    </>
   )
 }

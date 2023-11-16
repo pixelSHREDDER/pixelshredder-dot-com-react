@@ -1,0 +1,163 @@
+@keyframes flicker {
+  0% { opacity: 0.57861; }
+  5% { opacity: 0.64769; }
+  10% { opacity: 0.53604; }
+  15% { opacity: 0.90626; }
+  20% { opacity: 0.48128; }
+  25% { opacity: 0.83891; }
+  30% { opacity: 0.65583; }
+  35% { opacity: 0.67807; }
+  40% { opacity: 0.56559; }
+  45% { opacity: 0.84693; }
+  50% { opacity: 0.96019; }
+  55% { opacity: 0.58594; }
+  60% { opacity: 0.50313; }
+  65% { opacity: 0.71988; }
+  70% { opacity: 0.53455; }
+  75% { opacity: 0.67288; }
+  80% { opacity: 0.71428; }
+  85% { opacity: 0.70419; }
+  90% { opacity: 0.70003; }
+  95% { opacity: 0.66108; }
+  100% { opacity: 0.54387; }
+}
+
+.scanlines {
+  position: absolute;
+  z-index: 6;
+  background-color: var(--bg);
+  aspect-ratio: 4 / 3;
+
+  /*@supports not (aspect-ratio) { 
+    float: left;
+    padding-top: 75%;
+  }*/
+}
+:global .home :local .scanlines {
+  background-color: var(--home-bg);
+}
+:global .projects :local .scanlines {
+  background-color: var(--projects-bg);
+}
+:global .resumes :local .scanlines {
+  background-color: var(--resumes-bg);
+}
+:global .startup :local .scanlines {
+  background-color: var(--startup-bg);
+}
+.scanlines::before,
+.scanlines::after {
+  pointer-events: none;
+  touch-action: none;
+  content: " ";
+  display: block;
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+}
+.scanlines::before {
+  z-index: 4;
+  background: -webkit-linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), -webkit-linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+}
+.scanlines::after {
+  z-index: 5;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+}
+
+@media (orientation: landscape) {
+  .scanlines {
+    inset: 7%;
+  }
+}
+
+@media (orientation: portrait) {
+  .scanlines {
+    inset: 6%;
+    aspect-ratio: 3 / 4;
+  }
+  .scanlines::before,
+  .scanlines::after {
+    transform: rotate(90deg) scale(1.34);
+    inset: 6rem 0;
+  }
+  :global .startup :local .scanlines {
+    background: transparent;
+  }
+}
+
+/* Safari 11+ */
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  .scanlines {
+    top: 6%;
+    left: 6%;
+    bottom: 6%;
+    right: 6%;
+  }
+  .scanlines::before,
+  .scanlines::after {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .scanlines::before {
+    float: left;
+    padding-top: 75%;
+  }
+}}
+
+/* Safari 11+ portrait orientation */
+@media not all and (min-resolution:.001dpcm) and (orientation: landscape)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  .scanlines {
+    top: 7%;
+    left: 7%;
+    bottom: 7%;
+    right: 7%;
+  }
+  /*.scanlines::before,
+  .scanlines::after {
+    top: 6rem;
+    left: 0;
+    bottom: 6rem;
+    right: 0;
+  }*/
+  .scanlines::before {
+    float: left;
+    padding-top: 33%;
+  }
+}}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+  @media (prefers-reduced-motion: no-preference) {  
+    :global .lightsOut :local .scanlines::after {
+      animation: flicker var(--crt-timing);
+    }
+    /*:global .lightsOut :local .scanlines::before,
+    :global .lightsOut :local .scanlines::after {
+      composes: lightsOutTransition from "./animations.module.css";
+      animation-duration: .25s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+    }
+    :global .lightsOut .landscaping :local .scanlines {
+      composes: lightsOutLandscapingAspect from "./animations.module.css";
+    }
+    :global .lightsOut .landscaping :local .scanlines::before,
+    :global .lightsOut .landscaping :local .scanlines::after
+    ) {
+      composes: lightsOutLandscaping from "./animations.module.css";
+    }
+    :global .lightsOut .portraiting :local .scanlines {
+      composes: lightsOutPortraitingAspect from "./animations.module.css";
+    }
+    :global .lightsOut .portraiting :local .scanlines::before,
+    :global .lightsOut .portraiting :local .scanlines::after {
+      composes: lightsOutPortraiting from "./animations.module.css";
+    }*/
+  }

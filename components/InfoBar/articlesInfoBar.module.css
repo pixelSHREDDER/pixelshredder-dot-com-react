@@ -1,0 +1,4 @@
+.articlesInfoBar {
+  composes: infoBarBase from "./infoBarBase.module.css";
+  margin-block-start: 1.2rem;
+}

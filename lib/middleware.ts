@@ -1,6 +1,14 @@
 import { defaultKeywords } from "@mikeintosh/layout";
 import { stripHTML, getWordCount } from "./utils";
 
+function getKeywords(data: any, extraData: string[]) {
+  if (!!data.schema.keywords) {
+    return [...data.schema.keywords, ...extraData, ...defaultKeywords]
+  } else {
+    return [...extraData, ...defaultKeywords]
+  }
+}
+
 function getSortDate(data: any) {
   if (!!data.schema.datePublished) {
     return data.schema.datePublished
@@ -18,9 +26,9 @@ function populateArticle(data: any) {
     schema: {
       '@type': 'BlogPosting',
       articleBody: stripHTML(data.body),
+      author: 'Mike DeVine',
       description: data.description,
       headline: data.title,
-      keywords: [...data.keywords, ...defaultKeywords],
       name: data.title,
       image: 'https://www.pixel-shredder.com/android-chrome-512x512.png',
       inLanguage: 'en-US',
@@ -28,6 +36,7 @@ function populateArticle(data: any) {
       url: `https://www.pixel-shredder.com/articles/${data.slug}`,
       wordCount: getWordCount(data.body).toString(),
       ...data.schema,
+      keywords: getKeywords(data, data.tags)
     }
   }
 }
@@ -39,9 +48,9 @@ function populateProject(data: any) {
     schema: {
       '@type': 'BlogPosting',
       articleBody: stripHTML(data.body),
+      author: 'Mike DeVine',
       description: data.description,
       headline: data.title,
-      keywords: [...data.tags, ...data.tech, ...defaultKeywords],
       name: data.title,
       image: 'https://www.pixel-shredder.com/android-chrome-512x512.png',
       inLanguage: 'en-US',
@@ -49,6 +58,7 @@ function populateProject(data: any) {
       url: `https://www.pixel-shredder.com/projects/${data.slug}`,
       wordCount: getWordCount(data.body).toString(),
       ...data.schema,
+      keywords: getKeywords(data, [...data.tags, ...data.tech])
     }
   }
 }

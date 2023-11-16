@@ -1,0 +1,57 @@
+.nav {
+  width: 100%;
+}
+.nav :is(ul, li) {
+  margin: 0;
+}
+.nav ul {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+}
+.nav li {
+  text-align: start;
+  color: inherit;
+  border-radius: 10px;
+  transition: 0.15s ease all;
+  padding: 0.4rem;
+  border: var(--thin-border);
+  line-height: 1;
+}
+.nav li a {
+  text-decoration: none;
+}
+.nav li:hover,
+.nav li:focus,
+.nav li:focus-within,
+.nav li:active {
+  background: #000;
+  border-color: #ddd;
+  outline-color: transparent;
+}
+.nav li:hover,
+.nav li:hover *,
+.nav li:focus,  
+.nav li:focus *,
+.nav li:focus-within {
+  color: #ddd;
+}
+.nav li:focus-within a {
+  outline: none;
+}
+:global .darkMode :local .nav li {
+  text-shadow: none;
+  box-shadow: var(--darkMode-shadow);
+  color: #bfbfbf;
+  border-color: #bfbfbf;
+}
+:global .darkMode :local .nav li:hover,
+:global .darkMode :local .nav li:focus,
+:global .darkMode :local .nav li:focus-within {
+  background: #bfbfbf;
+}
+:global .darkMode :local .nav li:hover a,
+:global .darkMode :local .nav li:focus a,
+:global .darkMode :local .nav li:focus-within a {
+  color: #222;
+}

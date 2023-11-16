@@ -1,0 +1,29 @@
+.expandableBase,
+.expandingBase,
+.expandedBase {
+  composes: infoBarBase from "@/components/InfoBar/infoBarBase.module.css";
+  overflow: hidden;
+}
+.expandableBase {
+  max-height: 0svh;
+}
+.expandingBase,
+.expandedBase {
+  max-height: 100svh;
+}
+.expandedBase {
+  overflow: visible;
+}
+.expandableBase > div:first-child,
+.expandingBase > div:first-child,
+.expandedBase > div:first-child {
+  flex: 1 1 50%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .expandableBase,
+  .expandingBase,
+  .expandedBase {
+    transition: all 400ms ease-in-out;
+  }
+}

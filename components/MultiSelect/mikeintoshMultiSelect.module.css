@@ -1,0 +1,29 @@
+.mikeintoshMultiSelect {
+  composes: multiSelectBase from "./multiSelectBase.module.css";
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.mikeintoshMultiSelectLoading {
+  composes: multiSelectLoadingBase from "./multiSelectBase.module.css";
+}
+.mikeintoshMultiSelect :global .chip {
+  background: #222;
+  color: #ddd;
+}
+.mikeintoshMultiSelect :global input[type="text"] {
+  border: 2px solid #222;
+}
+.mikeintoshMultiSelect :global .option.highlight,
+.mikeintoshMultiSelect :global .option:hover {
+  background: #222;
+  color: #ccc;
+}
+.mikeintoshMultiSelect :global ul {
+  background: #ddd;
+}
+.mikeintoshMultiSelect :global ul > span {
+  color: #222;
+}
+:global .projects :local .mikeintoshMultiSelect > div > span {
+  color: var(--projects-bg);
+}

@@ -1,0 +1,51 @@
+.mikeintoshCard {
+  composes: cardBase from "./cardBase.module.css";
+  max-width: max(190px, 30%);
+  border-radius: 10px;
+  transition: 0.15s ease all;
+  border: 4px double #222;
+}
+
+.mikeintoshCard:hover,
+.mikeintoshCard:hover *,
+.mikeintoshCard:focus,
+.mikeintoshCard:focus *,
+.mikeintoshCard:focus-within,
+.mikeintoshCard:focus-within *,
+.mikeintoshCard:active,
+.mikeintoshCard:active * {
+  color: #ddd;
+}
+.mikeintoshCard:hover,
+.mikeintoshCard:focus,
+.mikeintoshCard:focus-within, 
+.mikeintoshCard:active {
+  background: #000;
+  border-color: #ddd;
+  outline-color: transparent;
+}
+.mikeintoshCard h2,
+.mikeintoshCard h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.mikeintoshCard h2 {
+  animation: none;
+}
+.mikeintoshCard h3 {
+  line-height: 1.2rem;
+  height: 5.9ch;
+}
+li.mikeintoshCard a {
+  text-decoration: underline;
+}
+.mikeintoshCard a:focus-visible,
+.mikeintoshCard a:focus-visible * {
+  outline: none;
+}
+.mikeintoshCard p {
+  text-align: center;
+  height: 7.2ch;
+  margin: 0.6rem 0 0;
+  line-height: 1;
+}

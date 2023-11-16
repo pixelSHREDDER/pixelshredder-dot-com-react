@@ -1,0 +1,55 @@
+.frame {
+  pointer-events: none;
+  touch-action: none;
+  aspect-ratio: 4 / 3;
+  z-index: 7;
+  -webkit-filter: contrast(0.25);
+  filter: contrast(0.25);
+  
+  /*@supports not (aspect-ratio) { 
+    float: left;
+    padding-top: 75%;
+  }*/
+}
+
+@media (orientation: portrait) {
+  .frame {
+    transform: rotate(90deg) scale(1.34);
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* Safari 11+ */
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  .frame::before {
+    float: left;
+    padding-top: 75%;
+  }
+}}
+
+/* Safari 11+ portrait orientation */
+@media not all and (min-resolution:.001dpcm) and (orientation: landscape)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  .frame::before {
+    float: left;
+    padding-top: 33%;
+  }
+}}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+@media (prefers-reduced-motion: no-preference) {
+    /*:global .lightsOut :local .frame {
+      composes: lightsOutTransition from "./animations.module.css";
+      animation-duration: .25s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+    }
+    /*:global .lightsOut .landscaping :local .frame {
+      composes: lightsOutLandscaping from "./animations.module.css";
+    }
+    :global .lightsOut .portraiting :local .frame {
+      composes: lightsOutPortraiting from "./animations.module.css";
+    }*/
+  }

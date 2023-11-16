@@ -1,0 +1,12 @@
+.cardGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+}
+.cardGrid li {
+  margin: 0;
+}

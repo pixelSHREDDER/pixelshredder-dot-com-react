@@ -1,9 +1,11 @@
-import { ArticleClass } from '@/models/Article'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import styles from '@mikeintosh/utils.module.css'
-import articleStyles from './article.module.css'
+import Link from 'next/link'
+import infoBarStyles from '@/components/InfoBar/articlesInfoBarArticle.module.css'
+import tagsStyles from '@/components/Tags/articlesTags.module.css'
 import { ItemSchema } from '@/components/Schema'
+import { formatDate } from '@/lib/utils'
+import { ArticleClass } from '@/models/Article'
 
 interface IArticle {
   params: { slug: string }
@@ -71,16 +73,33 @@ export default async function Article({ params }: IArticle) {
   const article: ArticleClass = await getArticle(params.slug)
 
   return (
-    <section className={articleStyles.article}>
+    <>
       <h1>{article.title}</h1>
-      <h2>{article.description}</h2>
-      <div aria-hidden className={styles.infobar}>
-        <h5 className={styles.keywords} aria-label="Keywords">{
-          article.keywords.map((kw: string, i: number) => <span key={`${article.slug}_kw_${i}`}>{kw}</span>)
-        }</h5>
+      {!!article.schema.alternativeHeadline && 
+        <h2>{article.schema.alternativeHeadline}</h2>
+      }
+      <div className={infoBarStyles.articlesInfoBarArticle}>
+        <h5>
+          {!!article.schema.datePublished &&
+            <time dateTime={article.schema.datePublished}>
+              {formatDate(article.schema.datePublished)}
+            </time>
+          }
+          {!!article.schema.articleSection && `&nbsp;&bull;&nbsp;${article.schema.articleSection}`}
+          {!!article.schema.publisher && `&nbsp;&bull;&nbsp;Originally published by ${article.schema.publisher}`}
+          &nbsp;&bull;&nbsp;<Link href={article.link} target='_blank'>View original</Link>
+        </h5>
+        <div className={tagsStyles.articlesTags} aria-label="Tags">
+          {article.tags.map((tag: string, i: number) => <span key={`${article.slug}_tag_${i}`}>{tag}</span>)}
+        </div>
       </div>
+      {!!article.schema.backstory && 
+        <blockquote>
+          {article.schema.backstory} To learn more about the making of this article, <Link href={`${process.env.BASE_URL}/projects/${article.slug}`}>click here</Link>.
+        </blockquote>
+      }
       <div dangerouslySetInnerHTML={{__html: article.body}} aria-hidden></div>
       <ItemSchema item={article.schema} />
-    </section>
+    </>
   )
 }

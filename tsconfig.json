@@ -5,6 +5,9 @@
       "@/*": [
         "./*"
       ],
+      "@articles/*": [
+        "./app/articles/*"
+      ],
       "@mikeintosh/*": [
         "./app/(mikeintosh)/*"
       ]

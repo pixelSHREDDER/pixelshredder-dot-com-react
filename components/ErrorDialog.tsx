@@ -1,9 +1,9 @@
 import Image from "next/image"
-import styles from '@mikeintosh/utils.module.css'
+import dialogStyles from './dialog.module.css'
 
 export default function ErrorDialog({errorMsg}: {errorMsg?: string}) {
   return (
-    <section className={styles.dialog}>
+    <section className={dialogStyles.dialog}>
       <Image
         src="/images/icons8-bomb-90.png"
         alt="Error icon"

@@ -1,0 +1,12 @@
+.techIconsCard {
+  composes: techIcons from "./techIcons.module.css";
+  height: 32px;
+  justify-content: center;
+  margin-block: 0.4rem;
+}
+:global(.clickableCard:hover) :local .techIconsCard span,
+:global(.clickableCard:focus) :local .techIconsCard span,
+:global(.clickableCard:focus-within) :local .techIconsCard span,
+:global(.clickableCard:active) :local .techIconsCard span {
+  filter: brightness(0) invert(0.8);
+}

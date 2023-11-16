@@ -1,11 +1,9 @@
-import localFont from "next/font/local";
-import { Metadata } from 'next';
-import Image from 'next/image';
-import './globals.css';
-import styles from './layout.module.css';
-import MacGlow from "./MacGlow";
-import MacWrapper from "./MacWrapper";
-import Script from "next/script";
+import { Metadata } from 'next'
+import localFont from 'next/font/local'
+import Script from 'next/script'
+import '@/app/globals.css'
+import mikeintoshStyles from '@mikeintosh/mikeintosh.module.css'
+import Environment from '@/components/Environment/Environment'
 
 const sysfont = localFont({
   src: './sysfont.woff2',
@@ -61,32 +59,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sysfont.variable}`}>
-      <body>
-        <div className={styles.next}>
-          <div className={styles.root}>
-            <div className={styles.container}>
-              <Image
-                src="/images/tv-frame.svg"
-                fill
-                aria-hidden
-                alt="TV frame"
-                className={styles.tvframe}
-                priority />
-              <Image
-                src="/images/tv-bezel.svg"
-                fill
-                aria-hidden
-                alt="TV bezel"
-                className={styles.tvbezel} />
-              <MacWrapper>
-                {children}
-              </MacWrapper>
-            </div>
-            <div className={styles.mac} aria-hidden>
-              <MacGlow />
-            </div>
-          </div>
+    <html lang="en" className={`${mikeintoshStyles.mikeintosh} ${sysfont.variable}`}>
+      <body className={'startup'}>
+        <div>
+          <Environment>
+            {children}
+          </Environment>
         </div>
         <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=G-${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
         <Script

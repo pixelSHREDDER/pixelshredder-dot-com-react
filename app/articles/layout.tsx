@@ -1,16 +1,24 @@
-//import styles from '@mikeintosh/utils.module.css';
-//import Nav from "@/components/Nav";
+import { Gelasio, Lora } from 'next/font/google'
+import { Metadata } from 'next'
+import '@/app/globals.css'
+import styles from '@articles/articles.module.css'
+import Script from "next/script"
 
-import localFont from "next/font/local";
-import { Metadata } from 'next';
-//import './globals.css';
-//import styles from './layout.module.css';
-import Script from "next/script";
+const gelasio = Gelasio({
+  weight: ['500'],
+  style: ['normal'],
+  variable: '--font-gelasio',
+  subsets: ['latin'],
+  display: 'swap'
+})
 
-/*const sysfont = localFont({
-  src: './sysfont.woff2',
-  variable: '--font-sysfont',
-});*/
+const lora = Lora({
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-lora',
+  subsets: ['latin'],
+  display: 'swap'
+})
 
 export const defaultMetadata: {[key: string]: string} = {
   'applicationName': 'Mikeintosh',
@@ -61,19 +69,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" /*className={`${sysfont.variable}`}*/>
+    <html lang="en" className={`${styles.articles} ${gelasio.variable} ${lora.variable}`}>
       <body>
-        <article>
-          {/*<Nav parent={{
-            label: 'Projects',
-            path: '/projects',
-          }}  />*/}
-          {children}
-          {/*<Nav parent={{
-            label: 'Projects',
-            path: '/projects',
-          }}  />*/}
-        </article>
+        {children}
         <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=G-${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
         <Script
           id='google-analytics'

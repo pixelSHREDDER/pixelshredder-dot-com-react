@@ -1,12 +1,22 @@
 'use client'
-import styles from '@mikeintosh/utils.module.css'
-import ErrorDialog from '@/components/ErrorDialog'
+
+import Nav from '@/components/Nav/Nav'
 
 export default function Error() {
   return (
     <>
-      <h1 className={styles.srOnly}>Error</h1>
-      <ErrorDialog />
+      <header>
+        <span>Mike DeVine</span>
+        <Nav articles />
+      </header>
+      <main>
+        <h1>Whoops.</h1>
+        <p>Sorry, an unexpected error has occurred. Please reload and try again.</p>
+      </main>
+      <footer>
+        <span>Mike DeVine</span>
+        <Nav articles />
+      </footer>
     </>
   )
 }

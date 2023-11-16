@@ -77,7 +77,9 @@ Search Settings by TkBt from [Noun Project](https://thenounproject.com/browse/ic
 
 ### Fonts
 
-[Sysfont webfont by Alina Sava](https://fontsarena.com/sysfont-by-alina-sava/).
+- [Gelasio webfont by Google Fonts](https://fonts.google.com/specimen/Gelasio)
+- [Lora webfont by Google Fonts](https://fonts.google.com/specimen/Lora)
+- [Sysfont webfont by Alina Sava](https://fontsarena.com/sysfont-by-alina-sava/)
 
 ### Misc.
 

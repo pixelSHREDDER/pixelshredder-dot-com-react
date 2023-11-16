@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import styles from '@mikeintosh/utils.module.css'
-import homeStyles from './home.module.css'
+import cardGridStyles from '@/components/Grid/cardGrid.module.css'
+import mikeintoshCardStyles from '@/components/Card/mikeintoshCard.module.css'
+import postStartupStyles from '@/components/Monitor/postStartup.module.css'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -10,20 +11,23 @@ export const metadata: Metadata = {
 
 export default function Index() {
   return (
-    <article className={homeStyles.postStartup}>
-      <h1 className={styles.title}>Welcome!</h1>
-      <p className={styles.description}>Please select an option below</p>
-      <section className={styles.grid}>
-        <Link href="/resumes" className={styles.card}>
+    <article className={postStartupStyles.postStartup}>
+      <h1>Welcome!</h1>
+      <p>Please select an option below</p>
+      <section className={cardGridStyles.cardGrid}>
+        <Link href="/resumes" className={`${mikeintoshCardStyles.mikeintoshCard} clickableCard`}>
           <h2>Résumé</h2>
         </Link>
-        <Link href="/projects" className={styles.card}>
+        <Link href="/projects" className={`${mikeintoshCardStyles.mikeintoshCard} clickableCard`}>
           <h2>Projects</h2>
         </Link>
-        <Link href="/about-me" className={styles.card}>
+        <Link href="/articles" className={`${mikeintoshCardStyles.mikeintoshCard} clickableCard`}>
+          <h2>Writing</h2>
+        </Link>
+        <Link href="/about-me" className={`${mikeintoshCardStyles.mikeintoshCard} clickableCard`}>
           <h2>About Me</h2>
         </Link>
-        <Link href="/projects/mikeintosh" className={styles.card}>
+        <Link href="/projects/mikeintosh" className={`${mikeintoshCardStyles.mikeintoshCard} clickableCard`}>
           <h2>About This Site</h2>
         </Link>
       </section>

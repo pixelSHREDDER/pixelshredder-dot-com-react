@@ -9,6 +9,22 @@ module.exports = withPWA({
     serverActions: true,
     serverComponentsExternalPackages:['mongoose','@typegoose/typegoose']
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'pixel-shredder.com',
+        port: '',
+        pathname: '/article-files/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pixel-shredder.com',
+        port: '',
+        pathname: '/project-files/**',
+      },
+    ],
+  },
   reactStrictMode: true,
   async rewrites() {
     return [

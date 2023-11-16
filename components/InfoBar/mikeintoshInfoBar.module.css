@@ -1,0 +1,12 @@
+.mikeintoshInfoBar {
+  composes: infoBarBase from "./infoBarBase.module.css";
+  margin-block-start: 0.8rem;
+}
+.mikeintoshInfoBar h1,
+.mikeintoshInfoBar h2,
+.mikeintoshInfoBar h3,
+.mikeintoshInfoBar h4,
+.mikeintoshInfoBar h5,
+.mikeintoshInfoBar h6 {
+  margin-block: 0;
+}

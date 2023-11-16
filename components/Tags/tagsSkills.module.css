@@ -1,0 +1,11 @@
+.tagsSkills {
+  composes: tagsBase from "./tagsBase.module.css";
+  composes: mikeintoshTags from "./mikeintoshTags.module.css";
+  justify-content: center;
+}
+ul.tagsSkills {
+  margin-block-end: 1rem;
+}
+.tagsSkills li {
+  margin: 0;
+}

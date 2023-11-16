@@ -1,5 +1,6 @@
 import { Article } from '@/models/Article'
 import connectDB from './connect-db'
+import mongoose from 'mongoose'
 
 interface ArticleFilter {
   page?: number

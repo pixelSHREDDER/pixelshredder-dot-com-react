@@ -1,7 +1,7 @@
-import styles from '@mikeintosh/utils.module.css';
-import Nav from '@/components/Nav';
-import clsx from 'clsx';
-import { Metadata } from 'next';
+import { Metadata } from 'next'
+import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
+import Nav from '@/components/Nav/Nav'
+import tagsSkillsStyles from '@/components/Tags/tagsSkills.module.css'
 
 export const metadata: Metadata = {
   title: 'Mike DeVine | Civic Engagement & Grassroots Politics Résumé',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function CivicsPoliticsResume() {
   return (
-    <article className={styles.darkmode}>
+    <article className='darkMode'>
 			<Nav parent={{
 				label: 'Resumes',
 				path: '/resumes',
@@ -23,9 +23,11 @@ export default function CivicsPoliticsResume() {
 			<section>
 				<h2>Experience</h2>
 				<h3>Vice President of Technology</h3>
-				<h4>Young Democrats of Washington</h4>
-        <h5>Feb ’21 - Jun ’22</h5>
-        <ul>
+				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>Young Democrats of Washington</h4>
+        	<h5>Feb ’21 - Jun ’22</h5>
+        </div>
+				<ul>
 					<li>Spearheaded initiative to build a robust, scalable multisite WordPress installation with sites for each YDWA chapter (current stable version viewable <a href="https://ydwa.org/demo/" target="_blank">here</a>)</li>
 					<li>Developed custom theme in PHP using a fork of established parent theme while editing and adding features, including simplified Customizer menus, integrated plugins, streamlined color customization options, role-based feature toggles, bindable shortcodes, and automatic importing / syncing of Facebook events</li>
 					<li>Built hierarchical user and role functionality for end-users and clients, with contextual features for each access level</li>
@@ -33,99 +35,88 @@ export default function CivicsPoliticsResume() {
 					<li>Managed G Suite installation for organization-wide use, prevented several attempted cyberattacks</li>
         </ul>
 				<h3>At-Large Director East</h3>
-        <h4>King County Young Democrats</h4>
-        <h5>Feb ’19 - Jan ’21</h5>
-        <ul>
-					<li>Spearheaded initiative to build a robust, scalable multisite WordPress installation with sites for each YDWA chapter (current stable version viewable <a href="https://ydwa.org/demo/" target="_blank">here</a>)</li>
-				</ul>
+        <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>King County Young Democrats</h4>
+        	<h5>Feb ’19 - Jan ’21</h5>
+        </div>
 				<h3>Poll Observer</h3>
-        <h4>Pennsylvania Democrats</h4>
-        <h5>Sep - Nov ’20</h5>
-        <ul>
-					<li>Spearheaded initiative to build a robust, scalable multisite WordPress installation with sites for each YDWA chapter (current stable version viewable <a href="https://ydwa.org/demo/" target="_blank">here</a>)</li>
-				</ul>
+        <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>Pennsylvania Democrats</h4>
+        	<h5>Sep - Nov ’20</h5>
+        </div>
 				<h3>Nerd Caucus Chair</h3>
-        <h4>Young Democrats of Washington</h4>
-        <h5>May ’19 - Aug ’21</h5>
-        <ul>
-					<li>Spearheaded initiative to build a robust, scalable multisite WordPress installation with sites for each YDWA chapter (current stable version viewable <a href="https://ydwa.org/demo/" target="_blank">here</a>)</li>
-				</ul>
+        <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>Young Democrats of Washington</h4>
+        	<h5>May ’19 - Aug ’21</h5>
+        </div>
 				<h3>Technology Co-Director</h3>
-				<h4>Young Democrats of Washington</h4>
-        <h5>Feb ’20 - Jun ’21</h5>
-        <ul>
-					<li>Spearheaded initiative to build a robust, scalable multisite WordPress installation with sites for each YDWA chapter (current stable version viewable <a href="https://ydwa.org/demo/" target="_blank">here</a>)</li>
-					<li>Developed custom theme in PHP using a fork of established parent theme while editing and adding features, including simplified Customizer menus, integrated plugins, streamlined color customization options, role-based feature toggles, bindable shortcodes, and automatic importing / syncing of Facebook events</li>
-					<li>Built hierarchical user and role functionality for end-users and clients, with contextual features for each access level</li>
-					<li>Incorporated third-party services and plugins, including SEO optimization via Google Search Console and Yoast, mailing list management via MailChimp, analytics via Google Analytics, recurring payments and membership subscriptions, and POS functionality via PayPal and WooCommerce</li>
-					<li>Managed G Suite installation for organization-wide use, prevented several attempted cyberattacks</li>
-        </ul>
+				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>Young Democrats of Washington</h4>
+        	<h5>Feb ’20 - Jun ’21</h5>
+        </div>
 				<h3>Technology Committee Chair / Co-Chair</h3>
-        <h4>45th District Democrats</h4>
-        <h5>Jan ’20 - Oct ’21</h5>
-        <ul>
-					<li>Spearheaded initiative to build a robust, scalable multisite WordPress installation with sites for each YDWA chapter (current stable version viewable <a href="https://ydwa.org/demo/" target="_blank">here</a>)</li>
-				</ul>
+        <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>45th District Democrats</h4>
+        	<h5>Jan ’20 - Oct ’21</h5>
+        </div>
 				<h3>Vice President of Operations</h3>
-        <h4>Young Democrats of Washington</h4>
-        <h5>May ’19 - Jun ’20</h5>
-        <ul>
-					<li>Spearheaded initiative to build a robust, scalable multisite WordPress installation with sites for each YDWA chapter (current stable version viewable <a href="https://ydwa.org/demo/" target="_blank">here</a>)</li>
-					<li>Developed custom theme in PHP using a fork of established parent theme while editing and adding features, including simplified Customizer menus, integrated plugins, streamlined color customization options, role-based feature toggles, bindable shortcodes, and automatic importing / syncing of Facebook events</li>
-					<li>Built hierarchical user and role functionality for end-users and clients, with contextual features for each access level</li>
-					<li>Incorporated third-party services and plugins, including SEO optimization via Google Search Console and Yoast, mailing list management via MailChimp, analytics via Google Analytics, recurring payments and membership subscriptions, and POS functionality via PayPal and WooCommerce</li>
-					<li>Managed G Suite installation for organization-wide use, prevented several attempted cyberattacks</li>
-        </ul>
+        <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>Young Democrats of Washington</h4>
+      		<h5>May ’19 - Jun ’20</h5>
+        </div>
 				<h3>King County Young Democrats Representative</h3>
-        <h4>45th District Democrats</h4>
-        <h5>Jan ’19 - Oct ’21</h5>
-        <ul>
-					<li>Spearheaded initiative to build a robust, scalable multisite WordPress installation with sites for each YDWA chapter (current stable version viewable <a href="https://ydwa.org/demo/" target="_blank">here</a>)</li>
-				</ul>
-				<h3>PCO</h3>
-        <h4>45th District Democrats</h4>
-        <h5>Jan ’19 - Oct ’21</h5>
-        <ul>
-					<li>Spearheaded initiative to build a robust, scalable multisite WordPress installation with sites for each YDWA chapter (current stable version viewable <a href="https://ydwa.org/demo/" target="_blank">here</a>)</li>
-				</ul>
+        <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>45th District Democrats</h4>
+        	<h5>Jan ’19 - Oct ’21</h5>
+        </div>
+				<h3>Precinct Committee Officer</h3>
+        <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>45th District Democrats</h4>
+        	<h5>Jan ’19 - Oct ’21</h5>
+        </div>
 				<h3>Technology Director</h3>
-				<h4>Young Democrats of Washington</h4>
-        <h5>Feb ’18 - May ’19</h5>
-        <ul>
-					<li>Spearheaded initiative to build a robust, scalable multisite WordPress installation with sites for each YDWA chapter (current stable version viewable <a href="https://ydwa.org/demo/" target="_blank">here</a>)</li>
-					<li>Developed custom theme in PHP using a fork of established parent theme while editing and adding features, including simplified Customizer menus, integrated plugins, streamlined color customization options, role-based feature toggles, bindable shortcodes, and automatic importing / syncing of Facebook events</li>
-					<li>Built hierarchical user and role functionality for end-users and clients, with contextual features for each access level</li>
-					<li>Incorporated third-party services and plugins, including SEO optimization via Google Search Console and Yoast, mailing list management via MailChimp, analytics via Google Analytics, recurring payments and membership subscriptions, and POS functionality via PayPal and WooCommerce</li>
-					<li>Managed G Suite installation for organization-wide use, prevented several attempted cyberattacks</li>
-        </ul>
+				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>Young Democrats of Washington</h4>
+        	<h5>Feb ’18 - May ’19</h5>
+        </div>
 				<h3>Front-End Developer</h3>
-				<h4>Symplicity Corporation</h4>
-        <h5>Jun ’12 - Dec ’17</h5>
-        <ul>
+				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>Symplicity Corporation</h4>
+        	<h5>Jun ’12 - Dec ’17</h5>
+        </div>
+				<ul>
 					<li>Built responsive, mobile-first websites for high-level government clients</li>
 					<li>Used myriad government data sources in projects, including THOMAS and congress.gov</li>
 				</ul>
         <h3>Neighborhood Nerd</h3>
-        <h4>Owner / Chief Technician</h4>
-        <h5>Nov ’08 - Jun ’12</h5>
-        <p>Founded and operated computer repair service based around an innovative new business model; devised branding strategy.</p>
+        <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>Owner / Chief Technician</h4>
+        	<h5>Nov ’08 - Jun ’12</h5>
+        </div>
+				<p>Founded and operated computer repair service based around an innovative new business model; devised branding strategy.</p>
         <h3>Boys & Girls Club of Suffolk County</h3>
-        <h4>After School & Summer Camp Counselor / Computer Technician / Computers & Technology Instructor</h4>
-				<h5>Oct ’07 - Aug ’09</h5>
+        <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>After School & Summer Camp Counselor / Computer Technician / Computers & Technology Instructor</h4>
+					<h5>Oct ’07 - Aug ’09</h5>
+				</div>
 				<p>In addition to roles listed above, also provided work as promotional advisor. Developed and implemented multimedia marketing campaign for teen after school program comprised of print, merchandising, and installation efforts.</p>
       </section>
 			<section>
 				<h2>Education</h2>
 				<h3>Rochester Institute of Technology</h3>
-				<h4>B.S. Degree, New Media Interactive Development / Concentration, Global Studies (Japanese)</h4>
-				<p>Class of 2012. Rochester, NY</p>
+				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>B.S. Degree, New Media Interactive Development / Concentration, Global Studies (Japanese)</h4>
+					<h5>Class of 2012. Rochester, NY</h5>
+				</div>
 				<h3>Suffolk County Community College</h3>
-				<h4>A.A.S. Degree, Computer Art</h4>
-        <p>Class of 2008. Selden, NY</p>
+				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>A.A.S. Degree, Computer Art</h4>
+        	<h5>Class of 2008. Selden, NY</h5>
+				</div>
       </section>
 			<section>
 				<h2>Additional Skills</h2>
-				<ul className={clsx([styles.skills, styles.tags])}>
+				<ul className={tagsSkillsStyles.tagsSkills}>
 					<li>JavaScript</li>
 					<li>HTML</li>
 					<li>CSS/SASS/LESS</li>

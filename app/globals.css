@@ -1,0 +1,65 @@
+/* @link https://utopia.fyi/type/calculator?c=320,20,1.067,1240,26,1.333,3,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+:root {
+  /* Step -2: 10.00px → 11.00px */
+  --step--2: clamp(0.63rem, calc(0.45rem + 0.0015vw), 0.55rem);
+  /* Step -1: 12.80px → 13.50px */
+  --step--1: clamp(0.80rem, calc(0.78rem + 0.08vw), 0.84rem);
+  /* Step 0: 16.00px → 18.00px */
+  --step-0: clamp(1.00rem, calc(0.95rem + 0.23vw), 1.13rem);
+  /* Step 1: 20.00px → 23.99px */
+  --step-1: clamp(1.25rem, calc(1.14rem + 0.46vw), 1.50rem);
+  /* Step 2: 25.00px → 31.98px */
+  --step-2: clamp(1.56rem, calc(1.38rem + 0.80vw), 2.00rem);
+  /* Step 3: 31.25px → 42.63px */
+  --step-3: clamp(1.95rem, calc(1.65rem + 1.31vw), 2.66rem);
+  
+  --home-bg: #619cb5;
+  --projects-bg: #67b561;
+  --resumes-bg: #b56161;
+  --startup-bg: #787878;
+  --bg: #393c5a;
+  --bg-articles: #efe9e1;
+  --glow-bg: #e1e1e1;
+
+  --home-glow: sepia(25%) saturate(2000%) hue-rotate(149deg) brightness(95%) contrast(91%);
+  --projects-glow: sepia(33%) saturate(1000%) hue-rotate(27deg) brightness(86%) contrast(77%);
+  --resumes-glow: sepia(66%) saturate(1000%) hue-rotate(316deg) brightness(86%) contrast(89%);
+  --glow: invert(19%) sepia(4%) saturate(6576%) hue-rotate(197deg) brightness(86%) contrast(77%);
+
+  --landscape-macglow-radial: farthest-side at 120% 50%;
+  --landscape-radial: farthest-side at 50% 100%;
+  --portrait-radial: farthest-corner at 50% -30%;
+
+  --crt-timing: 0.15s infinite;
+  --darkmode-shadow: 1px 1px #000;
+  --thick-border: 4px double #222;
+  --thick-border-articles: 2px solid #111;
+  --thin-border: 1px solid #222;
+  --thin-border-articles: 1px solid #111;
+
+  --button-box-shadow-articles: 1px 1px 0 #333;
+  --input-box-shadow-articles: -1px -1px 0 #333;
+}
+html,
+body {
+  margin: 0;
+}
+html {
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+}
+input[type="text"] {
+  background: transparent;
+  padding-inline: 0.4rem;
+}
+input[type="text"]::placeholder {
+  font-style: italic;
+}
+button {
+  background: transparent;
+}

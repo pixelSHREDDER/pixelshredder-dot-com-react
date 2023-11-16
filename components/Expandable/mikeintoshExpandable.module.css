@@ -1,0 +1,9 @@
+.expandable {
+  composes: expandableBase from "./expandableBase.module.css";
+}
+.expanding {
+  composes: expandingBase from "./expandableBase.module.css";
+}
+.expanded {
+  composes: expandedBase from "./expandableBase.module.css";
+}

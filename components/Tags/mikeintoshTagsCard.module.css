@@ -1,0 +1,12 @@
+.mikeintoshTagsCard {
+  composes: tagsCardBase from "./tagsCardBase.module.css";
+  composes: mikeintoshTags from "./mikeintoshTags.module.css";
+  height: 9ch;
+}
+:global(.clickableCard:hover) :local .mikeintoshTagsCard span,
+:global(.clickableCard:focus) :local .mikeintoshTagsCard span,
+:global(.clickableCard:focus-within) :local .mikeintoshTagsCard span,
+:global(.clickableCard:active) :local .mikeintoshTagsCard span {
+  background: #bfbfbf;
+  color: #000;
+}

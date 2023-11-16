@@ -1,0 +1,32 @@
+.articleCard {
+  composes: cardBase from "@/components/Card/cardBase.module.css";
+  max-width: max(340px, 30%);
+  list-style: none;
+  padding-block-start: 0;
+}
+.articleCard::after {
+  display: block;
+  content: '';
+  width: 66%;
+  border-top: var(--thin-border-articles);
+  margin-block-start: 1.6rem;
+}
+.articleCard p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-gelasio), serif;
+  font-size: 2.9em;
+  line-height: 1.1;
+  margin-inline-end: 0.2rem;
+}
+.articleCard > a {
+  text-decoration: none;
+}
+.articleCard h3 {
+  font-size: var(--step-2);
+}
+.articleCard img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-block-end: 0.8rem;
+}

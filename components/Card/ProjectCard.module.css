@@ -1,0 +1,3 @@
+.projectCard {
+  composes: mikeintoshCard from "./mikeintoshCard.module.css";
+}

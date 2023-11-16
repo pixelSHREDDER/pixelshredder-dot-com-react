@@ -1,0 +1,4 @@
+.articlesTagsCard {
+  composes: tagsCardBase from "./tagsCardBase.module.css";
+  composes: articlesTags from "./articlesTags.module.css";
+}

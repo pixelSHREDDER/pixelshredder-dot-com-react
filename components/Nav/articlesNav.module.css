@@ -1,0 +1,14 @@
+.nav ul,
+.nav li {
+  margin: 0;
+}
+.nav ul {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+.nav li {
+  padding: 0;
+  border: none;
+  list-style: none;
+}

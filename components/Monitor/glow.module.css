@@ -1,0 +1,75 @@
+@keyframes glow {
+  0% { opacity: 0.77861; }
+  5% { opacity: 0.74769; }
+  10% { opacity: 0.73604; }
+  15% { opacity: 0.90626; }
+  20% { opacity: 0.78128; }
+  25% { opacity: 0.83891; }
+  30% { opacity: 0.75583; }
+  35% { opacity: 0.77807; }
+  40% { opacity: 0.76559; }
+  45% { opacity: 0.84693; }
+  50% { opacity: 0.96019; }
+  55% { opacity: 0.78594; }
+  60% { opacity: 0.70313; }
+  65% { opacity: 0.71988; }
+  70% { opacity: 0.73455; }
+  75% { opacity: 0.77288; }
+  80% { opacity: 0.71428; }
+  85% { opacity: 0.70419; }
+  90% { opacity: 0.77003; }
+  95% { opacity: 0.76108; }
+  100% { opacity: 0.74387; }
+}
+
+.glow {
+  pointer-events: none;
+  touch-action: none;
+  z-index: 8;
+  padding: 4%;
+  -webkit-filter: var(--glow) blur(2px);
+  filter: var(--glow) blur(2px);
+}
+:global .startup :local .glow {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+:global .home :local .glow {
+  -webkit-filter: var(--home-glow) blur(2px);
+  filter: var(--home-glow) blur(2px);
+}
+:global .projects :local .glow {
+  -webkit-filter: var(--projects-glow) blur(2px);
+  filter: var(--projects-glow) blur(2px);
+}
+:global .resumes :local .glow {
+  -webkit-filter: var(--resumes-glow) blur(2px);
+  filter: var(--resumes-glow) blur(2px);
+}
+
+@media (orientation: portrait) {
+  .glow {
+    transform: rotate(90deg) scale(1.34);
+    padding: 5%;
+  }
+}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+@media (prefers-reduced-motion: no-preference) {
+  :global .lightsOut :local .glow {
+    animation: glow var(--crt-timing);
+  }
+  /*:global .lightsOut :local .glow {
+    composes: lightsOutTransition from "./animations.module.css";
+    animation-duration: .25s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  }
+  :global .lightsOut .landscaping :local .glow {
+    composes: lightsOutLandscaping from "./animations.module.css";
+  }
+  :global .lightsOut .portraiting :local .glow {
+    composes: lightsOutPortraiting from "./animations.module.css";
+  }*/
+}

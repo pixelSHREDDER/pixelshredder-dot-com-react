@@ -27,7 +27,7 @@ import type {
 } from 'schema-dts'
 
 type TProjectSchema = {
-  '@type': 'BlogPosting',
+  '@type': 'BlogPosting'
   articleBody?: string
   audio?: AudioObject
   award?: string
@@ -39,14 +39,14 @@ type TProjectSchema = {
   description?: string
   disambiguatingDescription?: string
   headline?: string
-  image?: URL,
-  isPartOf?: URL,
-  keywords?: string[],
+  image?: URL
+  isPartOf?: URL
+  keywords?: string[]
   locationCreated?: Place
   material?: Product | string | URL
   materialExtent?: string
   mentions?: Thing
-  name?: string,
+  name?: string
   pattern?: DefinedTerm | string
   recordedAt?: Event
   releasedEvent?: PublicationEvent

@@ -1,16 +1,19 @@
 import Link from 'next/link'
-import styles from '@mikeintosh/utils.module.css'
+import clsx from 'clsx'
+import articlesNavStyles from './articlesNav.module.css'
+import mikeintoshNavStyles from './mikeintoshNav.module.css'
 
 export interface INavProps {
+  articles?: boolean,
   parent?: {
     label: string,
     path: string,
-  }
+  },
 }
 
 export default function Nav(props: INavProps) {
   return (
-    <nav className={styles.nav}>
+    <nav className={clsx(!!props.articles ? [articlesNavStyles.nav] : [mikeintoshNavStyles.nav])}>
       <ul>
         {!!props.parent &&
           <li>

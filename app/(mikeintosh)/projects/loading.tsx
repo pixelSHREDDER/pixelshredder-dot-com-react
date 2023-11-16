@@ -1,7 +1,7 @@
 'use client'
 
-import styles from '@mikeintosh/utils.module.css'
-import Nav from '@/components/Nav'
+import Loader from '@/components/Loader/Loader'
+import Nav from '@/components/Nav/Nav'
 
 export default function Loading() {
   return (
@@ -9,7 +9,7 @@ export default function Loading() {
       <Nav />
       <h1>Projects</h1>
       <section>
-        <div className={styles.loader}>&bull;</div>
+        <Loader />
       </section>
       <Nav />
     </article>

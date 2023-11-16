@@ -1,0 +1,9 @@
+.tagsCardBase {
+  composes: tagsBase from "./tagsBase.module.css";
+  justify-content: flex-start;
+  align-content: flex-start;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-block-start: 0.8rem;
+  margin-block-end: 0;
+}

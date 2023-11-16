@@ -1,17 +1,25 @@
 'use client'
 
-import styles from '@mikeintosh/utils.module.css'
-import Nav from '@/components/Nav'
+import Loader from '@/components/Loader/Loader'
+import Masthead from '@/components/Masthead/Masthead'
+import Nav from '@/components/Nav/Nav'
 
 export default function Loading() {
   return (
-    <article>
-      <Nav />
-      <h1>Articles</h1>
-      <section>
-        <div className={styles.loader}>&bull;</div>
-      </section>
-      <Nav />
-    </article>
+    <>
+      <Masthead />
+      <main>
+        <article>
+          <h1>Articles</h1>
+          <section>
+          <Loader />
+          </section>
+        </article>
+      </main>
+      <footer>
+        <span>Mike DeVine</span>
+        <Nav articles />
+      </footer>
+    </>
   )
 }

@@ -1,0 +1,224 @@
+@keyframes pulser {
+  50% { opacity: 0.33; }
+}
+
+.mikeintosh,
+.mikeintosh body {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #222;
+  color: #111;
+  font-family: var(--font-sysfont), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.mikeintosh {
+  touch-action: none;
+}
+.mikeintosh body {
+  overflow-x: hidden;
+  padding: 0;
+  background-image: radial-gradient(55% 100% at center, #000 50%, #8cb7e8 100%);
+}
+.mikeintosh :global(.lightsOut) {
+  background-image: radial-gradient(55% 70% at center, #2e2f4d 40%, #000 100%);
+}
+.mikeintosh img {
+  max-width: 100%;
+  height: auto;
+}
+.mikeintosh ul {
+  padding: 0;
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 1.6rem;
+}
+.mikeintosh p,
+.mikeintosh li,
+.mikeintosh figure,
+.mikeintosh iframe {
+  font-size: var(--step--1);
+  margin-block-start: 0.8rem;
+  margin-block-end: 0.8rem;
+}
+.mikeintosh figure iframe {
+  margin-block: 0;
+}
+.mikeintosh h1,
+.mikeintosh h2,
+.mikeintosh h3,
+.mikeintosh h4,
+.mikeintosh h5,
+.mikeintosh h6 {
+  text-align: center;
+  margin-block-start: 0;
+  margin-block-end: 0.8rem;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #222;
+}
+.mikeintosh h1 {
+  font-size: var(--step-3);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  line-height: 1.4;
+}
+.mikeintosh h1 a {
+  color: #222;
+  text-decoration: none;
+}
+.mikeintosh h2 {
+  font-size: var(--step-2);
+  line-height: 1.2;
+}
+.mikeintosh h3 {
+  font-size: var(--step-0);
+}
+.mikeintosh h4 {
+  font-size: var(--step--1);
+}
+.mikeintosh h5 {
+  font-size: var(--step--1);
+}
+.mikeintosh p a,
+.mikeintosh li a {
+  text-decoration: underline wavy;
+}
+.mikeintosh input[type="text"] {
+  border: 2px solid #222;
+  font-family: var(--font-sysfont), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.mikeintosh input[type="text"]::placeholder {
+  color: #222;
+}
+.mikeintosh button {
+  padding: 0.2rem 0.6rem;
+  text-align: center;
+  color: inherit;
+  border-radius: 10px;
+  transition: 0.15s ease all;
+  border: var(--thin-border);
+  border-radius: 10px;
+}
+.mikeintosh button:hover,
+.mikeintosh button:focus,
+.mikeintosh button:active {
+  color: #ddd;
+  background: #000;
+  border-color: #ddd;
+  outline-color: transparent;
+}
+.mikeintosh button[aria-expanded] span {
+  align-self: center;
+  width: 0; 
+  height: 0; 
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-bottom: 0.35rem solid #222;
+  transform: rotate(90deg);
+}
+.mikeintosh button[aria-expanded]:hover span,
+.mikeintosh button[aria-expanded]:active span,
+.mikeintosh button[aria-expanded]:focus span {
+  border-bottom-color: #ddd;
+}
+.mikeintosh button[aria-expanded="true"] span {
+  transform: rotate(180deg);
+}
+.mikeintosh figure {
+  margin-inline: auto;
+}
+.mikeintosh figcaption {
+  background: #000;
+  color: #bfbfbf;
+  text-shadow: none;
+  border-radius: 4px;
+  padding: .2rem;
+  font-size: 0.7rem;
+  font-family: sans-serif;
+  font-style: italic;
+  text-align: left;
+}
+.mikeintosh iframe {
+  width: 100%;
+}
+.mikeintosh abbr {
+  text-decoration: underline dotted;
+}
+.mikeintosh main {
+  height: 100%;
+  overflow-y: auto;
+  margin-inline-end: 2rem;
+}
+.mikeintosh article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 4rem;
+  padding-inline-end: 2rem;
+}
+.mikeintosh :global(.darkMode) {
+  color: #ddd;
+  text-shadow: var(--darkMode-shadow);
+}
+.mikeintosh :global(.darkMode) h1,
+.mikeintosh :global(.darkMode) h2,
+.mikeintosh :global(.darkMode) h3,
+.mikeintosh :global(.darkMode) h4,
+.mikeintosh :global(.darkMode) h5,
+.mikeintosh :global(.darkMode) h6 {
+  color: #bfbfbf;
+}
+.mikeintosh :global(.darkMode) h1 {
+  animation: none;
+}
+.mikeintosh :global(.darkMode) button[aria-expanded] span {
+  border-bottom-color: #bfbfbf;
+}
+.mikeintosh :global(.darkMode) button[aria-expanded]:hover span,
+.mikeintosh :global(.darkMode) button[aria-expanded]:active span,
+.mikeintosh :global(.darkMode) button[aria-expanded]:focus span {
+  border-bottom-color: #222;
+}
+.mikeintosh :global(.darkMode) figcaption {
+  background: #ccc;
+  color: #000;
+  border: 1px outset #000;
+}
+.mikeintosh :global(.darkMode) button {
+  border-color: #bfbfbf;
+}
+
+@media (orientation: landscape) {
+  .mikeintosh body > div {
+    width: 85%;
+    margin: auto;
+  }
+}
+@media (orientation: portrait) {
+  .mikeintosh body {
+    background-image: radial-gradient(110% 60% at center, #000 50%, #8cb7e8 100%);
+  }
+  .mikeintosh main {
+    margin-inline-end: 0.5rem;
+  }
+  .mikeintosh article {
+    padding: 2rem;
+    padding-inline-end: 1.5rem;
+  }
+}
+/*@media (prefers-reduced-motion: reduced) {*/
+@media (prefers-reduced-motion: no-preference) {
+  .mikeintosh h1 {
+    animation: pulser 1.5s ease-out infinite;
+  }
+  .mikeintosh h2 {
+    animation: pulser 1.5s ease-out infinite;
+  }
+  .mikeintosh button[aria-expanded] span {
+    transition: transform 250ms ease-in-out;
+  }
+}

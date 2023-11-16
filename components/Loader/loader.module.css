@@ -1,0 +1,18 @@
+@keyframes loader {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader {
+  opacity: 0.75;
+  border: 2rem groove #222;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  margin: auto;
+  animation: loader 2s linear infinite;
+}
+:global .darkMode :local .loader {
+  opacity: 1;
+  border-color: #ddd;
+}

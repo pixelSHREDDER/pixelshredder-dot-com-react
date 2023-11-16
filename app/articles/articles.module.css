@@ -1,0 +1,101 @@
+.articles,
+.articles body {
+  background-color: var(--bg-articles);
+  color: #111;
+  font-family: var(--font-lora), serif;
+  margin: 0;
+}
+.articles a {
+  color: inherit;
+  text-decoration-style: double;
+}
+.articles body {
+  padding: 1.8rem;
+}
+.articles p,
+.articles li,
+.articles figure,
+.articles iframe {
+  font-size: var(--step--1);
+  line-height: 1.6;
+  margin-block-start: 1.2rem;
+  margin-block-end: 1.2rem;
+}
+.articles figcaption {
+  font-size: var(--step--2);
+}
+.articles h1,
+.articles h2,
+.articles h3,
+.articles h4,
+.articles h5,
+.articles h6 {
+  margin-block-start: 0;
+  margin-block-end: 0.8rem;
+  font-family: var(--font-gelasio), serif;
+  font-weight: normal;
+  line-height: 1.2;
+}
+.articles h1 {
+  font-size: var(--step-3);
+}
+.articles h1 a {
+  text-decoration: none;
+}
+.articles h2 {
+  font-size: var(--step-2);
+}
+.articles h3 {
+  font-size: var(--step-0);
+}
+.articles h4 {
+  font-size: var(--step--1);
+}
+.articles h5 {
+  font-size: var(--step--1);
+}
+.articles p:first-of-type {
+  margin-block-start: 0;
+}
+.articles blockquote {
+  font-size: var(--step-1);
+  font-weight: 700;
+  line-height: 1.6;
+  border-left: var(--thick-border-articles);
+  padding-left: 1rem;
+  margin-inline-start: 2.5rem;
+  margin-inline-end: 2.5rem;
+}
+.articles button,
+.articles input {
+  border: var(--thin-border-articles);
+}
+.articles button {
+  box-shadow: var(--button-box-shadow-articles);
+  margin-right: 1px;
+}
+.articles input {
+  box-shadow: var(--input-box-shadow-articles);
+}
+.articles input:focus-visible {
+  border-radius: 0;
+}
+.articles header,
+.articles footer {
+  background: #333;
+  color: var(--bg-articles);
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.articles header {
+  margin-block-end: 1.8rem;
+}
+.articles footer {
+  margin-block-start: 1.8rem;
+}
+.articles header > :first-child,
+.articles footer > :first-child {
+  flex: 1 0 5rem;
+}

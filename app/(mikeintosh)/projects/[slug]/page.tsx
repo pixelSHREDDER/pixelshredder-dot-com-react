@@ -1,10 +1,12 @@
-import { ProjectClass } from '@/models/Project'
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import styles from '@mikeintosh/utils.module.css'
-import projectStyles from './project.module.css'
+import tagsStyles from '@/components/Tags/mikeintoshTags.module.css'
+import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
 import TechIcons from '@/components/TechIcons/TechIcons'
 import { ItemSchema } from '@/components/Schema'
+import { ProjectClass } from '@/models/Project'
+import projectStyles from './project.module.css'
 
 interface IProject {
   params: { slug: string }
@@ -75,8 +77,11 @@ export default async function Project({ params }: IProject) {
     <section className={projectStyles.project}>
       <h1>{project.title}</h1>
       <h3>{project.description}</h3>
-      <div aria-hidden className={styles.infobar}>
-        <h5 className={styles.tags} aria-label="Tags">{
+      {project.tags.includes('writing') &&
+        <h4><Link href={`${process.env.BASE_URL}/articles/${project.slug}`}>Read full article</Link></h4>
+      }
+      <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+        <h5 className={tagsStyles.mikeintoshTags} aria-label="Tags">{
           project.tags.map((tag: string, i: number) => <span key={`${project.slug}_tag_${i}`}>{tag}</span>)
         }</h5>
         <TechIcons project={project} />

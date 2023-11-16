@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import styles from '@mikeintosh/utils.module.css'
+import techIconsStyles from './techIcons.module.css'
+import techIconsCardStyles from './techIconsCard.module.css'
 import { ProjectClass } from '@/models/Project'
 import adobeIllustratorIcon from './icons8-adobe-illustrator.svg'
 import adobePhotoshopIcon from './icons8-adobe-photoshop.svg'
@@ -17,6 +18,7 @@ import reduxIcon from './icons8-redux.svg'
 import typeScriptIcon from './icons8-typescript.svg'
 import unityIcon from './icons8-unity.svg'
 import wordPressIcon from './icons8-wordpress.svg'
+import clsx from 'clsx'
 
 const TechIconMap: {[key: string]: string} = {
   'Auth0': `/images/icons8-auth0.png`,
@@ -40,9 +42,12 @@ const TechIconMap: {[key: string]: string} = {
   'WordPress': wordPressIcon,
 }
 
-export default function TechIcons({ project }: { project: ProjectClass }) {
+export default function TechIcons({ project, card }: { project: ProjectClass, card?: boolean }) {
   return (
-    <h5 className={styles.techIcons} aria-label="Tech">{
+    <h5 className={clsx({
+      [techIconsStyles.techIcons]: !card,
+      [techIconsCardStyles.techIconsCard]: !!card,
+    })} aria-label="Tech">{
       project.tech?.map((tech: string, i: number) => {
         return (!!TechIconMap[tech]) ?
           <span key={`${project.slug}_tech_${i}`}>

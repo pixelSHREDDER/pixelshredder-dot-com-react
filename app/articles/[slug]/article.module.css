@@ -1,66 +1,72 @@
-.article h1,
-.article h2,
-.article h3,
-.article h4,
-.article h5,
-.article h6 {
-  text-align: left;
-}
-.article h1 {
-  line-height: 1;
-  margin-block-end: 0.6rem;
-}
-.article h1 ~ h3 {
-  font-weight: normal;
-  line-height: 1.2;
-}
-.article p {
-  margin-block-start: 0;
+.article p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-gelasio), serif;
+  font-size: 2.9em;
+  line-height: 1.1;
+  margin-inline-end: 0.2rem;
 }
 .article figure {
   width: 48%;
-  min-width: 120px;
+  min-width: 180px;
   float: left;
-  margin-block-start: 0;
-  margin-block-end: 0.8rem;
+  margin-block-start: 0.35rem;
+  margin-block-end: 0.47rem;
   margin-inline: 0 1.2rem;
+  break-inside: avoid;
 }
-.article figure[data-class*="wide"] {
+.project figure[data-class*='tall'] {
+  grid-row: span 2;
+}
+.article figure[data-class*='wide'] {
   width: 100%;
   min-width: 0;
   float: none;
   margin-inline: 0;
 }
-.article figure:nth-of-type(2n) {
+.article figure[data-class*='right'] {
   float: right;
   margin-inline: 1.2rem 0;
+}
+.article figure[data-class*='split'] {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  align-items: center;
+}
+.article figure[data-class*='split'] figcaption {
+  grid-column: 1 / 3;
+}
+.article figure[data-class*='break'] {
+  column-span: all;
+  float: none;
+  width: 100%;
+  margin-inline: 0;
 }
 .article p,
 .article li {
   text-align: justify;
 }
-.article ul {
-  list-style: disc;
-  margin-inline-start: 1.6rem;
-}
-.article ul ul {
-  list-style: circle;
-}
-.article section {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
-}
-.article section > figure {
+.article img {
   width: 100%;
-  min-width: 0;
-  float: none;
 }
-.article section > figure:nth-of-type(2n) {
-  margin-inline: 0;
+
+@media (orientation: landscape) {
+  .article div[aria-hidden=true] {
+    column-count: 2;
+    column-gap: 1.8rem;
+  }
+  .article div[aria-hidden=true] figure:not([data-class*='break']) {
+    width: 100%;
+  }
 }
-.article section > figure[data-class*="wide"] {
-  grid-column: 1 / -1;
-  margin-inline: 0;
+
+@media (min-width: 760px) {
+  .article div[aria-hidden=true] {
+    column-count: 3;
+    column-gap: 1.8rem;
+  }
+  .article div[aria-hidden=true] figure:not([data-class*='break']) {
+    width: 100%;
+  }
 }

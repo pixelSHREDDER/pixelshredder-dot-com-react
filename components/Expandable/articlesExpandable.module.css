@@ -1,0 +1,19 @@
+.expandable {
+  composes: expandableBase from "./expandableBase.module.css";
+}
+.expanding {
+  composes: expandingBase from "./expandableBase.module.css";
+}
+.expanded {
+  composes: expandedBase from "./expandableBase.module.css";
+}
+.expandable,
+.expanding,
+.expanded {
+  border: var(--thin-border-articles);
+  padding-inline: 0.6rem;
+}
+.expanding,
+.expanded {
+  padding-block: 0.6rem;
+}

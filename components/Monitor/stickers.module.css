@@ -1,0 +1,115 @@
+@keyframes glow {
+  0% { opacity: 0.77861; }
+  5% { opacity: 0.74769; }
+  10% { opacity: 0.73604; }
+  15% { opacity: 0.90626; }
+  20% { opacity: 0.78128; }
+  25% { opacity: 0.83891; }
+  30% { opacity: 0.75583; }
+  35% { opacity: 0.77807; }
+  40% { opacity: 0.76559; }
+  45% { opacity: 0.84693; }
+  50% { opacity: 0.96019; }
+  55% { opacity: 0.78594; }
+  60% { opacity: 0.70313; }
+  65% { opacity: 0.71988; }
+  70% { opacity: 0.73455; }
+  75% { opacity: 0.77288; }
+  80% { opacity: 0.71428; }
+  85% { opacity: 0.70419; }
+  90% { opacity: 0.77003; }
+  95% { opacity: 0.76108; }
+  100% { opacity: 0.74387; }
+}
+
+.stickers :is(a, button) {
+  position: absolute;
+  z-index: 9;
+  transform: rotate(12deg);
+  border: 1px inset var(--bg);
+  border-radius: 50%;
+  -webkit-filter: var(--glow) saturate(55%);
+  filter: var(--glow) saturate(55%);
+}
+.stickers li:nth-child(2) a {
+  transform: rotate(319deg);
+}
+.stickers li button {
+  transform: rotate(-340deg);
+  font-size: 0.5rem;
+  padding: 0.2rem;
+  background-color: #fff;
+  min-width: 0;
+}
+:global .home :local .stickers a {
+  -webkit-filter: var(--home-glow) saturate(55%);
+  filter: var(--home-glow) saturate(55%);
+  border-color: var(--home-glow);
+}
+:global .projects :local .stickers a {
+  -webkit-filter: var(--projects-glow) saturate(55%);
+  filter: var(--projects-glow) saturate(55%);
+  border-color: var(--projects-glow);
+}
+:global .resumes :local .stickers a {
+  -webkit-filter: var(--resumes-glow) saturate(55%);
+  filter: var(--resumes-glow) saturate(55%);
+  border-color: var(--resumes-glow);
+}
+:global .startup :local .stickers a {
+  -webkit-filter: saturate(55%);
+  filter: saturate(55%);
+  border-color: var(--startup-bg);
+}
+.stickers img {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+@media (orientation: landscape) {
+  .stickers a {
+    height: max(20px, 3vw);
+    width: max(20px, 3vw);
+    top: max(1.95rem, 5%);
+    left: max(3.2rem, 10%);
+  }
+  .stickers li:nth-child(2) a {
+    top: max(3.6rem, 14%);
+    left: max(2.05rem, 4%);
+  }
+  .stickers li button {
+    top: max(3.6rem, 11%);
+    right: max(2.05rem, 4%);
+  }
+}
+
+@media (orientation: portrait) {
+  .stickers a {
+    height: max(20px, 3svh);
+    width: max(20px, 3svh);
+    top: 4%;
+    left: 5%;
+  }
+  .stickers li:nth-child(2) a {
+    top: 10%;
+    left: 3%;
+  }
+  .stickers li button {
+    top: 10%;
+    right: 2%;
+  }
+}
+
+@media (aspect-ratio >= 16 / 9) {
+  .stickers a {
+    height: max(16px, 2vw);
+    width: max(16px, 2vw);
+  }
+}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+@media (prefers-reduced-motion: no-preference) {
+  :global .lightsOut :local .stickers a {
+    animation: glow var(--crt-timing);
+  }
+}

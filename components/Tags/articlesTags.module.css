@@ -1,0 +1,13 @@
+.articlesTags {
+  composes: tagsBase from "./tagsBase.module.css";
+  gap: 5px;
+}
+.articlesTags span,
+.articlesTags li {
+  font-family: var(--font-lora);
+  font-style: italic;
+  font-size: 0.7rem;
+  color: var(--bg-articles);
+  background: #333;
+  padding: 4px 10px;
+}

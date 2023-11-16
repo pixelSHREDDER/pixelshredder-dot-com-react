@@ -1,6 +1,7 @@
 'use client'
-import styles from '@mikeintosh/utils.module.css'
+
+import Loader from '@/components/Loader/Loader'
 
 export default function Loading() {
-  return <div className={styles.loader}>&bull;</div>
+  return <Loader />
 }

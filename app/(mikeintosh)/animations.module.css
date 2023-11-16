@@ -1,0 +1,80 @@
+/*@keyframes landscaping {
+  0% {
+    transform: rotate(90deg) scale(1.34);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+@keyframes portraiting {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  100% {
+    transform: rotate(90deg) scale(1.34);
+  }
+}
+@keyframes landscapingAspect {
+  0% {
+    aspect-ratio: 3 / 4;
+  }
+  100% {
+    aspect-ratio: 4 / 3;
+  }
+}
+@keyframes portraitingAspect {
+  0% {
+    aspect-ratio: 4 / 3;
+  }
+  100% {
+    aspect-ratio: 3 / 4;
+  }
+}
+@keyframes landscapingScreen {
+  0% {
+    margin-inline-end: 0.5rem;
+    padding-block: 1rem;
+    padding-inline: 1rem 0.5rem;
+  }
+  100% {
+    margin-inline-end: 2rem;
+    padding-block: 2rem;
+    padding-inline: 3rem 1rem;
+  }
+}
+@keyframes portraitingScreen {
+  0% {
+    margin-inline-end: 2rem;
+    padding-block: 2rem;
+    padding-inline: 3rem 1rem;
+  }
+  100% {
+    margin-inline-end: 0.5rem;
+    padding-block: 1rem;
+    padding-inline: 1rem 0.5rem;
+  }
+}
+.lightsOutTransition {
+    animation-duration: .25s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  }
+  .lightsOutLandscaping {
+    animation-name: landscaping;
+  }
+  .lightsOutPortraiting {
+    animation-name: portraiting;
+  }
+  .lightsOutLandscapingAspect {
+    animation-name: landscapingAspect;
+  }
+  .lightsOutPortraitingAspect {
+    animation-name: portraitingAspect;
+  }
+  .lightsOutLandscapingScreen {
+    animation-name: landscapingScreen;
+  }
+  .lightsOutPortraitingScreen {
+    animation-name: portraitingScreen;
+  }*/

@@ -1,0 +1,133 @@
+@keyframes reflectedGlow {
+  0% { opacity: 0.76861; }
+  5% { opacity: 0.74769; }
+  10% { opacity: 0.74604; }
+  15% { opacity: 0.74626; }
+  20% { opacity: 0.76128; }
+  25% { opacity: 0.76891; }
+  30% { opacity: 0.75583; }
+  35% { opacity: 0.76807; }
+  40% { opacity: 0.76559; }
+  45% { opacity: 0.76693; }
+  50% { opacity: 0.76019; }
+  55% { opacity: 0.76594; }
+  60% { opacity: 0.74313; }
+  65% { opacity: 0.74988; }
+  70% { opacity: 0.74455; }
+  75% { opacity: 0.76288; }
+  80% { opacity: 0.74428; }
+  85% { opacity: 0.74419; }
+  90% { opacity: 0.76003; }
+  95% { opacity: 0.76108; }
+  100% { opacity: 0.74387; }
+}
+
+.glow {
+  pointer-events: none;
+  touch-action: none;
+  border-radius: 0.5rem;
+  /*display: block;
+  Brute force Safari fix because im sick of using goddamn simulators */
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 11;
+  opacity: 0.7;
+}
+
+@media (orientation: landscape) {
+  .glow {
+    height: 100%;
+    background-image: radial-gradient(
+      var(--landscape-macglow-radial),
+      var(--bg) -75%,
+      transparent 100%
+    );
+  }
+  :global .home :local .glow {
+    background-image: radial-gradient(
+      var(--landscape-macglow-radial),
+      var(--home-bg) -75%,
+      transparent 100%
+    );
+  }
+  :global .projects :local .glow {
+    background-image: radial-gradient(
+      var(--landscape-macglow-radial),
+      var(--projects-bg) -75%,
+      transparent 100%
+    );
+  }
+  :global .resumes :local .glow {
+    background-image: radial-gradient(
+      var(--landscape-macglow-radial),
+      var(--resumes-bg) -75%,
+      transparent 100%
+    );
+  }
+  :global .startup :local .glow {
+    background-image: radial-gradient(
+      var(--landscape-macglow-radial),
+      var(--startup-bg) -75%,
+      transparent 100%
+    );
+  }
+}
+
+@media (orientation: portrait) {
+  .glow {
+    width: 100%;
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--bg) -75%,
+      transparent 100%
+    );
+  }
+  :global .home :local .glow {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--home-bg) -75%,
+      transparent 100%
+    );
+  }
+  :global .projects :local .glow {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--projects-bg) -75%,
+      transparent 100%
+    );
+  }
+  :global .resumes :local .glow {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--resumes-bg) -75%,
+      transparent 100%
+    );
+  }
+  :global .startup :local .glow {
+    background-image: radial-gradient(
+      var(--portrait-radial),
+      var(--startup-bg) -75%,
+      transparent 100%
+    );
+  }
+}
+
+/* Safari 11+ */
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  .glow {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: none !important;
+  }
+}}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+@media (prefers-reduced-motion: no-preference) {
+  :global .lightsOut :local .glow {
+    animation: reflectedGlow var(--crt-timing) ease-in-out;
+  }
+}

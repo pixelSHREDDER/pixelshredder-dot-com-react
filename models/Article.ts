@@ -15,6 +15,7 @@ import type {
   DefinedTerm,
   Event,
   Organization,
+  Person,
   Place,
   PublicationEvent,
   Thing,
@@ -23,24 +24,34 @@ import type {
 } from 'schema-dts'
 
 type TArticleSchema = {
-  '@type': 'BlogPosting',
+  '@type': 'BlogPosting'
+  alternativeHeadline?: string
   articleBody?: string
+  articleSection?: string
   audio?: AudioObject
   award?: string
+  backstory?: string
   citation?: string
   creativeWorkStatus?: DefinedTerm | string
   creditText?: string
   dateCreated?: Date
+  dateModified?: Date
   datePublished?: Date
   description?: string
   disambiguatingDescription?: string
+  editor?: Person
   headline?: string
-  image?: URL,
-  isPartOf?: URL,
-  keywords?: string[],
+  image?: URL
+  inLanguage?: string
+  isPartOf?: URL
+  keywords?: string[]
   locationCreated?: Place
   mentions?: Thing
-  name?: string,
+  name?: string
+  pageEnd?: string
+  pageStart?: string
+  pagination?: string
+  publisher?: Organization | Person
   recordedAt?: Event
   releasedEvent?: PublicationEvent
   sameAs?: URL
@@ -74,12 +85,14 @@ class ArticleClass {
   date: Date
   @prop({ default: '...' })
   description: string
+  @prop({ required: true })
+  link: string
   @prop({ required: true, unique: true })
   slug: string
-  @prop({ default: [] })
-  keywords: Array<string>
   @prop()
   sortDate: string
+  @prop({ default: [] })
+  tags: Array<string>
   @prop({ required: true })
   title: string
   _id: mongoose.Types.ObjectId

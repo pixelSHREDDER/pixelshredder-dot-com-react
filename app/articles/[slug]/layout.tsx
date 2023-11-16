@@ -1,18 +1,32 @@
-import styles from '@mikeintosh/utils.module.css';
-import Nav from "@/components/Nav";
+import Nav from '@/components/Nav/Nav'
+import articleStyles from './article.module.css'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <article className={styles.darkmode}>
-      <Nav parent={{
-				label: 'Projects',
-				path: '/projects',
-			}}  />
-      {children}
-      <Nav parent={{
-				label: 'Projects',
-				path: '/projects',
-			}}  />
-    </article>
+    <>
+      <header>
+        <span>Mike DeVine</span>
+        <Nav
+          parent={{
+            label: 'Articles',
+            path: '/articles',
+          }}
+        articles />
+      </header>
+      <main>
+        <article className={articleStyles.article}>
+          {children}
+        </article>
+      </main>
+      <footer>
+        <span>Mike DeVine</span>
+        <Nav
+          parent={{
+            label: 'Articles',
+            path: '/articles',
+          }}
+        articles />
+      </footer>
+    </>
   )
 }

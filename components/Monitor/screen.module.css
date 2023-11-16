@@ -1,0 +1,33 @@
+.screen {
+  height: 100%;
+  z-index: 3;
+  overflow: hidden;
+}
+
+@media (orientation: landscape) {
+  .screen {
+    box-shadow: 0px 4px 16px 11px #000;
+  }
+}
+@media (orientation: portrait) {
+  :global .startup :local .screen {
+    background-color: var(--startup-bg);
+  }
+}
+
+/*@media (prefers-reduced-motion: reduced) {*/
+@media (prefers-reduced-motion: no-preference) {
+  /*:global .lightsOut :local .screen {
+    composes: lightsOutTransition from "./animations.module.css";
+    animation-duration: .25s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  }
+  :global .lightsOut .landscaping :local .screen {
+    composes: lightsOutLandscapingingScreen from "./animations.module.css";
+  }
+  :global .lightsOut .portraiting :local .screen {
+    composes: lightsOutPortraitingScreen from "./animations.module.css";
+  }*/
+}
