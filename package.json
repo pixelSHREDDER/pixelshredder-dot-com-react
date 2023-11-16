@@ -1,7 +1,7 @@
 {
   "name": "pixelshredder-dot-com-react",
   "description": "Personal website, built in React + NextJS + TypeScript",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
