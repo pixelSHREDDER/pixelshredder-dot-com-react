@@ -1,4 +1,4 @@
-import connectDB from '@/lib/connect-db'
+import connectDB from '@/lib/article-connect-db'
 import { getArticle } from '@/lib/article-db'
 import { createErrorResponse } from '@/lib/utils'
 import { NextResponse } from 'next/server'

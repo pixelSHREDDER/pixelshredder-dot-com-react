@@ -1,4 +1,4 @@
-import connectDB from '@/lib/connect-db'
+import connectDB from '@/lib/project-connect-db'
 import { populateProjectData } from '@/lib/middleware'
 import { getProjects } from '@/lib/project-db'
 import { createErrorResponse } from '@/lib/utils'
