@@ -4,8 +4,6 @@ import { getArticles } from '@/lib/article-db'
 import { createErrorResponse } from '@/lib/utils'
 import { NextRequest, NextResponse } from 'next/server'
 
-export const fetchCache = 'force-no-store'
-
 export async function GET(request: NextRequest) {
   try {
     await connectDB()

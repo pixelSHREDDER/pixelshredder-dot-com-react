@@ -4,8 +4,6 @@ import { createErrorResponse } from '@/lib/utils'
 import { NextResponse } from 'next/server'
 import { populateProjectData } from '@/lib/middleware'
 
-export const fetchCache = 'force-no-store'
-
 export async function GET(
   _request: Request,
   { params }: { params: { slug: string } }
