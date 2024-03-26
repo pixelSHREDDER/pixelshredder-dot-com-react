@@ -27,7 +27,6 @@ export async function GET(request: NextRequest) {
         throw error
       }
 
-      res.setHeader('Cache-Control', 'no-store');
       return {
         status: 'success',
         results,
