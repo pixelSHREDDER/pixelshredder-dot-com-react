@@ -1,11 +1,11 @@
-/*import Nav from '@/components/Nav/Nav'
+import Nav from '@/components/Nav/Nav'
 import { Metadata } from 'next'
 import ProjectsGrid from '@/components/Grid/ProjectsGrid'
 import { ProjectClass } from '@/models/Project'
 import Link from 'next/link'
-import { defaultKeywords } from '../layout'*/
+import { defaultKeywords } from '../layout'
 
-/*const defaultMetadata = {
+const defaultMetadata = {
   description: 'Various personal endeavors, side projects, and tinkering I\'ve worked on over the years.',
   title: 'Mike DeVine | Projects'
 }
@@ -38,11 +38,10 @@ const getProjects = async () => {
   } catch (error: any) {
     throw error
   }
-}*/
+}
 
 export default async function Projects() {
-  return null;
-  /*const projects: ProjectClass[] = await getProjects()
+  const projects: ProjectClass[] = await getProjects()
 
   return (
     <article>
@@ -52,5 +51,5 @@ export default async function Projects() {
       <ProjectsGrid projects={projects} />
       <Nav />
     </article>
-  )*/
+  )
 }

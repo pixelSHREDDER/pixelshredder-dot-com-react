@@ -1,4 +1,4 @@
-/*import { Metadata } from 'next'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import tagsStyles from '@/components/Tags/mikeintoshTags.module.css'
@@ -6,13 +6,13 @@ import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.modu
 import TechIcons from '@/components/TechIcons/TechIcons'
 import { ItemSchema } from '@/components/Schema'
 import { ProjectClass } from '@/models/Project'
-import projectStyles from './project.module.css'*/
+import projectStyles from './project.module.css'
 
 interface IProject {
   params: { slug: string }
 }
 
-/*export async function generateMetadata({ params }: IProject): Promise<Metadata> {
+export async function generateMetadata({ params }: IProject): Promise<Metadata> {
   try {
     const slug = params.slug
     const projectData = await fetch(`${process.env.BASE_URL}/projects/${slug}/api`)
@@ -68,11 +68,10 @@ async function getProject(slug: string) {
   } catch (error: any) {
     throw error
   }
-}*/
+}
 
 export default async function Project({ params }: IProject) {
-  return null;
-  /*const project: ProjectClass = await getProject(params.slug)
+  const project: ProjectClass = await getProject(params.slug)
 
   return (
     <section className={projectStyles.project}>
@@ -90,5 +89,5 @@ export default async function Project({ params }: IProject) {
       <div dangerouslySetInnerHTML={{__html: project.body}} aria-hidden></div>
       <ItemSchema item={project.schema} />
     </section>
-  )*/
+  )
 }

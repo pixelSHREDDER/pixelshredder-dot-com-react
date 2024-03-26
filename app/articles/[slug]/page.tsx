@@ -1,17 +1,17 @@
-/*import { Metadata } from 'next'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import infoBarStyles from '@/components/InfoBar/articlesInfoBarArticle.module.css'
 import tagsStyles from '@/components/Tags/articlesTags.module.css'
 import { ItemSchema } from '@/components/Schema'
 import { formatDate } from '@/lib/utils'
-import { ArticleClass } from '@/models/Article'*/
+import { ArticleClass } from '@/models/Article'
 
 interface IArticle {
   params: { slug: string }
 }
 
-/*export async function generateMetadata({ params }: IArticle): Promise<Metadata> {
+export async function generateMetadata({ params }: IArticle): Promise<Metadata> {
   try {
     const slug = params.slug
     const articleData = await fetch(`${process.env.BASE_URL}/articles/${slug}/api`)
@@ -67,11 +67,10 @@ async function getArticle(slug: string) {
   } catch (error: any) {
     throw error
   }
-}*/
+}
 
 export default async function Article({ params }: IArticle) {
-  return null;
-  /*const article: ArticleClass = await getArticle(params.slug)
+  const article: ArticleClass = await getArticle(params.slug)
 
   return (
     <>
@@ -102,5 +101,5 @@ export default async function Article({ params }: IArticle) {
       <div dangerouslySetInnerHTML={{__html: article.body}} aria-hidden></div>
       <ItemSchema item={article.schema} />
     </>
-  )*/
+  )
 }
