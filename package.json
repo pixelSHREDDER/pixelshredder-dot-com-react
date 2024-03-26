@@ -4,7 +4,7 @@
   "version": "2.0.1",
   "scripts": {
     "dev": "next dev",
-    "build": "bash ./get-sc-creds.sh && next build",
+    "build": "source ./get-sc-creds.sh; next build",
     "start": "next start"
   },
   "dependencies": {
