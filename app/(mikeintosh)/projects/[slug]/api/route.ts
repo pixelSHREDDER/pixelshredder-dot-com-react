@@ -23,6 +23,7 @@ export async function GET(
         throw error
       }
 
+      res.setHeader('Cache-Control', 'no-store');
       return {
         status: 'success',
         data: project
