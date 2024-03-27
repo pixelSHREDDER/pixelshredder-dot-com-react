@@ -4,8 +4,8 @@
   "version": "2.0.1",
   "scripts": {
     "dev": "next dev",
-    "build": "source ./get-sc-creds.sh; npx rimraf .next && next build",
-    "build:local": "npx rimraf .next && next build",
+    "build": "source ./get-sc-creds.sh; next build",
+    "build:local": "next build",
     "start": "next start"
   },
   "dependencies": {
