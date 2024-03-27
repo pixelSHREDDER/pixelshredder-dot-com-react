@@ -33,7 +33,9 @@ export const metadata: Metadata = {
 
 const getArticles = async () => {
   try {
-    const articles = await fetch(`${process.env.BASE_URL}/articles/api`)
+    const articles = await fetch(`${process.env.BASE_URL}/articles/api`, {
+      next: { revalidate: 10 },
+    })
     .then((res) => res.json())
     return articles.articles
   } catch (error: any) {
