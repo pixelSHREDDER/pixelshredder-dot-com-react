@@ -1,4 +1,4 @@
-import Nav from '@/components/Nav/Nav'
+/*import Nav from '@/components/Nav/Nav'
 import { Metadata } from 'next'
 import ArticlesGrid from '@/components/Grid/ArticlesGrid'
 import { ArticleClass } from '@/models/Article'
@@ -41,10 +41,11 @@ const getArticles = async () => {
   } catch (error: any) {
     throw error
   }
-}
+}*/
 
 export default async function Articles() {
-  const articles: ArticleClass[] = await getArticles()
+  return null;
+  /*const articles: ArticleClass[] = await getArticles()
 
   return (
     <>
@@ -59,5 +60,5 @@ export default async function Articles() {
         <Nav articles />
       </footer>
     </>
-  )
+  )*/
 }

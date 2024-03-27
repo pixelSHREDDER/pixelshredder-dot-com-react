@@ -1,4 +1,4 @@
-import Nav from '@/components/Nav/Nav'
+/*import Nav from '@/components/Nav/Nav'
 import { Metadata } from 'next'
 import ProjectsGrid from '@/components/Grid/ProjectsGrid'
 import { ProjectClass } from '@/models/Project'
@@ -32,18 +32,17 @@ export const metadata: Metadata = {
 
 const getProjects = async () => {
   try {
-    const projects = await fetch(`${process.env.BASE_URL}/projects/api`, {
-      next: { revalidate: 10 },
-    })
+    const projects = await fetch(`${process.env.BASE_URL}/projects/api`)
     .then((res) => res.json())
     return projects.projects
   } catch (error: any) {
     throw error
   }
-}
+}*/
 
 export default async function Projects() {
-  const projects: ProjectClass[] = await getProjects()
+  return null;
+  /*const projects: ProjectClass[] = await getProjects()
 
   return (
     <article>
@@ -53,5 +52,5 @@ export default async function Projects() {
       <ProjectsGrid projects={projects} />
       <Nav />
     </article>
-  )
+  )*/
 }
