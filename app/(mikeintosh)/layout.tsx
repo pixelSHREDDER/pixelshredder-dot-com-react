@@ -25,6 +25,9 @@ export const defaultKeywords: string[] = [
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.pixel-shredder.com'),
+  alternates: {
+    canonical: '/',
+  },
   appleWebApp: {
     statusBarStyle: 'default',
     title: defaultMetadata.applicationName,
@@ -75,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-            
+
               gtag('config', 'G-${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
             `,
           }}

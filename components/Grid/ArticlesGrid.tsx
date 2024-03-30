@@ -20,12 +20,18 @@ type Sort = {
 }
 
 export const tags = [
+  "gaming",
   "journalism",
+  "movies",
+  "reviews",
   "politics"
 ]
 
 export const defaultVisibleTags = [
-  "journalism"
+  "gaming",
+  "journalism",
+  "movies",
+  "reviews"
 ]
 
 export const defaultHiddenTags = [

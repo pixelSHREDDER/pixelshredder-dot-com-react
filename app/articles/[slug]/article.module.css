@@ -56,7 +56,7 @@
     column-count: 2;
     column-gap: 1.8rem;
   }
-  .article div[aria-hidden=true] figure:not([data-class*='break']) {
+  .article div[aria-hidden=true] figure:not([data-class*='break']):not([data-class*='force-half']) {
     width: 100%;
   }
 }
@@ -66,7 +66,7 @@
     column-count: 3;
     column-gap: 1.8rem;
   }
-  .article div[aria-hidden=true] figure:not([data-class*='break']) {
+  .article div[aria-hidden=true] figure:not([data-class*='break']):not([data-class*='force-half']) {
     width: 100%;
   }
 }
