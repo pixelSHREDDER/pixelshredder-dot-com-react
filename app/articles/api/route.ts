@@ -1,7 +1,7 @@
 import connectDB from '@/lib/article-connect-db'
-import { populateArticleData } from '@/lib/middleware'
-import { getArticles } from '@/lib/article-db'
 import { createErrorResponse } from '@/lib/utils'
+import { getArticles } from '@/lib/article-db'
+import { populateArticlesData } from '@/lib/middleware'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
       throw error
     }
 
-    const res = populateArticleData(articles, (articles: any[], error: any) => {
+    const res = populateArticlesData(articles, (articles: any[], error: any) => {
       if (error) {
         throw error
       }

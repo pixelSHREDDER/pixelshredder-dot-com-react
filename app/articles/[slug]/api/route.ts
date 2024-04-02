@@ -1,6 +1,6 @@
 import connectDB from '@/lib/article-connect-db'
-import { getArticle } from '@/lib/article-db'
 import { createErrorResponse } from '@/lib/utils'
+import { getArticle } from '@/lib/article-db'
 import { NextResponse } from 'next/server'
 import { populateArticleData } from '@/lib/middleware'
 

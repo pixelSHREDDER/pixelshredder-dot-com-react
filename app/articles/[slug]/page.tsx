@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import infoBarStyles from '@/components/InfoBar/articlesInfoBarArticle.module.css'
 import tagsStyles from '@/components/Tags/articlesTags.module.css'
 import { ItemSchema } from '@/components/Schema'

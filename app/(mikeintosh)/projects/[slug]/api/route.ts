@@ -1,6 +1,6 @@
 import connectDB from '@/lib/project-connect-db'
-import { getProject } from '@/lib/project-db'
 import { createErrorResponse } from '@/lib/utils'
+import { getProject } from '@/lib/project-db'
 import { NextResponse } from 'next/server'
 import { populateProjectData } from '@/lib/middleware'
 

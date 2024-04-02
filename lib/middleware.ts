@@ -65,11 +65,16 @@ function populateProject(data: any) {
 
 export function populateArticleData(data: any, callback: Function) {
   try {
-    if (data instanceof Array) {
-      return callback(data.map((d) => populateArticle(d)))
-    } else {
-      return callback(populateArticle(data))
-    }
+    return callback(populateArticle(data))
+  } catch(err: any) {
+      data['exception'] = err.toString();
+      return callback(data, err);
+  }
+}
+
+export function populateArticlesData(data: any, callback: Function) {
+  try {
+    return callback(data.map((d: any) => populateArticle(d)))
   } catch(err: any) {
       data['exception'] = err.toString();
       return callback(data, err);
@@ -78,11 +83,16 @@ export function populateArticleData(data: any, callback: Function) {
 
 export function populateProjectData(data: any, callback: Function) {
   try {
-    if (data instanceof Array) {
-      return callback(data.map((d) => populateProject(d)))
-    } else {
-      return callback(populateProject(data))
-    }
+    return callback(populateProject(data))
+  } catch(err: any) {
+      data['exception'] = err.toString();
+      return callback(data, err);
+  }
+}
+
+export function populateProjectsData(data: any, callback: Function) {
+  try {
+    return callback(data.map((d: any) => populateProject(d)))
   } catch(err: any) {
       data['exception'] = err.toString();
       return callback(data, err);

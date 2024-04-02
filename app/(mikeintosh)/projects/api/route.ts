@@ -1,7 +1,7 @@
 import connectDB from '@/lib/project-connect-db'
-import { populateProjectData } from '@/lib/middleware'
-import { getProjects } from '@/lib/project-db'
 import { createErrorResponse } from '@/lib/utils'
+import { getProjects } from '@/lib/project-db'
+import { populateProjectsData } from '@/lib/middleware'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
       throw error
     }
 
-    const res = populateProjectData(projects, (projects: any[], error: any) => {
+    const res = populateProjectsData(projects, (projects: any[], error: any) => {
       if (error) {
         throw error
       }
