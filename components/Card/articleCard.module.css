@@ -1,6 +1,7 @@
 .articleCard {
   composes: cardBase from "@/components/Card/cardBase.module.css";
-  max-width: max(340px, 30%);
+  max-width: max(494px, 30%);
+  min-width: max(240px, 30%);
   list-style: none;
   padding-block-start: 0;
 }
