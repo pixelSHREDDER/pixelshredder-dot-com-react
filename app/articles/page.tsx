@@ -2,13 +2,13 @@ import Nav from '@/components/Nav/Nav'
 import { Metadata } from 'next'
 import ArticlesGrid from '@/components/Grid/ArticlesGrid'
 import { ArticleClass } from '@/models/Article'
-import Link from 'next/link'
 import { defaultKeywords } from '@mikeintosh/layout'
 import Masthead from '@/components/Masthead/Masthead'
 
 const defaultMetadata = {
-  description: '',
-  title: 'Mike DeVine | Articles'
+  description: 'Features, interviews, investigative reporting, reviews, and more.',
+  title: 'Mike DeVine | Articles',
+  url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles`
 }
 
 export const metadata: Metadata = {
@@ -16,11 +16,11 @@ export const metadata: Metadata = {
 		title: defaultMetadata.title,
 	},
 	description: defaultMetadata.description,
-	keywords: ['articles', ...defaultKeywords],
+	keywords: ['articles', 'journalism', 'features', 'interviews', 'investigative reporting', 'reviews', ...defaultKeywords],
 	openGraph: {
 		description: defaultMetadata.description,
 		title: defaultMetadata.title,
-		url: `${process.env.BASE_URL}/articles`,
+		url: defaultMetadata.url,
 	},
 	title: defaultMetadata.title,
 	twitter: {

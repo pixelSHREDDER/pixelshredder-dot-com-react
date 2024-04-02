@@ -3,9 +3,13 @@ import Nav from '@/components/Nav/Nav'
 import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
 import tagsSkillsStyles from '@/components/Tags/tagsSkills.module.css'
 import { defaultKeywords } from '@mikeintosh/layout'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  appleWebApp: {
+	alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes/web-development`,
+  },
+	appleWebApp: {
 		title: 'Mike DeVine | Web Development Résumé',
 	},
 	description: 'Over 10 years of professional experience',
@@ -13,7 +17,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		description: 'Over 10 years of professional experience',
 		title: 'Mike DeVine | Web Development Résumé',
-		url: `${process.env.BASE_URL}/resumes/web-development`,
+		url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes/web-development`,
 	},
 	title: 'Mike DeVine | Web Development Résumé',
 	twitter: {
@@ -36,7 +40,7 @@ export default function WebDevelopmentResume() {
 				<h2>Profile</h2>
 				<p>Frontend developer with 10 years experience in customer-facing and internal software including web, government, <abbr title="Customer Management System">CMS</abbr>, ecommerce and other problem spaces across property management, gaming, and higher education.</p>
 				<p>Expertise in agile software development with React, Redux, Next, Vue, and AngularJS frameworks involving complex workflows. Knowledgeable in test-driven development, modernization projects, internationalization, and accessibility / Section 508 compliance requirements. Seeking a new front-end position with an amazing team.</p>
-				<p>Work samples viewable <a href="https://www.pixel-shredder.com/projects" target="_blank">here</a>, and on <a href="https://github.com/pixelSHREDDER/" target="_blank">GitHub</a>.</p>
+				<p>Work samples viewable <Link href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects`} target="_blank">here</Link>, and on <a href="https://github.com/pixelSHREDDER/" target="_blank">GitHub</a>.</p>
 			</section>
 			<section>
 				<h2>Skills</h2>
@@ -255,4 +259,3 @@ export default function WebDevelopmentResume() {
 		</article>
 	);
 }
-  

@@ -34,9 +34,9 @@ export const defaultKeywords: string[] = [
 ]
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.pixel-shredder.com'),
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles`),
   alternates: {
-    canonical: '/',
+    canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles`,
   },
   appleWebApp: {
     statusBarStyle: 'default',

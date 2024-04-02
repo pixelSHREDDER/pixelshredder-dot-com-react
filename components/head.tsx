@@ -20,7 +20,7 @@ export default function GlobalHead(props: {meta: MetaProps}) {
             <meta property="og:type" content="website" />
             <meta property="og:title" content={props.meta.title} />
             <meta property="og:description" content={props.meta.description} />
-            <meta property="og:url" content={`https://www.pixel-shredder.com${asPath}`} />
+            <meta property="og:url" content={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}${asPath}`} />
             <meta property="og:image" content={props.meta.image || 'images/welcome-to-mikeintosh.png'} />
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:site" content="@pixelSHREDDER" />
@@ -50,6 +50,7 @@ export default function GlobalHead(props: {meta: MetaProps}) {
             <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
             <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
             <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+            <link rel="canonical" href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}${asPath}`} />
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             <link rel="manifest" href="/site.webmanifest" />

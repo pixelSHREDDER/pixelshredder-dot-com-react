@@ -25,6 +25,9 @@ export async function generateMetadata({ params }: IProject): Promise<Metadata> 
     const project: ProjectClass = projectData.data
 
     return {
+      alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects/${slug}`,
+      },
       appleWebApp: {
         title: `${project.title} | Mike DeVine`,
       },
@@ -81,7 +84,7 @@ export default async function Project({ params }: IProject) {
       <h1>{project.title}</h1>
       <h3>{project.description}</h3>
       {project.tags.includes('writing') &&
-        <h4><Link href={`${process.env.BASE_URL}/articles/${project.slug}`}>Read full article</Link></h4>
+        <h4><Link href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles/${project.slug}`}>Read full article</Link></h4>
       }
       <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
         <h5 className={tagsStyles.mikeintoshTags} aria-label="Tags">{

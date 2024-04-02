@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
 import Nav from '@/components/Nav/Nav'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Mike DeVine | Business Résumé',
@@ -113,7 +114,7 @@ export default function BusinessResume() {
         <p>Various uses of social media APIs, including Twitter, Facebook, Pinterest, and LinkedIn.</p>
         <p>Various uses of Google Maps API functionality for interactive data rendering.</p>
         <p>Various uses of THOMAS and <a href="https://www.congress.gov/" target="_blank">congress.gov</a> API functionality.</p>
-        <p>Various uses of multimedia APIs, including Flickr and YouTube (see my favorite examples on my <a href="https://www.pixel-shredder.com/projects" target="_blank">projects page</a>).</p>
+        <p>Various uses of multimedia APIs, including Flickr and YouTube (see my favorite examples on my <Link href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}}/projects`} target="_blank">projects page</Link>).</p>
         <h3>VOICE Government CRM</h3>
         <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
           <h4>Front-End Design & Development, Symplicity Corporation</h4>

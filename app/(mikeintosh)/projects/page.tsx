@@ -7,10 +7,14 @@ import { defaultKeywords } from '../layout'
 
 const defaultMetadata = {
   description: 'Various personal endeavors, side projects, and tinkering I\'ve worked on over the years.',
-  title: 'Mike DeVine | Projects'
+  title: 'Mike DeVine | Projects',
+  url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects`
 }
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: defaultMetadata.url,
+  },
   appleWebApp: {
 		title: defaultMetadata.title,
 	},
@@ -19,7 +23,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		description: defaultMetadata.description,
 		title: defaultMetadata.title,
-		url: `${process.env.BASE_URL}/projects`,
+		url: defaultMetadata.url,
 	},
 	title: defaultMetadata.title,
 	twitter: {

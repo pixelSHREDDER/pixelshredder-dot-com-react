@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
 import Nav from '@/components/Nav/Nav'
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Mike DeVine | Web & Graphic Design Résumé',
@@ -18,7 +19,7 @@ export default function WebAndGraphicDesignResume() {
       <section>
 				<h2>Profile</h2>
 				<p>Web/graphic designer with 10 years experience in customer-facing and internal software including web, government, CMS, ecommerce and other problem spaces across property management, gaming, and higher education. Nearly two decades of experience using Photoshop and Illustrator. Expertise in agile software development with React, Redux, Next, Vue, and AngularJS frameworks involving complex workflows. Knowledgeable in test-driven development, modernization projects, internationalization, and accessibility/508 compliance requirements.</p>
-        <p>Portfolio/work samples viewable <a href="https://www.pixel-shredder.com/projects" target="_blank">here</a>, and on <a href="https://www.behance.net/user/?username=mikedevine" target="_blank">Behance</a>.</p>
+        <p>Portfolio/work samples viewable <Link href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects`} target="_blank">here</Link>, and on <a href="https://www.behance.net/user/?username=mikedevine" target="_blank">Behance</a>.</p>
       </section>
 			{/*<section>
 				<h2>Skills</h2>

@@ -23,6 +23,9 @@ export async function generateMetadata({ params }: IArticle): Promise<Metadata> 
     const article: ArticleClass = articleData.data
 
     return {
+      alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles/${slug}`,
+      },
       appleWebApp: {
         title: article.title,
       },
@@ -97,7 +100,7 @@ export default async function Article({ params }: IArticle) {
       </div>
       {!!article.schema.backstory &&
         <blockquote>
-          {article.schema.backstory} To learn more about the making of this article, <Link href={`${process.env.BASE_URL}/projects/${article.slug}`}>click here</Link>.
+          {article.schema.backstory} To learn more about the making of this article, <Link href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects/${article.slug}`}>click here</Link>.
         </blockquote>
       }
       <div dangerouslySetInnerHTML={{__html: article.body}} aria-hidden></div>

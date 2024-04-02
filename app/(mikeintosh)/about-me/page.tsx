@@ -4,6 +4,9 @@ import { Metadata } from 'next'
 import { defaultKeywords } from '../layout'
 
 export const metadata: Metadata = {
+	alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/about-me`,
+  },
 	appleWebApp: {
 		title: 'Mike DeVine | About Me',
 	},
@@ -12,7 +15,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		description: 'Great in small doses!',
 		title: 'Mike DeVine | About Me',
-		url: `${process.env.BASE_URL}/about-me`,
+		url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/about-me`,
 	},
 	title: 'Mike DeVine | About Me',
 	twitter: {
