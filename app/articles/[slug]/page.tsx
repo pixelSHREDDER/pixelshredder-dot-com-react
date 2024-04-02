@@ -50,7 +50,9 @@ export async function generateStaticParams() {
   try {
     const articles = await fetch(`${process.env.BASE_URL}/articles/api`)
     .then((res) => res.json())
-    return articles.articles.map((article: ArticleClass) => article.slug)
+    .then((res) => res.articles.map((article: ArticleClass) => article.slug))
+
+    return articles
   } catch (error: any) {
     throw error
   }

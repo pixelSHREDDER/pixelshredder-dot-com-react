@@ -7,6 +7,7 @@ import TechIcons from '@/components/TechIcons/TechIcons'
 import { ItemSchema } from '@/components/Schema'
 import { ProjectClass } from '@/models/Project'
 import projectStyles from './project.module.css'
+import { Project } from 'schema-dts'
 
 interface IProject {
   params: { slug: string }
@@ -51,7 +52,9 @@ export async function generateStaticParams() {
   try {
     const projects = await fetch(`${process.env.BASE_URL}/projects/api`)
     .then((res) => res.json())
-    return projects.projects.map((project: ProjectClass) => project.slug)
+    .then((res) => res.projects.map((project: ProjectClass) => project.slug))
+
+    return projects
   } catch (error: any) {
     throw error
   }
