@@ -53,11 +53,10 @@ export async function generateMetadata({ params }: IProject): Promise<Metadata> 
 
 export async function generateStaticParams() {
   try {
-    const projects = await fetch(`${process.env.BASE_URL}/projects/api`)
-    .then((res) => res.json())
-    .then((res) => res.projects.map((project: ProjectClass) => project.slug))
-
-    return projects
+    const projectsData = await fetch(`${process.env.BASE_URL}/projects/api`)
+    const projects = await projectsData.json()
+    return projects.projects ?
+      projects.projects.map((project: ProjectClass) => project.slug) : []
   } catch (error: any) {
     throw error
   }

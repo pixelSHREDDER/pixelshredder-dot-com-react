@@ -51,11 +51,10 @@ export async function generateMetadata({ params }: IArticle): Promise<Metadata> 
 
 export async function generateStaticParams() {
   try {
-    const articles = await fetch(`${process.env.BASE_URL}/articles/api`)
-    .then((res) => res.json())
-    .then((res) => res.articles.map((article: ArticleClass) => article.slug))
-
-    return articles
+    const articlesData = await fetch(`${process.env.BASE_URL}/articles/api`)
+    const articles = await articlesData.json()
+    return articles.articles ?
+      articles.articles.map((article: ArticleClass) => article.slug) : []
   } catch (error: any) {
     throw error
   }
