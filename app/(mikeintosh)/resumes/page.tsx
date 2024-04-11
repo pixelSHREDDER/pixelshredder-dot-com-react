@@ -5,26 +5,32 @@ import Nav from '@/components/Nav/Nav'
 import { Metadata } from 'next'
 import { defaultKeywords } from '../layout'
 
+const defaultMetadata = {
+  description: 'Over 30 years of experience, at least a third of which was professional!',
+  title: 'Mike DeVine | Résumés',
+  url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes`
+}
+
 export const metadata: Metadata = {
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes`,
+    canonical: defaultMetadata.url,
   },
   appleWebApp: {
-		title: 'Mike DeVine | Résumés',
+		title: defaultMetadata.title,
 	},
-	description: 'Over 30 years of experience, at least a third of which was professional!',
+	description: defaultMetadata.description,
 	keywords: ['resumes', 'resume', ...defaultKeywords],
 	openGraph: {
-		description: 'Over 30 years of experience, at least a third of which was professional!',
-		title: 'Mike DeVine | Résumés',
-		url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes`,
+		description: defaultMetadata.description,
+		title: defaultMetadata.title,
+		url: defaultMetadata.url,
 	},
-	title: 'Mike DeVine | Résumés',
+	title: defaultMetadata.title,
 	twitter: {
 		card: 'summary',
 		creator: '@pixelSHREDDER',
-		description: 'Over 30 years of experience, at least a third of which was professional!',
-		title: 'Mike DeVine | Résumés',
+		description: defaultMetadata.description,
+		title: defaultMetadata.title,
 	},
 }
 
@@ -36,7 +42,7 @@ export default function Resumes() {
       <section className={cardGridStyles.cardGrid}>
         <Link href="/resumes/web-development" className={mikeintoshCardStyles.mikeintoshCard}>
           <h2>Web Development</h2>
-          <p>Over 10 years of professional experience</p>
+          <p>Over 12 years of professional experience</p>
         </Link>
         <Link href="/resumes/game-development" className={mikeintoshCardStyles.mikeintoshCard}>
           <h2>Game Development</h2>

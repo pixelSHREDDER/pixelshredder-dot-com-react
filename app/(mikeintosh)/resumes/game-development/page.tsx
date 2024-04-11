@@ -5,26 +5,32 @@ import tagsSkillsStyles from '@/components/Tags/tagsSkills.module.css'
 import { defaultKeywords } from '@mikeintosh/layout'
 import Link from 'next/link'
 
+const defaultMetadata = {
+  description: 'Go play Halo Infinite!',
+  title: 'Mike DeVine | Game Development Résumé',
+  url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes/game-development`
+}
+
 export const metadata: Metadata = {
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes/game-development`,
+    canonical: defaultMetadata.url,
   },
   appleWebApp: {
-		title: 'Mike DeVine | Game Development Résumé',
+		title: defaultMetadata.title,
 	},
-	description: 'Go play Halo Infinite!',
-	keywords: ['game development', 'game developer', 'aaa development', 'game', 'game tools', 'infrastructure', 'halo infinite', 'halo', 'web development', 'web developer', 'front-end developer', 'front end developer', 'software engineer', 'engineer', 'full-stack', 'full stack', 'web', 'responsive design', 'atomic design', 'scalable ui libraries', 'authentication', 'jwt', 'tokenization', 'auth0', 'accessibility', 'section 508', 'compliance', 'test-driven development', 'tdd', 'internationalization', 'i18', 'search engine optimization', 'seo', 'code', 'javascript', 'js', 'es6', 'es7', 'typescript', 'hypertext markup language', 'html', 'cascading style sheets', 'preprocessors', 'css', 'sass', 'less', 'php', 'xml', 'json', 'sql', 'c sharp', 'c#', 'actionscript', 'react', 'reactjs', 'next', 'nextjs', 'redux', 'vue', 'vuejs', 'angularjs', 'jquery', 'laravel', 'node', 'nodejs', 'rest apis', 'ajax', 'mongodb', 'mongoose', 'material ui', 'bootstrap', 'jsx', 'git', 'subversion', 'svn', 'node package manager', 'npm', 'yarn', 'bower', 'composer', 'grunt', 'gulp', 'wordpress', 'mongodb', 'mongodb atlas', 'adobe creative cloud', 'adobe photoshop', 'adobe illustrator', 'resume', ...defaultKeywords],
+	description: defaultMetadata.description,
+	keywords: ['game development', 'game developer', 'aaa development', 'game', 'game tools', 'infrastructure', 'halo infinite', 'halo', 'web development', 'web developer', 'front-end developer', 'front end developer', 'software engineer', 'engineer', 'full-stack', 'full stack', 'web', 'responsive design', 'atomic design', 'scalable ui libraries', 'authentication', 'jwt', 'tokenization', 'auth0', 'accessibility', 'section 508', 'compliance', 'test-driven development', 'tdd', 'internationalization', 'i18', 'search engine optimization', 'seo', 'code', 'javascript', 'js', 'es6', 'es7', 'typescript', 'hypertext markup language', 'html', 'html5', 'cascading style sheets', 'preprocessors', 'css', 'css3', 'tailwind', 'sass', 'less', 'php', 'xml', 'json', 'sql', '.net', 'dotnet', 'c sharp', 'c#', 'ahk', 'autohotkey', 'react', 'reactjs', 'next', 'nextjs', 'redux', 'vercel', 'vue', 'vuejs', 'electron', 'express', 'jquery', 'node', 'nodejs', 'jest', 'cypress', 'rest apis', 'ajax', 'oauth', 'mongodb', 'mongoose', 'mongodb atlas', 'postgres', 'prisma', 'mysql', 'material ui', 'bootstrap', 'jsx', 'jekyl', 'liquid', 'continuous integration', 'ci', 'continuous deployment', 'cd', 'git', 'subversion', 'svn', 'node package manager', 'npm', 'node version manager', 'nvm', 'yarn', 'grunt', 'gulp', 'windows presentation framework', 'wpf', 'wordpress', 'theme developer', 'mailman', 'adobe creative cloud', 'adobe photoshop', 'adobe illustrator', 'resume', ...defaultKeywords],
 	openGraph: {
-		description: 'Go play Halo Infinite!',
-		title: 'Mike DeVine | Game Development Résumé',
-		url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes/game-development`,
+		description: defaultMetadata.description,
+		title: defaultMetadata.title,
+		url: defaultMetadata.url,
 	},
-	title: 'Mike DeVine | Game Development Résumé',
+	title: defaultMetadata.title,
 	twitter: {
 		card: 'summary',
 		creator: '@pixelSHREDDER',
-		description: 'Go play Halo Infinite!',
-		title: 'Mike DeVine | Game Development Résumé',
+		description: defaultMetadata.description,
+		title: defaultMetadata.title,
 	},
 }
 
@@ -38,13 +44,21 @@ export default function GameDevelopmentResume() {
       <h1>Résumé</h1>
       <section>
         <h2>Profile</h2>
-        <p>Frontend developer with 10 years experience in customer-facing and internal software including web, government, <abbr title="Customer Management System">CMS</abbr>, ecommerce and other problem spaces across property management, gaming, and higher education.</p>
-        <p>Expertise in agile software development with React, Redux, Next, Vue, and AngularJS frameworks involving complex workflows. Knowledgeable in test-driven development, modernization projects, internationalization, and accessibility / Section 508 compliance requirements. Seeking a new front-end position with an amazing team.</p>
+        <p>Frontend developer with over 12 years experience in customer-facing and internal software including web, government, <abbr title="Customer Management System">CMS</abbr>, ecommerce and other problem spaces across property management, gaming, and higher education.</p>
+        <p>Expertise in agile software development with React, Redux, Next, and Vue frameworks involving complex workflows. Knowledgeable in test-driven development, modernization projects, internationalization, and accessibility / Section 508 compliance requirements. Seeking a new front-end position with an amazing team.</p>
         <p>Work samples viewable <Link href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects`} target="_blank">here</Link>, and on <a href="https://github.com/pixelSHREDDER/" target="_blank">GitHub</a>.</p>
       </section>
       <section>
         <h2>Experience</h2>
-        <h3>343 Industries</h3>
+        <h3>Simply Made Apps</h3>
+				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4>Web Developer</h4>
+					<h5>Nov ’23 - Mar ’24</h5>
+				</div>
+				<ul>
+					<li>Built new features for a React/Redux/Electron desktop time management app, interfacing with internally-developed <abbr title="Application Programmable Interfaces">APIs</abbr> to synchronize data with iOS, Android, and web apps.</li>
+				</ul>
+        <h3>343 Industries (Microsoft Game Studios) [DISYS]</h3>
         <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
           <h4>Software Engineer III</h4>
           <h5>Feb ’21 - Jan ’23</h5>
@@ -75,7 +89,7 @@ export default function GameDevelopmentResume() {
           <li>Spearheaded initiative to replace internal web-to-print portal, conducting research and analysis of various vendors and liasoning with Design and Development teams</li>
           <li>Designed and built data visualizations for Marketing team using Chart.js and Vuetify, with endpoints on the backend to Entrata and Google Analytics <abbr title="REpresentational State Transfer Application Programmable Interfaces">REST APIs</abbr></li>
         </ul>
-        <h3>Holland America Line</h3>
+        <h3>Holland America Line [Harvey Nash]</h3>
         <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
           <h4>Web Developer</h4>
           <h5>Jan ’18 - Nov ’18</h5>
@@ -195,45 +209,67 @@ export default function GameDevelopmentResume() {
         </ul>
         <h3>Code</h3>
         <ul className={tagsSkillsStyles.tagsSkills}>
-          <li>JavaScript/TypeScript</li>
-          <li><abbr title="HyperText Markup Language">HTML</abbr></li>
-          <li><abbr title="Cascading Style Sheets and preprocessors">CSS/SASS/LESS</abbr></li>
-          <li><abbr title="PHP: Hypertext Preprocessor">PHP</abbr></li>
-          <li><abbr title="eXtensible Markup Language">XML</abbr></li>
-          <li><abbr title="JavaScript Object Notation">JSON</abbr></li>
-          <li><abbr title="Structured Query Language">SQL</abbr></li>
-          <li><abbr title="C Sharp">C#</abbr></li>
-          <li>ColdFusion</li>
-          <li>ActionScript</li>
+          <li>JavaScript <abbr title="ECMAScript 6+">ES6+</abbr></li>
+					<li>TypeScript</li>
+					<li><abbr title="HyperText Markup Language 5">HTML 5</abbr></li>
+					<li><abbr title="Cascading Style Sheets 3">CSS 3</abbr></li>
+					<li><abbr title="eXtensible Markup Language">XML</abbr></li>
+					<li><abbr title="JavaScript Object Notation">JSON</abbr></li>
+					<li><abbr title="Structured Query Language">SQL</abbr></li>
+					<li><abbr title="PHP: Hypertext Preprocessor">PHP</abbr></li>
+					<li><abbr title="Dot Net">.NET</abbr></li>
+					<li><abbr title="C Sharp">C#</abbr></li>
+					<li><abbr title="AutoHotkey">AHK</abbr></li>
         </ul>
         <h3>Web</h3>
         <ul className={tagsSkillsStyles.tagsSkills}>
           <li>React</li>
-          <li>Next</li>
-          <li>Redux</li>
-          <li>Vue</li>
-          <li>AngularJS</li>
-          <li>jQuery</li>
-          <li>Laravel</li>
-          <li>Node</li>
-          <li><abbr title="REpresentational State Transfer Application Programmable Interfaces">REST APIs</abbr></li>
-          <li><abbr title="Asynchronous Javascript And XML">AJAX</abbr></li>
-          <li>MongoDB/Mongoose</li>
-          <li>Material/Bootstrap</li>
-          <li><abbr title="JavaScript eXtensible Markup Language">JSX</abbr>/Jekyll/Liquid/Smarty</li>
+					<li>Redux</li>
+					<li>Next</li>
+					<li>Vue</li>
+					<li>Electron</li>
+					<li>Express</li>
+					<li><abbr title="REpresentational State Transfer Application Programmable Interfaces">REST APIs</abbr></li>
+					<li><abbr title="Asynchronous Javascript And XML">AJAX</abbr></li>
+					<li>OAuth</li>
+					<li><abbr title="JSON Web Token">JWT</abbr></li>
+					<li>Tailwind</li>
+					<li>Material UI</li>
+					<li>Bootstrap</li>
+					<li><abbr title="SASS CSS preprocessor">SASS</abbr></li>
+					<li><abbr title="LESS CSS preprocessor">LESS</abbr></li>
+					<li><abbr title="JavaScript eXtensible Markup Language">JSX</abbr></li>
+					<li>Jekyl</li>
+					<li>Liquid</li>
+					<li>jQuery</li>
         </ul>
         <h3>Tools</h3>
         <ul className={tagsSkillsStyles.tagsSkills}>
-          <li>Git/<abbr title="SubVersioN">SVN</abbr></li>
-          <li><abbr title="Node Package Manager">NPM</abbr>/Yarn</li>
-          <li>Bower</li>
-          <li>Composer</li>
-          <li>Grunt/Gulp</li>
-          <li>WordPress</li>
-          <li>MongoDB Atlas</li>
-          <li>Auth0</li>
-          <li>Adobe CC</li>
-          <li>Flex Builder</li>
+          <li>Node</li>
+					<li><abbr title="Node Package Manager">NPM</abbr></li>
+					<li><abbr title="Node Version Manager">NVM</abbr></li>
+					<li>Yarn</li>
+					<li>Vercel</li>
+					<li>Jest</li>
+					<li>Cypress</li>
+					<li>MongoDB</li>
+					<li>Mongoose</li>
+					<li>Atlas</li>
+					<li>Postgres</li>
+					<li>Zod</li>
+					<li>Prisma</li>
+					<li>MySQL</li>
+					<li>Auth0</li>
+					<li><abbr title="Continuous Integration">CI</abbr></li>
+					<li><abbr title="Continuous Deployment">CD</abbr></li>
+					<li>Git</li>
+					<li><abbr title="SubVersioN">SVN</abbr></li>
+					<li>Grunt</li>
+					<li>Gulp</li>
+					<li><abbr title="Windows Presentation Framework">WPF</abbr></li>
+					<li>WordPress</li>
+					<li>Mailman</li>
+					<li>Adobe CC</li>
         </ul>
       </section>
       <section>

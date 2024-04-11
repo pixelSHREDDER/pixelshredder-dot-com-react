@@ -18,6 +18,7 @@ import type {
   Person,
   Place,
   PublicationEvent,
+  Review,
   Thing,
   URL,
   VideoObject,
@@ -54,6 +55,7 @@ type TArticleSchema = {
   publisher?: Organization | Person
   recordedAt?: Event
   releasedEvent?: PublicationEvent
+  review?: Review
   sameAs?: URL
   sharedContent?: CreativeWork
   sourceOrganization?: Organization

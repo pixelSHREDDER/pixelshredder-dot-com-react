@@ -1,28 +1,35 @@
-import Image from 'next/image'
-import Nav from '@/components/Nav/Nav'
-import { Metadata } from 'next'
 import { defaultKeywords } from '../layout'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Metadata } from 'next'
+import Nav from '@/components/Nav/Nav'
+
+const defaultMetadata = {
+  description: 'Great in small doses!',
+  title: 'Mike DeVine | About Me',
+  url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/about-me`
+}
 
 export const metadata: Metadata = {
 	alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/about-me`,
+    canonical: defaultMetadata.url,
   },
 	appleWebApp: {
-		title: 'Mike DeVine | About Me',
+		title: defaultMetadata.title,
 	},
-	description: 'Great in small doses!',
+	description: defaultMetadata.description,
 	keywords: ['about me', ...defaultKeywords],
 	openGraph: {
-		description: 'Great in small doses!',
-		title: 'Mike DeVine | About Me',
-		url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/about-me`,
+		description: defaultMetadata.description,
+		title: defaultMetadata.title,
+		url: defaultMetadata.url,
 	},
-	title: 'Mike DeVine | About Me',
+	title: defaultMetadata.title,
 	twitter: {
 		card: 'summary',
 		creator: '@pixelSHREDDER',
-		description: 'Great in small doses!',
-		title: 'Mike DeVine | About Me',
+		description: defaultMetadata.description,
+		title: defaultMetadata.title,
 	},
 }
 
@@ -39,10 +46,10 @@ export default function AboutMe() {
 					alt="Here's what I look like!"
 				/>
 				<h2>Hey There</h2>
-				<p>My goal in life is to use my skills in technology to make as much of a positive impact as I can. I've spent over a decade honing my skills in web development, and along the way have embraced core tenets of computer science. Code reusability, optimization, and documentation are some of my specialties.</p>
-				<p>Over my career I've gained experience in the artistic sides of digital development, as well. I've tried to balance my work with a little bit of everything, from drawing and Photoshop to JavaScript frameworks and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>. I figure the broader my knowledge and skills, the better I'll be able to work with others in specialized roles.</p>
-				<p>Gaming, ecommerce, government, education, journalism, electronics, landscaping, telemarketing- I've had experience working in so many fields it can be hard to keep track of it all sometimes. But it all inspires me in one way or another. An entrepreneurial spirit and an insatiable appetite for learning new things doesn't hurt either.</p>
-				<p>Aside from playing and collecting video games, I try to keep my interests as broad as possible. There's no substitute for experience when it comes to good ideas, and so I try to soak up any new experience I can get- I never know when it may inspire me in my work.</p>
+				<p>My name is Mike DeVine, and my goal in life is to make as much of a positive impact as I can, however I can. I've spent over a decade honing my skills in web development, and along the way have embraced core tenets of computer science; Code reusability, optimization, and documentation are some of my specialties.</p>
+				<p>Throughout my career I've gained experience in the artistic sides of digital development, as well. I've tried to balance my work with a little bit of everything, from <Link href="projects/compass-rebrand">graphic design</Link>, to <Link href="/articles">journalism</Link>, to <Link href="/projects/mikeintosh">JavaScript frameworks</Link> and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>. I figure the broader my knowledge and skills, the better I'll be able to work with others in specialized roles.</p>
+				<p>Gaming, ecommerce, government, education, journalism, electronics, landscaping, telemarketing- I've had experience working in so many fields it can be hard to keep track of it all sometimes. But it all inspires me in one way or another. An entrepreneurial spirit and an insatiable appetite for learning new things doesn't hurt, either.</p>
+				<p>In my downtime I like to play and collect video games, hike the beautiful Pacific Northwest, watch baseball (let's go Yankees), and play badminton. I generally try to keep my interests as broad as possible, since there's no substitute for experience when it comes to good ideas. I try to soak up any new experience I can get, because I never know what'll inspire me next!</p>
 			</section>
 			<Nav />
 		</article>
