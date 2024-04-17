@@ -14,7 +14,10 @@ interface IArticle {
 export async function generateMetadata({ params }: IArticle): Promise<Metadata> {
   try {
     const slug = params.slug
-    const articleData = await fetch(`${process.env.BASE_URL}/articles/${slug}/api`)
+    const articleData = await fetch(
+      `${process.env.BASE_URL}/articles/${slug}/api`,
+      { next: { revalidate: 60 } }
+    )
     .then((res) => res.json())
 
     if (!articleData.data) {
@@ -51,7 +54,10 @@ export async function generateMetadata({ params }: IArticle): Promise<Metadata> 
 
 export async function generateStaticParams() {
   try {
-    const articlesData = await fetch(`${process.env.BASE_URL}/articles/api`)
+    const articlesData = await fetch(
+      `${process.env.BASE_URL}/articles/api`,
+      { next: { revalidate: 60 } }
+    )
     const articles = await articlesData.json()
     return articles.articles ?
       articles.articles.map((article: ArticleClass) => article.slug) : []

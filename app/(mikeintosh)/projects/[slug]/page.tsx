@@ -15,7 +15,10 @@ interface IProject {
 export async function generateMetadata({ params }: IProject): Promise<Metadata> {
   try {
     const slug = params.slug
-    const projectData = await fetch(`${process.env.BASE_URL}/projects/${slug}/api`)
+    const projectData = await fetch(
+      `${process.env.BASE_URL}/projects/${slug}/api`,
+      { next: { revalidate: 60 } }
+    )
     .then((res) => res.json())
 
     if (!projectData.data) {
@@ -52,7 +55,10 @@ export async function generateMetadata({ params }: IProject): Promise<Metadata> 
 
 export async function generateStaticParams() {
   try {
-    const projectsData = await fetch(`${process.env.BASE_URL}/projects/api`)
+    const projectsData = await fetch(
+      `${process.env.BASE_URL}/projects/api`,
+      { next: { revalidate: 60 } }
+    )
     const projects = await projectsData.json()
     return projects.projects ?
       projects.projects.map((project: ProjectClass) => project.slug) : []
