@@ -62,7 +62,10 @@ export async function generateStaticParams() {
 
 async function getArticle(slug: string) {
   try {
-    const articleData = await fetch(`${process.env.BASE_URL}/articles/${slug}/api`)
+    const articleData = await fetch(
+      `${process.env.BASE_URL}/articles/${slug}/api`,
+      { next: { revalidate: 3600 } }
+    )
     .then((res) => res.json())
     if (!articleData.data) {
       notFound()
