@@ -23,6 +23,7 @@ export const tags = [
   "gaming",
   "journalism",
   "movies",
+  "op-eds",
   "reviews",
   "politics"
 ]
@@ -31,6 +32,7 @@ export const defaultVisibleTags = [
   "gaming",
   "journalism",
   "movies",
+  "op-eds",
   "reviews"
 ]
 
