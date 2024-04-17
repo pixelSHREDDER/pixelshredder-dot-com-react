@@ -65,7 +65,7 @@ async function getProject(slug: string) {
   try {
     const projectData = await fetch(
       `${process.env.BASE_URL}/projects/${slug}/api`,
-      { next: { revalidate: 3600 } }
+      { next: { revalidate: 60 } }
     )
     .then((res) => res.json())
     if (!projectData.data) {

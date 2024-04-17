@@ -35,7 +35,7 @@ const getArticles = async () => {
   try {
     const articles = await fetch(
       `${process.env.BASE_URL}/articles/api`,
-      { next: { revalidate: 3600 } }
+      { next: { revalidate: 60 } }
     )
     .then((res) => res.json())
     return articles.articles

@@ -64,7 +64,7 @@ async function getArticle(slug: string) {
   try {
     const articleData = await fetch(
       `${process.env.BASE_URL}/articles/${slug}/api`,
-      { next: { revalidate: 3600 } }
+      { next: { revalidate: 60 } }
     )
     .then((res) => res.json())
     if (!articleData.data) {

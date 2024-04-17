@@ -38,7 +38,7 @@ const getProjects = async () => {
   try {
     const projects = await fetch(
       `${process.env.BASE_URL}/projects/api`,
-      { next: { revalidate: 3600 } }
+      { next: { revalidate: 60 } }
     )
     .then((res) => res.json())
     return projects.projects
