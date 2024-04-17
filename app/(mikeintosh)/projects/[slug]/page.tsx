@@ -7,7 +7,6 @@ import TechIcons from '@/components/TechIcons/TechIcons'
 import { ItemSchema } from '@/components/Schema'
 import { ProjectClass } from '@/models/Project'
 import projectStyles from './project.module.css'
-import { Project } from 'schema-dts'
 
 interface IProject {
   params: { slug: string }
@@ -64,7 +63,10 @@ export async function generateStaticParams() {
 
 async function getProject(slug: string) {
   try {
-    const projectData = await fetch(`${process.env.BASE_URL}/projects/${slug}/api`)
+    const projectData = await fetch(
+      `${process.env.BASE_URL}/projects/${slug}/api`,
+      { next: { revalidate: 3600 } }
+    )
     .then((res) => res.json())
     if (!projectData.data) {
       notFound()
