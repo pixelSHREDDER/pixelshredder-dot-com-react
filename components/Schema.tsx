@@ -1,6 +1,6 @@
 import { BlogPosting, WithContext } from 'schema-dts'
 
-export function ItemSchema({item}: {item: BlogPosting}) {
+export function ItemSchema({ item }: { item: BlogPosting }) {
   const jsonLd: WithContext<BlogPosting> = {
     '@context': 'https://schema.org',
     ...item,

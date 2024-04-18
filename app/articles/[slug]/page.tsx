@@ -6,6 +6,7 @@ import tagsStyles from '@/components/Tags/articlesTags.module.css'
 import { ItemSchema } from '@/components/Schema'
 import { formatDate } from '@/lib/utils'
 import { ArticleClass } from '@/models/Article'
+import { getArticleBySlug, getArticlesMeta } from '@/lib/articles'
 
 interface IArticle {
   params: { slug: string }
@@ -13,21 +14,15 @@ interface IArticle {
 
 export async function generateMetadata({ params }: IArticle): Promise<Metadata> {
   try {
-    const slug = params.slug
-    const articleData = await fetch(
-      `${process.env.BASE_URL}/articles/${slug}/api`,
-      { next: { revalidate: 60 } }
-    )
-    .then((res) => res.json())
+    const article: ArticleClass | undefined = await getArticleBySlug(params.slug)
 
-    if (!articleData.data) {
+    if (!article) {
       notFound()
     }
-    const article: ArticleClass = articleData.data
 
     return {
       alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles/${slug}`,
+        canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles/${params.slug}`,
       },
       appleWebApp: {
         title: article.title,
@@ -54,38 +49,19 @@ export async function generateMetadata({ params }: IArticle): Promise<Metadata> 
 
 export async function generateStaticParams() {
   try {
-    const articlesData = await fetch(
-      `${process.env.BASE_URL}/articles/api`,
-      { next: { revalidate: 60 } }
-    )
-    const articles = await articlesData.json()
-    return articles.articles ?
-      articles.articles.map((article: ArticleClass) => article.slug) : []
+    const articlesMeta: string[] | undefined = await getArticlesMeta()
+    if (!articlesMeta) return []
+    return articlesMeta.map(articleMeta => ({ slug: articleMeta }))
   } catch (error: any) {
-    throw error
-  }
-}
-
-async function getArticle(slug: string) {
-  try {
-    const articleData = await fetch(
-      `${process.env.BASE_URL}/articles/${slug}/api`,
-      { next: { revalidate: 60 } }
-    )
-    .then((res) => res.json())
-    if (!articleData.data) {
-      notFound()
-    }
-    return articleData.data
-  } catch (error: any) {
-    throw error
+    return []
   }
 }
 
 export default async function Article({ params }: IArticle) {
-  const article: ArticleClass = await getArticle(params.slug)
+  const article: ArticleClass | undefined = await getArticleBySlug(params.slug)
+  if (!article) notFound()
 
-  return (
+    return (
     <>
       <h1>{article.title}</h1>
       {!!article.schema.alternativeHeadline &&

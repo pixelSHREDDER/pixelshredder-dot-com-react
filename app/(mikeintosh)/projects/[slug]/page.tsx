@@ -7,6 +7,7 @@ import TechIcons from '@/components/TechIcons/TechIcons'
 import { ItemSchema } from '@/components/Schema'
 import { ProjectClass } from '@/models/Project'
 import projectStyles from './project.module.css'
+import { getProjectBySlug, getProjectsMeta } from '@/lib/projects'
 
 interface IProject {
   params: { slug: string }
@@ -14,21 +15,15 @@ interface IProject {
 
 export async function generateMetadata({ params }: IProject): Promise<Metadata> {
   try {
-    const slug = params.slug
-    const projectData = await fetch(
-      `${process.env.BASE_URL}/projects/${slug}/api`,
-      { next: { revalidate: 60 } }
-    )
-    .then((res) => res.json())
+    const project: ProjectClass | undefined = await getProjectBySlug(params.slug)
 
-    if (!projectData.data) {
+    if (!project) {
       notFound()
     }
-    const project: ProjectClass = projectData.data
 
     return {
       alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects/${slug}`,
+        canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects/${params.slug}`,
       },
       appleWebApp: {
         title: `${project.title} | Mike DeVine`,
@@ -55,36 +50,17 @@ export async function generateMetadata({ params }: IProject): Promise<Metadata> 
 
 export async function generateStaticParams() {
   try {
-    const projectsData = await fetch(
-      `${process.env.BASE_URL}/projects/api`,
-      { next: { revalidate: 60 } }
-    )
-    const projects = await projectsData.json()
-    return projects.projects ?
-      projects.projects.map((project: ProjectClass) => project.slug) : []
+    const projectsMeta: string[] | undefined = await getProjectsMeta()
+    if (!projectsMeta) return []
+    return projectsMeta.map(projectMeta => ({ slug: projectMeta }))
   } catch (error: any) {
-    throw error
-  }
-}
-
-async function getProject(slug: string) {
-  try {
-    const projectData = await fetch(
-      `${process.env.BASE_URL}/projects/${slug}/api`,
-      { next: { revalidate: 60 } }
-    )
-    .then((res) => res.json())
-    if (!projectData.data) {
-      notFound()
-    }
-    return projectData.data
-  } catch (error: any) {
-    throw error
+    return []
   }
 }
 
 export default async function Project({ params }: IProject) {
-  const project: ProjectClass = await getProject(params.slug)
+  const project: ProjectClass | undefined = await getProjectBySlug(params.slug)
+  if (!project) notFound()
 
   return (
     <section className={projectStyles.project}>
