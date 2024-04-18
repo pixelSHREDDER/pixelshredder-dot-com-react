@@ -31,7 +31,7 @@ export async function getArticlesMeta(): Promise<string[] | undefined> {
 
 export async function getArticlesBySearch(): Promise<ArticleClass[]> {
   try {
-    const articles = await fetch(`${process.env.BASE_URL}/articles/api`)
+    const articles = await fetch(`${process.env.BASE_URL}/articles/api`, { cache: 'no-store' })
     .then((res) => res.json())
     return articles.articles
   } catch (error: any) {

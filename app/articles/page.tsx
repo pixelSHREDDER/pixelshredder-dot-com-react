@@ -5,7 +5,6 @@ import { ArticleClass } from '@/models/Article'
 import { defaultKeywords } from '@mikeintosh/layout'
 import Masthead from '@/components/Masthead/Masthead'
 import { getArticlesBySearch } from '@/lib/articles'
-import { notFound } from 'next/navigation'
 
 const defaultMetadata = {
   description: 'Features, interviews, investigative reporting, reviews, and more.',
