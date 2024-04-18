@@ -1,5 +1,5 @@
 import { Project } from '@/models/Project'
-import connectDB from './project-connect-db'
+import connectDB from './connect-db'
 
 interface ProjectFilter {
   page?: number

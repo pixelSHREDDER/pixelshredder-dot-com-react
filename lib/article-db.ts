@@ -1,5 +1,5 @@
 import { Article } from '@/models/Article'
-import connectDB from './article-connect-db'
+import connectDB from './connect-db'
 
 interface ArticleFilter {
   page?: number

@@ -1,7 +1,7 @@
 import _mongoose, { connect } from 'mongoose'
 
 declare global {
-  var projectMongoose: {
+  var mongoose: {
     promise: ReturnType<typeof connect> | null
     conn: typeof _mongoose | null
   }
@@ -18,10 +18,10 @@ if (!MONGODB_URI || MONGODB_URI.length === 0) {
  * in development. This prevents connections from growing exponentially
  * during API Route usage.
  */
-let cached = global.projectMongoose
+let cached = global.mongoose
 
 if (!cached) {
-  cached = global.projectMongoose = { conn: null, promise: null }
+  cached = global.mongoose = { conn: null, promise: null }
 }
 
 async function connectDB() {

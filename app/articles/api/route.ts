@@ -1,4 +1,4 @@
-import connectDB from '@/lib/article-connect-db'
+import connectDB from '@/lib/connect-db'
 import { createErrorResponse } from '@/lib/utils'
 import { getArticles } from '@/lib/article-db'
 import { populateArticlesData } from '@/lib/middleware'
