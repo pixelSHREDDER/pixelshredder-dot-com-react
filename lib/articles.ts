@@ -28,13 +28,3 @@ export async function getArticlesMeta(): Promise<string[] | undefined> {
       return undefined
   }
 }
-
-export async function getArticlesBySearch(): Promise<ArticleClass[]> {
-  try {
-    const articles = await fetch(`${process.env.BASE_URL}/articles/api`, { cache: 'no-store' })
-    .then((res) => res.json())
-    return articles.articles
-  } catch (error: any) {
-    return []
-  }
-}

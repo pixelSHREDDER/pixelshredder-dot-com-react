@@ -28,13 +28,3 @@ export async function getProjectsMeta(): Promise<string[] | undefined> {
       return undefined
   }
 }
-
-export async function getProjectsBySearch(): Promise<ProjectClass[]> {
-  try {
-    const projects = await fetch(`${process.env.BASE_URL}/projects/api`, { cache: 'no-store' })
-    .then((res) => res.json())
-    return projects.projects
-  } catch (error: any) {
-    return []
-  }
-}
