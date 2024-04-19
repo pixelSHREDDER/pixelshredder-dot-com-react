@@ -4,6 +4,7 @@ import ArticlesGrid from '@/components/Grid/ArticlesGrid'
 import { ArticleClass } from '@/models/Article'
 import { defaultKeywords } from '@mikeintosh/layout'
 import Masthead from '@/components/Masthead/Masthead'
+import { ArticlesResult, getArticlesBySearchParams } from '@/lib/articles'
 
 const defaultMetadata = {
   description: 'Features, interviews, investigative reporting, reviews, and more.',
@@ -33,9 +34,8 @@ export const metadata: Metadata = {
 
 async function getArticles(): Promise<ArticleClass[]> {
   try {
-    const articles = await fetch(`${process.env.BASE_URL}/articles/api`, { cache: 'no-store' })
-    .then((res) => res.json())
-    return [...articles.articles]
+    const { articles }: ArticlesResult = await getArticlesBySearchParams()
+    return articles
   } catch (error: any) {
     return []
   }

@@ -4,6 +4,7 @@ import ProjectsGrid from '@/components/Grid/ProjectsGrid'
 import { ProjectClass } from '@/models/Project'
 import Link from 'next/link'
 import { defaultKeywords } from '../layout'
+import { ProjectsResult, getProjectsBySearchParams } from '@/lib/projects'
 
 const defaultMetadata = {
   description: 'Various personal endeavors, side projects, and tinkering I\'ve worked on over the years.',
@@ -36,9 +37,8 @@ export const metadata: Metadata = {
 
 async function getProjects(): Promise<ProjectClass[]> {
   try {
-    const projects = await fetch(`${process.env.BASE_URL}/projects/api`, { cache: 'no-store' })
-    .then((res) => res.json())
-    return [...projects.projects]
+    const { projects }: ProjectsResult = await getProjectsBySearchParams()
+    return projects
   } catch (error: any) {
     return []
   }

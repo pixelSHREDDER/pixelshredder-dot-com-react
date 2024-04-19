@@ -37,7 +37,8 @@ function populateArticle(data: any) {
       wordCount: getWordCount(data.body).toString(),
       ...data.schema,
       keywords: getKeywords(data, data.tags)
-    }
+    },
+    _id: data._id.toString()
   }
 }
 
@@ -59,7 +60,8 @@ function populateProject(data: any) {
       wordCount: getWordCount(data.body).toString(),
       ...data.schema,
       keywords: getKeywords(data, [...data.tags, ...data.tech])
-    }
+    },
+    _id: data._id.toString()
   }
 }
 

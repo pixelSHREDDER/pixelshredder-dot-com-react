@@ -1,7 +1,7 @@
 import { Article } from '@/models/Article'
 import connectDB from './connect-db'
 
-interface ArticleFilter {
+export interface ArticleFilter {
   page?: number
   limit?: number
 }

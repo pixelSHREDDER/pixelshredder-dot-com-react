@@ -1,7 +1,7 @@
 import { Project } from '@/models/Project'
 import connectDB from './connect-db'
 
-interface ProjectFilter {
+export interface ProjectFilter {
   page?: number
   limit?: number
 }
