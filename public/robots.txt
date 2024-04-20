@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.pixel-shredder.com
+
+# Sitemaps
+Sitemap: https://www.pixel-shredder.com/sitemap.xml
