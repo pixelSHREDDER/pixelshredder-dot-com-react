@@ -4,8 +4,8 @@
   "version": "2.0.1",
   "scripts": {
     "dev": "next dev",
-    "build:server": "source ./get-sc-creds.sh; next build",
-    "build": "next build",
+    "build": "source ./get-sc-creds.sh; next build",
+    "build:local": "next build",
     "postbuild": "next-sitemap",
     "start": "next start"
   },
