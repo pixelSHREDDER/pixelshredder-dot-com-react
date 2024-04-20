@@ -5,6 +5,7 @@ import { ArticleClass } from '@/models/Article'
 import { defaultKeywords } from '@mikeintosh/layout'
 import Masthead from '@/components/Masthead/Masthead'
 import { ArticlesResult, getArticlesBySearchParams } from '@/lib/articles'
+import { revalidatePath } from 'next/cache'
 
 const defaultMetadata = {
   description: 'Features, interviews, investigative reporting, reviews, and more.',
@@ -37,6 +38,7 @@ export const metadata: Metadata = {
 async function getArticles(): Promise<ArticleClass[]> {
   try {
     const { articles }: ArticlesResult = await getArticlesBySearchParams()
+    revalidatePath('/articles')
     return articles
   } catch (error: any) {
     return []
