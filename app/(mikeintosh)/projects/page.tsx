@@ -13,6 +13,8 @@ const defaultMetadata = {
   url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects`
 }
 
+export const revalidate = 86400
+
 export const metadata: Metadata = {
   alternates: {
     canonical: defaultMetadata.url,
