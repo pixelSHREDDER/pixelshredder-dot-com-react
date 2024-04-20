@@ -12,7 +12,7 @@ const defaultMetadata = {
   url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles`
 }
 
-export const revalidate = 86400
+export const revalidate = 60
 
 export const metadata: Metadata = {
   appleWebApp: {

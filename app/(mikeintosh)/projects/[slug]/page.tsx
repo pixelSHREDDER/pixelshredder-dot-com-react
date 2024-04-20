@@ -13,7 +13,7 @@ interface IProject {
   params: { slug: string }
 }
 
-export const revalidate = 86400
+export const revalidate = 60
 
 export async function generateMetadata({ params }: IProject): Promise<Metadata> {
   try {

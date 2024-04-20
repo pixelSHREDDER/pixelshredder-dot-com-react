@@ -12,7 +12,7 @@ interface IArticle {
   params: { slug: string }
 }
 
-export const revalidate = 86400
+export const revalidate = 60
 
 export async function generateMetadata({ params }: IArticle): Promise<Metadata> {
   try {
