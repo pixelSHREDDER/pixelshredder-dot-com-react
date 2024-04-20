@@ -5,6 +5,7 @@ import { ProjectClass } from '@/models/Project'
 import Link from 'next/link'
 import { defaultKeywords } from '../layout'
 import { ProjectsResult, getProjectsBySearchParams } from '@/lib/projects'
+import { revalidatePath } from 'next/cache'
 
 const defaultMetadata = {
   description: 'Various personal endeavors, side projects, and tinkering I\'ve worked on over the years.',
@@ -38,6 +39,7 @@ export const metadata: Metadata = {
 async function getProjects(): Promise<ProjectClass[]> {
   try {
     const { projects }: ProjectsResult = await getProjectsBySearchParams()
+    revalidatePath('/projects')
     return projects
   } catch (error: any) {
     return []

@@ -13,6 +13,8 @@ interface IProject {
   params: { slug: string }
 }
 
+export const revalidate = 86400
+
 export async function generateMetadata({ params }: IProject): Promise<Metadata> {
   try {
     const project: ProjectClass | undefined = await getProjectBySlug(params.slug)

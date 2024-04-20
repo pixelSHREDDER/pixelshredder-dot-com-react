@@ -12,6 +12,8 @@ interface IArticle {
   params: { slug: string }
 }
 
+export const revalidate = 86400
+
 export async function generateMetadata({ params }: IArticle): Promise<Metadata> {
   try {
     const article: ArticleClass | undefined = await getArticleBySlug(params.slug)
