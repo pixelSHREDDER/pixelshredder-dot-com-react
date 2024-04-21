@@ -1,5 +1,6 @@
-import { Project } from '@/models/Project'
 import connectDB from './connect-db'
+
+const Project = connectDB.Project;
 
 export interface ProjectFilter {
   page?: number
@@ -8,8 +9,6 @@ export interface ProjectFilter {
 
 export async function getProjects(filter: ProjectFilter = {}) {
   try {
-    await connectDB()
-
     const page = filter.page ?? 1
     const limit = filter.limit ?? 10
     const skip = (page - 1) * limit
@@ -31,8 +30,6 @@ export async function getProjects(filter: ProjectFilter = {}) {
 
 export async function getProject(slug: string) {
   try {
-    await connectDB()
-
     if (!slug) {
       return { error: 'Project not found' }
     }

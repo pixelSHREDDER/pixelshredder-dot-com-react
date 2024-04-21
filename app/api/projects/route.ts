@@ -1,4 +1,3 @@
-import connectDB from '@/lib/connect-db'
 import { createErrorResponse } from '@/lib/utils'
 import { getProjects } from '@/lib/project-db'
 import { populateProjectsData } from '@/lib/middleware'
@@ -6,8 +5,6 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
   try {
-    await connectDB()
-
     const pageStr = request.nextUrl.searchParams.get('page')
     const limitStr = request.nextUrl.searchParams.get('limit')
 

@@ -1,7 +1,6 @@
 import { ProjectClass } from "@/models/Project"
 import { NextResponse } from "next/server"
 import { ProjectFilter, getProject, getProjects } from "./project-db"
-import connectDB from "./connect-db"
 import { populateProjectData, populateProjectsData } from "./middleware"
 
 export interface ProjectsResult {
@@ -13,8 +12,6 @@ export interface ProjectsResult {
 
 export async function getProjectBySlug(slug: string): Promise<ProjectClass | undefined> {
   try {
-    await connectDB()
-
     const { project, error } = await getProject(slug)
 
     if (error) {
@@ -40,8 +37,6 @@ export async function getProjectsBySearchParams(
   {page, limit}: ProjectFilter = {page: 1, limit: 10}
 ): Promise<ProjectsResult> {
   try {
-    await connectDB()
-
     const { projects, results, error } = await getProjects({ page, limit })
 
     if (error) {

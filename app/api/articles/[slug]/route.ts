@@ -1,4 +1,3 @@
-import connectDB from '@/lib/connect-db'
 import { createErrorResponse } from '@/lib/utils'
 import { getArticle } from '@/lib/article-db'
 import { NextResponse } from 'next/server'
@@ -9,8 +8,6 @@ export async function GET(
   { params }: { params: { slug: string } }
 ) {
   try {
-    await connectDB()
-
     const slug = params.slug
     const { article, error } = await getArticle(slug)
 

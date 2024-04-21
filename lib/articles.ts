@@ -1,7 +1,6 @@
 import { ArticleClass } from "@/models/Article"
 import { NextResponse } from "next/server"
 import { ArticleFilter, getArticle, getArticles } from "./article-db"
-import connectDB from "./connect-db"
 import { populateArticleData, populateArticlesData } from "./middleware"
 
 export interface ArticlesResult {
@@ -13,8 +12,6 @@ export interface ArticlesResult {
 
 export async function getArticleBySlug(slug: string): Promise<ArticleClass | undefined> {
   try {
-    await connectDB()
-
     const { article, error } = await getArticle(slug)
 
     if (error) {
@@ -40,8 +37,6 @@ export async function getArticlesBySearchParams(
   {page, limit}: ArticleFilter = {page: 1, limit: 10}
 ): Promise<ArticlesResult> {
   try {
-    await connectDB()
-
     const { articles, results, error } = await getArticles({ page, limit })
 
     if (error) {

@@ -1,5 +1,6 @@
-import { Article } from '@/models/Article'
 import connectDB from './connect-db'
+
+const Article = connectDB.Article;
 
 export interface ArticleFilter {
   page?: number
@@ -8,8 +9,6 @@ export interface ArticleFilter {
 
 export async function getArticles(filter: ArticleFilter = {}) {
   try {
-    await connectDB()
-
     const page = filter.page ?? 1
     const limit = filter.limit ?? 10
     const skip = (page - 1) * limit
@@ -31,8 +30,6 @@ export async function getArticles(filter: ArticleFilter = {}) {
 
 export async function getArticle(slug: string) {
   try {
-    await connectDB()
-
     if (!slug) {
       return { error: 'Article not found' }
     }
