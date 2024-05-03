@@ -3,6 +3,40 @@ import cardGridStyles from '@/components/Grid/cardGrid.module.css'
 import mikeintoshCardStyles from '@/components/Card/mikeintoshCard.module.css'
 import postStartupStyles from '@/components/Monitor/postStartup.module.css'
 import { Metadata } from 'next'
+import { Person, WithContext } from 'schema-dts'
+
+const jsonLd: WithContext<Person> = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  additionalName: 'Owen',
+  alternateName: 'Michael DeVine',
+  email: 'mike.o.devine@gmail.com',
+  image: 'https://www.pixel-shredder.com/_next/image?url=%2Fimages%2Fmike-devine-headshot.jpg&w=256&q=75',
+  jobTitle: 'Web Developer',
+  name: 'Mike DeVine',
+  alumniOf: [
+    {
+     '@type': 'CollegeOrUniversity',
+     name: 'Rochester Institute of Technology',
+     sameAs: 'https://en.wikipedia.org/wiki/Rochester_Institute_of_Technology'
+    },
+    {
+     '@type': 'CollegeOrUniversity',
+     name: 'Suffolk County Community College',
+     sameAs: 'https://en.wikipedia.org/wiki/Suffolk_County_Community_College'
+    }
+  ],
+  birthPlace: 'South Setauket, NY',
+  gender: 'male',
+  description: 'Developer, designer, creative professional, writer, and attempted funnyperson.',
+  disambiguatingDescription: 'Web Developer',
+  url: 'https://www.pixel-shredder.com',
+  sameAs : [ 'https://github.com/pixelshredder',
+  'https://www.linkedin.com/in/pixelshredder',
+  'https://twitter.com/pixelSHREDDER',
+  'https://www.facebook.com/Mike.O.DeVine/',
+  'https://www.instagram.com/pixelshredder']
+}
 
 export const metadata: Metadata = {
   title: 'Mike DeVine | Developer/Designer/Creative',
@@ -31,6 +65,7 @@ export default function Index() {
           <h2>About This Site</h2>
         </Link>
       </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </article>
   )
 }

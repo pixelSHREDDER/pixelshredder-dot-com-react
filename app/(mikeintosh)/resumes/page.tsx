@@ -42,11 +42,15 @@ export default function Resumes() {
       <section className={cardGridStyles.cardGrid}>
         <Link href="/resumes/web-development" className={mikeintoshCardStyles.mikeintoshCard}>
           <h2>Web Development</h2>
-          <p>Over 12 years of professional experience</p>
+          <p>12+ years' experience in both public-facing and internal web software</p>
         </Link>
         <Link href="/resumes/game-development" className={mikeintoshCardStyles.mikeintoshCard}>
           <h2>Game Development</h2>
           <p>Go play Halo Infinite!</p>
+        </Link>
+        <Link href="/resumes/civic-engagement-and-grassroots-politics" className={mikeintoshCardStyles.mikeintoshCard}>
+          <h2>Civic Engagement</h2>
+          <p>Non-profit technology management, operations, and web development</p>
         </Link>
       </section>
       <Nav />

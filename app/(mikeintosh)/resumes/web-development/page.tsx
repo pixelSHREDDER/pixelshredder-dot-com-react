@@ -128,7 +128,7 @@ export default function WebDevelopmentResume() {
 				<h2>Professional Experience</h2>
 				<h3>Simply Made Apps</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Web Developer</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Web Developer</span></h4>
 					<h5>Nov ’23 - Mar ’24</h5>
 				</div>
 				<ul>
@@ -136,7 +136,7 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3>343 Industries (Microsoft Games Studios) [DISYS]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Software Engineer III</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Software Engineer III</span></h4>
 					<h5>Feb ’21 - Jan ’23</h5>
 				</div>
 				<ul>
@@ -146,7 +146,7 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3>CDK Global</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Front-End React Developer</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Front-End React Developer</span></h4>
 					<h5>Feb ’20 - Sep ’20</h5>
 				</div>
 				<ul>
@@ -156,7 +156,7 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3>Horizon Realty Advisors</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Full-Stack Developer</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Full-Stack Developer</span></h4>
 					<h5>Aug ’19 - Jan ’20</h5>
 				</div>
 				<ul>
@@ -167,7 +167,7 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3>Holland America Line [Harvey Nash]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Web Developer</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Web Developer</span></h4>
 					<h5>Jan ’18 - Nov ’18</h5>
 				</div>
 				<ul>
@@ -180,7 +180,7 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3>Symplicity Corporation</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Front-End Developer II</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Front-End Developer II</span></h4>
 					<h5>Jun ’12 - Dec ’17</h5>
 				</div>
 				<ul>
@@ -196,7 +196,7 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3>Neighborhood Nerd</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Owner / Chief Technician</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Owner</span><span>Chief Technician</span></h4>
 					<h5>Nov ’08 - Jun ’12</h5>
 				</div>
 				<ul>
@@ -205,7 +205,7 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3>Boys & Girls Club of Suffolk County</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>After School & Summer Camp Counselor / Computer Technician / Computers & Technology Instructor</h4>
+				<h4 className={tagsSkillsStyles.tagsSkills}><span>After School & Summer Camp Counselor</span><span>Computer Technician</span><span>Computers & Technology Instructor</span></h4>
 					<h5>Oct ’07 - Aug ’09</h5>
 				</div>
 				<ul>
@@ -217,20 +217,43 @@ export default function WebDevelopmentResume() {
 				<h2>Education</h2>
 				<h3>Rochester Institute of Technology</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4><abbr title="Bachelor's of Science">B.S.</abbr> Degree, New Media Interactive Development / Concentration, Global Studies (Japanese)</h4>
-					<h5>Class of 2012. Rochester, NY</h5>
+					<h4>B.S. Degree, New Media Interactive Development / Concentration, Global Studies (Japanese)</h4>
+					<h4>Class of 2012. Rochester, NY</h4>
 				</div>
+				<h4>
+					Sugar Labs Website Redesign Co-op<br />
+					<ul className={tagsSkillsStyles.tagsSkills}>
+						<li>design</li>
+						<li>translations</li>
+					</ul>
+				</h4>
+				<h4 className={tagsSkillsStyles.tagsSkills}>
+					One Laptop Per Child: Mathematical Adventure Fortune Hunter Co-op<br />
+					<ul className={tagsSkillsStyles.tagsSkills}>
+						<li>character art</li><li>animation</li>
+					</ul>
+				</h4>
+				<hr/>
 				<h3>Suffolk County Community College</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4><abbr title="Associate's of Arts">A.A.S.</abbr> Degree, Computer Art</h4>
-					<h5>Class of 2008. Selden, NY</h5>
+					<h4>A.A.S. Degree, Computer Art</h4>
+        	<h4>Class of 2008. Selden, NY</h4>
 				</div>
-			</section>
+				<h4>SCCC Compass Newspaper<br />
+					<ul className={tagsSkillsStyles.tagsSkills}>
+						<li>Editor-in-chief</li>
+						<li>Managing Editor</li>
+						<li>Layout Editor</li>
+						<li>Staff Writer</li>
+						<li>Student Advisor</li>
+					</ul>
+				</h4>
+      </section>
 			<section>
 				<h2>Additional Experience</h2>
 				<h3>Young Democrats of Washington</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Vice President of Technology / Vice President of Operations / Tech Director</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Vice President of Technology</span><span>Technology Co-Director</span><span>Technology Director</span></h4>
 					<h5>Feb ’18 - Jun ’22</h5>
 				</div>
 				<ul>
@@ -244,7 +267,7 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3><a href="/projects/project-odyssey">Project Odyssey</a></h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Concept / Design / Physical Installation</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>concept</span><span>design</span><span>physical installation</span></h4>
 					<h5>Sep ’11 - May ’12</h5>
 				</div>
 				<ul>
@@ -257,7 +280,7 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3><a href="https://www.microsoft.com/en-us/research/project/just-press-play/" target="_blank">Just Press Play, Rochester Institute of Technology</a></h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Content Development</h4>
+				<h4 className={tagsSkillsStyles.tagsSkills}><span>content development</span></h4>
 					<h5>Sep - Nov ’11</h5>
 				</div>
 				<ul>
@@ -269,7 +292,7 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3><a href="https://web.archive.org/web/20110726185832/http://sugarlabs.org/index.php" target="_blank">Sugar Labs</a></h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Website Redesign (Co-op)</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>website redesign (co-op)</span></h4>
 					<h5>Feb - May ’11</h5>
 				</div>
 				<ul>
@@ -279,7 +302,7 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3><a href="http://wiki.sugarlabs.org/go/Fortune_Hunter" target="_blank">Fortune Hunter</a></h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Character Artist</h4>
+				<h4 className={tagsSkillsStyles.tagsSkills}><span>character art</span><span>animation</span></h4>
 					<h5>Dec ’09 - May ’10</h5>
 				</div>
 				<ul>
