@@ -44,7 +44,7 @@ export default function GameDevelopmentResume() {
       <h1>Résumé</h1>
       <section>
         <h2>Profile</h2>
-        <p>Frontend developer with over 12 years experience in customer-facing and internal software including web, government, <abbr title="Customer Management System">CMS</abbr>, ecommerce and other problem spaces across property management, gaming, and higher education.</p>
+        <p>Frontend developer with experience in customer-facing and internal software including web, government, <abbr title="Customer Management System">CMS</abbr>, ecommerce and other problem spaces across property management, gaming, and higher education.</p>
         <p>Expertise in agile software development with React, Redux, Next, and Vue frameworks involving complex workflows. Knowledgeable in test-driven development, modernization projects, internationalization, and accessibility / Section 508 compliance requirements. Seeking a new front-end position with an amazing team.</p>
         <p>Work samples viewable <Link href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects`} target="_blank">here</Link>, and on <a href="https://github.com/pixelSHREDDER/" target="_blank">GitHub</a>.</p>
       </section>
