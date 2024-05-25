@@ -6,7 +6,7 @@ import { defaultKeywords } from '@mikeintosh/layout'
 import Link from 'next/link'
 
 const defaultMetadata = {
-  description: 'Over a decade of professional experience developing websites and web apps for government, CMS, ecommerce, property management, gaming, and higher ed.',
+  description: 'Experienced professional developing websites and web apps for government, CMS, ecommerce, property management, gaming, and higher ed.',
   title: 'Mike DeVine | Web Development Résumé',
   url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes/web-development`
 }

@@ -26,7 +26,7 @@ export default function BusinessResume() {
           <li>Founded and operated computer repair service based around an innovative new business model; devised branding strategy.</li>
           <li>Third prize winner at the DC Tech Hackathon Presented by Dun & Bradstreet, 2013.</li>
           <li>First prize winner at the RIT Winter 2012 Research & Innovation Symposium, for ’Project Odyssey’.</li>
-          <li>7+ years professional experience in the field of web development, specializing in higher education, government, CMS, and customer-facing web software. Broad knowledge of HTML, CSS, JS and modern web frameworks. Well-versed in atomic design, responsive web and email design, accessibility and 508 compliance, SEO, REST APIs. Skilled in agile development. Accustomed to complex workflows utilizing various task runners and package managers.</li>
+          <li>Experienced professional in the field of web development, specializing in higher education, government, CMS, and customer-facing web software. Broad knowledge of HTML, CSS, JS and modern web frameworks. Well-versed in atomic design, responsive web and email design, accessibility and 508 compliance, SEO, REST APIs. Skilled in agile development. Accustomed to complex workflows utilizing various task runners and package managers.</li>
           <li>Nearly two decades of experience using Photoshop and Illustrator.</li>
           <li>Experienced in Database Structure, SOHO Networking, Windows Server setup, general IT.</li>
           <li>Second place winner of Newsday’s School Journalism Award for Typography & Layout, 2007.</li>

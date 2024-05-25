@@ -18,7 +18,7 @@ export default function WebAndGraphicDesignResume() {
 			<h1>Résumé</h1>
       <section>
 				<h2>Profile</h2>
-				<p>Web/graphic designer with 10 years experience in customer-facing and internal software including web, government, CMS, ecommerce and other problem spaces across property management, gaming, and higher education. Nearly two decades of experience using Photoshop and Illustrator. Expertise in agile software development with React, Redux, Next, Vue, and AngularJS frameworks involving complex workflows. Knowledgeable in test-driven development, modernization projects, internationalization, and accessibility/508 compliance requirements.</p>
+				<p>Web/graphic designer with years of experience in customer-facing and internal software including web, government, CMS, ecommerce and other problem spaces across property management, gaming, and higher education. Nearly two decades of experience using Photoshop and Illustrator. Expertise in agile software development with React, Redux, Next, Vue, and AngularJS frameworks involving complex workflows. Knowledgeable in test-driven development, modernization projects, internationalization, and accessibility/508 compliance requirements.</p>
         <p>Portfolio/work samples viewable <Link href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects`} target="_blank">here</Link>, and on <a href="https://www.behance.net/user/?username=mikedevine" target="_blank">Behance</a>.</p>
       </section>
 			{/*<section>
@@ -98,7 +98,7 @@ export default function WebAndGraphicDesignResume() {
 			</section>*/}
 			<section>
 				<h2>Skills & Qualifications</h2>
-				<p>10+ years professional experience in the field of web design and development, specializing in higher education, government, CMS, and customer-facing web software. Broad knowledge of HTML, CSS, JS and modern web frameworks. Well-versed in atomic design, responsive web and email design, accessibility and 508 compliance. Skilled in agile development.</p>
+				<p>Experienced professional in the field of web design and development, specializing in higher education, government, CMS, and customer-facing web software. Broad knowledge of HTML, CSS, JS and modern web frameworks. Well-versed in atomic design, responsive web and email design, accessibility and 508 compliance. Skilled in agile development.</p>
 				<p>Nearly two decades of experience using Photoshop and Illustrator.</p>
 				<p>Second place winner of Newsday’s School Journalism Award for Typography & Layout, 2007.</p>
 				<p>Served as Staff Writer, Layout Editor, Managing Editor, Editor-in-Chief & Student Advisor of Suffolk County Community College’s award-winning ‘Compass’ newspaper; oversaw complete rebranding process.</p>
