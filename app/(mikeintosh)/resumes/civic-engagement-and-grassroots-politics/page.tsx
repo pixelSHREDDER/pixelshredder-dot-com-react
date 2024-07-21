@@ -56,7 +56,7 @@ export default function CivicsPoliticsResume() {
 				<ul>
 					<li>Built new features for a React/Redux/Electron desktop time management app, interfacing with internally-developed <abbr title="Application Programmable Interfaces">APIs</abbr> to synchronize data with iOS, Android, and web apps.</li>
 				</ul>
-				<h3>343 Industries (Microsoft Games Studios) [DISYS]</h3>
+				<h3>343 Industries (Microsoft Games Studios) [Contract with DISYS]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
 					<h4 className={tagsSkillsStyles.tagsSkills}><span>Software Engineer III</span></h4>
 					<h5>Feb ’21 - Jan ’23</h5>
@@ -66,7 +66,7 @@ export default function CivicsPoliticsResume() {
 					<li>Solved technical debt problems by applying modern <abbr title="Windows Presentation Framework">WPF</abbr> design standards and best practices to refactoring a decade-old <abbr title="Dot Net">.NET</abbr> code base and sustainably maintaining the new tooling.</li>
 					<li>Updated and maintained a legacy <abbr title="Dot Net">.NET</abbr> tool used studio-wide for managing local builds, refactoring to apply modern <abbr title="Windows Presentation Framework">WPF</abbr> design standards and best practices to a more than decade-old codebase, while resolving <abbr title="User Interface">UI</abbr> inconsistencies which were resulting in user confusion and repeated bug submissions.</li>
 				</ul>
-				<h3>CDK Global</h3>
+				<h3>CDK Global [Contract with KForce]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
 					<h4 className={tagsSkillsStyles.tagsSkills}><span>Front-End React Developer</span></h4>
 					<h5>Feb ’20 - Sep ’20</h5>
@@ -98,7 +98,7 @@ export default function CivicsPoliticsResume() {
 					<li>Spearheaded initiative to replace internal web-to-print portal, conducting research and analysis of various vendors and liasoning with Design and Development teams</li>
 					<li>Designed and built data visualizations for Marketing team using Chart.js and Vuetify, with endpoints on the backend to Entrata and Google Analytics <abbr title="REpresentational State Transfer Application Programmable Interfaces">REST APIs</abbr></li>
 				</ul>
-				<h3>Holland America Line [Harvey Nash]</h3>
+				<h3>Holland America Line [Contract with Harvey Nash]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
 					<h4 className={tagsSkillsStyles.tagsSkills}><span>Web Developer</span></h4>
 					<h5>Jan ’18 - Nov ’18</h5>

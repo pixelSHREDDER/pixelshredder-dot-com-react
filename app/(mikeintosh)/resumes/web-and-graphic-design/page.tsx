@@ -176,7 +176,7 @@ export default function WebAndGraphicDesignResume() {
       </section>
 			<section>
 				<h2>Work Experience</h2>
-				<h3>343 Industries</h3>
+				<h3>343 Industries (Microsoft Game Studios) [Contract with DISYS]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
 					<h4>Software Engineer III</h4>
 					<h5>Feb ’21 - Jan ’23</h5>
@@ -186,7 +186,7 @@ export default function WebAndGraphicDesignResume() {
 					<li>Solved technical debt problems by applying modern WPF design standards and best practices to refactoring a decade-old .NET code base and sustainably maintaining the new tooling.</li>
 					<li>Updated and maintained a legacy .NET tool used studio-wide for managing local builds, refactoring to apply modern WPF design standards and best practices to a more than decade-old codebase, while resolving UI inconsistencies which were resulting in user confusion and repeated bug submissions.</li>
         </ul>
-				<h3>CDK Global</h3>
+				<h3>CDK Global [Contract with KForce]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
 					<h4>Front-End React Developer</h4>
 					<h5>Feb ’20 - Sep ’20</h5>
@@ -207,7 +207,7 @@ export default function WebAndGraphicDesignResume() {
 					<li>Spearheaded initiative to replace internal web-to-print portal, conducting research and analysis of various vendors and liasoning with Design and Development teams</li>
 					<li>Designed and built data visualizations for Marketing team using Chart.js and Vuetify, with endpoints on the backend to Entrata and Google Analytics REST APIs</li>
         </ul>
-				<h3>Holland America Line</h3>
+				<h3>Holland America Line [Contract with Harvey Nash]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
 					<h4>Web Developer</h4>
 					<h5>Jan ’18 - Nov ’18</h5>
