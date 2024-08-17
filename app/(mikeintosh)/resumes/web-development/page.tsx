@@ -44,8 +44,8 @@ export default function WebDevelopmentResume() {
 			<h1>Résumé</h1>
 			<section>
 				<h2>Profile</h2>
-				<p>Frontend developer with experience in customer-facing and internal software including web, government, <abbr title="Customer Management System">CMS</abbr>, ecommerce and other problem spaces across property management, gaming, and higher education.</p>
-				<p>Expertise in agile software development with React, Redux, Next, and Vue frameworks involving complex workflows. Knowledgeable in test-driven development, modernization projects, internationalization, and accessibility / Section 508 compliance requirements. Seeking a new front-end position with an amazing team.</p>
+				<p>Frontend developer with over 12 years experience in customer-facing and internal software including web, government, CMS, e-commerce and other problem spaces across property management, gaming, and higher education.</p>
+				<p>Expertise in agile software development with React and Next frameworks involving complex workflows. Knowledgeable in test-driven development, internationalization, accessibility compliance, and codebase modernization.</p>
 				<p>Work samples viewable <Link href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects`} target="_blank">here</Link>, and on <a href="https://github.com/pixelSHREDDER/" target="_blank">GitHub</a>.</p>
 			</section>
 			<section>
@@ -97,7 +97,6 @@ export default function WebDevelopmentResume() {
 				</ul>
 				<h3>Tools</h3>
 				<ul className={tagsSkillsStyles.tagsSkills}>
-					<li>Node</li>
 					<li><abbr title="Node Package Manager">NPM</abbr></li>
 					<li><abbr title="Node Version Manager">NVM</abbr></li>
 					<li>Yarn</li>
@@ -105,23 +104,12 @@ export default function WebDevelopmentResume() {
 					<li>Jest</li>
 					<li>Cypress</li>
 					<li>MongoDB</li>
-					<li>Mongoose</li>
-					<li>Atlas</li>
 					<li>Postgres</li>
-					<li>Zod</li>
-					<li>Prisma</li>
 					<li>MySQL</li>
 					<li>Auth0</li>
 					<li><abbr title="Continuous Integration">CI</abbr></li>
 					<li><abbr title="Continuous Deployment">CD</abbr></li>
-					<li>Git</li>
-					<li><abbr title="SubVersioN">SVN</abbr></li>
-					<li>Grunt</li>
-					<li>Gulp</li>
 					<li><abbr title="Windows Presentation Framework">WPF</abbr></li>
-					<li>WordPress</li>
-					<li>Mailman</li>
-					<li>Adobe CC</li>
 				</ul>
 			</section>
 			<section>
@@ -132,7 +120,8 @@ export default function WebDevelopmentResume() {
 					<h5>Nov ’23 - Mar ’24</h5>
 				</div>
 				<ul>
-					<li>Built new features for a React/Redux/Electron desktop time management app, interfacing with internally-developed <abbr title="Application Programmable Interfaces">APIs</abbr> to synchronize data with iOS, Android, and web apps.</li>
+					<li>Expanded employee status options in an enterprise time management app (React/Redux/Electron), adapting the codebase to accommodate greater data variety and fulfilling the top-ranked customer feature request</li>
+					<li>Conducted accessibility audit using Lighthouse and <abbr title="Web Accessibility Evaluation Tool">WAVE</abbr>, including manual color contrast checks, to meet <abbr title="Americans with Disabilities Act">ADA</abbr> compliance requirements</li>
 				</ul>
 				<h3>343 Industries (Microsoft Games Studios) [Contract with DISYS]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -140,9 +129,9 @@ export default function WebDevelopmentResume() {
 					<h5>Feb ’21 - Jan ’23</h5>
 				</div>
 				<ul>
-					<li>Created and drove adoption of a modern React/Redux/Electron desktop app to replace a legacy <abbr title="Dot Net">.NET</abbr> tool, coordinating <abbr title="Application Programmable Interface">API</abbr> design with backend engineers and integrating with other internally-developed software.</li>
-					<li>Solved technical debt problems by applying modern <abbr title="Windows Presentation Framework">WPF</abbr> design standards and best practices to refactoring a decade-old <abbr title="Dot Net">.NET</abbr> code base and sustainably maintaining the new tooling.</li>
-					<li>Updated and maintained a legacy <abbr title="Dot Net">.NET</abbr> tool used studio-wide for managing local builds, refactoring to apply modern <abbr title="Windows Presentation Framework">WPF</abbr> design standards and best practices to a more than decade-old codebase, while resolving <abbr title="User Interface">UI</abbr> inconsistencies which were resulting in user confusion and repeated bug submissions.</li>
+					<li>Created a desktop app (React/Redux/Electron) to replace a legacy employee workflow management tool, coordinating API design with backend engineers</li>
+					<li>Implemented software integrations via <abbr title="google Remote Procedure Call">gRPC</abbr> with Azure-hosted <abbr title="Single Sign-On">SSO</abbr>, built themed UI components with Material UI, and verified <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> AA compliance via Lighthouse and WAVE</li>
+					<li>Modernized a legacy .NET tool used studio-wide to manage local builds, adding updated WPF functionality, reducing user confusion and repeat bug submissions due to UI inconsistencies</li>
 				</ul>
 				<h3>CDK Global [Contract with KForce]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -150,9 +139,9 @@ export default function WebDevelopmentResume() {
 					<h5>Feb ’20 - Sep ’20</h5>
 				</div>
 				<ul>
-					<li>Implemented new features in a legacy React codebase and added extensive test coverage to the existing code, increasing reliability and solving new business needs.</li>
-					<li>Replaced a legacy Angular tool with a modern React equivalent, incorporating modern techniques and tools using <abbr title="Test-Driven Development">TDD</abbr> methodology while building feature parity with the legacy app, including client-side <abbr title="Portable Document File">PDF</abbr> generation and internationalization support.</li>
-					<li>Submitted multiple bug fixes and compatibility updates to an internally-developed <abbr title="User Interface">UI</abbr> component library used company-wide, coordinating with dedicated internal team.</li>
+					<li>Built a React-based dealership support app to replace a legacy Angular tool, ensuring feature parity with the existing app while adding client-side PDF generation and i18 internationalization support for additional languages</li>
+					<li>Added extensive unit test coverage and new features to car dealership management app (React)</li>
+					<li>Coordinated with UI team on bug fix and compatibility pull requests on a company-wide component library</li>
 				</ul>
 				<h3>Horizon Realty Advisors</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -160,10 +149,9 @@ export default function WebDevelopmentResume() {
 					<h5>Aug ’19 - Jan ’20</h5>
 				</div>
 				<ul>
-					<li>Updated and maintained a legacy Laravel-based codebase, implemented new features using flexible, agile development practices</li>
-					<li>Enhanced and maintained a newly-built internal <abbr title="Customer Relations Management">CRM</abbr> application built in Laravel and Vue + Vuetify, ensuring compliance with <abbr title="Americans with Disabilities Act">ADA</abbr> accessibility standards and decoupling functional and interface code, in preparation for development of upcoming mobile app</li>
-					<li>Spearheaded initiative to replace internal web-to-print portal, conducting research and analysis of various vendors and liasoning with Design and Development teams</li>
-					<li>Designed and built data visualizations for Marketing team using Chart.js and Vuetify, with endpoints on the backend to Entrata and Google Analytics <abbr title="REpresentational State Transfer Application Programmable Interfaces">REST APIs</abbr></li>
+					<li>Led initiative to replace internal web-to-print portal in a property management web app (Laravel/Vue/Vuetify), conducting analysis of third-party vendors and liaising with Design and Development teams</li>
+					<li>Identified business requirements, designed and built data visualizations for Marketing team using Chart.js and Vuetify, with backend endpoints to Entrata and Google Analytics</li>
+					<li>Implemented UI theming support and maintained enterprise CRM web app, decoupling functional and interface code and ensuring full ADA compliance</li>
 				</ul>
 				<h3>Holland America Line [Contract with Harvey Nash]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -171,12 +159,8 @@ export default function WebDevelopmentResume() {
 					<h5>Jan ’18 - Nov ’18</h5>
 				</div>
 				<ul>
-					<li>Updated and refactored an outdated codebase, implemented new features using flexible, agile development practices</li>
-					<li>Adapted strategies for changing business needs and expectations; created functional connections between legacy and modern web applications</li>
-					<li>Enhanced and maintained client-facing e-commerce applications built in Angular, ensuring compliance with <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> accessibility standards</li>
-					<li>Built and implemented third party payment service, <abbr title="General Data Protection Regulation">GDPR</abbr> compliance, and internationalization features</li>
-					<li>Incorporated legacy work into modern infrastructure utilizing <abbr title="Application Programmable Interface">API</abbr> endpoints and token-based authorization to securely transmit user data</li>
-					<li>Tested and remedied bugs in new releases for React based web applications</li>
+					<li>Developed new features for onboard purchases web app built in Angular, updating i18 language support and integrating a newly-launched third party payment service using JWT authorization in collaboration with payment vendor</li>
+					<li>Satisfied <abbr title="General Data Protection Regulation">GDPR</abbr> compliance requirements adding disclaimers and consent language to UI, and verifying compliance with WCAG accessibility guidelines using WAVE</li>
 				</ul>
 				<h3>Symplicity Corporation</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -184,40 +168,16 @@ export default function WebDevelopmentResume() {
 					<h5>Jun ’12 - Dec ’17</h5>
 				</div>
 				<ul>
-					<li>Translated wireframes and mockups into fully functional web and mobile products using agile design and development practices and incorporating features from the latest industry trends</li>
-					<li>Adapted development based on changing client needs and expectations, researched and implemented new web technologies into existing products built on established stacks including <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, JavaScript, etc.</li>
-					<li>Used Bootstrap and atomic design principles to build a <abbr title="Customer Management System">CMS</abbr> application in Angular with unique features including dockable modals and compliance with Section 508 accessibility standards</li>
+					<li>Served over two dozen high-profile public sector clients and millions of visitors with responsive, mobile-first websites</li>
 					<li>Spearheaded atomic design strategy with integrated style guide, components library, and visual regression testing suite</li>
-					<li>Built responsive, mobile-first websites for public sector clients</li>
-					<li>Designed responsive emails with variable pixel-density image handling</li>
-					<li>Designed a website intended for large-format viewing on TV screens for use in conjunction with Chromecast devices</li>
-					<li>Used myriad <abbr title="REpresentational State Transfer Application Programmable Interfaces">REST APIs</abbr> in projects, including Twitter, Facebook, Pinterest, LinkedIn, Google Maps, THOMAS / congress.gov, Flickr, and YouTube</li>
-					<li>Built a Flash app in Flex Builder that could dynamically scale its contents using the same techniques applied by responsive websites</li>
-				</ul>
-				<h3>Neighborhood Nerd</h3>
-				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4 className={tagsSkillsStyles.tagsSkills}><span>Owner</span><span>Chief Technician</span></h4>
-					<h5>Nov ’08 - Jun ’12</h5>
-				</div>
-				<ul>
-					<li>Founded and operated computer repair service based around an innovative new business model</li>
-					<li>Devised company-wide branding strategy</li>
-				</ul>
-				<h3>Boys & Girls Club of Suffolk County</h3>
-				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-				<h4 className={tagsSkillsStyles.tagsSkills}><span>After School & Summer Camp Counselor</span><span>Computer Technician</span><span>Computers & Technology Instructor</span></h4>
-					<h5>Oct ’07 - Aug ’09</h5>
-				</div>
-				<ul>
-					<li>In addition to roles listed above, also provided work as promotional advisor</li>
-					<li>Developed and implemented multimedia marketing campaign for teen after school program comprised of print, merchandising, and installation efforts</li>
+					<li>Built CMS application in AngularJS using Bootstrap and atomic design principles, including custom dockable modals and full compliance with Section 508 accessibility standards</li>
 				</ul>
 			</section>
 			<section>
 				<h2>Education</h2>
 				<h3>Rochester Institute of Technology</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>B.S. Degree, New Media Interactive Development / Concentration, Global Studies (Japanese)</h4>
+					<h4>B.S. Degree, New Media Interactive Development (Computer Science)</h4>
 					<h4>Class of 2012. Rochester, NY</h4>
 				</div>
 				<h4>
