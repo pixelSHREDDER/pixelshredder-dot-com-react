@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Nav from '@/components/Nav/Nav'
 import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
+import resumeStyles from '../resume.module.css'
 import tagsSkillsStyles from '@/components/Tags/tagsSkills.module.css'
 import { defaultKeywords } from '@mikeintosh/layout'
 import Link from 'next/link'
@@ -112,7 +113,7 @@ export default function WebDevelopmentResume() {
 					<li><abbr title="Windows Presentation Framework">WPF</abbr></li>
 				</ul>
 			</section>
-			<section>
+			<section className={resumeStyles.experience}>
 				<h2>Professional Experience</h2>
 				<h3>Simply Made Apps</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -209,7 +210,7 @@ export default function WebDevelopmentResume() {
 					</ul>
 				</h4>
       </section>
-			<section>
+			<section className={resumeStyles.experience}>
 				<h2>Additional Experience</h2>
 				<h3>Young Democrats of Washington</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>

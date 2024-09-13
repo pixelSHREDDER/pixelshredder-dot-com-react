@@ -1,0 +1,9 @@
+.experience h3,
+.experience p,
+.experience li {
+  text-align: left;
+}
+.experience li {
+  margin-block-start: 0.8rem;
+  margin-block-end: 0.8rem;
+}

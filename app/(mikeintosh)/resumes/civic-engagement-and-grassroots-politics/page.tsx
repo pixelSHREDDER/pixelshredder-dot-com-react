@@ -2,6 +2,7 @@ import { defaultKeywords } from '@mikeintosh/layout'
 import { Metadata } from 'next'
 import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
 import Nav from '@/components/Nav/Nav'
+import resumeStyles from '../resume.module.css'
 import tagsSkillsStyles from '@/components/Tags/tagsSkills.module.css'
 import Link from 'next/link'
 
@@ -46,7 +47,7 @@ export default function CivicsPoliticsResume() {
 				<h2>About</h2>
 				<p>I worked for years with various government entities during my time in Arlington, VA, but was only driven to take political action after the 2016 presidential election. I believe that the problems our society faces are systemic, long-term, and will require a generational effort by individuals driven to secure a future for themselves, and for those who come after.</p><p>Work samples viewable <Link href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects`} target="_blank">here</Link>, and on <a href="https://github.com/pixelSHREDDER/" target="_blank">GitHub</a>.</p>
       </section>
-			<section>
+			<section className={resumeStyles.experience}>
 				<h2>Professional Experience</h2>
 				<h3>Simply Made Apps</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -55,6 +56,7 @@ export default function CivicsPoliticsResume() {
 				</div>
 				<ul>
 					<li>Built new features for a React/Redux/Electron desktop time management app, interfacing with internally-developed <abbr title="Application Programmable Interfaces">APIs</abbr> to synchronize data with iOS, Android, and web apps.</li>
+					<li>Conducted accessibility audit using Lighthouse and <abbr title="Web Accessibility Evaluation Tool">WAVE</abbr>, including manual color contrast checks, to meet <abbr title="Americans with Disabilities Act">ADA</abbr> compliance requirements</li>
 				</ul>
 				<h3>343 Industries (Microsoft Games Studios) [Contract with DISYS]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>

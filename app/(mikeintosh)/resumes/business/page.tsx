@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
+import resumeStyles from '../resume.module.css'
 import Nav from '@/components/Nav/Nav'
 import Link from 'next/link'
 
@@ -34,7 +35,7 @@ export default function BusinessResume() {
           <li>Winner of the Herbert M. Rothstein Award for Excellence in Journalism, 2005.</li>
         </ul>
       </section>
-      <section>
+      <section className={resumeStyles.experience}>
         <h2>Work Experience</h2>
         <h3>Horizon Realty Advisors</h3>
         <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -89,7 +90,7 @@ export default function BusinessResume() {
         </div>
         <p>In addition to roles listed above, also provided work as promotional advisor. Developed and implemented multimedia marketing campaign for teen after school program comprised of print, merchandising, and installation efforts.</p>
       </section>
-      <section>
+      <section className={resumeStyles.experience}>
         <h2>Project Experience</h2>
         <h3>Angular CMS App</h3>
         <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -185,7 +186,7 @@ export default function BusinessResume() {
           <h5>Class of 2008. Selden, NY</h5>
         </div>
       </section>
-      <section>
+      <section className={resumeStyles.experience}>
         <h2>Additional Experience</h2>
         <h3>Young Democrats of Washington</h3>
         <div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>

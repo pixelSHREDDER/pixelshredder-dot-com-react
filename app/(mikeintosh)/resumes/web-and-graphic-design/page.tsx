@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
+import resumeStyles from '../resume.module.css'
 import Nav from '@/components/Nav/Nav'
 import Link from 'next/link';
 
@@ -106,7 +107,7 @@ export default function WebAndGraphicDesignResume() {
 				<p>First prize winner at the RIT Winter 2012 Research & Innovation Symposium, for ’Project Odyssey’.</p>
 				<p>Winner of the Herbert M. Rothstein Award for Excellence in Journalism, 2005.</p>
 			</section>
-			<section>
+			<section className={resumeStyles.experience}>
 				<h2>Project Experience</h2>
 				<h3>Angular CMS App</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -174,7 +175,7 @@ export default function WebAndGraphicDesignResume() {
 				</div>
 				<p>Oversaw complete rebranding process of Suffolk County Community College’s award-winning ‘Compass’ newspaper. Responsibilities included conception of new logo and style guide for print, complete redesign of newspaper layout, and replacement of legacy branding.</p>
       </section>
-			<section>
+			<section className={resumeStyles.experience}>
 				<h2>Work Experience</h2>
 				<h3>343 Industries (Microsoft Game Studios) [Contract with DISYS]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -249,7 +250,7 @@ export default function WebAndGraphicDesignResume() {
 				</div>
 				<p>In addition to roles listed above, also provided work as promotional advisor. Developed and implemented multimedia marketing campaign for teen after school program comprised of print, merchandising, and installation efforts.</p>
 			</section>
-			<section>
+			<section className={resumeStyles.experience}>
 				<h2>Additional Experience</h2>
 				<h3>Young Democrats of Washington</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>

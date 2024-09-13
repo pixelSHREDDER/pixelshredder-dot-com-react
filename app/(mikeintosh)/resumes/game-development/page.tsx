@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
 import Nav from '@/components/Nav/Nav'
 import tagsSkillsStyles from '@/components/Tags/tagsSkills.module.css'
+import resumeStyles from '../resume.module.css'
 import { defaultKeywords } from '@mikeintosh/layout'
 import Link from 'next/link'
 
@@ -48,7 +49,7 @@ export default function GameDevelopmentResume() {
         <p>Expertise in agile software development with React, Redux, Next, and Vue frameworks involving complex workflows. Knowledgeable in test-driven development, modernization projects, internationalization, and accessibility / Section 508 compliance requirements. Seeking a new front-end position with an amazing team.</p>
         <p>Work samples viewable <Link href={`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects`} target="_blank">here</Link>, and on <a href="https://github.com/pixelSHREDDER/" target="_blank">GitHub</a>.</p>
       </section>
-      <section>
+      <section className={resumeStyles.experience}>
         <h2>Experience</h2>
         <h3>Simply Made Apps</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
@@ -57,6 +58,7 @@ export default function GameDevelopmentResume() {
 				</div>
 				<ul>
 					<li>Built new features for a React/Redux/Electron desktop time management app, interfacing with internally-developed <abbr title="Application Programmable Interfaces">APIs</abbr> to synchronize data with iOS, Android, and web apps.</li>
+					<li>Conducted accessibility audit using Lighthouse and <abbr title="Web Accessibility Evaluation Tool">WAVE</abbr>, including manual color contrast checks, to meet <abbr title="Americans with Disabilities Act">ADA</abbr> compliance requirements</li>
 				</ul>
 				<h3>343 Industries (Microsoft Games Studios) [Contract with DISYS]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>

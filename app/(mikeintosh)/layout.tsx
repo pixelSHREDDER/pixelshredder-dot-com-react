@@ -5,10 +5,14 @@ import '@/app/globals.css'
 import mikeintoshStyles from '@mikeintosh/mikeintosh.module.css'
 import Environment from '@/components/Environment/Environment'
 
+const geneva = localFont({
+  src: './geneva_9.ttf',
+  variable: '--font-geneva',
+})
 const sysfont = localFont({
   src: './sysfont.woff2',
   variable: '--font-sysfont',
-});
+})
 
 export const defaultMetadata: {[key: string]: string} = {
   'applicationName': 'Mikeintosh',
@@ -62,7 +66,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${mikeintoshStyles.mikeintosh} ${sysfont.variable}`}>
+    <html lang="en" className={`${mikeintoshStyles.mikeintosh} ${geneva.variable} ${sysfont.variable}`}>
       <body className={'startup'}>
         <div>
           <Environment>

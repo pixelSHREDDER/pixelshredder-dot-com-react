@@ -78,6 +78,7 @@ Search Settings by TkBt from [Noun Project](https://thenounproject.com/browse/ic
 ### Fonts
 
 - [Gelasio webfont by Google Fonts](https://fonts.google.com/specimen/Gelasio)
+- [Geneva 9 webfont by Kelsey Higham](https://fonts2u.com/geneva-9-regular.font)
 - [Lora webfont by Google Fonts](https://fonts.google.com/specimen/Lora)
 - [Sysfont webfont by Alina Sava](https://fontsarena.com/sysfont-by-alina-sava/)
 
