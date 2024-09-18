@@ -2,7 +2,7 @@ import { Gelasio, Lora } from 'next/font/google'
 import { Metadata } from 'next'
 import '@/app/globals.css'
 import styles from '@articles/articles.module.css'
-import Script from "next/script"
+import Script from 'next/script'
 
 const gelasio = Gelasio({
   weight: ['500'],

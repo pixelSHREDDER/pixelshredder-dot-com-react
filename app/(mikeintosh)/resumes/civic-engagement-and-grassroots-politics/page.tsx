@@ -1,4 +1,4 @@
-import { defaultKeywords } from '@mikeintosh/layout'
+import { defaultKeywords } from '@/lib/utils'
 import { Metadata } from 'next'
 import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
 import Nav from '@/components/Nav/Nav'

@@ -3,7 +3,7 @@ import cardGridStyles from '@/components/Grid/cardGrid.module.css'
 import mikeintoshCardStyles from '@/components/Card/mikeintoshCard.module.css'
 import Nav from '@/components/Nav/Nav'
 import { Metadata } from 'next'
-import { defaultKeywords } from '../layout'
+import { defaultKeywords } from '@/lib/utils'
 
 const defaultMetadata = {
   description: 'Over 30 years of experience, at least a third of which was professional!',

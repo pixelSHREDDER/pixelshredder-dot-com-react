@@ -3,7 +3,7 @@ import Nav from '@/components/Nav/Nav'
 import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
 import resumeStyles from '../resume.module.css'
 import tagsSkillsStyles from '@/components/Tags/tagsSkills.module.css'
-import { defaultKeywords } from '@mikeintosh/layout'
+import { defaultKeywords } from '@/lib/utils'
 import Link from 'next/link'
 
 const defaultMetadata = {

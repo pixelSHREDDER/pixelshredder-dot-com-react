@@ -1,4 +1,4 @@
-import { defaultKeywords } from "@mikeintosh/layout";
+import { defaultKeywords } from '@/lib/utils'
 import { stripHTML, getWordCount } from "./utils";
 
 function getKeywords(data: any, extraData: string[]) {

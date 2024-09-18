@@ -6,7 +6,6 @@ const withPWA = require('next-pwa')({
 
 module.exports = withPWA({
   experimental: {
-    serverActions: true,
     serverComponentsExternalPackages:['mongoose','@typegoose/typegoose']
   },
   images: {
@@ -46,4 +45,4 @@ module.exports = withPWA({
       },
     ]
   },
-})  
+})

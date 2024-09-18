@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import ProjectsGrid from '@/components/Grid/ProjectsGrid'
 import { ProjectClass } from '@/models/Project'
 import Link from 'next/link'
-import { defaultKeywords } from '../layout'
+import { defaultKeywords } from '@/lib/utils'
 import { ProjectsResult, getProjectsBySearchParams } from '@/lib/projects'
 import { revalidatePath } from 'next/cache'
 

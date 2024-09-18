@@ -1,4 +1,4 @@
-import { defaultKeywords } from '../layout'
+import { defaultKeywords } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from 'next'

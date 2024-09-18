@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Script from 'next/script'
 import '@/app/globals.css'
+import { defaultKeywords } from '@/lib/utils'
 import mikeintoshStyles from '@mikeintosh/mikeintosh.module.css'
 import Environment from '@/components/Environment/Environment'
 
@@ -14,7 +15,7 @@ const sysfont = localFont({
   variable: '--font-sysfont',
 })
 
-export const defaultMetadata: {[key: string]: string} = {
+const defaultMetadata: {[key: string]: string} = {
   'applicationName': 'Mikeintosh',
   'author': 'Mike DeVine',
   'description': 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX Designer, Creative Professional, Writer, Attempted Funnyperson.',
@@ -22,10 +23,6 @@ export const defaultMetadata: {[key: string]: string} = {
   'themeColor': '#787878',
   'title': 'Mike DeVine | Developer/Designer/Creative',
 }
-
-export const defaultKeywords: string[] = [
-  'pixelshredder', 'pixel-shredder', 'pixel shredder', 'pixel', 'shredder', 'mike devine', 'mike', 'devine'
-]
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}`),

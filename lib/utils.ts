@@ -11,6 +11,10 @@ export enum Weekdays {
   'Sun.',
 }
 
+export const defaultKeywords: string[] = [
+  'pixelshredder', 'pixel-shredder', 'pixel shredder', 'pixel', 'shredder', 'mike devine', 'mike', 'devine'
+]
+
 export function formatDate(dateString: string, dateFormat: string = 'LLLL d, yyyy'): string {
   const date = parseISO(dateString)
   return format(date, dateFormat)
