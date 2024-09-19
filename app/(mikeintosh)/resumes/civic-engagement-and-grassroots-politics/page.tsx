@@ -9,12 +9,12 @@ import Link from 'next/link'
 const defaultMetadata = {
 	description: 'Non-profit technology management, operations, and web development. Experienced in managing IT infrastructure, developing and implementing policies, and providing support.',
   title: 'Mike DeVine | Civic Engagement & Grassroots Politics Résumé',
-  url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes/civic-engagement-and-grassroots-politics`
+  url: '/resumes/civic-engagement-and-grassroots-politics',
 }
 
 export const metadata: Metadata = {
 	alternates: {
-    canonical: defaultMetadata.url,
+    canonical: `${defaultMetadata.url}/`,
   },
 	appleWebApp: {
 		title: defaultMetadata.title,

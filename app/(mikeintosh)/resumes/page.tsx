@@ -8,12 +8,12 @@ import { defaultKeywords } from '@/lib/utils'
 const defaultMetadata = {
   description: 'Over 30 years of experience, at least a third of which was professional!',
   title: 'Mike DeVine | Résumés',
-  url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes`
+  url: '/resumes'
 }
 
 export const metadata: Metadata = {
-  alternates: {
-    canonical: defaultMetadata.url,
+	alternates: {
+    canonical: `${defaultMetadata.url}/`,
   },
   appleWebApp: {
 		title: defaultMetadata.title,

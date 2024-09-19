@@ -10,12 +10,15 @@ import { revalidatePath } from 'next/cache'
 const defaultMetadata = {
   description: 'Features, interviews, investigative reporting, reviews, and more.',
   title: 'Mike DeVine | Articles',
-  url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles`
+  url: '/articles',
 }
 
 export const revalidate = 0
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: `${defaultMetadata.url}/`,
+  },
   appleWebApp: {
 		title: defaultMetadata.title,
 	},

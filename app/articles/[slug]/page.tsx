@@ -22,9 +22,11 @@ export async function generateMetadata({ params }: IArticle): Promise<Metadata> 
       notFound()
     }
 
+    const articleUrl = article.schema.url || `/articles/${params.slug}`;
+
     return {
       alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles/${params.slug}`,
+        canonical: `${articleUrl}/`,
       },
       appleWebApp: {
         title: article.title,
@@ -34,7 +36,7 @@ export async function generateMetadata({ params }: IArticle): Promise<Metadata> 
       openGraph: {
         description: article.description,
         title: article.title,
-        url: article.schema.url,
+        url: articleUrl,
       },
       title: article.title,
       twitter: {

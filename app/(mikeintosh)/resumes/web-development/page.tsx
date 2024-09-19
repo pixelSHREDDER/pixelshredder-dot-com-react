@@ -9,12 +9,12 @@ import Link from 'next/link'
 const defaultMetadata = {
   description: 'Experienced professional developing websites and web apps for government, CMS, ecommerce, property management, gaming, and higher ed.',
   title: 'Mike DeVine | Web Development Résumé',
-  url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes/web-development`
+  url: '/resumes/web-development',
 }
 
 export const metadata: Metadata = {
 	alternates: {
-    canonical: defaultMetadata.url,
+    canonical: `${defaultMetadata.url}/`,
   },
 	appleWebApp: {
 		title: defaultMetadata.title,

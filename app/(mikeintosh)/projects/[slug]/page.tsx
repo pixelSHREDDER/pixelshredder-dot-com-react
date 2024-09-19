@@ -23,9 +23,11 @@ export async function generateMetadata({ params }: IProject): Promise<Metadata> 
       notFound()
     }
 
+    const projectUrl = project.schema.url || `/projects/${params.slug}`;
+
     return {
       alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/projects/${params.slug}`,
+        canonical: `${projectUrl}/`,
       },
       appleWebApp: {
         title: `${project.title} | Mike DeVine`,
@@ -35,7 +37,7 @@ export async function generateMetadata({ params }: IProject): Promise<Metadata> 
       openGraph: {
         description: project.description,
         title: `${project.title} | Mike DeVine`,
-        url: project.schema.url,
+        url: projectUrl,
       },
       title: `${project.title} | Mike DeVine`,
       twitter: {

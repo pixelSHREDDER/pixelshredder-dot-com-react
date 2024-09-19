@@ -5,7 +5,10 @@ import Nav from '@/components/Nav/Nav'
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Mike DeVine | Web & Graphic Design Résumé',
+	alternates: {
+    canonical: '/resumes/web-and-graphic-design/',
+  },
+	title: 'Mike DeVine | Web & Graphic Design Résumé',
   description: 'iT\'S mY PaSsIoN',
 }
 

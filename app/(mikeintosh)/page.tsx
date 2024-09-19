@@ -39,6 +39,9 @@ const jsonLd: WithContext<Person> = {
 }
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
   title: 'Mike DeVine | Developer/Designer/Creative',
   description: 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX Designer, Creative Professional, Writer, Attempted Funnyperson.',
 }

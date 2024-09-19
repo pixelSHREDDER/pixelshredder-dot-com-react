@@ -9,12 +9,12 @@ import Link from 'next/link'
 const defaultMetadata = {
   description: 'Go play Halo Infinite!',
   title: 'Mike DeVine | Game Development Résumé',
-  url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/resumes/game-development`
+  url: '/resumes/game-development',
 }
 
 export const metadata: Metadata = {
-  alternates: {
-    canonical: defaultMetadata.url,
+	alternates: {
+    canonical: `${defaultMetadata.url}/`,
   },
   appleWebApp: {
 		title: defaultMetadata.title,

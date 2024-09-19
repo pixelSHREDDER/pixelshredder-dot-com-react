@@ -15,19 +15,18 @@ const sysfont = localFont({
   variable: '--font-sysfont',
 })
 
-const defaultMetadata: {[key: string]: string} = {
-  'applicationName': 'Mikeintosh',
-  'author': 'Mike DeVine',
-  'description': 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX Designer, Creative Professional, Writer, Attempted Funnyperson.',
-  'image': '/android-chrome-512x512.png',
-  'themeColor': '#787878',
-  'title': 'Mike DeVine | Developer/Designer/Creative',
+const defaultMetadata = {
+  applicationName: 'Mikeintosh',
+  author: 'Mike DeVine',
+  description: 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX Designer, Creative Professional, Writer, Attempted Funnyperson.',
+  image: '/android-chrome-512x512.png',
+  themeColor: '#787878',
+  title: 'Mike DeVine | Developer/Designer/Creative',
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}`),
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/`,
+    canonical: '/',
   },
   appleWebApp: {
     statusBarStyle: 'default',
@@ -36,7 +35,6 @@ export const metadata: Metadata = {
   applicationName: defaultMetadata.applicationName,
   archives: ['/old'],
   authors: [{name: defaultMetadata.author}],
-  colorScheme: 'light',
   creator: defaultMetadata.author,
   description: defaultMetadata.description,
   generator: 'Next.js',
@@ -44,21 +42,27 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
   openGraph: {
     description: defaultMetadata.description,
+    images: '/opengraph-image.png',
     locale: 'en_US',
     siteName: defaultMetadata.applicationName,
     title: defaultMetadata.title,
     type: 'website',
-    url: `/`,
+    url: '/',
   },
   publisher: defaultMetadata.author,
-  themeColor: defaultMetadata.themeColor,
   title: defaultMetadata.title,
   twitter: {
     card: 'summary',
     creator: '@pixelSHREDDER',
     description: defaultMetadata.description,
+    images: '/twitter-image.png',
     title: defaultMetadata.title,
   },
+}
+
+export const viewport = {
+  colorScheme: 'light',
+  themeColor: defaultMetadata.themeColor,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

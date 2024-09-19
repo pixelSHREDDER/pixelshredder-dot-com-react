@@ -7,12 +7,12 @@ import Nav from '@/components/Nav/Nav'
 const defaultMetadata = {
   description: 'Great in small doses!',
   title: 'Mike DeVine | About Me',
-  url: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/about-me`
+  url: `/about-me`
 }
 
 export const metadata: Metadata = {
-	alternates: {
-    canonical: defaultMetadata.url,
+  alternates: {
+    canonical: `${defaultMetadata.url}/`,
   },
 	appleWebApp: {
 		title: defaultMetadata.title,

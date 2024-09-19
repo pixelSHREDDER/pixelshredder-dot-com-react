@@ -5,6 +5,9 @@ import Nav from '@/components/Nav/Nav'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+	alternates: {
+    canonical: `/resumes/business/`,
+  },
   title: 'Mike DeVine | Business Résumé',
   description: 'Two credited startups (so far)',
 }

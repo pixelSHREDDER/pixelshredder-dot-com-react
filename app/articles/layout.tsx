@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import '@/app/globals.css'
 import styles from '@articles/articles.module.css'
 import Script from 'next/script'
+import { defaultKeywords } from '@/lib/utils'
 
 const gelasio = Gelasio({
   weight: ['500'],
@@ -20,23 +21,19 @@ const lora = Lora({
   display: 'swap'
 })
 
-export const defaultMetadata: {[key: string]: string} = {
-  'applicationName': 'Mikeintosh',
-  'author': 'Mike DeVine',
-  'description': 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX Designer, Creative Professional, Writer, Attempted Funnyperson.',
-  'image': '/android-chrome-512x512.png',
-  'themeColor': '#787878',
-  'title': 'Mike DeVine | Developer/Designer/Creative',
+const defaultMetadata = {
+  applicationName: 'Mikeintosh',
+  author: 'Mike DeVine',
+  description: 'Website of Mike DeVine, aka pixelSHREDDER - Web/Game Developer, Web/Graphic/UI/UX Designer, Creative Professional, Writer, Attempted Funnyperson.',
+  image: '/android-chrome-512x512.png',
+  themeColor: '#787878',
+  title: 'Mike DeVine | Developer/Designer/Creative',
+  url: '/articles',
 }
 
-export const defaultKeywords: string[] = [
-  'pixelshredder', 'pixel-shredder', 'pixel shredder', 'pixel', 'shredder', 'mike devine', 'mike', 'devine'
-]
-
 export const metadata: Metadata = {
-  metadataBase: new URL(`${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles`),
-  alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_CANONICAL_BASE_URL}/articles`,
+	alternates: {
+    canonical: `${defaultMetadata.url}/`,
   },
   appleWebApp: {
     statusBarStyle: 'default',
@@ -45,7 +42,6 @@ export const metadata: Metadata = {
   applicationName: defaultMetadata.applicationName,
   archives: ['/old'],
   authors: [{name: defaultMetadata.author}],
-  colorScheme: 'light',
   creator: defaultMetadata.author,
   description: defaultMetadata.description,
   generator: 'Next.js',
@@ -57,10 +53,9 @@ export const metadata: Metadata = {
     siteName: defaultMetadata.applicationName,
     title: defaultMetadata.title,
     type: 'website',
-    url: `/`,
+    url: '/',
   },
   publisher: defaultMetadata.author,
-  themeColor: defaultMetadata.themeColor,
   title: defaultMetadata.title,
   twitter: {
     card: 'summary',
@@ -68,6 +63,11 @@ export const metadata: Metadata = {
     description: defaultMetadata.description,
     title: defaultMetadata.title,
   },
+}
+
+export const viewport = {
+  colorScheme: 'light',
+  themeColor: defaultMetadata.themeColor,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
