@@ -3,7 +3,8 @@
 .project h3,
 .project h4,
 .project h5,
-.project h6 {
+.project h6,
+.project li {
   text-align: left;
 }
 .project h1 {
@@ -15,6 +16,7 @@
   line-height: 1.2;
 }
 .project p {
+  text-align: justify;
   margin-block-start: 0;
 }
 .project figure {
@@ -38,10 +40,6 @@
   float: right;
   margin-inline: 1.2rem 0;
 }
-.project p,
-.project li {
-  text-align: justify;
-}
 .project ul {
   list-style: disc;
   margin-inline-start: 1.6rem;
@@ -59,6 +57,7 @@
   width: 100%;
   min-width: 0;
   float: none;
+  grid-column: 1 / -1;
 }
 .project section > figure:nth-of-type(2n) {
   margin-inline: 0;
@@ -66,4 +65,13 @@
 .project section > figure[data-class*='wide'] {
   grid-column: 1 / -1;
   margin-inline: 0;
+}
+
+@media (min-width: 490px) {
+  .project section > figure {
+    grid-column: 1 / 2;
+  }
+  .project section > figure:nth-of-type(2n) {
+    grid-column: 2 / 2;
+  }
 }

@@ -87,7 +87,7 @@
 }
 .mikeintosh p a,
 .mikeintosh li a {
-  text-decoration: underline wavy;
+  text-decoration: 0px underline wavy;
 }
 .mikeintosh input[type="text"] {
   border: 2px solid #222;

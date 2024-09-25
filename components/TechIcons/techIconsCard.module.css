@@ -2,7 +2,9 @@
   composes: techIcons from "./techIcons.module.css";
   height: 32px;
   justify-content: center;
-  margin-block: 0.4rem;
+}
+:global(.clickableCard) :local h5.techIconsCard {
+  margin-block: 0.8rem;
 }
 :global(.clickableCard:hover) :local .techIconsCard span,
 :global(.clickableCard:focus) :local .techIconsCard span,
