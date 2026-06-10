@@ -49,6 +49,16 @@ export default function CivicsPoliticsResume() {
       </section>
 			<section className={resumeStyles.experience}>
 				<h2>Professional Experience</h2>
+				<h3>Amazon Project Kuiper/Leo [Contract with Accenture]</h3>
+				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Front End Engineer</span></h4>
+					<h5>Oct ’24 - Apr ’26</h5>
+				</div>
+				<ul>
+					<li>Delivered new features for B2C web app supporting 3,000+ satellites and tens of billions of dollars in infrastructure, comprising several React micro-frontends and a Next.js app</li>
+					<li>Features include error instrumentation, integration testing, and user flows involving complex API interactions</li>
+					<li>Released scripts to enhance usability and accessibility of internal tools, currently in use by over 30,000 employees</li>
+				</ul>
 				<h3>Simply Made Apps</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
 					<h4 className={tagsSkillsStyles.tagsSkills}><span>Web Developer</span></h4>

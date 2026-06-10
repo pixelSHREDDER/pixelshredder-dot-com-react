@@ -51,7 +51,17 @@ export default function GameDevelopmentResume() {
       </section>
       <section className={resumeStyles.experience}>
         <h2>Experience</h2>
-        <h3>Simply Made Apps</h3>
+        <h3>Amazon Project Kuiper/Leo [Contract with Accenture]</h3>
+				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Front End Engineer</span></h4>
+					<h5>Oct ’24 - Apr ’26</h5>
+				</div>
+				<ul>
+					<li>Delivered new features for B2C web app supporting 3,000+ satellites and tens of billions of dollars in infrastructure, comprising several React micro-frontends and a Next.js app</li>
+					<li>Features include error instrumentation, integration testing, and user flows involving complex API interactions</li>
+					<li>Released scripts to enhance usability and accessibility of internal tools, currently in use by over 30,000 employees</li>
+				</ul>
+				<h3>Simply Made Apps</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
 					<h4 className={tagsSkillsStyles.tagsSkills}><span>Web Developer</span></h4>
 					<h5>Nov ’23 - Mar ’24</h5>
@@ -201,12 +211,12 @@ export default function GameDevelopmentResume() {
       <section>
         <h2>Skills</h2>
         <ul className={tagsSkillsStyles.tagsSkills}>
-          <li>Responsive Design</li>
-          <li>Atomic Design</li>
-          <li>Scalable UI Libraries</li>
-          <li>Accessibility / Section 508 Compliance</li>
           <li>Test-Driven Development</li>
           <li>Internationalization</li>
+					<li>Accessibility / Section 508 Compliance</li>
+					<li>Scalable UI Libraries</li>
+					<li>Responsive Design</li>
+          <li>Atomic Design</li>
           <li><abbr title="Search Engine Optimization">SEO</abbr></li>
         </ul>
         <h3>Code</h3>
@@ -226,8 +236,8 @@ export default function GameDevelopmentResume() {
         <h3>Web</h3>
         <ul className={tagsSkillsStyles.tagsSkills}>
           <li>React</li>
-					<li>Redux</li>
 					<li>Next</li>
+					<li>Redux</li>
 					<li>Vue</li>
 					<li>Electron</li>
 					<li>Express</li>
@@ -247,10 +257,11 @@ export default function GameDevelopmentResume() {
         </ul>
         <h3>Tools</h3>
         <ul className={tagsSkillsStyles.tagsSkills}>
-          <li>Node</li>
-					<li><abbr title="Node Package Manager">NPM</abbr></li>
-					<li><abbr title="Node Version Manager">NVM</abbr></li>
-					<li>Yarn</li>
+          <li><abbr title="Amazon Web Services">AWS</abbr></li>
+					<li>Amazon Q</li>
+					<li><abbr title="Continuous Integration">CI</abbr></li>
+					<li><abbr title="Continuous Deployment">CD</abbr></li>
+					<li>Node</li>
 					<li>Vercel</li>
 					<li>Jest</li>
 					<li>Cypress</li>
@@ -262,8 +273,9 @@ export default function GameDevelopmentResume() {
 					<li>Prisma</li>
 					<li>MySQL</li>
 					<li>Auth0</li>
-					<li><abbr title="Continuous Integration">CI</abbr></li>
-					<li><abbr title="Continuous Deployment">CD</abbr></li>
+					<li><abbr title="Node Package Manager">NPM</abbr></li>
+					<li><abbr title="Node Version Manager">NVM</abbr></li>
+					<li>Yarn</li>
 					<li>Git</li>
 					<li><abbr title="SubVersioN">SVN</abbr></li>
 					<li>Grunt</li>

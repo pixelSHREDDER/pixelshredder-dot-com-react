@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import mikeintoshInfoBarStyles from '@/components/InfoBar/mikeintoshInfoBar.module.css'
+import tagsSkillsStyles from '@/components/Tags/tagsSkills.module.css'
 import resumeStyles from '../resume.module.css'
 import Nav from '@/components/Nav/Nav'
 import Link from 'next/link';
@@ -180,9 +181,28 @@ export default function WebAndGraphicDesignResume() {
       </section>
 			<section className={resumeStyles.experience}>
 				<h2>Work Experience</h2>
+				<h3>Amazon Project Kuiper/Leo [Contract with Accenture]</h3>
+				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Front End Engineer</span></h4>
+					<h5>Oct ’24 - Apr ’26</h5>
+				</div>
+				<ul>
+					<li>Delivered new features for B2C web app supporting 3,000+ satellites and tens of billions of dollars in infrastructure, comprising several React micro-frontends and a Next.js app</li>
+					<li>Features include error instrumentation, integration testing, and user flows involving complex API interactions</li>
+					<li>Released scripts to enhance usability and accessibility of internal tools, currently in use by over 30,000 employees</li>
+				</ul>
+				<h3>Simply Made Apps</h3>
+				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Web Developer</span></h4>
+					<h5>Nov ’23 - Mar ’24</h5>
+				</div>
+				<ul>
+					<li>Built new features for a React/Redux/Electron desktop time management app, interfacing with internally-developed <abbr title="Application Programmable Interfaces">APIs</abbr> to synchronize data with iOS, Android, and web apps.</li>
+					<li>Conducted accessibility audit using Lighthouse and <abbr title="Web Accessibility Evaluation Tool">WAVE</abbr>, including manual color contrast checks, to meet <abbr title="Americans with Disabilities Act">ADA</abbr> compliance requirements</li>
+				</ul>
 				<h3>343 Industries (Microsoft Game Studios) [Contract with DISYS]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Software Engineer III</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Software Engineer III</span></h4>
 					<h5>Feb ’21 - Jan ’23</h5>
 				</div>
 				<ul>
@@ -192,7 +212,7 @@ export default function WebAndGraphicDesignResume() {
         </ul>
 				<h3>CDK Global [Contract with KForce]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Front-End React Developer</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Front-End React Developer</span></h4>
 					<h5>Feb ’20 - Sep ’20</h5>
 				</div>
 				<ul>
@@ -202,7 +222,7 @@ export default function WebAndGraphicDesignResume() {
 				</ul>
 				<h3>Horizon Realty Advisors</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Full-Stack Developer</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Full-Stack Developer</span></h4>
 					<h5>Aug ’19 - Jan ’20</h5>
 				</div>
 				<ul>
@@ -213,7 +233,7 @@ export default function WebAndGraphicDesignResume() {
         </ul>
 				<h3>Holland America Line [Contract with Harvey Nash]</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Web Developer</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Web Developer</span></h4>
 					<h5>Jan ’18 - Nov ’18</h5>
 				</div>
 				<ul>
@@ -226,7 +246,7 @@ export default function WebAndGraphicDesignResume() {
         </ul>
 				<h3>Symplicity Corporation</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Front-End Developer II</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Front-End Developer II</span></h4>
 					<h5>Jun ’12 - Dec ’17</h5>
 				</div>
 				<ul>
@@ -242,13 +262,13 @@ export default function WebAndGraphicDesignResume() {
 				</ul>
 				<h3>Neighborhood Nerd</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>Owner / Chief Technician</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>Owner / Chief Technician</span></h4>
 					<h5>Nov ’08 - Jun ’12</h5>
 				</div>
 				<p>Founded and operated computer repair service based around an innovative new business model; devised branding strategy.</p>
 				<h3>Boys & Girls Club of Suffolk County</h3>
 				<div aria-hidden className={mikeintoshInfoBarStyles.mikeintoshInfoBar}>
-					<h4>After School & Summer Camp Counselor / Computer Technician / Computers & Technology Instructor</h4>
+					<h4 className={tagsSkillsStyles.tagsSkills}><span>After School & Summer Camp Counselor / Computer Technician / Computers & Technology Instructor</span></h4>
 					<h5>Oct ’07 - Aug ’09</h5>
 				</div>
 				<p>In addition to roles listed above, also provided work as promotional advisor. Developed and implemented multimedia marketing campaign for teen after school program comprised of print, merchandising, and installation efforts.</p>
